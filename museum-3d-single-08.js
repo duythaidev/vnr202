@@ -366,13 +366,17 @@ const StoryBoard = (() => {
 
     // ---------------- Bút + viết ----------------
     const penLocalQuat = new THREE.Quaternion().setFromUnitVectors(new V3(0, 1, 0), new V3(0.42, 0.48, 0.77).normalize());
+    let previousPenTip = null;
     function updateWriting(dt) {
         const card = st.cards[st.current];
         if (!card || !card.writer) { pen.visible = false; MuseumSound.writing(false); return; }
         const res = card.writer.update(dt);
         if (res.changed) card.tex.needsUpdate = true;
         pen.visible = res.visible && !st.flight;
-        MuseumSound.writing(pen.visible && res.writing && !st.isTransitioning);
+        const writing = pen.visible && res.writing && !st.isTransitioning;
+        const penSpeed = previousPenTip && writing ? Math.hypot(res.tip.x - previousPenTip.x, res.tip.y - previousPenTip.y) / Math.max(dt, .001) / 1100 : 1;
+        MuseumSound.writing(writing, penSpeed);
+        previousPenTip = writing ? { x: res.tip.x, y: res.tip.y } : null;
         if (pen.visible) {
             const lx = (res.tip.x / BoardWriter.W - 0.5) * CW, ly = (0.5 - res.tip.y / BoardWriter.H) * CH;
             const zSurf = 0.035 + res.tip.lift * 0.2;
@@ -390,6 +394,7 @@ const StoryBoard = (() => {
     }
 
     function finishCurrent() {
+        previousPenTip = null;
         MuseumSound.writing(false);
         const card = st.cards[st.current];
         if (card && card.writer && !card.writer.done) {

@@ -13,6 +13,7 @@ const MuseumSound = (() => {
         }
     }
     function unlock() {
+        penBlocked = false;
         try {
             const Audio = window.AudioContext || window.webkitAudioContext;
             if (!Audio) return;
@@ -225,30 +226,45 @@ const MuseumSound = (() => {
         src.start(now); src.stop(now + duration);
         src.onended = () => { src.disconnect(); filter.disconnect(); gain.disconnect(); };
     }
-    let penVoice = null, lastFoot = -Infinity, footSide = 1;
-    function writing(active) {
-        active = active && enabled && unlocked && ctx && !document.hidden;
+    // HTMLAudioElement để MP3 phát được cả khi mở trang bằng file://.
+    const penAudio = new window.Audio(new URL('writing-with-pencil.mp3', document.baseURI).href);
+    penAudio.preload = 'auto';
+    penAudio.loop = true;
+    penAudio.volume = 0;
+    let penPlaying = false, penFade = 0, penBlocked = false;
+    let lastFoot = -Infinity, footSide = 1;
+    function writing(active, speed = 1) {
+        active = active && enabled && unlocked && !document.hidden;
         if (!active) {
-            if (penVoice) {
-                const voice = penVoice; penVoice = null;
-                voice.gain.gain.setTargetAtTime(0, ctx.currentTime, .012);
-                voice.src.stop(ctx.currentTime + .05);
+            if (document.hidden) {
+                penPlaying = false; cancelAnimationFrame(penFade);
+                penAudio.pause(); penAudio.volume = 0; return;
             }
+            if (!penPlaying) return;
+            penPlaying = false;
+            cancelAnimationFrame(penFade);
+            const initial = penAudio.volume, start = performance.now();
+            const fadeOut = () => {
+                if (penPlaying) return;
+                const t = Math.min(1, (performance.now() - start) / 45);
+                penAudio.volume = initial * (1 - t);
+                if (t < 1) penFade = requestAnimationFrame(fadeOut);
+                else penAudio.pause();
+            };
+            penFade = requestAnimationFrame(fadeOut);
             return;
         }
-        if (!penVoice) {
-            const src = ctx.createBufferSource(), filter = ctx.createBiquadFilter(), gain = ctx.createGain();
-            src.buffer = noise; src.loop = true;
-            filter.type = 'bandpass'; filter.frequency.value = 1900; filter.Q.value = .65;
-            gain.gain.value = 0;
-            src.connect(filter); filter.connect(gain); gain.connect(master); src.start();
-            src.onended = () => { src.disconnect(); filter.disconnect(); gain.disconnect(); };
-            penVoice = { src, gain, filter };
+        cancelAnimationFrame(penFade);
+        // Giữ nguyên cao độ / tốc độ MP3; chỉ thay âm lượng nhẹ theo tốc độ ngòi.
+        const motion = Math.max(.15, Math.min(2, speed));
+        penAudio.volume = Math.min(.8, .55 + .1 * Math.sqrt(motion));
+        if (!penPlaying && !penBlocked) {
+            penPlaying = true;
+            penAudio.play().catch(error => {
+                if (error.name !== 'AbortError') penBlocked = true;
+                penPlaying = false;
+            });
         }
-        // Nét bút có nhịp xước nhẹ, không phát trong đoạn nhấc bút / bay camera.
-        const t = ctx.currentTime;
-        penVoice.gain.gain.setTargetAtTime(.09 + .055 * Math.pow(Math.sin(t * 37), 2), t, .015);
-        penVoice.filter.frequency.setTargetAtTime(1500 + 600 * Math.sin(t * 13), t, .025);
     }
     function footstep() {
         if (!enabled || !unlocked || !ctx || document.hidden || performance.now() - lastFoot < 300) return;
@@ -258,12 +274,12 @@ const MuseumSound = (() => {
         const body = ctx.createOscillator(), bodyGain = ctx.createGain();
         const pan = ctx.createStereoPanner(); pan.pan.value = footSide * .16;
         src.buffer = noise; filter.type = 'lowpass'; filter.frequency.value = 700 + Math.random() * 250;
-        gain.gain.setValueAtTime(.0001, now); gain.gain.linearRampToValueAtTime(.32, now + .008);
+        gain.gain.setValueAtTime(.0001, now); gain.gain.linearRampToValueAtTime(.19, now + .012);
         gain.gain.exponentialRampToValueAtTime(.0001, now + .16);
         body.frequency.setValueAtTime(105 + Math.random() * 16, now);
         body.frequency.exponentialRampToValueAtTime(48, now + .13);
-        bodyGain.gain.setValueAtTime(.0001, now); bodyGain.gain.linearRampToValueAtTime(.27, now + .008);
-        bodyGain.gain.exponentialRampToValueAtTime(.0001, now + .18);
+        bodyGain.gain.setValueAtTime(.0001, now); bodyGain.gain.linearRampToValueAtTime(.13, now + .014);
+        bodyGain.gain.exponentialRampToValueAtTime(.0001, now + .13);
         src.connect(filter); filter.connect(gain); gain.connect(pan);
         body.connect(bodyGain); bodyGain.connect(pan); pan.connect(master);
         src.start(now); src.stop(now + .18); body.start(now); body.stop(now + .2);
@@ -360,12 +376,13 @@ const MuseumIntro = (() => {
         document.getElementById('introWelcome').hidden = true;
         stage.hidden = false;
         await delay(300);
-        for (const [i, text] of ['Xin chào', 'tất cả các bạn', 'Hôm nay, cùng khám phá bảo tàng nhé'].entries()) {
+        for (const [i, text] of ['Xin chào tất cả các bạn', 'Hôm nay, cùng khám phá bảo tàng nhé'].entries()) {
             if (failed) break;
             await showStep(text, i);
         }
         if (!failed) {
             title.textContent = 'Không gian lịch sử đang mở…';
+            MuseumSound.chime(2);
             document.getElementById('introLoading').hidden = false;
             stage.classList.remove('step-out'); stage.classList.add('step-in');
         }

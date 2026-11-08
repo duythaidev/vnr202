@@ -21,10 +21,10 @@
 .intro-stage.step-in { opacity: 1; transform: translateY(0); }
 .intro-stage.step-out { opacity: 0; transform: translateY(-22px); }
 .intro-loading { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: min(340px, calc(100% - 48px)); text-align: center; z-index: 2; }
-.intro-loading p { font: 11px/1.6 'Be Vietnam Pro', sans-serif; color: #bfc4ae; margin: 0 0 12px; }
+.intro-loading p { font: 12px/1.6 'Be Vietnam Pro', sans-serif; color: #bfc4ae; margin: 0 0 12px; }
 .intro-loading progress { display: block; width: 100%; height: 2px; border: 0; background: #4b5342; appearance: none; }
 .intro-loading progress::-webkit-progress-bar { background: #4b5342; }
-.intro-loading progress::-webkit-progress-value { background: #d9c692; transition: width .3s; }
+.intro-loading progress::-webkit-progress-value { background: #d9c692; }
 .intro-loading progress::-moz-progress-bar { background: #d9c692; }
 .intro-whoosh { position: fixed; inset: -30%; pointer-events: none; opacity: 0; background: linear-gradient(110deg, transparent 35%, #d9c69218 46%, #f8edc97a 50%, #d9c69218 54%, transparent 65%); transform: translateX(-100%) skewX(-12deg); }
 .intro-transition .intro-whoosh { animation: museum-whoosh 3.8s ease-in-out both; }
@@ -34,7 +34,7 @@
 @media (max-width: 700px) {
     .museum-intro { padding: 20px 24px; }
     .intro-header { top: 18px; right: 20px; }
-    .intro-header button { font-size: 10px; padding: 9px 12px; }
+    .intro-header button { font-size: 11px; padding: 9px 12px; }
     .intro-stage h2 { font-size: clamp(36px, 9vw, 54px); }
     .intro-loading { bottom: 28px; }
 }
