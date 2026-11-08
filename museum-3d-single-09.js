@@ -1,6 +1,6 @@
 
 // =============================================================================
-// ĐIỀU KHIỂN BẢO TÀNG + HUD + DRAWER CHI TIẾT + FLAT VIEW + ÂM THANH + VÒNG LẶP
+// ĐIỀU KHIỂN BẢO TÀNG + HUD + DRAWER CHI TIẾT + ÂM THANH + VÒNG LẶP
 // Click tranh → camera bay tới tranh → mở BẢNG GHIM 3D fullscreen (board-scene.js)
 // =============================================================================
 let pendingBoardTimer = null;
@@ -57,7 +57,6 @@ function setupMuseumControls() {
     const keyMap = { KeyW: 'w', ArrowUp: 'w', KeyS: 's', ArrowDown: 's', KeyA: 'a', ArrowLeft: 'a', KeyD: 'd', ArrowRight: 'd' };
     window.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || StoryBoard.isOpen) return;
-        if (e.code === 'Escape') { closeArtworkDetail(); closeFlatViewModal(); }
         if (keyMap[e.code]) moveKeys[keyMap[e.code]] = true;
     });
     window.addEventListener('keyup', (e) => { if (keyMap[e.code]) moveKeys[keyMap[e.code]] = false; });
@@ -111,7 +110,6 @@ function stepToNextPiece(delta) {
     const n = (activePieceIndex + delta + MUSEUM_PIECES.length) % MUSEUM_PIECES.length;
     if (StoryBoard.isOpen) { StoryBoard.close(); setTimeout(() => flyToPiece(n, true), 700); return; }
     flyToPiece(n, false);
-    openArtworkDetail(activePieceIndex);
 }
 
 // ---------- Vòng lặp render ----------
@@ -154,111 +152,6 @@ function updateNearestHudText() {
     const L = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2)];
     const R = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2 + 1)];
     document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}: Trái [${L.shortLabel}] · Phải [${R.shortLabel}]`;
-}
-
-// ---------- Drawer chi tiết (mở từ nút "Chi tiết & Quiz" trong bảng ghim) ----------
-function openArtworkDetail(idx) {
-    activePieceIndex = idx;
-    const p = MUSEUM_PIECES[idx];
-    const $ = (id) => document.getElementById(id);
-    $('modalPieceNumber').innerText = `${p.code} / ${MUSEUM_PIECES.length}`;
-    $('modalPieceDate').innerText = p.date;
-    $('modalPieceChapter').innerText = p.chapter;
-    $('modalPieceTitle').innerText = p.title;
-    $('modalPieceSubtitle').innerText = p.subtitle;
-    $('modalPieceImage').src = p.imageUrl;
-    $('customImageUrlInput').value = p.imageUrl;
-    $('modalBottomIndex').innerText = `${idx + 1} / ${MUSEUM_PIECES.length}`;
-    $('modalPieceBullets').innerHTML = p.bullets.map(b => `<div class="p-2.5 rounded-lg bg-stone-900 border border-stone-800">${b}</div>`).join('');
-    $('modalPieceHotspots').innerHTML = p.hotspots.map((h, i) => `
-        <div class="p-3 rounded-lg bg-stone-900/70 border border-stone-800/90">
-            <div class="font-bold text-amber-300 text-xs">${i + 1}. ${h.name}</div>
-            <p class="text-stone-300 text-[11px] mt-1 leading-relaxed">${h.desc}</p>
-        </div>`).join('');
-    $('modalQuizQ').innerText = p.quiz.q;
-    $('modalQuizOpts').innerHTML = p.quiz.options.map((opt, o) => `
-        <button onclick="checkModalQuiz(${o})" class="w-full text-left p-2 rounded-lg bg-stone-950 hover:bg-stone-800 border border-stone-700 text-stone-200 transition flex items-start gap-2">
-            <span class="font-mono-museum font-bold text-amber-400">${String.fromCharCode(65 + o)}.</span><span>${opt}</span>
-        </button>`).join('');
-    $('modalQuizFeedback').classList.add('hidden');
-    $('artworkDetailModal').classList.remove('hidden');
-}
-function closeArtworkDetail() { document.getElementById('artworkDetailModal').classList.add('hidden'); }
-
-function checkModalQuiz(o) {
-    const p = MUSEUM_PIECES[activePieceIndex];
-    const fb = document.getElementById('modalQuizFeedback');
-    fb.classList.remove('hidden');
-    if (o === p.quiz.ans) {
-        fb.className = 'mt-2.5 p-2.5 rounded-lg text-[11px] bg-emerald-950/90 border border-emerald-500/40 text-emerald-200 font-semibold';
-        fb.innerHTML = `✓ ${p.quiz.explain}`;
-    } else {
-        fb.className = 'mt-2.5 p-2.5 rounded-lg text-[11px] bg-rose-950/90 border border-rose-500/40 text-rose-200';
-        fb.innerHTML = '✕ Chưa chính xác, hãy thử phương án khác!';
-    }
-}
-
-// ---------- Thay ảnh tranh ----------
-function updatePieceTextureIn3D(idx, url) {
-    MUSEUM_PIECES[idx].imageUrl = url;
-    const tex = createArtworkCanvasTexture(MUSEUM_PIECES[idx]);
-    paintingMeshes.forEach(m => { if (m.userData.pieceIndex === idx) { m.material.map = tex; m.material.needsUpdate = true; } });
-    if (activePieceIndex === idx) document.getElementById('modalPieceImage').src = url;
-    renderFlatGalleryGrid();
-}
-function readFileAsUrl(event, cb) {
-    const f = event.target.files && event.target.files[0];
-    if (!f) return;
-    const r = new FileReader();
-    r.onload = (e) => cb(e.target.result);
-    r.readAsDataURL(f);
-}
-function handleLocalImageUpload(e) { readFileAsUrl(e, (u) => updatePieceTextureIn3D(activePieceIndex, u)); }
-function uploadImageForPiece(idx, e) { readFileAsUrl(e, (u) => updatePieceTextureIn3D(idx, u)); }
-function toggleUrlInputBox() { document.getElementById('urlInputBox').classList.toggle('hidden'); }
-function applyCustomImageUrl() {
-    const v = document.getElementById('customImageUrlInput').value.trim();
-    if (v) { updatePieceTextureIn3D(activePieceIndex, v); document.getElementById('urlInputBox').classList.add('hidden'); }
-}
-
-// ---------- Flat view ----------
-function renderFlatGalleryGrid() {
-    document.getElementById('flatContent_gallery').innerHTML = MUSEUM_PIECES.map((p, idx) => `
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg">
-            <div>
-                <div class="relative h-44 bg-stone-950 border-b border-stone-800">
-                    <img src="${p.imageUrl}" alt="${p.title}" class="w-full h-full object-cover">
-                    <span class="absolute top-2.5 left-2.5 font-mono-museum text-[10px] font-bold px-2 py-0.5 rounded bg-black/80 text-amber-300 border border-amber-500/30">${p.code} · ${p.date}</span>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-sm text-white line-clamp-2">${p.title}</h3>
-                    <p class="text-xs text-stone-400 mt-1 line-clamp-2">${p.subtitle}</p>
-                </div>
-            </div>
-            <div class="p-3 bg-stone-950/80 border-t border-stone-800/80 flex items-center justify-between gap-2">
-                <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-amber-300 text-xs font-semibold transition">
-                    🖼️ Thay ảnh file<input type="file" accept="image/*" class="hidden" onchange="uploadImageForPiece(${idx}, event)">
-                </label>
-                <button onclick="closeFlatViewModal(); StoryBoard.open(${idx});" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-semibold">Mở bảng ghim</button>
-                <button onclick="closeFlatViewModal(); flyToPiece(${idx}, false);" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs transition">Bay tới →</button>
-            </div>
-        </div>`).join('');
-}
-function openFlatViewModal(tab = 'gallery') {
-    renderFlatGalleryGrid();
-    document.getElementById('flatViewModal').classList.remove('hidden');
-    switchFlatTab(tab);
-}
-function openImageManagerModal() { openFlatViewModal('gallery'); }
-function closeFlatViewModal() { document.getElementById('flatViewModal').classList.add('hidden'); }
-function switchFlatTab(tab) {
-    ['gallery', 'spiral', 'matrix', 'debate'].forEach(t => {
-        const on = t === tab;
-        document.getElementById(`flatContent_${t}`).classList.toggle('hidden', !on);
-        document.getElementById(`flatTab_${t}`).className = on
-            ? 'px-4 py-2 rounded-full text-xs font-bold bg-amber-500 text-stone-950 shadow'
-            : 'px-4 py-2 rounded-full text-xs font-bold bg-stone-800 text-stone-300 hover:bg-stone-700';
-    });
 }
 
 // ---------- Âm thanh nền ----------

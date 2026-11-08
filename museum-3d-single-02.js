@@ -1,7 +1,7 @@
 
 // =========================================================================
 // DỮ LIỆU 15 BỨC TRANH TRONG BẢO TÀNG (tách nguyên văn từ file HTML gốc)
-// Sửa imageUrl / title / hotspots / quiz tại đây.
+// Sửa imageUrl / title / hotspots tại đây.
 // Nội dung các step trên bảng ghim (khi click vào tranh) nằm ở js/story-data.js
 // =========================================================================
 const MUSEUM_PIECES = [
@@ -26,16 +26,6 @@ const MUSEUM_PIECES = [
             "<strong>Trong nước:</strong> 2 cuộc khai thác thuộc địa (1897–1914; 1919–1929) làm mâu thuẫn dân tộc gay gắt tột độ.",
             "<strong>Kết cục:</strong> Cả khuynh hướng phong kiến lẫn dân chủ tư sản (đến khởi nghĩa Yên Bái 2/1930) đều thất bại vì thiếu đường lối đúng đắn."
         ],
-        quiz: {
-            q: "Mâu thuẫn chủ yếu nhất trong xã hội Việt Nam thuộc địa nửa phong kiến là gì?",
-            options: [
-                "Giữa nông dân với địa chủ phong kiến",
-                "Giữa toàn thể dân tộc Việt Nam với thực dân Pháp và phong kiến phản động",
-                "Giữa tư sản dân tộc với tư bản Pháp"
-            ],
-            ans: 1,
-            explain: "Chính xác! Mâu thuẫn chủ yếu nhất là mâu thuẫn giữa toàn thể dân tộc Việt Nam với thực dân Pháp xâm lược và tay sai phản động."
-        }
     },
     {
         id: 1,
@@ -58,16 +48,6 @@ const MUSEUM_PIECES = [
             "<strong>Chính trị:</strong> Cách mạng giải phóng dân tộc thuộc phạm trù cách mạng vô sản, có thể thắng lợi trước cách mạng vô sản ở chính quốc.",
             "<strong>Tổ chức:</strong> Lập Hội VN Cách mạng Thanh niên (6/1925 tại Quảng Châu), ra báo <em>Thanh niên (21/6/1925)</em>, thúc đẩy <em>'Vô sản hóa' (29/9/1928)</em>."
         ],
-        quiz: {
-            q: "Tờ báo Thanh Niên — cơ quan ngôn luận của Hội Việt Nam Cách mạng Thanh niên — ra số đầu tiên vào ngày nào?",
-            options: [
-                "Ngày 21/6/1925 tại Quảng Châu",
-                "Ngày 17/6/1929 tại Hà Nội",
-                "Ngày 03/2/1930 tại Hương Cảng"
-            ],
-            ans: 0,
-            explain: "Chuẩn xác! Báo Thanh Niên ra số đầu tiên ngày 21/6/1925 tại Quảng Châu."
-        }
     },
     {
         id: 2,
@@ -89,16 +69,6 @@ const MUSEUM_PIECES = [
             "<strong>3 Tổ chức Cộng sản năm 1929:</strong> Đông Dương CSĐ (17/6/1929 - Bắc Kỳ), An Nam CSĐ (11/1929 - Nam Kỳ), Đông Dương CS Liên đoàn (9/1929 - Trung Kỳ).",
             "<strong>Hội nghị hợp nhất (6/1 – 7/2/1930):</strong> Họp tại Cửu Long (Hương Cảng) do Nguyễn Ái Quốc chủ trì, thành lập <strong>Đảng Cộng sản Việt Nam</strong> (24/2/1930 Đông Dương CS Liên đoàn chính thức gia nhập)."
         ],
-        quiz: {
-            q: "Tổ chức cộng sản nào được chấp nhận chính thức gia nhập Đảng Cộng sản Việt Nam vào ngày 24/2/1930?",
-            options: [
-                "Đông Dương Cộng sản Đảng",
-                "An Nam Cộng sản Đảng",
-                "Đông Dương Cộng sản Liên đoàn"
-            ],
-            ans: 2,
-            explain: "Đúng! Ngày 24/2/1930, Đông Dương Cộng sản Liên đoàn chính thức gia nhập Đảng Cộng sản Việt Nam."
-        }
     },
     {
         id: 3,
@@ -121,16 +91,6 @@ const MUSEUM_PIECES = [
             "<strong>Ưu tiên số 1:</strong> Đặt <strong>chống đế quốc, giành độc lập dân tộc ở vị trí hàng đầu</strong> (chỉ tịch thu ruộng đất của đế quốc Pháp).",
             "<strong>Lực lượng:</strong> Công – nông là gốc; lôi kéo tiểu tư sản, trí thức, trung nông; trung lập/lợi dụng phú nông, trung/tiểu địa chủ và tư bản An Nam."
         ],
-        quiz: {
-            q: "Về kinh tế – ruộng đất, Chánh cương vắn tắt tháng 2/1930 chủ trương tịch thu ruộng đất của ai để chia cho dân cày nghèo?",
-            options: [
-                "Tịch thu ruộng đất của tất cả địa chủ lớn nhỏ",
-                "Chỉ tịch thu sản nghiệp và ruộng đất của đế quốc Pháp",
-                "Chưa đề cập đến vấn đề ruộng đất"
-            ],
-            ans: 1,
-            explain: "Chính xác! Cương lĩnh 2/1930 chỉ tịch thu ruộng đất của đế quốc Pháp để tập trung mũi nhọn vào kẻ thù dân tộc."
-        }
     },
     {
         id: 4,
@@ -153,16 +113,6 @@ const MUSEUM_PIECES = [
             "<strong>Diễn biến:</strong> Tháng 1–4/1930 → Tháng 5–8/1930 (Bến Thủy 8/1930) → Tháng 9/1930 (Đỉnh cao Xô viết Nghệ - Tĩnh, Hưng Nguyên 12/9/1930).",
             "<strong>Chính quyền tự quản:</strong> Chi bộ đảng & Nông hội quản lý xã thôn theo mô hình Xô viết."
         ],
-        quiz: {
-            q: "Cơ quan nào đã trực tiếp đứng ra quản lý đời sống xã hội ở các thôn, xã Nghệ - Tĩnh theo hình thức Ủy ban tự quản kiểu Xô viết?",
-            options: [
-                "Các chi bộ đảng và Ban chấp hành Nông hội",
-                "Viện Dân biểu Trung Kỳ",
-                "Ủy ban hành động Đông Dương đại hội"
-            ],
-            ans: 0,
-            explain: "Đúng! Các chi bộ đảng và Ban chấp hành Nông hội đã đứng ra quản lý xã thôn theo hình thức tự quản kiểu Xô viết."
-        }
     },
     {
         id: 5,
@@ -184,16 +134,6 @@ const MUSEUM_PIECES = [
             "<strong>Nội dung Luận cương (10/1930):</strong> Coi <em>'Vấn đề thổ địa là cái cốt'</em>, phương pháp là <em>'võ trang bạo động'</em> theo khuôn phép nhà binh.",
             "<strong>Hạn chế (Điểm nhấn phản biện):</strong> Nặng về đấu tranh giai cấp & ruộng đất; xem nhẹ khả năng yêu nước của tiểu tư sản, tư sản dân tộc, tiểu/trung địa chủ."
         ],
-        quiz: {
-            q: "Điểm hạn chế lớn nhất của Luận cương chính trị tháng 10/1930 so với Cương lĩnh đầu tiên tháng 2/1930 là gì?",
-            options: [
-                "Không khẳng định vai trò lãnh đạo của Đảng",
-                "Không đặt nhiệm vụ giải phóng dân tộc lên hàng đầu mà nặng về đấu tranh giai cấp và cách mạng ruộng đất",
-                "Không chủ trương dùng bạo lực cách mạng"
-            ],
-            ans: 1,
-            explain: "Chính xác! Đây là điểm cốt lõi nhất khi đối chiếu Cương lĩnh 2/1930 và Luận cương 10/1930."
-        }
     },
     {
         id: 6,
@@ -216,16 +156,6 @@ const MUSEUM_PIECES = [
             "<strong>Chấn chỉnh sai lầm:</strong> Tháng 5/1931 phê phán khẩu hiệu <em>'thanh trừ trí, phú, địa, hào, đào tận gốc trốc tận rễ'</em> của Xứ ủy Trung Kỳ.",
             "<strong>Trong nhà tù đế quốc:</strong> Ra báo <em>Đuốc đưa đường, Con đường chính, Người tù đỏ</em>."
         ],
-        quiz: {
-            q: "Tháng 5/1931, Thường vụ Trung ương đã phải ra chỉ thị phê phán khẩu hiệu thanh Đảng sai lầm nào của Xứ ủy Trung Kỳ?",
-            options: [
-                "Tạm gác cách mạng ruộng đất",
-                "Thanh trừ trí, phú, địa, hào, đào tận gốc trốc tận rễ",
-                "Cơm áo, tự do, hòa bình"
-            ],
-            ans: 1,
-            explain: "Chính xác! Khẩu hiệu 'thanh trừ trí, phú, địa, hào, đào tận gốc trốc tận rễ' đã bị Thường vụ TW phê phán tháng 5/1931."
-        }
     },
     {
         id: 7,
@@ -247,16 +177,6 @@ const MUSEUM_PIECES = [
             "<strong>Chỉ đạo khôi phục:</strong> <em>Chương trình hành động</em> (15/6/1932 - Lê Hồng Phong); <em>Sơ thảo lịch sử phong trào CSĐD</em> (3/1933 - Hà Huy Tập); lập <strong>Ban Chỉ huy ở ngoài</strong> (đầu 1934).",
             "<strong>Đại hội I tại Ma Cao (3/1935):</strong> Bầu <strong>Lê Hồng Phong</strong> làm Tổng Bí thư, cử <strong>Nguyễn Ái Quốc</strong> làm đại diện bên cạnh QTCS."
         ],
-        quiz: {
-            q: "Đại hội đại biểu lần thứ I của Đảng (3/1935 tại Ma Cao) đã bầu đồng chí nào làm Tổng Bí thư?",
-            options: [
-                "Đồng chí Trần Phú",
-                "Đồng chí Lê Hồng Phong",
-                "Đồng chí Nguyễn Văn Cừ"
-            ],
-            ans: 1,
-            explain: "Đúng! Đại hội I (3/1935) bầu đồng chí Lê Hồng Phong làm Tổng Bí thư."
-        }
     },
     {
         id: 8,
@@ -278,16 +198,6 @@ const MUSEUM_PIECES = [
             "<strong>Hội nghị TW 7/1936 (Thượng Hải):</strong> Lập Mặt trận nhân dân phản đế (đến 3/1938 đổi thành <strong>Mặt trận Dân chủ Đông Dương</strong>); kết hợp công khai, hợp pháp với bí mật, bất hợp pháp.",
             "<strong>Đột phá lý luận (10/1936):</strong> Văn kiện <em>Chung quanh vấn đề chiến sách mới</em> tháo gỡ sự buộc chặt giữa phản đế và điền địa."
         ],
-        quiz: {
-            q: "Văn kiện nào của Đảng (tháng 10/1936) đã khẳng định: 'Cuộc dân tộc giải phóng không nhất định phải kết chặt với cuộc cách mạng điền địa'?",
-            options: [
-                "Chương trình hành động của Đảng (1932)",
-                "Chung quanh vấn đề chiến sách mới (10/1936)",
-                "Tự chỉ trích (1939)"
-            ],
-            ans: 1,
-            explain: "Chính xác! Văn kiện 'Chung quanh vấn đề chiến sách mới' (10/1936) là bước đột phá lý luận quan trọng."
-        }
     },
     {
         id: 9,
@@ -309,16 +219,6 @@ const MUSEUM_PIECES = [
             "<strong>Quần chúng & Nghị trường:</strong> Bãi công vùng mỏ (12/11/1936); Mít tinh Khu Đấu Xảo (1/5/1938); lập <strong>Hội truyền bá Quốc ngữ (cuối 1937)</strong>.",
             "<strong>Báo chí & Lý luận:</strong> <em>Tờrốtxky và phản cách mạng</em> (Hà Huy Tập, 5/1937), <em>Vấn đề dân cày</em> (1938), <em>Chủ nghĩa mácxít phổ thông</em> (Hải Triều), <strong>Tự chỉ trích</strong> (Nguyễn Văn Cừ, 1939)."
         ],
-        quiz: {
-            q: "Tác phẩm lý luận nổi tiếng nào về công tác tự phê bình và phê bình trong Đảng được Tổng Bí thư Nguyễn Văn Cừ viết năm 1939?",
-            options: [
-                "Đường Kách Mệnh",
-                "Vấn đề dân cày",
-                "Tự chỉ trích"
-            ],
-            ans: 2,
-            explain: "Chính xác! Cuốn 'Tự chỉ trích' (1939) của Tổng Bí thư Nguyễn Văn Cừ là văn kiện mẫu mực về xây dựng Đảng."
-        }
     },
     {
         id: 10,
@@ -340,16 +240,6 @@ const MUSEUM_PIECES = [
             "<strong>Hội nghị TW 6 (11/1939 - Bà Điểm, Hóc Môn):</strong> Đặt quyền lợi dân tộc làm tối cao; tạm gác khẩu hiệu cách mạng ruộng đất.",
             "<strong>3 Tiếng súng báo hiệu:</strong> Bắc Sơn (27/9/1940), Nam Kỳ (23/11/1940), Đô Lương (13/1/1941)."
         ],
-        quiz: {
-            q: "Hội nghị nào của Đảng (tháng 11/1939 tại Bà Điểm, Hóc Môn) đã mở đầu sự chuyển hướng chỉ đạo chiến lược, chủ trương 'lấy quyền lợi dân tộc làm tối cao'?",
-            options: [
-                "Hội nghị Trung ương tháng 7/1936",
-                "Hội nghị Trung ương 6 (tháng 11/1939)",
-                "Hội nghị Trung ương 7 (tháng 11/1940)"
-            ],
-            ans: 1,
-            explain: "Chính xác! Hội nghị TW 6 (11/1939) mở đầu quá trình chuyển hướng chỉ đạo chiến lược."
-        }
     },
     {
         id: 11,
@@ -371,16 +261,6 @@ const MUSEUM_PIECES = [
             "<strong>Hoàn chỉnh chuyển hướng (5/1941 tại Cao Bằng):</strong> Nguyễn Ái Quốc chủ trì, bầu đồng chí <strong>Trường Chinh</strong> làm Tổng Bí thư.",
             "<strong>6 Nội dung cốt lõi:</strong> (1) Mâu thuẫn toàn dân tộc với Pháp–Nhật; (2) Chỉ giải quyết một vấn đề cần kíp là <em>dân tộc giải phóng</em>; (3) Lập <strong>Mặt trận Việt Minh</strong>; (4) Hội <em>Cứu quốc</em>; (5) Lập nhà nước <strong>Việt Nam Dân chủ Cộng hòa</strong>; (6) Chuẩn bị khởi nghĩa vũ trang là trung tâm."
         ],
-        quiz: {
-            q: "Về hình thức nhà nước sau khi cách mạng thành công, Hội nghị Trung ương 8 (5/1941) chủ trương thành lập chính quyền như thế nào?",
-            options: [
-                "Chính quyền Xô viết của riêng giai cấp công – nông",
-                "Nhà nước Việt Nam Dân chủ Cộng hòa của toàn thể nhân dân liên hợp",
-                "Chế độ quân chủ lập hiến"
-            ],
-            ans: 1,
-            explain: "Chính xác! Hội nghị TW 8 chủ trương thành lập nước Việt Nam Dân chủ Cộng hòa của toàn dân tộc."
-        }
     },
     {
         id: 12,
@@ -402,16 +282,6 @@ const MUSEUM_PIECES = [
             "<strong>Chính trị & Văn hóa:</strong> Tuyên ngôn Việt Minh (25/10/1941); HN Võng La (2/1943); <strong>Đề cương văn hóa Việt Nam (1943)</strong> (Dân tộc, Khoa học, Đại chúng).",
             "<strong>Căn cứ & Vũ trang:</strong> Mở hành lang <strong>'Nam tiến' (cuối 1943)</strong>; ngày <strong>22/12/1944</strong> thành lập <strong>Đội VN Tuyên truyền Giải phóng quân</strong>, thắng trận Phai Khất & Nà Ngần."
         ],
-        quiz: {
-            q: "Ba nguyên tắc lớn của 'Đề cương về văn hóa Việt Nam' (năm 1943) là gì?",
-            options: [
-                "Tự do – Bình đẳng – Bác ái",
-                "Dân tộc – Khoa học – Đại chúng",
-                "Tập trung – Thống nhất – Kịp thời"
-            ],
-            ans: 1,
-            explain: "Đúng! Ba nguyên tắc cốt lõi của Đề cương văn hóa Việt Nam (1943) là Dân tộc, Khoa học và Đại chúng."
-        }
     },
     {
         id: 13,
@@ -433,16 +303,6 @@ const MUSEUM_PIECES = [
             "<strong>Chỉ thị 12/3/1945:</strong> Xác định kẻ thù duy nhất là <strong>phát xít Nhật</strong>; đẩy mạnh <em>'Phá kho thóc, giải quyết nạn đói'</em>; lập <strong>Khu giải phóng Việt Bắc (4/6/1945)</strong>.",
             "<strong>Chạy đua nước rút (8/1945):</strong> <strong>Quân lệnh số 1</strong> (13/8); <strong>HN toàn quốc</strong> (14–15/8); <strong>Đại hội Quốc dân Tân Trào</strong> (16/8/1945)."
         ],
-        quiz: {
-            q: "Thời cơ 'ngàn năm có một' của Tổng khởi nghĩa Tháng Tám 1945 được xác định nằm trong khoảng thời gian nào?",
-            options: [
-                "Từ khi Đức tấn công Liên Xô (6/1941) đến khi Nhật đảo chính Pháp (3/1945)",
-                "Từ khi Nhật đầu hàng Đồng minh (15/8/1945) đến trước khi quân Đồng minh vào Đông Dương giải giáp quân Nhật",
-                "Sau khi quân Anh và quân Tưởng đã vào Đông Dương"
-            ],
-            ans: 1,
-            explain: "Chính xác! Đó là khoảng thời gian 'chạy đua nước rút' trước khi quân Đồng minh tiến vào Đông Dương."
-        }
     },
     {
         id: 14,
@@ -464,16 +324,6 @@ const MUSEUM_PIECES = [
             "<strong>Thắng lợi thần tốc trong 15 ngày:</strong> 4 tỉnh sớm nhất (Hải Dương, Bắc Giang, Hà Tĩnh, Quảng Nam 14–18/8) → <strong>Hà Nội (19/8)</strong> → <strong>Huế (23/8)</strong> → <strong>Sài Gòn (25/8)</strong> → <strong>Tuyên ngôn Độc lập (2/9/1945)</strong>.",
             "<strong>4 Bài học lớn:</strong> (1) Đặt giải phóng dân tộc lên tối cao; (2) Đại đoàn kết trong Mặt trận Việt Minh; (3) Kết hợp chính trị – vũ trang, chớp thời cơ; (4) Xây dựng Đảng vững mạnh."
         ],
-        quiz: {
-            q: "Bốn tỉnh nào đã giành được chính quyền ở tỉnh lỵ sớm nhất cả nước trong Tổng khởi nghĩa Tháng Tám (từ 14 đến 18/8/1945)?",
-            options: [
-                "Hà Nội, Huế, Sài Gòn, Đà Nẵng",
-                "Hải Dương, Bắc Giang, Hà Tĩnh, Quảng Nam",
-                "Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên"
-            ],
-            ans: 1,
-            explain: "Chính xác! Hải Dương, Bắc Giang, Hà Tĩnh, Quảng Nam là 4 tỉnh giành chính quyền ở tỉnh lỵ sớm nhất."
-        }
     }
 ];
 

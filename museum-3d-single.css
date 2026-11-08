@@ -89,6 +89,5 @@ canvas:active { cursor: grabbing; }
     .board-top { padding: 12px 14px; }
     .board-crumb #boardPieceTitle { display: none; }
     .board-btn { padding: 8px 12px; font-size: 11px; }
-    #boardInfo { display: none; }
 }
 

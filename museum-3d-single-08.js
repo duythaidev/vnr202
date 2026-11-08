@@ -446,13 +446,12 @@ const StoryBoard = (() => {
         $('boardPrev').onclick = () => goTo(st.current - 1);
         $('boardNext').onclick = () => goTo(st.current + 1);
         $('boardSkip').onclick = () => finishCurrent();
-        $('boardInfo').onclick = () => openArtworkDetail(st.piece);
         $('boardClose').onclick = () => close();
         $('boardDots').onclick = (e) => { const b = e.target.closest('[data-i]'); if (b) goTo(+b.dataset.i); };
         window.addEventListener('keydown', (e) => {
             if (!st.isOpen || e.target.tagName === 'INPUT') return;
             if (e.code === 'Escape') {
-                if (!$('artworkDetailModal').classList.contains('hidden')) closeArtworkDetail(); else close();
+                close();
             } else if (e.code === 'ArrowRight' || e.code === 'KeyD') goTo(st.current + 1);
             else if (e.code === 'ArrowLeft' || e.code === 'KeyA') goTo(st.current - 1);
             else if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); skipOrNext(); }
@@ -532,7 +531,6 @@ const StoryBoard = (() => {
     function close() {
         if (!st.isOpen) return;
         st.isTransitioning = true;
-        closeArtworkDetail();
         const ov = $('boardOverlay');
         ov.classList.remove('open');
         ov.setAttribute('aria-hidden', 'true');
