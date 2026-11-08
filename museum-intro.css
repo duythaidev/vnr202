@@ -1,0 +1,45 @@
+.museum-intro {
+    position: fixed; inset: 0; z-index: 100; overflow: auto;
+    display: flex; flex-direction: column; min-height: 100%;
+    padding: 30px clamp(24px, 5vw, 96px); color: #eae1cb;
+    background: #181e19;
+    transition: opacity .75s, transform .75s;
+}
+.museum-intro[hidden], .intro-stage[hidden], .intro-welcome[hidden], .intro-loading[hidden] { display: none; }
+.intro-header { display: flex; justify-content: flex-end; position: absolute; top: 24px; right: 28px; z-index: 2; }
+.intro-header button { padding: 10px 16px; border: 1px solid #7b806a; border-radius: 30px; color: #eae1cb; background: transparent; font: 12px 'Be Vietnam Pro', sans-serif; cursor: pointer; }
+.intro-cinema { flex: 1; display: grid; place-items: center; position: relative; padding: 70px 0; min-height: 420px; }
+.intro-welcome, .intro-stage { text-align: center; width: 100%; position: relative; z-index: 1; }
+.intro-start-icon { width: 80px; height: 80px; margin: 0 auto 32px; border: 1px solid #76663d; border-radius: 50%; color: #c7ac68; display: grid; place-items: center; }
+.intro-start-icon svg { width: 42px; height: 42px; }
+.intro-welcome h1, .intro-stage h2 { font: 600 clamp(40px, 6.5vw, 96px)/1.2 'Playfair Display', Georgia, serif; letter-spacing: -.04em; margin: 0 auto; color: #f2ead8; max-width: 1100px; text-wrap: balance; }
+.intro-welcome h1 { font-size: clamp(32px, 3.5vw, 52px); color: #e7ce8f; letter-spacing: -.025em; }
+.intro-welcome > p { font-size: 13px; line-height: 1.9; color: #c0c5b9; margin: 18px auto 32px; max-width: 360px; }
+.intro-welcome button { min-height: 48px; padding: 15px 28px; border-radius: 30px; background: #e5c574; color: #20251c; border: 1px solid #e5c574; font: 700 12px 'Be Vietnam Pro', sans-serif; cursor: pointer; }
+.intro-welcome button:hover { background: #f4d993; }
+.intro-stage { opacity: 0; transform: translateY(28px); transition: opacity .8s, transform .8s; }
+.intro-stage.step-in { opacity: 1; transform: translateY(0); }
+.intro-stage.step-out { opacity: 0; transform: translateY(-22px); }
+.intro-loading { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: min(340px, calc(100% - 48px)); text-align: center; z-index: 2; }
+.intro-loading p { font: 11px/1.6 'Be Vietnam Pro', sans-serif; color: #bfc4ae; margin: 0 0 12px; }
+.intro-loading progress { display: block; width: 100%; height: 2px; border: 0; background: #4b5342; appearance: none; }
+.intro-loading progress::-webkit-progress-bar { background: #4b5342; }
+.intro-loading progress::-webkit-progress-value { background: #d9c692; transition: width .3s; }
+.intro-loading progress::-moz-progress-bar { background: #d9c692; }
+.intro-whoosh { position: fixed; inset: -30%; pointer-events: none; opacity: 0; background: linear-gradient(110deg, transparent 35%, #d9c69218 46%, #f8edc97a 50%, #d9c69218 54%, transparent 65%); transform: translateX(-100%) skewX(-12deg); }
+.intro-transition .intro-whoosh { animation: museum-whoosh 3.8s ease-in-out both; }
+.intro-leaving { opacity: 0; transform: scale(1.06); pointer-events: none; }
+.museum-intro button:focus-visible { outline: 2px solid #f5cf75; outline-offset: 5px; }
+@keyframes museum-whoosh { 0% { opacity: 0; transform: translateX(-70%) skewX(-12deg); } 40% { opacity: .8; } 52% { opacity: 1; } 100% { opacity: 0; transform: translateX(70%) skewX(-12deg); } }
+@media (max-width: 700px) {
+    .museum-intro { padding: 20px 24px; }
+    .intro-header { top: 18px; right: 20px; }
+    .intro-header button { font-size: 10px; padding: 9px 12px; }
+    .intro-stage h2 { font-size: clamp(36px, 9vw, 54px); }
+    .intro-loading { bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .museum-intro, .intro-stage, .intro-loading progress::-webkit-progress-value { transition: none; }
+    .intro-transition .intro-whoosh { animation: none; }
+    .intro-leaving { transform: none; }
+}

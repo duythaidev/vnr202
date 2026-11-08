@@ -29,11 +29,11 @@ const StoryBoard = (() => {
         inited = true;
         const wrap = $('boardCanvasWrap');
         renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
-        renderer.setPixelRatio(Math.min(devicePixelRatio, FX.isLowPower ? 1.25 : 1.75));
+        renderer.setPixelRatio(GraphicsQuality.pixelRatio());
         renderer.setSize(innerWidth, innerHeight);
         renderer.physicallyCorrectLights = true;
         renderer.toneMapping = THREE.NoToneMapping;
-        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.enabled = !GraphicsQuality.low;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         wrap.appendChild(renderer.domElement);
 
@@ -359,7 +359,7 @@ const StoryBoard = (() => {
         const zoom = st.prevDist ? THREE.MathUtils.clamp((st.prevDist - dist) / dist * 1.4 * strength, -0.12, 0.12) : 0;
         fx.motion.uniforms.velocity.value.copy(v);
         fx.motion.uniforms.zoom.value = zoom;
-        fx.motion.enabled = v.length() > 0.0012 || Math.abs(zoom) > 0.002;
+        fx.motion.enabled = !GraphicsQuality.low && (v.length() > 0.0012 || Math.abs(zoom) > 0.002);
         st.prevLook.copy(st.cam.look);
         st.prevDist = dist;
     }
@@ -368,10 +368,11 @@ const StoryBoard = (() => {
     const penLocalQuat = new THREE.Quaternion().setFromUnitVectors(new V3(0, 1, 0), new V3(0.42, 0.48, 0.77).normalize());
     function updateWriting(dt) {
         const card = st.cards[st.current];
-        if (!card || !card.writer) { pen.visible = false; return; }
+        if (!card || !card.writer) { pen.visible = false; MuseumSound.writing(false); return; }
         const res = card.writer.update(dt);
         if (res.changed) card.tex.needsUpdate = true;
         pen.visible = res.visible && !st.flight;
+        MuseumSound.writing(pen.visible && res.writing && !st.isTransitioning);
         if (pen.visible) {
             const lx = (res.tip.x / BoardWriter.W - 0.5) * CW, ly = (0.5 - res.tip.y / BoardWriter.H) * CH;
             const zSurf = 0.035 + res.tip.lift * 0.2;
@@ -389,6 +390,7 @@ const StoryBoard = (() => {
     }
 
     function finishCurrent() {
+        MuseumSound.writing(false);
         const card = st.cards[st.current];
         if (card && card.writer && !card.writer.done) {
             card.writer.finish(); card.writer.update(0); card.tex.needsUpdate = true; card.visited = true;
@@ -397,6 +399,7 @@ const StoryBoard = (() => {
 
     function goTo(i, opts = {}) {
         if (i < 0 || i >= st.cards.length || (i === st.current && !opts.force)) return;
+        if (!opts.instant && !opts.entering) MuseumSound.whoosh();
         finishCurrent();
         st.current = i;
         const card = st.cards[i];
@@ -441,7 +444,8 @@ const StoryBoard = (() => {
         dom.addEventListener('pointermove', (e) => {
             st.mouse.x = (e.clientX / innerWidth) * 2 - 1;
             st.mouse.y = -(e.clientY / innerHeight) * 2 + 1;
-            dom.style.cursor = pick(e) ? 'pointer' : 'default';
+            const hit = pick(e);
+            dom.style.cursor = hit ? 'pointer' : 'default';
         });
         $('boardPrev').onclick = () => goTo(st.current - 1);
         $('boardNext').onclick = () => goTo(st.current + 1);
@@ -519,7 +523,8 @@ const StoryBoard = (() => {
         } else {
             const o = overviewPose();
             st.cam.pos.copy(o.pos); st.cam.look.copy(o.look); st.cam.roll = o.roll;
-            goTo(start, { dur: 2.1, kick: 0.05, force: true });
+            MuseumSound.boardEntry();
+            goTo(start, { dur: 2.1, kick: 0.05, force: true, entering: true });
         }
         st.prevLook.copy(st.cam.look); st.prevDist = 0;
         clock.getDelta();
@@ -530,6 +535,7 @@ const StoryBoard = (() => {
 
     function close() {
         if (!st.isOpen) return;
+        MuseumSound.writing(false);
         st.isTransitioning = true;
         const ov = $('boardOverlay');
         ov.classList.remove('open');

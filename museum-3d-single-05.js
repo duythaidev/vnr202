@@ -92,11 +92,11 @@ function initThreeMuseum() {
     camera.position.copy(camPos);
 
     renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, low ? 1.25 : 1.75));
+    renderer.setPixelRatio(GraphicsQuality.pixelRatio());
     renderer.setSize(innerWidth, innerHeight);
     renderer.physicallyCorrectLights = true;
     renderer.toneMapping = THREE.NoToneMapping;     // tone map ở pass cuối (FX)
-    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.enabled = !GraphicsQuality.low;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.shadowMap.autoUpdate = false;
     container.appendChild(renderer.domElement);
@@ -117,6 +117,10 @@ function initThreeMuseum() {
     });
 
     bakeEnvironment();
+    GraphicsQuality.subscribe(() => {
+        if (MuseumScene.reflector) MuseumScene.reflector.visible = !GraphicsQuality.low;
+        if (MuseumScene.floorShader) MuseumScene.floorShader.uniforms.uReflStrength.value = GraphicsQuality.low ? 0 : 0.65;
+    });
     setupMuseumControls();
 }
 
@@ -179,7 +183,8 @@ function buildFloor(low) {
     mat.onBeforeCompile = (shader) => {
         shader.uniforms.tReflect = { value: reflTex };
         shader.uniforms.uTexMatrix = { value: texMatrix };
-        shader.uniforms.uReflStrength = { value: 0.65 };
+        shader.uniforms.uReflStrength = { value: GraphicsQuality.low ? 0 : 0.65 };
+        MuseumScene.floorShader = shader;
         shader.vertexShader = shader.vertexShader
             .replace('#include <common>', '#include <common>\nuniform mat4 uTexMatrix;\nvarying vec4 vReflUv;')
             .replace('#include <begin_vertex>', '#include <begin_vertex>\nvReflUv = uTexMatrix * vec4(transformed, 1.0);');
@@ -459,6 +464,7 @@ function bakeEnvironment() {
 
 // Bóng đổ đi theo người xem (cập nhật khi di chuyển đủ xa → tiết kiệm GPU)
 function updateMuseumShadows() {
+    if (GraphicsQuality.low) return;
     const sun = MuseumScene.sunLight;
     if (Math.abs(camPos.z - MuseumScene.lastShadowZ) < 1.5) return;
     const cz = camPos.z - 10;

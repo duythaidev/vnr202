@@ -48,6 +48,7 @@ function setupMuseumControls() {
     });
 
     dom.addEventListener('wheel', (e) => {
+        wheelWalkUntil = performance.now() + 250;
         isAutoFlying = false;
         const fwd = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
         camTargetPos.addScaledVector(fwd, -e.deltaY * 0.012);
@@ -56,10 +57,11 @@ function setupMuseumControls() {
 
     const keyMap = { KeyW: 'w', ArrowUp: 'w', KeyS: 's', ArrowDown: 's', KeyA: 'a', ArrowLeft: 'a', KeyD: 'd', ArrowRight: 'd' };
     window.addEventListener('keydown', (e) => {
-        if (e.target.tagName === 'INPUT' || StoryBoard.isOpen) return;
+        if (MuseumIntro.active || e.target.tagName === 'INPUT' || StoryBoard.isOpen) return;
         if (keyMap[e.code]) moveKeys[keyMap[e.code]] = true;
     });
     window.addEventListener('keyup', (e) => { if (keyMap[e.code]) moveKeys[keyMap[e.code]] = false; });
+    window.addEventListener('blur', () => { Object.keys(moveKeys).forEach(k => { moveKeys[k] = false; }); footDistance = 0; });
     window.addEventListener('resize', resizeMuseum);
 }
 
@@ -77,9 +79,13 @@ function pickPainting(e) {
     return hits.length ? hits[0].object : null;
 }
 
+let hoveredPainting = null;
 function hoverPainting(e) {
-    if (StoryBoard.isOpen || e.target !== renderer.domElement) return;
-    renderer.domElement.style.cursor = pickPainting(e) ? 'pointer' : 'grab';
+    if (MuseumIntro.active || StoryBoard.isOpen || e.target !== renderer.domElement) { hoveredPainting = null; return; }
+    const hit = pickPainting(e);
+    if (hit && hit !== hoveredPainting) MuseumSound.whoosh(true);
+    hoveredPainting = hit;
+    renderer.domElement.style.cursor = hit ? 'pointer' : 'grab';
 }
 
 function handleCanvasClick(e) {
@@ -89,6 +95,7 @@ function handleCanvasClick(e) {
 
 // Bay tới trước bức tranh; openBoard=true → mở bảng ghim 3D khi tới nơi
 function flyToPiece(pieceIdx, openBoard = true) {
+    MuseumSound.whoosh();
     activePieceIndex = (pieceIdx + MUSEUM_PIECES.length) % MUSEUM_PIECES.length;
     const isLeft = activePieceIndex % 2 === 0;
     const pieceZ = BAY_START_Z - Math.floor(activePieceIndex / 2) * BAY_LENGTH;
@@ -114,6 +121,7 @@ function stepToNextPiece(delta) {
 
 // ---------- Vòng lặp render ----------
 const museumClock = new THREE.Clock();
+let footDistance = 0, wheelWalkUntil = 0;
 function animateMuseum() {
     requestAnimationFrame(animateMuseum);
     const dt = Math.min(0.05, museumClock.getDelta());
@@ -131,7 +139,14 @@ function animateMuseum() {
         clampPositionInHall(camTargetPos);
     }
     const k = 1 - Math.pow(0.0006, dt);
+    const beforeX = camPos.x, beforeZ = camPos.z;
     camPos.lerp(camTargetPos, k * 0.9);
+    const walked = Math.hypot(camPos.x - beforeX, camPos.z - beforeZ);
+    const manualWalk = !StoryBoard.isOpen && !isAutoFlying && (Object.values(moveKeys).some(Boolean) || performance.now() < wheelWalkUntil);
+    if (manualWalk && walked > .005) {
+        footDistance += walked;
+        if (footDistance >= 1.8) { MuseumSound.footstep(); footDistance = 0; }
+    } else footDistance = 0;
     yaw += (targetYaw - yaw) * k;
     pitch += (targetPitch - pitch) * k;
     camera.position.copy(camPos);
@@ -154,34 +169,20 @@ function updateNearestHudText() {
     document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}: Trái [${L.shortLabel}] · Phải [${R.shortLabel}]`;
 }
 
-// ---------- Âm thanh nền ----------
-let audioCtx = null, isAudioPlaying = false, ambientGain = null;
-function toggleAmbientAudio() {
-    const btn = document.getElementById('soundToggleBtn');
-    if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        ambientGain = audioCtx.createGain();
-        ambientGain.gain.value = 0.04;
-        ambientGain.connect(audioCtx.destination);
-        [130.81, 196.0, 246.94, 293.66].forEach(f => {
-            const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = f; o.connect(ambientGain); o.start();
-        });
-        isAudioPlaying = true;
-    } else {
-        isAudioPlaying = !isAudioPlaying;
-        if (isAudioPlaying) audioCtx.resume();
-        ambientGain.gain.setTargetAtTime(isAudioPlaying ? 0.04 : 0.0001, audioCtx.currentTime, 0.2);
+// ---------- Âm thanh tương tác dùng chung với intro ----------
+function toggleAmbientAudio() { MuseumSound.toggle(); }
+
+window.MuseumApp = {
+    async prepare() {
+        initThreeMuseum();
+        updateNearestHudText();
+        postFX.composer.render(0); // Sẵn sàng sau khung hình thật đầu tiên.
+        StoryBoard.onClose = () => { museumClock.getDelta(); };
+    },
+    start() {
+        museumClock.getDelta();
+        animateMuseum();
+        const q = new URLSearchParams(location.search);
+        if (q.has('board')) StoryBoard.open(parseInt(q.get('board'), 10) || 0, { instant: true, step: parseInt(q.get('step') || '0', 10) });
     }
-    btn.classList.toggle('ring-2', isAudioPlaying);
-    btn.classList.toggle('ring-amber-400', isAudioPlaying);
-}
-
-window.addEventListener('load', async () => {
-    try { await document.fonts.ready; } catch (e) { /* bỏ qua */ }
-    initThreeMuseum();
-    animateMuseum();
-    StoryBoard.onClose = () => { museumClock.getDelta(); };
-    const q = new URLSearchParams(location.search);
-    if (q.has('board')) StoryBoard.open(parseInt(q.get('board'), 10) || 0, { instant: true, step: parseInt(q.get('step') || '0', 10) });
-});
-
+};

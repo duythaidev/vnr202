@@ -371,7 +371,7 @@ const BoardWriter = (() => {
             this.t = Math.min(this.total, this.t + dt);
             const changed = this.dirty || (this.t !== was && was < this.contentEnd + 0.01);
             if (changed) this.render();
-            let tip = { x: 1700, y: 1250, lift: 1 }, visible = this.t < this.total;
+            let tip = { x: 1700, y: 1250, lift: 1 }, visible = this.t < this.total, writing = false;
             for (const op of this.timeline) {
                 const end = op.start + op.dur;
                 if (this.t >= op.start && this.t <= end) {
@@ -379,12 +379,15 @@ const BoardWriter = (() => {
                     if (op.kind === 'travel') {
                         const e = FX.easeInOutSine(p);
                         tip = { x: op.from.x + (op.to.x - op.from.x) * e, y: op.from.y + (op.to.y - op.from.y) * e, lift: op.exit ? p : Math.sin(Math.PI * p) * 0.6 };
-                    } else tip = tipOf(op, p, this.t);
+                    } else {
+                        tip = tipOf(op, p, this.t);
+                        writing = (op.kind === 'text' || op.kind === 'stroke') && this.t > was && p < 1;
+                    }
                     break;
                 }
             }
             if (this.t < 0.35) tip = { x: 1700 - (1700 - 900) * FX.easeOutCubic(this.t / 0.35), y: 1250 - 550 * FX.easeOutCubic(this.t / 0.35), lift: 1 - this.t / 0.35 * 0.6 };
-            return { changed, tip, visible };
+            return { changed, tip, visible, writing: writing && visible && this.t >= .35 };
         }
     }
 

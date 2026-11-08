@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VNR202 Museum 3D</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="museum-3d-single.css">
+    <link rel="stylesheet" href="museum-intro.css">
 </head>
 <body class="relative w-screen h-screen overflow-hidden text-stone-100">
+    <section id="museumIntro" class="museum-intro" aria-label="Lời chào bảo tàng lịch sử">
+        <header class="intro-header"><button id="introSound" type="button" aria-pressed="false">Âm thanh: Tắt</button></header>
+        <div class="intro-cinema">
+            <div id="introWelcome" class="intro-welcome">
+                <div class="intro-start-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 18 24 8l17 10H7Zm3 21h28M8 43h32M13 22v13m11-13v13m11-13v13"/></svg></div>
+                <h1 id="introWelcomeTitle">Chạm để bắt đầu</h1>
+                <p>Mở âm thanh. Bước vào những trang sử.</p>
+                <button id="introEnter" type="button">Bắt đầu ngay →</button>
+            </div>
+            <div id="introStage" class="intro-stage" hidden>
+                <h2 id="introTitle" aria-live="polite"></h2>
+            </div>
+            <div class="intro-whoosh" aria-hidden="true"></div>
+        </div>
+        <div id="introLoading" class="intro-loading" hidden><p id="introStatus" role="status" aria-live="polite">Đang mở phòng trưng bày…</p><progress id="introProgress" max="100" value="0" aria-label="Tiến độ chuẩn bị bảo tàng"></progress></div>
+        <noscript>Bật JavaScript trong trình duyệt để khám phá bảo tàng 3D.</noscript>
+    </section>
+    <main id="museumApp" inert aria-hidden="true">
     <!-- Bố cục: js/museum-*.js = bảo tàng · js/board-*.js = bảng ghim 3D · js/story-data.js = NỘI DUNG các step -->
 
     <!-- ==================== 1. THREE.JS 3D REALISTIC MUSEUM VIEWPORT ==================== -->
@@ -64,6 +81,8 @@
         <button onclick="stepToNextPiece(1)" class="bg-black/50 hover:bg-black/80 text-stone-200 border border-white/15 px-2.5 py-1 rounded text-[11px] font-mono-museum">Tranh tiếp »</button>
     </div>
 
+    <button id="graphicsQualityToggle" type="button" class="graphics-quality-toggle" aria-pressed="false">Đồ họa: Cao</button>
+
     <!-- ==================== 6. BẢNG GHIM 3D FULLSCREEN (board-scene.js) ==================== -->
     <div id="boardOverlay" class="board-overlay" aria-hidden="true">
         <div id="boardCanvasWrap"></div>
@@ -83,26 +102,7 @@
         <div class="board-hint font-mono-museum">CLICK THẺ BẤT KỲ ĐỂ BAY TỚI · ← → · SPACE</div>
     </div>
 
-    <!-- three.js r147: bản cuối còn examples/js dạng script thường → chạy được khi mở file trực tiếp (file://) -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/CopyShader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/EffectComposer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/RenderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/ShaderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/objects/Reflector.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/lights/RectAreaLightUniformsLib.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/environments/RoomEnvironment.js"></script>
-
-    <script src="museum-3d-single-01.js"></script>
-    <script src="museum-3d-single-02.js"></script>
-    <script src="museum-3d-single-03.js"></script>
-    <script src="museum-3d-single-04.js"></script>
-    <script src="museum-3d-single-05.js"></script>
-    <script src="museum-3d-single-06.js"></script>
-    <script src="museum-3d-single-07.js"></script>
-    <script src="museum-3d-single-08.js"></script>
-    <script src="museum-3d-single-09.js"></script>
+    </main>
+    <script src="museum-intro.js"></script>
 </body>
 </html>

@@ -7,6 +7,41 @@
 // =============================================================================
 THREE.ColorManagement.legacyMode = false;
 
+// Cài đặt dùng chung cho cả hai renderer; vẫn chạy được khi localStorage bị chặn.
+const GraphicsQuality = (() => {
+    const key = 'vnr202-graphics-quality';
+    const mobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || innerWidth < 760;
+    let mode = mobile ? 'low' : 'high';
+    try {
+        const saved = localStorage.getItem(key);
+        if (saved === 'low' || saved === 'high') mode = saved;
+    } catch (_) {}
+    const listeners = new Set();
+    function updateButton() {
+        const button = document.getElementById('graphicsQualityToggle');
+        if (!button) return;
+        button.textContent = mode === 'low' ? 'Đồ họa: Thấp' : 'Đồ họa: Cao';
+        button.setAttribute('aria-pressed', String(mode === 'low'));
+        button.title = mode === 'low' ? 'Chuyển sang đồ họa cao' : 'Chuyển sang đồ họa thấp để giảm lag';
+    }
+    function setMode(next) {
+        if (next !== 'low' && next !== 'high') return;
+        mode = next;
+        try { localStorage.setItem(key, mode); } catch (_) {}
+        listeners.forEach(apply => apply());
+        updateButton();
+    }
+    const button = document.getElementById('graphicsQualityToggle');
+    if (button) button.addEventListener('click', () => setMode(mode === 'low' ? 'high' : 'low'));
+    updateButton();
+    return {
+        get low() { return mode === 'low'; },
+        pixelRatio() { return Math.min(devicePixelRatio || 1, mode === 'low' ? 1 : (mobile ? 1.25 : 1.75)); },
+        subscribe(apply) { listeners.add(apply); apply(); },
+        setMode
+    };
+})();
+
 const FX = (() => {
     // ---------- RNG có seed (mulberry32) ----------
     function rng(seed) {
@@ -131,7 +166,7 @@ const FX = (() => {
         const pr = renderer.getPixelRatio();
         const rt = new THREE.WebGLRenderTarget(size.x * pr, size.y * pr, {
             type: THREE.HalfFloatType,
-            samples: opts.samples ?? 4
+            samples: GraphicsQuality.low ? 2 : (opts.samples ?? 4)
         });
         const composer = new THREE.EffectComposer(renderer, rt);
         composer.addPass(new THREE.RenderPass(scene, camera));
@@ -161,6 +196,21 @@ const FX = (() => {
             composer.setSize(w, h);
             if (bloom) bloom.setSize(w, h);
         }
+        const originalGrain = grade.uniforms.grain.value;
+        GraphicsQuality.subscribe(() => {
+            renderer.setPixelRatio(GraphicsQuality.pixelRatio());
+            renderer.setSize(innerWidth, innerHeight);
+            renderer.shadowMap.enabled = !GraphicsQuality.low;
+            renderer.shadowMap.needsUpdate = true;
+            if (bloom) bloom.enabled = !GraphicsQuality.low;
+            if (motion) motion.enabled = false;
+            grade.uniforms.grain.value = GraphicsQuality.low ? 0 : originalGrain;
+            for (const target of [composer.renderTarget1, composer.renderTarget2]) {
+                const samples = GraphicsQuality.low ? 2 : (opts.samples ?? 4);
+                if (target.samples !== samples) { target.samples = samples; target.dispose(); }
+            }
+            setSize(innerWidth, innerHeight);
+        });
         return { composer, bloom, motion, grade, setSize };
     }
 
