@@ -1,0 +1,247 @@
+{
+  "revision": 3,
+  "voice": "vi-VN-NamMinhNeural",
+  "model": "tts-1",
+  "clips": [
+    {
+      "id": "vnr-p01-intro",
+      "file": "vnr-p01-intro.mp3",
+      "textHash": "95f2856bd1c9afa3c90d92d90aa44261e3d9004d07e22baa1a5dbfacea4d54eb"
+    },
+    {
+      "id": "vnr-p01-s01",
+      "file": "vnr-p01-s01.mp3",
+      "textHash": "b0002570f98a07d0d5df805b98a63119c40a59fabcda11a4d3a606dd1c94fa45"
+    },
+    {
+      "id": "vnr-p01-s02",
+      "file": "vnr-p01-s02.mp3",
+      "textHash": "b4c01391d0743d32a24815f795f8f091e28d5bbd433962ed8d02b79ad29bc9ea"
+    },
+    {
+      "id": "vnr-p01-s03",
+      "file": "vnr-p01-s03.mp3",
+      "textHash": "8a72e4fa718fee2089de71fdc34ecd5efa986986348fbd56f8b6b6af70218acb"
+    },
+    {
+      "id": "vnr-p01-s04",
+      "file": "vnr-p01-s04.mp3",
+      "textHash": "6ae160cde88877e6f1649fd2594167700eaa7680ce8d20be7c343a37a1c1f6a0"
+    },
+    {
+      "id": "vnr-p02-intro",
+      "file": "vnr-p02-intro.mp3",
+      "textHash": "3bc55c399c5e21f15b258bec07458b0e1eb4d3ed8f842b3c3ab7c85f6d2db19c"
+    },
+    {
+      "id": "vnr-p02-s01",
+      "file": "vnr-p02-s01.mp3",
+      "textHash": "470f5df7cfec1a128bb4fee3f52bb23b84bb39a89b3cc95bbaabd974fbfbf5bd"
+    },
+    {
+      "id": "vnr-p02-s02",
+      "file": "vnr-p02-s02.mp3",
+      "textHash": "dc74b7fa8fa7f2dfbea3be89ccffc72767242b4f8046a5f8470b17d11242cf94"
+    },
+    {
+      "id": "vnr-p02-s03",
+      "file": "vnr-p02-s03.mp3",
+      "textHash": "504af206e33d41dedc3bd518758749af34e22774f7f615e72b2f9a84e38e5337"
+    },
+    {
+      "id": "vnr-p02-s04",
+      "file": "vnr-p02-s04.mp3",
+      "textHash": "724e59ad7894fd22bbff0d118e5aa10e7d3e1703ad54643abdbae45870a4a688"
+    },
+    {
+      "id": "vnr-p03-intro",
+      "file": "vnr-p03-intro.mp3",
+      "textHash": "67b5f10555c30e0a9637867634c0e8ca744c128d6d289ff345565c1cab0d5d25"
+    },
+    {
+      "id": "vnr-p03-s01",
+      "file": "vnr-p03-s01.mp3",
+      "textHash": "a88c4c65c6b5536244cd405c506ae4364109d08af146b75d043c51ad60e5e11d"
+    },
+    {
+      "id": "vnr-p03-s02",
+      "file": "vnr-p03-s02.mp3",
+      "textHash": "23bb5085b6c046d6b1cf706e55f80d5ffe69bdf41765fbd52b757f6d3032b24a"
+    },
+    {
+      "id": "vnr-p03-s03",
+      "file": "vnr-p03-s03.mp3",
+      "textHash": "e662698723b8cfbda625fff10f5f09c628ad416267e75e7ae1b957abfb0bb707"
+    },
+    {
+      "id": "vnr-p04-intro",
+      "file": "vnr-p04-intro.mp3",
+      "textHash": "1790ddcbad498f6dc55e90f6e6699a8a903c9dcf97e6787f93e2b6b30af4d446"
+    },
+    {
+      "id": "vnr-p04-s01",
+      "file": "vnr-p04-s01.mp3",
+      "textHash": "3d34a5d0768b578a7e0914f2be4aa8cbadf7cdbe997143d5284b612bcebb2f00"
+    },
+    {
+      "id": "vnr-p04-s02",
+      "file": "vnr-p04-s02.mp3",
+      "textHash": "6093be8828b5357e8a1408d2214f6fa7696df6d430e29be679adc5570431b98e"
+    },
+    {
+      "id": "vnr-p04-s03",
+      "file": "vnr-p04-s03.mp3",
+      "textHash": "776c139c4039cd8ae980430d52de4f816c479cdd4694a1aaf70cc6931e13bd2f"
+    },
+    {
+      "id": "vnr-p04-s04",
+      "file": "vnr-p04-s04.mp3",
+      "textHash": "885830c7fddd3835c528eacfe8b1f262b8db199e1e2d881214ac571ad2459a89"
+    },
+    {
+      "id": "vnr-p05-intro",
+      "file": "vnr-p05-intro.mp3",
+      "textHash": "736996325db638e485ca6314cc4b6e9b0d952a0a980b9c89e517d847c97e830b"
+    },
+    {
+      "id": "vnr-p05-s01",
+      "file": "vnr-p05-s01.mp3",
+      "textHash": "02a2b355f0126ba8c129dcea0a210b1abc347a04c9cff8078e5f0a1a65fa2b29"
+    },
+    {
+      "id": "vnr-p05-s02",
+      "file": "vnr-p05-s02.mp3",
+      "textHash": "a10fde4e27a8648bcd7f198493a2b3b16a66d227e38caf858e7ce12cfc06ea62"
+    },
+    {
+      "id": "vnr-p05-s03",
+      "file": "vnr-p05-s03.mp3",
+      "textHash": "436218883fb2921600c05df8c9002323e9600b380c847dca96109d13dd82620d"
+    },
+    {
+      "id": "vnr-p05-s04",
+      "file": "vnr-p05-s04.mp3",
+      "textHash": "a7f3264a0f2b32a0ba0b2fffb4a36fa84f0e01015220ed426e486d0f447d61f9"
+    },
+    {
+      "id": "vnr-p06-intro",
+      "file": "vnr-p06-intro.mp3",
+      "textHash": "7511934e0cf29f2fd6420480be56b1933f3c69fa0449e64fd00bfb0552f9a60e"
+    },
+    {
+      "id": "vnr-p06-s01",
+      "file": "vnr-p06-s01.mp3",
+      "textHash": "72a78a393c22f0ffbd6b8dd562e498ccc4a28e023325735b49d8164942d6f150"
+    },
+    {
+      "id": "vnr-p06-s02",
+      "file": "vnr-p06-s02.mp3",
+      "textHash": "9de1acbaab0f1669466ed11837dfbe3b47c1902d43fdbdddc4f132a6eb8a8a7f"
+    },
+    {
+      "id": "vnr-p06-s03",
+      "file": "vnr-p06-s03.mp3",
+      "textHash": "f30a00a1d6e1a35c6a47b45cfd8d57d69c440617242a393a708556a8e5834bbc"
+    },
+    {
+      "id": "vnr-p06-s04",
+      "file": "vnr-p06-s04.mp3",
+      "textHash": "77b5c580b51928502b308aa629f099b6880d25b19055f0e8a13b330fb1f763dc"
+    },
+    {
+      "id": "vnr-p07-intro",
+      "file": "vnr-p07-intro.mp3",
+      "textHash": "15f9c3a6a5bdc01efceef9c13c017083e4d8c25cb38ac6ac4974b279a55c8c51"
+    },
+    {
+      "id": "vnr-p07-s01",
+      "file": "vnr-p07-s01.mp3",
+      "textHash": "d0a5d528a5dde6eab253954bbe44088ddc77542fccd3b721ce41fdeaebbd6210"
+    },
+    {
+      "id": "vnr-p07-s02",
+      "file": "vnr-p07-s02.mp3",
+      "textHash": "ccb78529b0b428a10818c959f37dbb491cc2b8849dedc93edf3672ce2cff0d63"
+    },
+    {
+      "id": "vnr-p07-s03",
+      "file": "vnr-p07-s03.mp3",
+      "textHash": "97779ec3e74e8df08c278fd6f411c94617b002d33bef1bc7c2780322439a479f"
+    },
+    {
+      "id": "vnr-p08-intro",
+      "file": "vnr-p08-intro.mp3",
+      "textHash": "2ff30f328703222bf9ec1410c34651b2d4864825de782cc1e1527da98ea9c17c"
+    },
+    {
+      "id": "vnr-p08-s01",
+      "file": "vnr-p08-s01.mp3",
+      "textHash": "2a70ee65a4dafbd487b5aaec53a9aedea0defb559f8565e37c7f1a04f26e60fd"
+    },
+    {
+      "id": "vnr-p08-s02",
+      "file": "vnr-p08-s02.mp3",
+      "textHash": "78d87da37bc25c1c0f6067e52fbb9a97c7ad40c73955cf46d07c6e101a5913ea"
+    },
+    {
+      "id": "vnr-p08-s03",
+      "file": "vnr-p08-s03.mp3",
+      "textHash": "ee2950108369dbc109e8b5c63b7a70c1204d65ec2cfcb049b483cd4c22150290"
+    },
+    {
+      "id": "vnr-p08-s04",
+      "file": "vnr-p08-s04.mp3",
+      "textHash": "7bc7026cbf80c4e1f376030ef969b6adbdc11c74042c4176d4332ca8a81f740c"
+    },
+    {
+      "id": "vnr-p09-intro",
+      "file": "vnr-p09-intro.mp3",
+      "textHash": "c91af479ce23e29f806abfe1b289cc37a861447bb69ce779c0089f5c15d994aa"
+    },
+    {
+      "id": "vnr-p09-s01",
+      "file": "vnr-p09-s01.mp3",
+      "textHash": "2299198379ad2b4952511759dfa4180a0798cdf2017e92e89ad5598cf63079d5"
+    },
+    {
+      "id": "vnr-p09-s02",
+      "file": "vnr-p09-s02.mp3",
+      "textHash": "f1d250e7e0649b073aa46aa8194ce2d64d4a3aecc2606b7ce43cf967f7670cff"
+    },
+    {
+      "id": "vnr-p09-s03",
+      "file": "vnr-p09-s03.mp3",
+      "textHash": "eda8c8be788780686accb21c4226e7a1d10cdd929739fbc6fe777956da28f630"
+    },
+    {
+      "id": "vnr-p09-s04",
+      "file": "vnr-p09-s04.mp3",
+      "textHash": "c0de34b206907a5b63f8f07715ae5a7a0d274080df3ef8585ecffb5d0b228f00"
+    },
+    {
+      "id": "vnr-p10-intro",
+      "file": "vnr-p10-intro.mp3",
+      "textHash": "87d3cd1b00215c965e9ee55ae44abfc2729281130fd9b22bb24c9c91ebffc8aa"
+    },
+    {
+      "id": "vnr-p10-s01",
+      "file": "vnr-p10-s01.mp3",
+      "textHash": "a2ffb5e36e2449f7e72d2aca6cc1fa8c606efbc90cbc22204bd2631e09524a4b"
+    },
+    {
+      "id": "vnr-p10-s02",
+      "file": "vnr-p10-s02.mp3",
+      "textHash": "286de1c4338e78a0e5ce8d08031ec79fa3d5f0ed07bfd2c0fa35f65125dc15e6"
+    },
+    {
+      "id": "vnr-p10-s03",
+      "file": "vnr-p10-s03.mp3",
+      "textHash": "ce0a57a6a933df6e4c08bf588f866a8939ff4533259d463d23a43358edec3af9"
+    },
+    {
+      "id": "vnr-p10-s04",
+      "file": "vnr-p10-s04.mp3",
+      "textHash": "62aff4f05b1c621ac431526cadc85fd346df53077db777d3ce96de0abd6e8d12"
+    }
+  ]
+}
