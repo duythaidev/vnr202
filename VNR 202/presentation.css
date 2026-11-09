@@ -1,0 +1,115 @@
+/* ===================== MODE THUYẾT TRÌNH ===================== */
+.tour-start { background: #b3211b !important; color: #fff4e8 !important; border-color: #e0574e !important; }
+.tour-start:hover { background: #cc2d25 !important; }
+.tour-start-dot { width: 0; height: 0; border-left: 8px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.board-top-actions { display: flex; gap: 8px; pointer-events: auto; flex-wrap: wrap; justify-content: flex-end; }
+.tour-start-board { background: rgba(179, 33, 27, .85); border-color: #e0574e; }
+
+/* khi tour chạy: ẩn điều khiển khám phá tự do, nhường chỗ cho thanh tour */
+body.tour-on .museum-pill,
+body.tour-on #crosshairDot,
+body.tour-on .board-bottom,
+body.tour-on .board-hint,
+body.tour-on .tour-start-board,
+body.tour-on .fixed.bottom-5.right-6,
+body.tour-on .fixed.top-5.left-6 { opacity: 0 !important; pointer-events: none !important; transition: opacity .4s; }
+
+#tourRoot { position: fixed; inset: 0; z-index: 45; pointer-events: none; font-family: 'Be Vietnam Pro', sans-serif; }
+#tourRoot > * { visibility: hidden; }
+body.tour-on #tourRoot > * { visibility: visible; }
+
+/* khung điện ảnh */
+.tour-letterbox { position: absolute; left: 0; right: 0; height: 9vh; background: #000; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+.tour-letterbox.top { top: 0; transform: translateY(-100%); }
+.tour-letterbox.bottom { bottom: 0; transform: translateY(100%); }
+body.tour-on .tour-letterbox { transform: none; }
+
+/* thẻ giới thiệu tranh (lower third) */
+.tour-intro {
+    position: absolute; left: clamp(16px, 5vw, 72px); top: calc(9vh + 26px);
+    max-width: min(430px, calc(100vw - 32px));
+    padding: 18px 22px 20px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(10, 9, 7, .72), rgba(10, 9, 7, .35));
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    color: #f3ead6; opacity: 0; transform: translateY(18px);
+    transition: opacity .7s ease, transform .9s cubic-bezier(.2, .7, .2, 1);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .8);
+}
+.tour-intro.show { opacity: 1; transform: none; }
+.tour-intro::before { content: ''; display: block; width: 56px; height: 3px; background: #c0141b; margin-bottom: 14px; }
+.tour-intro-code { font-size: 12px; letter-spacing: .24em; color: #e2b25c; }
+.tour-intro-title { font-size: clamp(20px, 2vw, 28px); line-height: 1.12; font-weight: 700; margin-top: 8px; }
+.tour-intro-meta { font-size: 13px; margin-top: 12px; color: rgba(243, 234, 214, .7); letter-spacing: .04em; }
+
+/* phụ đề lời dẫn kiểu karaoke */
+.tour-caption {
+    position: absolute; left: 50%; bottom: calc(9vh + 88px); transform: translate(-50%, 10px);
+    width: min(860px, calc(100vw - 32px)); text-align: center;
+    font-size: clamp(15px, 1.5vw, 19px); line-height: 1.55; color: rgba(243, 234, 214, .38);
+    background: rgba(8, 8, 6, .55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    padding: 10px 18px; border-radius: 12px; opacity: 0; transition: opacity .4s, transform .4s;
+}
+.tour-caption.show { opacity: 1; transform: translate(-50%, 0); }
+.tour-caption span { transition: color .25s; }
+.tour-caption span.lit { color: #fbf4e4; }
+
+/* dock điều khiển */
+.tour-dock {
+    position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%);
+    width: min(820px, calc(100vw - 24px)); pointer-events: auto;
+}
+.tour-chapters { display: flex; gap: 4px; padding: 0 6px 8px; }
+.tour-ch { flex: 1; display: flex; gap: 2px; position: relative; padding-bottom: 12px; }
+.tour-ch span { position: absolute; left: 0; bottom: -2px; font: 500 9px 'JetBrains Mono', monospace; color: rgba(243, 234, 214, .4); }
+.tour-ch button { flex: 1; height: 5px; border: 0; padding: 0; border-radius: 3px; background: rgba(243, 234, 214, .18); cursor: pointer; transition: background .2s, transform .2s; }
+.tour-ch button.intro { flex: .55; background: rgba(226, 178, 92, .25); }
+.tour-ch button.done { background: rgba(226, 178, 92, .85); }
+.tour-ch button.on { background: #e0463d; transform: scaleY(1.7); box-shadow: 0 0 10px rgba(224, 70, 61, .7); }
+.tour-ch button:hover { transform: scaleY(2); }
+.tour-bar {
+    display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+    background: rgba(18, 16, 12, .78); border: 1px solid rgba(233, 205, 150, .2);
+    border-radius: 999px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .55);
+}
+.tour-btn {
+    flex: none; min-width: 38px; height: 38px; padding: 0 12px; border-radius: 999px;
+    border: 1px solid rgba(233, 205, 150, .2); background: rgba(255, 255, 255, .05);
+    color: #efe4c9; font: 600 13px 'Be Vietnam Pro', sans-serif; cursor: pointer; transition: background .2s, opacity .2s;
+}
+.tour-btn:hover { background: rgba(255, 255, 255, .14); }
+.tour-btn:disabled { opacity: .3; pointer-events: none; }
+.tour-btn.round { width: 44px; height: 44px; padding: 0; background: #b3211b; border-color: #e0574e; color: #fff; font-size: 13px; letter-spacing: -2px; }
+.tour-btn.round.paused { animation: tourPulse 1.4s infinite; letter-spacing: 0; }
+.tour-btn#tourCC.on { background: rgba(226, 178, 92, .25); border-color: rgba(226, 178, 92, .6); }
+@keyframes tourPulse { 50% { box-shadow: 0 0 0 8px rgba(224, 70, 61, .25); } }
+.tour-info { flex: 1; min-width: 0; padding: 0 6px; }
+.tour-where { font-size: 10px; letter-spacing: .18em; color: #e2b25c; }
+.tour-what { font-size: 13px; color: #f3ead6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.tour-progress { height: 2px; background: rgba(255, 255, 255, .1); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+.tour-progress i { display: block; height: 100%; width: 100%; background: #e2b25c; transform: scaleX(0); transform-origin: left center; transition: transform .12s linear; }
+
+/* thẻ lỗi / hoàn tất */
+.tour-panel { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transition: opacity .5s; }
+.tour-panel.show { opacity: 1; pointer-events: auto; background: rgba(0, 0, 0, .35); }
+.tour-card {
+    width: min(440px, calc(100vw - 32px)); padding: 26px; border-radius: 18px; text-align: center;
+    background: rgba(20, 17, 12, .92); border: 1px solid rgba(233, 205, 150, .25); color: #f3ead6;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+}
+.tour-card > div:first-child { font-size: 11px; letter-spacing: .24em; color: #e2b25c; }
+.tour-card b { display: block; font-size: 18px; margin: 6px 0; }
+.tour-card.done b { font-size: 30px; }
+.tour-card p { font-size: 13px; color: rgba(243, 234, 214, .7); margin: 8px 0 18px; }
+.tour-card button { margin: 4px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(233, 205, 150, .3); background: rgba(255, 255, 255, .06); color: #f3ead6; font: 600 13px 'Be Vietnam Pro', sans-serif; cursor: pointer; }
+.tour-card button:first-of-type { background: #b3211b; border-color: #e0574e; }
+
+@media (max-width: 640px) {
+    .tour-letterbox { height: 5vh; }
+    .tour-intro { top: calc(5vh + 12px); left: 12px; padding: 12px 14px; }
+    .tour-caption { bottom: calc(5vh + 104px); font-size: 14px; }
+    .tour-btn { min-width: 34px; height: 34px; padding: 0 8px; font-size: 12px; }
+    #tourSpeed, #tourCC { display: none; }
+    .tour-ch span { display: none; }
+}
+

@@ -4,14 +4,18 @@
 // Click tranh → camera bay tới tranh → mở BẢNG GHIM 3D fullscreen (board-scene.js)
 // =============================================================================
 let pendingBoardTimer = null;
+function cancelPendingBoard() { clearTimeout(pendingBoardTimer); pendingBoardTimer = null; }
+const tourOwnsCamera = () => typeof MuseumTour !== 'undefined' && MuseumTour.owns;
 
 function setupMuseumControls() {
     const dom = renderer.domElement;
     paintingTooltip = document.getElementById('paintingTooltip');
     dom.addEventListener('mouseleave', hidePaintingTooltip);
     let downPos = { x: 0, y: 0 };
+    let tourClickArmed = false;
     dom.addEventListener('mousedown', (e) => {
         hidePaintingTooltip();
+        if (tourOwnsCamera()) { downPos = { x: e.clientX, y: e.clientY }; tourClickArmed = true; return; }
         isDraggingLook = true; isAutoFlying = false;
         prevMouse = { x: e.clientX, y: e.clientY };
         downPos = { x: e.clientX, y: e.clientY };
@@ -23,6 +27,14 @@ function setupMuseumControls() {
         prevMouse = { x: e.clientX, y: e.clientY };
     });
     window.addEventListener('mouseup', (e) => {
+        if (tourClickArmed) {
+            tourClickArmed = false;
+            if (Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) < 6) {
+                const hit = pickPainting(e);
+                if (hit) { Presentation.stop(); flyToPiece(hit.userData.pieceIndex, true); }
+            }
+            return;
+        }
         if (!isDraggingLook) return;
         isDraggingLook = false;
         if (Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) < 6) handleCanvasClick(e);
@@ -31,7 +43,7 @@ function setupMuseumControls() {
     let touchStart = null;
     dom.addEventListener('touchstart', (e) => {
         hidePaintingTooltip();
-        if (e.touches.length !== 1) return;
+        if (e.touches.length !== 1 || tourOwnsCamera()) return;
         isDraggingLook = true; isAutoFlying = false;
         prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
         touchStart = { ...prevMouse, t: performance.now() };
@@ -53,6 +65,7 @@ function setupMuseumControls() {
 
     dom.addEventListener('wheel', (e) => {
         hidePaintingTooltip();
+        if (tourOwnsCamera()) return;
         wheelWalkUntil = performance.now() + 250;
         isAutoFlying = false;
         const fwd = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
@@ -62,7 +75,7 @@ function setupMuseumControls() {
 
     const keyMap = { KeyW: 'w', ArrowUp: 'w', KeyS: 's', ArrowDown: 's', KeyA: 'a', ArrowLeft: 'a', KeyD: 'd', ArrowRight: 'd' };
     window.addEventListener('keydown', (e) => {
-        if (MuseumIntro.active || e.target.tagName === 'INPUT' || StoryBoard.isOpen) return;
+        if (MuseumIntro.active || e.target.tagName === 'INPUT' || StoryBoard.isOpen || tourOwnsCamera()) return;
         if (keyMap[e.code]) { hidePaintingTooltip(); moveKeys[keyMap[e.code]] = true; }
     });
     window.addEventListener('keyup', (e) => { if (keyMap[e.code]) moveKeys[keyMap[e.code]] = false; });
@@ -94,7 +107,7 @@ function hidePaintingTooltip() {
 }
 
 function hoverPainting(e) {
-    if (MuseumIntro.active || StoryBoard.isOpen || e.target !== renderer.domElement) { hidePaintingTooltip(); return; }
+    if (MuseumIntro.active || StoryBoard.isOpen || tourOwnsCamera() || e.target !== renderer.domElement) { hidePaintingTooltip(); return; }
     const hit = pickPainting(e);
     if (!hit) { hidePaintingTooltip(); return; }
     if (hit !== hoveredPainting) {
@@ -144,7 +157,7 @@ function flyToPiece(pieceIdx, openBoard = true) {
 
 function stepToNextPiece(delta) {
     const n = (activePieceIndex + delta + MUSEUM_PIECES.length) % MUSEUM_PIECES.length;
-    if (StoryBoard.isOpen) { StoryBoard.close(); setTimeout(() => flyToPiece(n, true), 700); return; }
+    if (StoryBoard.isOpen) { StoryBoard.close().then(() => { if (!tourOwnsCamera()) flyToPiece(n, true); }); return; }
     flyToPiece(n, false);
 }
 
@@ -157,31 +170,38 @@ function animateMuseum() {
     if (StoryBoard.isOpen && hoveredPainting) hidePaintingTooltip();
     if (StoryBoard.isOpen && !StoryBoard.isTransitioning) return; // bảng ghim đang chiếm màn hình
 
-    if (moveKeys.w || moveKeys.s || moveKeys.a || moveKeys.d) {
-        isAutoFlying = false;
-        const sp = 7.5 * dt;
-        const fwd = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
-        const right = new THREE.Vector3(Math.cos(yaw), 0, -Math.sin(yaw));
-        if (moveKeys.w) camTargetPos.addScaledVector(fwd, sp);
-        if (moveKeys.s) camTargetPos.addScaledVector(fwd, -sp);
-        if (moveKeys.d) camTargetPos.addScaledVector(right, sp);
-        if (moveKeys.a) camTargetPos.addScaledVector(right, -sp);
-        clampPositionInHall(camTargetPos);
+    if (tourOwnsCamera()) {
+        MuseumTour.update(dt);
+        footDistance = 0;
+    } else {
+        if (moveKeys.w || moveKeys.s || moveKeys.a || moveKeys.d) {
+            isAutoFlying = false;
+            const sp = 7.5 * dt;
+            const fwd = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
+            const right = new THREE.Vector3(Math.cos(yaw), 0, -Math.sin(yaw));
+            if (moveKeys.w) camTargetPos.addScaledVector(fwd, sp);
+            if (moveKeys.s) camTargetPos.addScaledVector(fwd, -sp);
+            if (moveKeys.d) camTargetPos.addScaledVector(right, sp);
+            if (moveKeys.a) camTargetPos.addScaledVector(right, -sp);
+            clampPositionInHall(camTargetPos);
+        }
+        const k = 1 - Math.pow(0.0006, dt);
+        const beforeX = camPos.x, beforeZ = camPos.z;
+        camPos.lerp(camTargetPos, k * 0.9);
+        const walked = Math.hypot(camPos.x - beforeX, camPos.z - beforeZ);
+        const manualWalk = !StoryBoard.isOpen && !isAutoFlying && (Object.values(moveKeys).some(Boolean) || performance.now() < wheelWalkUntil);
+        if (manualWalk && walked > .005) {
+            footDistance += walked;
+            if (footDistance >= 1.8) { MuseumSound.footstep(); footDistance = 0; }
+        } else footDistance = 0;
+        yaw += (targetYaw - yaw) * k;
+        pitch += (targetPitch - pitch) * k;
     }
-    const k = 1 - Math.pow(0.0006, dt);
-    const beforeX = camPos.x, beforeZ = camPos.z;
-    camPos.lerp(camTargetPos, k * 0.9);
-    const walked = Math.hypot(camPos.x - beforeX, camPos.z - beforeZ);
-    const manualWalk = !StoryBoard.isOpen && !isAutoFlying && (Object.values(moveKeys).some(Boolean) || performance.now() < wheelWalkUntil);
-    if (manualWalk && walked > .005) {
-        footDistance += walked;
-        if (footDistance >= 1.8) { MuseumSound.footstep(); footDistance = 0; }
-    } else footDistance = 0;
-    yaw += (targetYaw - yaw) * k;
-    pitch += (targetPitch - pitch) * k;
-    camera.position.copy(camPos);
-    camera.position.y += Math.sin(performance.now() * 0.0012) * 0.008; // nhịp thở rất nhẹ
-    camera.lookAt(camPos.x - Math.sin(yaw) * Math.cos(pitch), camPos.y + Math.sin(pitch), camPos.z - Math.cos(yaw) * Math.cos(pitch));
+    if (!tourOwnsCamera() || !MuseumTour.paused) {
+        camera.position.copy(camPos);
+        camera.position.y += Math.sin(performance.now() * 0.0012) * 0.008; // nhịp thở rất nhẹ
+        camera.lookAt(camPos.x - Math.sin(yaw) * Math.cos(pitch), camPos.y + Math.sin(pitch), camPos.z - Math.cos(yaw) * Math.cos(pitch));
+    }
 
     updateMuseumShadows();
     updateNearestHudText();
@@ -208,11 +228,13 @@ window.MuseumApp = {
         updateNearestHudText();
         postFX.composer.render(0); // Sẵn sàng sau khung hình thật đầu tiên.
         StoryBoard.onClose = () => { museumClock.getDelta(); };
+        Presentation.init();
     },
     start() {
         museumClock.getDelta();
         animateMuseum();
         const q = new URLSearchParams(location.search);
-        if (q.has('board')) StoryBoard.open(parseInt(q.get('board'), 10) || 0, { instant: true, step: parseInt(q.get('step') || '0', 10) });
+        if (q.has('present')) Presentation.start(Math.max(0, Math.min(MUSEUM_PIECES.length - 1, parseInt(q.get('present'), 10) || 0)));
+        else if (q.has('board')) StoryBoard.open(parseInt(q.get('board'), 10) || 0, { instant: true, step: parseInt(q.get('step') || '0', 10) });
     }
 };

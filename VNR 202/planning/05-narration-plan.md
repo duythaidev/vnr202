@@ -1,6 +1,6 @@
 # Planning voice VNR202 · revision 2
 
-Trạng thái: kế hoạch, chưa có MP3. Dùng 10 tác phẩm và 38 thẻ hiện hành, **48 clip: 10 lời dẫn + 38 lời nói step**. Chỉ mục đúng ID ở [presentation-clip-index.json](presentation-clip-index.json). Bản pilot revision 1 tại archive/15-paintings không còn khớp nội dung; không đưa vào batch mới.
+Trạng thái: kế hoạch voice, chưa có MP3. Tour/camera/phụ đề đã chạy bằng Narrator mô phỏng từ bản tham khảo; xem 06-presentation-implementation-plan.md. Dùng 10 tác phẩm và 38 thẻ hiện hành, **48 clip: 10 lời dẫn + 38 lời nói step**. Chỉ mục đúng ID ở [presentation-clip-index.json](presentation-clip-index.json). Bản pilot revision 1 tại archive/15-paintings không còn khớp nội dung; không đưa vào batch mới.
 
 ## Viết lời nói
 

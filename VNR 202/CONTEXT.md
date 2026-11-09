@@ -29,8 +29,12 @@ ID vnr-p01…p10 của revision 2 đã sắp xếp lại; **không dùng voice/c
 
 ## Mode thuyết trình
 
-Mới là kế hoạch: [06-presentation-implementation-plan.md](planning/06-presentation-implementation-plan.md). Chỉ mục đã cập nhật **48 clip = 10 lời dẫn + 38 step**, trạng thái planned-not-generated. Chưa có script generate, MP3, UI hoặc tour controller.
+Đã tích hợp **camera/animation, phụ đề và controller** từ `E:/Web/mln131/museum-3d-single.html` và `E:/Web/mln131/presentation.js`. Đọc [06-presentation-implementation-plan.md](planning/06-presentation-implementation-plan.md) trước khi sửa tour hoặc thêm voice.
 
-MP3 phải generate trước bằng service local POST localhost:5050/v1/audio/speech, model tts-1, voice vi-VN-NamMinhNeural; key ở công cụ local. Không gọi TTS khi vào detail. Tour tương lai di chuyển camera mượt, đợi đến tranh, nói lời dẫn, mở story rồi nói từng step; chuyển khi cả audio ended và writer.done. Phải xử lý pause/skip/thoát, không dùng timer đoán camera đến nơi.
+File mới: `museum-tour.js` (camera + Narrator mô phỏng), `presentation.js` (điều phối), `presentation.css` (UI). Loader nạp sau -09, UI init trong MuseumApp.prepare; không gắn window.load vì trang dùng lazy boot. -08 có Promise close, sự kiện stepReady/written, pause/timeScale/inputHook; -09 nhường quyền camera và hủy pendingBoardTimer.
+
+Nút **Thuyết trình** chạy từ tranh đầu; nút trong detail chạy từ tranh hiện tại. Có pause, tốc độ, chọn đoạn, CC, phím Space/←/→/PageUp/PageDown/Esc; kết thúc lùi camera về toàn cảnh. Tổng **48 segment = 10 giới thiệu + 38 step**, lấy từ dữ liệu chứ không hard-code 3 bước/tranh.
+
+**Chưa phát giọng đọc:** Narrator của tham khảo là đồng hồ phụ đề, không có MP3. Chỉ mục 48 clip vẫn planned-not-generated; chưa có công cụ generate hoặc audio thuyết trình. MP3 phải generate trước qua service local, key nằm ngoài frontend; không gọi TTS khi tham quan. Khi thêm voice thật, đợi audio ended và writer.done thay cho đồng hồ mô phỏng hiện tại.
 
 Giữ cơ chế intro, âm thanh và low graphic/MSAA kế thừa base. Vai trò file/kiến trúc chung có thêm tại [context base](../CONTEXT.md), nhưng số lượng và dữ liệu VNR202 lấy tài liệu tại thư mục này.

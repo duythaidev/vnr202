@@ -20,7 +20,7 @@
 - `museum-image-data.js`: sinh tự động bằng `scripts/build-local-image-data.cjs`, phục vụ file://.
 - `planning/content-index.json`: mapping revision 2 và gộp từ bản cũ; không nhầm ID cũ với ID mới.
 
-Giữ intro, âm bút MP3, bước chân, chuyển cảnh và chế độ đồ họa thấp/cao. Tour/voice vẫn là kế hoạch 48 clip, chưa có runtime. Sau khi sửa dữ liệu cần kiểm tra số frame, ID duy nhất, chiều dài, giới hạn camera, canvas không bị taint, layout từng thẻ, mở/đóng/đổi bước, file:// và HTTP. Có thêm kiểm tra số tranh lẻ để phòng không nhân đôi tác phẩm.
+Giữ intro, âm bút MP3, bước chân, chuyển cảnh và chế độ đồ họa thấp/cao. Tour/camera/phụ đề đã tích hợp từ bản tham khảo; voice vẫn là kế hoạch 48 MP3 chưa generate, xem 06-presentation-implementation-plan.md. Sau khi sửa dữ liệu cần kiểm tra số frame, ID duy nhất, chiều dài, giới hạn camera, canvas không bị taint, layout từng thẻ, mở/đóng/đổi bước, file:// và HTTP. Có thêm kiểm tra số tranh lẻ để phòng không nhân đôi tác phẩm.
 
 ## Kết quả kiểm tra 09/11/2026
 

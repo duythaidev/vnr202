@@ -330,7 +330,9 @@ const MuseumIntro = (() => {
         "museum-3d-single-06.js",
         "museum-3d-single-07.js",
         "museum-3d-single-08.js",
-        "museum-3d-single-09.js"
+        "museum-3d-single-09.js",
+        "museum-tour.js",
+        "presentation.js"
 ];
     const nextPaint = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     function loadScript(src) {

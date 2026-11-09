@@ -19,8 +19,15 @@ const StoryBoard = (() => {
         cards: [], decor: [], current: -1, flight: null, writer: null,
         mouse: { x: 0, y: 0 }, parallax: new THREE.Vector2(),
         cam: { pos: new V3(), look: new V3(), roll: 0 },
-        prevLook: new V3(), prevDist: 0, idleTime: 0, autoTimer: 0
+        prevLook: new V3(), prevDist: 0, idleTime: 0, autoTimer: 0,
+        paused: false, opening: false, gen: 0
     };
+    // ---- sự kiện cho mode thuyết trình: stepReady / written / opened / closed ----
+    const listeners = {};
+    function on(ev, fn) { (listeners[ev] = listeners[ev] || new Set()).add(fn); return () => listeners[ev].delete(fn); }
+    function emit(ev, data) { (listeners[ev] || []).forEach(fn => { try { fn(data); } catch (e) { console.error(e); } }); }
+    // mode thuyết trình có thể "chiếm" input: trả về true nghĩa là đã xử lý
+    const routed = (action, arg) => !!(api.inputHook && api.inputHook(action, arg));
     const $ = (id) => document.getElementById(id);
 
     // ---------------- Khởi tạo renderer / ánh sáng / bút ----------------
@@ -292,9 +299,12 @@ const StoryBoard = (() => {
         const mobile = aspect < 0.9;
         const d = Math.max(CW * (mobile ? 1.06 : 1.3) / (2 * t * aspect), CH * 1.5 / (2 * t));
         const dir = new V3(card.camOff.x, card.camOff.y, 1).normalize();
+        // mode thuyết trình: lùi xa hơn một chút + đẩy thẻ lên trên để chừa chỗ cho phụ đề
+        const tour = api.tourActive ? 1 : 0;
+        const dd = d * (1 + 0.2 * tour);
         return {
-            pos: card.center.clone().addScaledVector(dir, d).setZ(card.center.z + dir.z * d),
-            look: card.center.clone().add(new V3(0, -0.03, 0.02)),
+            pos: card.center.clone().add(new V3(0, -0.42 * tour, 0)).addScaledVector(dir, dd).setZ(card.center.z + dir.z * dd),
+            look: card.center.clone().add(new V3(0, -0.03 - 0.42 * tour, 0.02)),
             roll: card.rot * 0.55
         };
     }
@@ -373,7 +383,7 @@ const StoryBoard = (() => {
         const res = card.writer.update(dt);
         if (res.changed) card.tex.needsUpdate = true;
         pen.visible = res.visible && !st.flight;
-        const writing = pen.visible && res.writing && !st.isTransitioning;
+        const writing = pen.visible && res.writing && !st.isTransitioning && !st.paused;
         const penSpeed = previousPenTip && writing ? Math.hypot(res.tip.x - previousPenTip.x, res.tip.y - previousPenTip.y) / Math.max(dt, .001) / 1100 : 1;
         MuseumSound.writing(writing, penSpeed);
         previousPenTip = writing ? { x: res.tip.x, y: res.tip.y } : null;
@@ -389,7 +399,8 @@ const StoryBoard = (() => {
         if (card.writer.done && !card.visited) {
             card.visited = true;
             updateHud();
-            if ((typeof STORY_CONFIG !== 'undefined') && STORY_CONFIG.autoAdvance && st.current < st.cards.length - 1) st.autoTimer = 1.4;
+            if (!api.tourActive && typeof STORY_CONFIG !== 'undefined' && STORY_CONFIG.autoAdvance && st.current < st.cards.length - 1) st.autoTimer = 1.4;
+            emit('written', { piece: st.piece, index: st.current, gen: st.gen });
         }
     }
 
@@ -398,22 +409,32 @@ const StoryBoard = (() => {
         MuseumSound.writing(false);
         const card = st.cards[st.current];
         if (card && card.writer && !card.writer.done) {
-            card.writer.finish(); card.writer.update(0); card.tex.needsUpdate = true; card.visited = true;
+            card.writer.finish(); card.writer.update(0); card.tex.needsUpdate = true;
+            if (!card.visited) { card.visited = true; updateHud(); emit('written', { piece: st.piece, index: st.current, gen: st.gen }); }
         }
     }
 
     function goTo(i, opts = {}) {
         if (i < 0 || i >= st.cards.length || (i === st.current && !opts.force)) return;
         if (!opts.instant && !opts.entering) MuseumSound.whoosh();
-        finishCurrent();
+        if (i !== st.current) finishCurrent();
+        st.autoTimer = 0;
         st.current = i;
         const card = st.cards[i];
+        if (opts.rewrite) {          // viết lại từ đầu (dùng khi thuyết trình quay lại 1 bước)
+            card.writer = null; card.visited = false;
+            BoardWriter.drawBlank(card.canvas, card.paper, card.step, i);
+            card.tex.needsUpdate = true;
+        }
         updateHud();
+        const gen = st.gen;
         const begin = () => {
+            if (gen !== st.gen) return;
             if (!card.writer) {
                 card.writer = new BoardWriter.Writer(card.canvas, card.paper, card.step, card.seed);
                 if (card.visited) card.writer.finish();
             }
+            emit('stepReady', { piece: st.piece, index: i, gen });
         };
         if (opts.instant) {
             const pose = cardPose(card);
@@ -432,8 +453,8 @@ const StoryBoard = (() => {
         $('boardPieceTitle').textContent = p.title;
         $('boardDots').innerHTML = st.cards.map((c, i) =>
             `<button class="board-dot${i === st.current ? ' on' : ''}${c.visited ? ' done' : ''}" data-i="${i}" title="${(c.step.title || '').replace(/"/g, '')}">${i + 1}</button>`).join('');
-        $('boardPrev').disabled = st.current <= 0;
-        $('boardNext').disabled = st.current >= st.cards.length - 1;
+        $('boardPrev').disabled = !api.tourActive && st.current <= 0;
+        $('boardNext').disabled = !api.tourActive && st.current >= st.cards.length - 1;
     }
 
     function bindEvents() {
@@ -443,22 +464,24 @@ const StoryBoard = (() => {
         dom.addEventListener('pointerup', (e) => {
             if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 6) return;
             const hit = pick(e);
-            if (hit) goTo(hit.userData.stepIndex);
-            else skipOrNext();
+            if (hit) { if (!routed('card', hit.userData.stepIndex)) goTo(hit.userData.stepIndex); }
+            else if (!routed('space')) skipOrNext();
         });
         dom.addEventListener('pointermove', (e) => {
             st.mouse.x = (e.clientX / innerWidth) * 2 - 1;
             st.mouse.y = -(e.clientY / innerHeight) * 2 + 1;
-            const hit = pick(e);
-            dom.style.cursor = hit ? 'pointer' : 'default';
+            dom.style.cursor = pick(e) ? 'pointer' : 'default';
         });
-        $('boardPrev').onclick = () => goTo(st.current - 1);
-        $('boardNext').onclick = () => goTo(st.current + 1);
+        $('boardPrev').onclick = () => { if (!routed('prev')) goTo(st.current - 1); };
+        $('boardNext').onclick = () => { if (!routed('next')) goTo(st.current + 1); };
         $('boardSkip').onclick = () => finishCurrent();
-        $('boardClose').onclick = () => close();
-        $('boardDots').onclick = (e) => { const b = e.target.closest('[data-i]'); if (b) goTo(+b.dataset.i); };
+        $('boardClose').onclick = () => { if (!routed('close')) close(); };
+        $('boardDots').onclick = (e) => {
+            const b = e.target.closest('[data-i]');
+            if (b && !routed('card', +b.dataset.i)) goTo(+b.dataset.i);
+        };
         window.addEventListener('keydown', (e) => {
-            if (!st.isOpen || e.target.tagName === 'INPUT') return;
+            if (!st.isOpen || e.target.tagName === 'INPUT' || api.tourActive) return;
             if (e.code === 'Escape') {
                 close();
             } else if (e.code === 'ArrowRight' || e.code === 'KeyD') goTo(st.current + 1);
@@ -494,13 +517,13 @@ const StoryBoard = (() => {
     // ---------------- Vòng lặp ----------------
     function loop() {
         raf = requestAnimationFrame(loop);
-        const dt = Math.min(0.05, clock.getDelta());
-        updateFlight(dt);
-        applyCamera(dt);
-        updateWriting(dt);
+        const realDt = Math.min(0.05, clock.getDelta());
+        const dt = st.paused ? 0 : realDt * (api.timeScale || 1) * (window.__tourScale || 1);   // tạm dừng: đóng băng bay + bút
+        if (!st.paused) { updateFlight(dt); applyCamera(realDt); updateWriting(dt); }
+        else MuseumSound.writing(false);
         st.cards.forEach(c => { if (c !== st.cards[st.current] && c.writer && c.writer.dirty) { c.writer.update(0); c.tex.needsUpdate = true; } });
         if (st.autoTimer > 0 && (st.autoTimer -= dt) <= 0) goTo(st.current + 1);
-        updateMotionBlur(dt);
+        updateMotionBlur(st.paused ? realDt : dt);
         fx.grade.uniforms.time.value = performance.now() * 0.001;
         fx.composer.render(dt);
     }
@@ -513,12 +536,15 @@ const StoryBoard = (() => {
     // ---------------- API ----------------
     async function open(pieceIdx, opts = {}) {
         if (st.isOpen) return;
-        st.isOpen = true; st.isTransitioning = true;
+        st.isOpen = true; st.isTransitioning = true; st.opening = true;
+        const gen = ++st.gen;
         init();
         await waitFonts();
+        if (gen !== st.gen) return;
         st.piece = pieceIdx;
         st.story = getStory(pieceIdx);
         buildBoard(st.story);
+        st.opening = false;
         const ov = $('boardOverlay');
         ov.classList.add('open');
         ov.setAttribute('aria-hidden', 'false');
@@ -535,22 +561,43 @@ const StoryBoard = (() => {
         clock.getDelta();
         cancelAnimationFrame(raf);
         loop();
-        setTimeout(() => { st.isTransitioning = false; }, 700);
+        setTimeout(() => { if (gen === st.gen && st.isOpen) st.isTransitioning = false; }, 700);
+        emit('opened', { piece: pieceIdx, gen });
     }
 
+    // trả về Promise: resolve khi overlay đã đóng hẳn (an toàn cho mode thuyết trình)
+    let closing = null;
     function close() {
-        if (!st.isOpen) return;
+        if (!st.isOpen) return Promise.resolve();
+        if (closing) return closing;
         MuseumSound.writing(false);
+        st.opening = false;
+        const gen = ++st.gen;                 // vô hiệu mọi callback của phiên bảng cũ
         st.isTransitioning = true;
+        st.flight = null; st.autoTimer = 0;
         const ov = $('boardOverlay');
         ov.classList.remove('open');
         ov.setAttribute('aria-hidden', 'true');
-        setTimeout(() => {
+        closing = new Promise(resolve => setTimeout(() => {
+            closing = null;
+            if (gen !== st.gen) return resolve();
             cancelAnimationFrame(raf);
             st.isOpen = false; st.isTransitioning = false;
             pen.visible = false;
             if (api.onClose) api.onClose();
-        }, 650);
+            emit('closed', { gen });
+            resolve();
+        }, 650));
+        return closing;
+    }
+
+    function isStepReady(i) {
+        const c = st.cards[i];
+        return st.isOpen && st.current === i && !st.flight && !!(c && c.writer);
+    }
+    function isWritten(i) {
+        const c = st.cards[i];
+        return !!(c && c.writer && c.writer.done);
     }
 
     const api = {
@@ -560,8 +607,15 @@ const StoryBoard = (() => {
         get isOpen() { return st.isOpen; },
         get isTransitioning() { return st.isTransitioning; },
         get state() { return st; },
+        get piece() { return st.piece; },
+        get current() { return st.current; },
+        get cardCount() { return st.cards.length; },
+        get isClosing() { return !!closing; },
+        get isOpening() { return st.opening; },
+        on, isStepReady, isWritten, finishCurrent,
+        setPaused(b) { st.paused = !!b; if (st.paused) MuseumSound.writing(false); },
+        tourActive: false, inputHook: null, timeScale: 1,
         onClose: null
     };
     return api;
 })();
-

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="museum-3d-single.css">
     <link rel="stylesheet" href="museum-intro.css">
+    <link rel="stylesheet" href="presentation.css">
 </head>
 <body class="relative w-screen h-screen overflow-hidden text-stone-100">
     <section id="museumIntro" class="museum-intro" aria-label="Lời chào bảo tàng lịch sử">
@@ -68,6 +69,9 @@
         </div>
 
         <!-- Nút Âm thanh -->
+        <button id="startTourBtn" type="button" onclick="Presentation.start(0)" class="museum-pill tour-start pointer-events-auto px-4 py-2.5 rounded-full font-mono-museum text-[11px] uppercase flex items-center gap-2 font-semibold">
+            <span class="tour-start-dot" aria-hidden="true"></span>Thuyết trình
+        </button>
         <button id="soundToggleBtn" onclick="toggleAmbientAudio()" class="museum-pill pointer-events-auto w-10 h-10 rounded-full flex items-center justify-center" title="Bật/Tắt nhạc nền bảo tàng">
             <svg id="soundIconOn" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
@@ -93,7 +97,10 @@
                 <span id="boardPieceCode" class="font-mono-museum">PIECE 01</span>
                 <span id="boardPieceTitle"></span>
             </div>
-            <button id="boardClose" class="board-btn">✕ Về bảo tàng <kbd>Esc</kbd></button>
+            <div class="board-top-actions">
+                <button type="button" class="board-btn tour-start-board" onclick="Presentation.start(StoryBoard.piece)">Thuyết trình từ tranh này</button>
+                <button id="boardClose" class="board-btn">✕ Về bảo tàng <kbd>Esc</kbd></button>
+            </div>
         </div>
         <div class="board-bottom">
             <button id="boardPrev" class="board-btn" title="Thẻ trước (←)">←</button>
