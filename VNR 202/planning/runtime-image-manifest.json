@@ -1,197 +1,87 @@
-[
-  {
-    "file": "assets/images/diagrams/vnr-p01.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      1
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/verified/duong-kach-menh-1927.webp",
-    "type": "document-photo",
-    "caption": "Trang sách Đường Kách mệnh, tác phẩm xuất bản năm 1927; ảnh hiện vật do Bảo tàng Lịch sử Quốc gia giới thiệu.",
-    "sourcePage": "https://baotanglichsuquocgia.vn/vi/Articles/1001/28315/sach-djuong-kach-menh.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [
-      2
-    ],
-    "steps": [
-      "vnr-p02-s03"
-    ]
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p03.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      3
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p04.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      4
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p05.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      5
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/verified/luan-cuong-1930.webp",
-    "type": "document-photo",
-    "caption": "Ảnh văn kiện Luận cương chính trị do Trần Phú dự thảo, tháng 10/1930, được Bảo tàng Lịch sử Quốc gia giới thiệu.",
-    "sourcePage": "https://baotanglichsu.vn/vi/Articles/3098/19407/tran-phu-tong-bi-thu-djau-tien-cua-djang.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [
-      6
-    ],
-    "steps": [
-      "vnr-p06-s02"
-    ]
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p07.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      7
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p08.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      8
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p09.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      9
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/verified/dau-xao-1938.webp",
-    "type": "historical-photo",
-    "caption": "Cuộc mít tinh ngày 1/5/1938 tại khu Đấu xảo Hà Nội, theo chú thích của Bảo tàng Lịch sử Quốc gia.",
-    "sourcePage": "https://baotanglichsuquocgia.vn/vi/Articles/3097/14191/ngay-1-5-trong-qua-trinh-djau-tranh-cach-mang-viet-nam.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [
-      10
-    ],
-    "steps": [
-      "vnr-p10-s02"
-    ]
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p11.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      11
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p12.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      12
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/verified/doi-tuyen-truyen-giai-phong-quan-1944.webp",
-    "type": "historical-photo",
-    "caption": "Ảnh Đội Việt Nam Tuyên truyền Giải phóng quân được bảo tàng chú thích ở mốc thành lập ngày 22/12/1944.",
-    "sourcePage": "https://baotanglichsu.vn/vi/Articles/2002/68108/lung-bo-noi-lanh-tu-ho-chi-minh-quyet-djinh-thanh-lap-djoi-viet-nam-tuyen-truyen-giai-phong-quan.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [
-      13
-    ],
-    "steps": [
-      "vnr-p13-s04"
-    ]
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p14.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      14
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/diagrams/vnr-p15.svg",
-    "type": "authored-content-diagram",
-    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
-    "sourcePage": null,
-    "credit": "Biên soạn từ bài VNR202 của nhóm",
-    "primaryForPieces": [
-      15
-    ],
-    "steps": []
-  },
-  {
-    "file": "assets/images/verified/bao-thanh-nien-1926.webp",
-    "type": "document-photo",
-    "caption": "Ảnh chụp báo Thanh niên, số ngày 3/10/1926, từ bài giới thiệu của Bảo tàng Lịch sử Quốc gia.",
-    "sourcePage": "https://baotanglichsu.vn/vi/Articles/1001/19692/cuon-djuong-kach-menh-cua-nguyen-ai-quoc-su-xuat-hien-va-hanh-trinh.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [],
-    "steps": [
-      "vnr-p02-s02"
-    ]
-  },
-  {
-    "file": "assets/images/verified/nha-huan-luyen-quang-chau.webp",
-    "type": "heritage-site-photo",
-    "caption": "Di tích nhà trên đường Văn Minh, Quảng Châu, nơi từng mở lớp huấn luyện chính trị trong giai đoạn 1925–1927.",
-    "sourcePage": "https://baotanglichsu.vn/vi/Articles/1001/19692/cuon-djuong-kach-menh-cua-nguyen-ai-quoc-su-xuat-hien-va-hanh-trinh.html",
-    "credit": "Bảo tàng Lịch sử Quốc gia",
-    "primaryForPieces": [],
-    "steps": [
-      "vnr-p02-s04"
-    ]
-  }
-]
+{
+  "revision": 2,
+  "source": "../assets/images/exhibition-10/10-images.json",
+  "exhibits": [
+    {
+      "pieceId": "vnr-p01",
+      "image": "assets/images/exhibition-10/nguyen-ai-quoc-tours-1920.webp",
+      "caption": "Nguyễn Ái Quốc tại Đại hội Tours, 1920.",
+      "type": "Ảnh tư liệu",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/2002/68220/djang-cong-san-viet-nam-ra-djoi-buoc-ngoat-lich-su-cua-cach-mang-viet-nam.html",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p02",
+      "image": "assets/images/exhibition-10/hoi-nghi-thanh-lap-dang-phi-hoanh.webp",
+      "caption": "Hội nghị thành lập Đảng — tranh Phi Hoanh.",
+      "type": "Tranh lịch sử tái hiện",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/2001/68276/ho-chi-minh-voi-cach-mang-giai-phong-dan-toc-va-khoi-nghia.html",
+      "credit": "Họa sĩ Phi Hoanh; ảnh đăng Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p03",
+      "image": "assets/images/exhibition-10/xo-viet-nghe-tinh-tranh.webp",
+      "caption": "Xô viết Nghệ Tĩnh — tranh sơn mài tái hiện.",
+      "type": "Tranh lịch sử tái hiện",
+      "sourcePage": "https://nhandan.vn/special/nhung-mua-xuan-co-dang-qua-tranh-cua-cac-danh-hoa-vi-t/",
+      "credit": "Tác phẩm nhóm họa sĩ Nguyễn Đức Nùng, Trần Đình Thọ, Nguyễn Văn Tỵ, Phạm Văn Đôn, Nguyễn Sỹ Ngọc và Huỳnh Văn Thuận; Bảo tàng Mỹ thuật Việt Nam; ảnh đăng Báo Nhân Dân"
+    },
+    {
+      "pieceId": "vnr-p04",
+      "image": "assets/images/exhibition-10/tran-phu-chan-dung.webp",
+      "caption": "Trần Phú (1904–1931), Tổng Bí thư đầu tiên.",
+      "type": "Chân dung lịch sử",
+      "sourcePage": "https://baotanglichsu.vn/vi/Album/47/ky-niem-90-nam-ngay-thanh-lap-djang-cong-san-viet-nam-3-2-1930-3-2-2020",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p05",
+      "image": "assets/images/exhibition-10/dau-xao-1938.webp",
+      "caption": "Mít tinh Đấu Xảo, Hà Nội, 1/5/1938.",
+      "type": "Ảnh tư liệu",
+      "sourcePage": "https://baotanglichsuquocgia.vn/vi/Articles/3097/14191/ngay-1-5-trong-qua-trinh-djau-tranh-cach-mang-viet-nam.html",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p06",
+      "image": "assets/images/exhibition-10/pac-bo-suoi-le-nin-hien-nay.webp",
+      "caption": "Suối Lê-nin, Pác Bó — ảnh hiện đại.",
+      "type": "Di tích · ảnh hiện đại",
+      "sourcePage": "https://baotanghochiminh.vn/phat-trien-du-lich-pac-bo-trong-tinh-hinh-moi.htm",
+      "credit": "Bảo tàng Hồ Chí Minh"
+    },
+    {
+      "pieceId": "vnr-p07",
+      "image": "assets/images/exhibition-10/doi-tuyen-truyen-giai-phong-quan-1944.webp",
+      "caption": "Đội Việt Nam Tuyên truyền Giải phóng quân, 22/12/1944.",
+      "type": "Ảnh tư liệu",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/2002/68108/lung-bo-noi-lanh-tu-ho-chi-minh-quyet-djinh-thanh-lap-djoi-viet-nam-tuyen-truyen-giai-phong-quan.html",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p08",
+      "image": "assets/images/exhibition-10/chi-thi-nhat-phap-ban-nhau-1945.webp",
+      "caption": "Sách in Chỉ thị ngày 12/3/1945.",
+      "type": "Ảnh tư liệu hiện vật",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/1002/73335/suu-tap-hien-vat-ve-cach-mang-thang-tam-nam-1945-tai-bao-tang-lich-su-quoc-gia.html",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p09",
+      "image": "assets/images/exhibition-10/ha-noi-phu-kham-sai-19-8-1945.webp",
+      "caption": "Nhân dân Hà Nội chiếm Phủ Khâm sai, 19/8/1945.",
+      "type": "Ảnh tư liệu",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/4092/anh-tu-lieu",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    },
+    {
+      "pieceId": "vnr-p10",
+      "image": "assets/images/exhibition-10/le-doc-lap-ba-dinh-2-9-1945.webp",
+      "caption": "Lễ Độc lập tại Ba Đình, 2/9/1945.",
+      "type": "Ảnh tư liệu",
+      "sourcePage": "https://baotanglichsu.vn/vi/Articles/4092/anh-tu-lieu",
+      "credit": "Bảo tàng Lịch sử Quốc gia"
+    }
+  ],
+  "policy": "Framed image only; no UI/diagram composite. Full image contained without cropping."
+}

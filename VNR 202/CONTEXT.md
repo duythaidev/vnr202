@@ -1,43 +1,36 @@
-# Bảo tàng VNR 202
+# Bảo tàng VNR202
 
-Bản môn học này được sao chép từ base tại thư mục cha `vnr202/`. Điểm vào: [museum-3d-single.html](museum-3d-single.html).
+Điểm vào: [museum-3d-single.html](museum-3d-single.html). Bản độc lập trong `vnr202/VNR 202/`; base ở thư mục cha, MLN131 ở `../MLN 131/`.
 
-## Phạm vi chỉnh sửa
+## Hiện trạng
 
-- Triển khai nội dung **VNR 202** trong thư mục này. Bản môn còn lại nằm ở `../MLN 131/`.
-- `museum-3d-single-02.js`: nội dung tranh, ảnh, tiêu đề và các mốc/sự kiện.
-- `museum-3d-single-03.js`: nội dung từng step trên bảng ghim 3D.
-- `museum-3d-single.html`, `museum-intro.js`: nhãn môn, tiêu đề trang, lời chào intro nếu cần điều chỉnh.
-- Khung 3D, hiệu ứng và âm thanh kế thừa base; renderer đã bổ sung nguồn cuối thẻ, fit ảnh và bố cục tranh VNR202. Tất cả tài nguyên local đã được sao chép vào đây; đường dẫn không phụ thuộc tài nguyên ở thư mục môn còn lại.
+**Revision 2: 10 tác phẩm / 38 thẻ**, rút từ bài nhóm [VNR202 - Nhóm 1 (2).docx](VNR202%20-%20Nhóm%201%20(2).docx), 209 đoạn không rỗng. Bộ cũ 15 tranh/60 thẻ được lưu tại [planning/archive/15-paintings/](planning/archive/15-paintings/), không dùng để triển khai hiện tại.
 
-**Trạng thái hiện tại:** đã triển khai 15 tranh / 60 thẻ VNR202 theo bài nhóm, không còn story mock hoặc ảnh placehold.co trong dữ liệu môn.
+Ảnh trong khung là ảnh tư liệu, chân dung, ảnh hiện vật, hai tranh lịch sử tái hiện và một ảnh di tích Pác Bó hiện đại. **Không vẽ slide, sơ đồ, title hoặc UI lên ảnh trong khung.** Nhãn riêng bên cạnh ghi tên, niên đại, loại ảnh và nguồn. Bộ ảnh/metadata hiện hành ở [assets/images/exhibition-10/](assets/images/exhibition-10/). Ảnh cũ/diagrams chưa dùng có thể còn trong kho, không tự gắn lại.
 
-Đọc [context base](../CONTEXT.md) để xem vai trò đầy đủ của các file, đồ họa, intro, âm thanh và kế hoạch mode thuyết trình. Trong tài liệu đó, các đường dẫn file không có tiền tố cũng tồn tại tương ứng ngay trong thư mục môn học này. Mode thuyết trình vẫn chỉ là kế hoạch; MP3 thuyết trình phải generate trước theo kịch bản riêng của từng môn.
+Phòng tự dài theo số tác phẩm: 2 tranh/khoang, ceil(N/2) khoang, mỗi khoang 11.5 đơn vị + 16 khoảng đầu/cuối. Hiện 5 khoang, dài 73.5. Số lẻ không nhân đôi tranh cuối. Thay số tranh phải sửa dữ liệu và story tương ứng, không kéo giãn tọa độ thủ công.
 
-Các file `tham-khao-intro-sound.*` là bản tham khảo; `writing-with-pencil.mp3` là âm bút dùng trong runtime. Chưa có MP3 thuyết trình; mẫu kịch bản pilot nằm trong planning.
+## File và thuật ngữ
 
-## Planning nội dung VNR202 đã chuẩn bị
+- **Tranh/tác phẩm**: một mục MUSEUM_PIECES ở `museum-3d-single-02.js`, có contentId, ảnh, tiêu đề, nguồn và revision.
+- **Story/detail**: bảng ghim 3D của tranh. STORY_DATA trong `-03.js` gồm 38 step, số bước `[4,4,3,4,4,4,3,4,4,4]`. Không còn drawer cũ, quiz hoặc Flat View.
+- **Khoang**: một cặp vị trí trái/phải trong phòng; tính từ số tác phẩm.
+- `-01.js`: FX và quality; `-04.js`: texture nhãn; `-05.js`: phòng, khung, ảnh, ánh sáng; `-06.js`: giấy; `-07.js`: bút/dàn thẻ; `-08.js`: StoryBoard; `-09.js`: điều khiển, camera, vòng lặp, bootstrap.
+- `museum-intro.js/css`: intro từng bước, lazy boot và âm thanh. `writing-with-pencil.mp3`: loop bút. `tham-khao-intro-sound.*`: tài liệu tham khảo, không phải entry của môn.
+- `museum-image-data.js`: bundle ảnh data URL cho file://. Sau đổi ảnh hoặc src chạy `node scripts/build-local-image-data.cjs` tại đây; HTTP dùng ảnh thường, không nạp bundle.
 
-Đọc [planning/README.md](planning/README.md) trước khi triển khai. Nguồn chính là `../../mlngame/docs/VNR202 - Nhóm 1.docx`, đã trích xuất 219 đoạn không rỗng và lưu hash tại `planning/sources/`. Không nhầm bài này với tài liệu pháp quyền MLN131 cùng project.
+Hover tranh trong phòng hiện tooltip hai dòng: tên và niên đại từ `MUSEUM_PIECES`. HTML/CSS dùng `paintingTooltip`/`.painting-tooltip`; raycast và đóng tooltip khi rời tranh, kéo nhìn, di chuyển hoặc mở detail nằm trong `-09.js`. Không thêm mô tả dài, ảnh hay âm thanh riêng cho tooltip.
 
-Đã triển khai 15 tranh / 60 step, giữ phân bổ 4–4–2–3–2 cho năm phần/người thuyết trình. Planning có nội dung từng step, ánh xạ ID, lộ trình triển khai, audit mốc lịch sử, ma trận ảnh và kế hoạch 75 clip voice. Mẫu voice mới là pilot; chưa có đủ kịch bản đã duyệt hoặc MP3 thuyết trình.
+ID vnr-p01…p10 của revision 2 đã sắp xếp lại; **không dùng voice/cache revision 1 chỉ vì cùng ID**. `mergedFrom` trong dữ liệu trỏ vào bản cũ, còn nguồn đoạn trong thẻ trỏ vào snapshot 209 đoạn hiện hành.
 
-Đã xem 8 ảnh ứng viên sẵn có và tạo bản WebP tối ưu trong `assets/images/`, tổng khoảng 615KB. Nhiều ảnh chưa xác minh được sự kiện/niên đại, không tự gắn làm ảnh chính. Ma trận nguồn chỉ rõ ảnh còn thiếu; không ghi là đã chuẩn bị đủ 15 ảnh. Chưa tải thêm ảnh mạng.
+## Điểm bắt đầu cho agent
 
-**Runtime đã triển khai:** đủ STORY_DATA[0..14] với số thẻ 4,4,3,4,3,4,3,3,4,4,4,6,4,5,5. ID khớp planning/content-index.json. Nguồn ngắn hiện cuối giấy; sửa các mốc Hội Truyền bá Quốc ngữ 1938, Hội nghị quân sự tháng 4/1945 và hợp nhất lực lượng tháng 5, hai tổ chức tại hội nghị đầu 1930 rồi Liên đoàn gia nhập. Số 35.009 ghi đúng hội viên quần chúng; không dùng số thương vong Hưng Nguyên còn khác nhau giữa nguồn.
+Đọc [planning/README.md](planning/README.md), [content-index.json](planning/content-index.json) và [04-source-audit.md](planning/04-source-audit.md). Giữ phân biệt hai tổ chức dự hội nghị đầu 1930 với Liên đoàn gia nhập sau, Hội Truyền bá Quốc ngữ 1938, hội nghị quân sự 4/1945 với hợp nhất lực lượng 5/1945. Tránh số thương vong chưa thống nhất.
 
-Ảnh runtime: 6 tư liệu có nguồn BTLSQG trong assets/images/verified; 4 trong số đó là ảnh chính ở tranh 02/06/10/13, còn lại là ảnh hỗ trợ. Các chủ đề còn thiếu ảnh dùng sơ đồ SVG biên soạn trong assets/images/diagrams, ghi rõ không phải ảnh tư liệu. 8 ảnh ứng viên cũ chưa xác minh không gắn vào runtime. Ghi chú nguồn ảnh: assets/images/verified/README-SOURCES.md; ánh xạ runtime tại planning/runtime-image-manifest.json.
+## Mode thuyết trình
 
-Để mở bằng file:// trên Chrome/Edge mà canvas không bị taint, loader nạp museum-image-data.js chứa data URL ảnh đang dùng. Chạy `node scripts/build-local-image-data.cjs` trong thư mục môn sau khi đổi file ảnh hoặc đường dẫn ảnh. Qua HTTP, dùng tệp ảnh bình thường và không tải bundle này. Đợt này cũng sửa cơ chế nạp ảnh tương ứng của bản MLN131 để khắc phục lỗi file:// đã phát hiện; không đổi nội dung MLN131 hoặc base.
+Mới là kế hoạch: [06-presentation-implementation-plan.md](planning/06-presentation-implementation-plan.md). Chỉ mục đã cập nhật **48 clip = 10 lời dẫn + 38 step**, trạng thái planned-not-generated. Chưa có script generate, MP3, UI hoặc tour controller.
 
-Voice/tour vẫn chưa triển khai; MP3 phải generate trước, không gọi TTS khi đến detail.
+MP3 phải generate trước bằng service local POST localhost:5050/v1/audio/speech, model tts-1, voice vi-VN-NamMinhNeural; key ở công cụ local. Không gọi TTS khi vào detail. Tour tương lai di chuyển camera mượt, đợi đến tranh, nói lời dẫn, mở story rồi nói từng step; chuyển khi cả audio ended và writer.done. Phải xử lý pause/skip/thoát, không dùng timer đoán camera đến nơi.
 
-## Planning implement mode thuyết trình VNR202
-
-Đọc [planning/06-presentation-implementation-plan.md](planning/06-presentation-implementation-plan.md) trước khi code. [Chỉ mục voice](planning/presentation-clip-index.json) liệt kê đủ 75 clip dự kiến theo ID thực tế: 15 intro + 60 step; trạng thái planned-not-generated, không phải manifest runtime.
-
-Số bước/tranh: 4,4,3,4,3,4,3,3,4,4,4,6,4,5,5. Tour phải đọc độ dài story thật; không giả định 3 bước/tranh. Bài có năm phần/người với phân bổ 4–4–2–3–2 tranh. Voice bám audit nguồn, không đọc ghi chú biên tập hoặc coi sơ đồ biên soạn là ảnh chụp lịch sử.
-
-Kế hoạch gồm TTS local generate trước, voice player riêng, controller sở hữu luồng chuyển bước, tín hiệu camera-arrived/step-ready/writer-done/board-closed thay timer đoán, pause/resume và hủy từng operation. JS manifest hỗ trợ file://; thiếu voice không được chặn khám phá tự do. TTS/key chỉ có trong công cụ local, không gọi TTS lúc tham quan.
-
-Trạng thái: mới lập kế hoạch và chỉ mục clip; chưa viết đầy đủ kịch bản nói, script generate, MP3, UI tour hoặc controller. Nội dung 15 tranh/60 step và runtime không thay đổi trong đợt này.
+Giữ cơ chế intro, âm thanh và low graphic/MSAA kế thừa base. Vai trò file/kiến trúc chung có thêm tại [context base](../CONTEXT.md), nhưng số lượng và dữ liệu VNR202 lấy tài liệu tại thư mục này.

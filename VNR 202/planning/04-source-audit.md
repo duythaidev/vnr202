@@ -1,12 +1,12 @@
 # Đối chiếu nguồn VNR202 trước khi biên soạn
 
-Trạng thái: rà soát có chọn lọc cho planning, chưa sửa runtime. Nguồn nhóm là `mlngame/docs/VNR202 - Nhóm 1.docx`. Số đoạn dưới đây là thứ tự **đoạn có nội dung** trong `word/document.xml` (219 đoạn), không phải số trang giáo trình. Đã đối chiếu ngày 09/11/2026; đây không phải kiểm định toàn bộ bài.
+Trạng thái: các sửa mốc dưới đây đã áp dụng trong runtime revision 2. Nguồn nhóm hiện hành là `VNR202 - Nhóm 1 (2).docx`. Số đoạn dưới đây là thứ tự **đoạn có nội dung** trong `word/document.xml` (209 đoạn), không phải số trang giáo trình. Đã đối chiếu ngày 09/11/2026; đây không phải kiểm định toàn bộ bài.
 
 Ưu tiên văn kiện gốc, tài liệu lưu trữ và cơ quan sở hữu/biên soạn tư liệu. Khi nguồn công khai chưa thống nhất, ghi rõ giới hạn thay vì thay một số liệu chắc chắn bằng một số liệu chắc chắn khác.
 
 ## 1. Hội nghị quân sự Bắc Kỳ và ngày hợp nhất lực lượng
 
-**Kết quả: cần sửa, độ tin cậy cao.** Đoạn 184 đặt Hội nghị quân sự cách mạng Bắc Kỳ vào 15/5/1945, đang gộp hai sự kiện.
+**Kết quả: cần sửa, độ tin cậy cao.** Đoạn 174 đặt Hội nghị quân sự cách mạng Bắc Kỳ vào 15/5/1945, đang gộp hai sự kiện.
 
 - Văn kiện có tiêu đề và nội dung xác định Hội nghị diễn ra **15–20/4/1945**, ra chủ trương thống nhất lực lượng: [Nghị quyết Hội nghị quân sự cách mạng Bắc Kỳ, kho văn kiện Đảng](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-i/nghi-quyet-cua-hoi-nghi-quan-su-cach-mang-bac-ky-ngay-15-20-4-1945-670).
 - **15/5/1945** là lễ thống nhất Việt Nam Tuyên truyền Giải phóng quân và Cứu quốc quân thành Việt Nam Giải phóng quân. Đối chiếu [sách Đội Việt Nam Tuyên truyền Giải phóng quân trên thư viện Ban Tuyên giáo Cao Bằng](https://sachdientu.tuyengiaocaobang.vn/uploads/thuviensach/cuon-sach-doi-viet-nam-tuyen-truyen-giai-phong-quan.pdf).
@@ -15,7 +15,7 @@ Cách viết lên thẻ: `4/1945: hội nghị quyết định thống nhất l�
 
 ## 2. Hội Truyền bá Quốc ngữ
 
-**Kết quả: cần sửa mốc năm, độ tin cậy cao.** Đoạn 122 viết Hội ra đời và phát triển từ cuối 1937. Tư liệu của cơ quan lưu trữ ghi cuộc diễn thuyết cổ động tổ chức ngày **25/5/1938**: [Hội truyền bá chữ Quốc ngữ, Trung tâm Lưu trữ quốc gia I](https://www.archives.org.vn/video/hoi-truyen-ba-chu-quoc-ngu%7C-ltqgi.htm). [Diễn văn của Chủ tịch Quốc hội tại lễ kỷ niệm Nguyễn Văn Tố](https://quochoi.vn/pages/tim-kiem.aspx?ItemID=40546) cũng đặt việc thành lập tổ chức vào năm 1938.
+**Kết quả: cần sửa mốc năm, độ tin cậy cao.** Đoạn 112 viết Hội ra đời và phát triển từ cuối 1937. Tư liệu của cơ quan lưu trữ ghi cuộc diễn thuyết cổ động tổ chức ngày **25/5/1938**: [Hội truyền bá chữ Quốc ngữ, Trung tâm Lưu trữ quốc gia I](https://www.archives.org.vn/video/hoi-truyen-ba-chu-quoc-ngu%7C-ltqgi.htm). [Diễn văn của Chủ tịch Quốc hội tại lễ kỷ niệm Nguyễn Văn Tố](https://quochoi.vn/pages/tim-kiem.aspx?ItemID=40546) cũng đặt việc thành lập tổ chức vào năm 1938.
 
 Cách viết an toàn: `1938: Hội Truyền bá Quốc ngữ góp phần mở rộng vận động văn hóa, giáo dục`. Nếu cần ngày thành lập pháp lý hay ngày ra mắt, tách hai loại mốc theo tài liệu lưu trữ; không tự đồng nhất mọi sự kiện thành một ngày.
 
@@ -51,7 +51,7 @@ Khuyến nghị: thẻ viết `Cuộc biểu tình Hưng Nguyên ngày 12/9/1930
 
 ### 35.009 hội viên: có đối chiếu văn kiện gốc
 
-Đoạn 125 có thể giữ nếu ghi đúng đối tượng và mốc báo cáo. [Văn kiện Đảng toàn tập, Tập 6, tr.375–376](https://tulieuvankien.dangcongsan.vn/upload/3000006/20251024/20403122ca44f3a0c223857a121f4387VK_Dang_TT_-_Tap_6.pdf) có tổng số **35.009 hội viên quần chúng**, kèm các nhóm thành viên. Đây **không phải số đảng viên** hoặc số người tại một cuộc mít tinh.
+Đoạn 115 có thể giữ nếu ghi đúng đối tượng và mốc báo cáo. [Văn kiện Đảng toàn tập, Tập 6, tr.375–376](https://tulieuvankien.dangcongsan.vn/upload/3000006/20251024/20403122ca44f3a0c223857a121f4387VK_Dang_TT_-_Tap_6.pdf) có tổng số **35.009 hội viên quần chúng**, kèm các nhóm thành viên. Đây **không phải số đảng viên** hoặc số người tại một cuộc mít tinh.
 
 Cách dùng: caption `Theo báo cáo thời kỳ 1938: 35.009 hội viên trong các tổ chức quần chúng`; đặt số đảng viên ở chú giải riêng nếu thực sự cần. Không thay số hội viên bằng quy mô toàn bộ đội quân chính trị đã được vận động trong suốt giai đoạn.
 

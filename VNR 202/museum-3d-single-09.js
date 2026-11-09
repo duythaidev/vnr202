@@ -7,8 +7,11 @@ let pendingBoardTimer = null;
 
 function setupMuseumControls() {
     const dom = renderer.domElement;
+    paintingTooltip = document.getElementById('paintingTooltip');
+    dom.addEventListener('mouseleave', hidePaintingTooltip);
     let downPos = { x: 0, y: 0 };
     dom.addEventListener('mousedown', (e) => {
+        hidePaintingTooltip();
         isDraggingLook = true; isAutoFlying = false;
         prevMouse = { x: e.clientX, y: e.clientY };
         downPos = { x: e.clientX, y: e.clientY };
@@ -27,6 +30,7 @@ function setupMuseumControls() {
 
     let touchStart = null;
     dom.addEventListener('touchstart', (e) => {
+        hidePaintingTooltip();
         if (e.touches.length !== 1) return;
         isDraggingLook = true; isAutoFlying = false;
         prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
@@ -48,6 +52,7 @@ function setupMuseumControls() {
     });
 
     dom.addEventListener('wheel', (e) => {
+        hidePaintingTooltip();
         wheelWalkUntil = performance.now() + 250;
         isAutoFlying = false;
         const fwd = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
@@ -58,10 +63,11 @@ function setupMuseumControls() {
     const keyMap = { KeyW: 'w', ArrowUp: 'w', KeyS: 's', ArrowDown: 's', KeyA: 'a', ArrowLeft: 'a', KeyD: 'd', ArrowRight: 'd' };
     window.addEventListener('keydown', (e) => {
         if (MuseumIntro.active || e.target.tagName === 'INPUT' || StoryBoard.isOpen) return;
-        if (keyMap[e.code]) moveKeys[keyMap[e.code]] = true;
+        if (keyMap[e.code]) { hidePaintingTooltip(); moveKeys[keyMap[e.code]] = true; }
     });
     window.addEventListener('keyup', (e) => { if (keyMap[e.code]) moveKeys[keyMap[e.code]] = false; });
-    window.addEventListener('blur', () => { Object.keys(moveKeys).forEach(k => { moveKeys[k] = false; }); footDistance = 0; });
+    window.addEventListener('blur', () => { hidePaintingTooltip(); Object.keys(moveKeys).forEach(k => { moveKeys[k] = false; }); footDistance = 0; });
+    window.addEventListener('resize', hidePaintingTooltip);
     window.addEventListener('resize', resizeMuseum);
 }
 
@@ -80,12 +86,34 @@ function pickPainting(e) {
 }
 
 let hoveredPainting = null;
+let paintingTooltip = null;
+function hidePaintingTooltip() {
+    hoveredPainting = null;
+    if (paintingTooltip) paintingTooltip.hidden = true;
+    if (renderer) renderer.domElement.style.cursor = 'grab';
+}
+
 function hoverPainting(e) {
-    if (MuseumIntro.active || StoryBoard.isOpen || e.target !== renderer.domElement) { hoveredPainting = null; return; }
+    if (MuseumIntro.active || StoryBoard.isOpen || e.target !== renderer.domElement) { hidePaintingTooltip(); return; }
     const hit = pickPainting(e);
-    if (hit && hit !== hoveredPainting) MuseumSound.whoosh(true);
+    if (!hit) { hidePaintingTooltip(); return; }
+    if (hit !== hoveredPainting) {
+        MuseumSound.whoosh(true);
+        const piece = MUSEUM_PIECES[hit.userData.pieceIndex];
+        document.getElementById('paintingTooltipTitle').textContent = piece.title;
+        document.getElementById('paintingTooltipDate').textContent = piece.date;
+    }
     hoveredPainting = hit;
-    renderer.domElement.style.cursor = hit ? 'pointer' : 'grab';
+    renderer.domElement.style.cursor = 'pointer';
+    paintingTooltip.hidden = false;
+    const pad = 12, offset = 16;
+    const { width, height } = paintingTooltip.getBoundingClientRect();
+    let x = e.clientX + offset, y = e.clientY + offset;
+    if (x + width > innerWidth - pad) x = e.clientX - width - offset;
+    if (y + height > innerHeight - pad) y = e.clientY - height - offset;
+    x = Math.max(pad, Math.min(x, innerWidth - width - pad));
+    y = Math.max(pad, Math.min(y, innerHeight - height - pad));
+    paintingTooltip.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 function handleCanvasClick(e) {
@@ -95,6 +123,7 @@ function handleCanvasClick(e) {
 
 // Bay tới trước bức tranh; openBoard=true → mở bảng ghim 3D khi tới nơi
 function flyToPiece(pieceIdx, openBoard = true) {
+    hidePaintingTooltip();
     MuseumSound.whoosh();
     activePieceIndex = (pieceIdx + MUSEUM_PIECES.length) % MUSEUM_PIECES.length;
     const isLeft = activePieceIndex % 2 === 0;
@@ -125,6 +154,7 @@ let footDistance = 0, wheelWalkUntil = 0;
 function animateMuseum() {
     requestAnimationFrame(animateMuseum);
     const dt = Math.min(0.05, museumClock.getDelta());
+    if (StoryBoard.isOpen && hoveredPainting) hidePaintingTooltip();
     if (StoryBoard.isOpen && !StoryBoard.isTransitioning) return; // bảng ghim đang chiếm màn hình
 
     if (moveKeys.w || moveKeys.s || moveKeys.a || moveKeys.d) {
@@ -165,8 +195,8 @@ function updateNearestHudText() {
     if (bay === lastHudBay) return;
     lastHudBay = bay;
     const L = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2)];
-    const R = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2 + 1)];
-    document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}: Trái [${L.shortLabel}] · Phải [${R.shortLabel}]`;
+    const R = MUSEUM_PIECES[bay * 2 + 1];
+    document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}/${NUM_BAYS} · ${L.shortLabel}${R ? " / " + R.shortLabel : ""}`;
 }
 
 // ---------- Âm thanh tương tác dùng chung với intro ----------

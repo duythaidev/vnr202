@@ -10,7 +10,7 @@ Thư mục chứa toàn bộ các bản là `E:\Web\mln131\vnr202` (thư mục h
 - `MLN 131/`: bản để triển khai nội dung môn MLN 131; mở `MLN 131/museum-3d-single.html`.
 - Các file HTML/CSS/JS/MP3 ở ngay thư mục cha tiếp tục là **base** hiện tại, được giữ lại làm nguồn tham khảo.
 
-Hai bản môn học khởi đầu từ cùng base, gồm cả intro, đồ họa, âm thanh và trang tham khảo. Mỗi bản có tài nguyên riêng để chạy độc lập. Chúng chưa có nội dung môn học mới: bản MLN 131 hiện vẫn chứa dữ liệu/nhãn VNR202 kế thừa từ base, cần thay khi biên soạn. Khác biệt dự kiến chủ yếu nằm ở nội dung tranh và step; giữ khung trải nghiệm tương đồng.
+Hai bản môn học khởi đầu từ cùng base, có tài nguyên riêng và hiện đã triển khai nội dung riêng. MLN131 có 15 tranh / 45 thẻ; VNR202 revision 2 có 10 tranh / 38 thẻ và phòng tự co giãn theo số tác phẩm. Đọc [context MLN131](MLN%20131/CONTEXT.md) hoặc [context VNR202](VNR%20202/CONTEXT.md) để lấy trạng thái, dữ liệu và planning hiện hành. Tài liệu base dưới đây mô tả kiến trúc chung; không dùng số lượng của base thay cho dữ liệu từng môn.
 
 Khi làm nội dung môn nào, sửa trong thư mục môn đó; đọc `CONTEXT.md` ngay trong thư mục môn trước. Bản sao không tự đồng bộ: sửa base không tự cập nhật hai môn, sửa một môn không tác động môn còn lại. Kế hoạch thuyết trình bên dưới dùng chung về hướng thiết kế; kịch bản và MP3 sau này thuộc từng môn.
 
@@ -60,7 +60,7 @@ Tiếng bút dùng file `writing-with-pencil.mp3` cùng thư mục, phát bằng
 
 ### Yêu cầu và thuật ngữ
 
-Mode thuyết trình là chuyến tham quan tự động: camera đi mượt lần lượt qua 15 tranh, có giọng dẫn; đến tranh thì mở detail và thuyết trình lần lượt các step bên trong. Trong kế hoạch này, **detail là bảng ghim 3D `StoryBoard` hiện có**, không phải drawer chi tiết/quiz đã bị gỡ. Mỗi tranh tương ứng một phần tử `MUSEUM_PIECES`; mỗi step tương ứng một thẻ trong `getStory(pieceIndex).steps`.
+Mode thuyết trình là chuyến tham quan tự động: camera đi mượt lần lượt qua các tranh theo dữ liệu của môn, có giọng dẫn; đến tranh thì mở detail và thuyết trình lần lượt các step bên trong. Trong kế hoạch này, **detail là bảng ghim 3D `StoryBoard` hiện có**, không phải drawer chi tiết/quiz đã bị gỡ. Mỗi tranh tương ứng một phần tử `MUSEUM_PIECES`; mỗi step tương ứng một thẻ trong `getStory(pieceIndex).steps`.
 
 **Yêu cầu đã chốt: generate toàn bộ MP3 trước buổi thuyết trình. Không đợi đến khi vào detail mới tạo MP3. Trong lúc học sinh xem, ứng dụng chỉ tải/phát MP3 có sẵn, tuyệt đối không gọi endpoint TTS.** Công đoạn tạo giọng là công cụ chạy local riêng, không thuộc luồng mở tranh hay chuyển step.
 
@@ -124,6 +124,6 @@ Chỉ tải trước clip hiện tại và clip kế tiếp để không kéo to
 
 Lời thuyết trình cần rõ hơn âm hiệu ứng: đề xuất hạ tiếng bút/tiếng vút trong lúc voice nói. Điều khiển âm voice và hiệu ứng cần có ý nghĩa rõ: tắt tiếng không được tự coi clip đã kết thúc hoặc làm vòng tham quan chạy vô hạn. Hành vi pause/resume và đổi âm lượng phải được kiểm thử khi đang bay, đang viết và đang nói.
 
-Hoàn thành khi: đi hết 15 tranh đúng thứ tự; từng clip khớp tranh/step; camera đến nơi rồi mới nói; chỉ một voice phát tại một thời điểm; chuyển step đợi đủ lời nói và nét viết; pause/skip/thoát không để âm hay callback cũ chạy tiếp; thiếu MP3 có xử lý rõ ràng; low graphics vẫn hoạt động; không có request nào tới `localhost:5050` trong phiên tham quan, kể cả lần đầu mở detail.
+Hoàn thành khi: đi hết danh sách tranh của môn đúng thứ tự; từng clip khớp tranh/step; camera đến nơi rồi mới nói; chỉ một voice phát tại một thời điểm; chuyển step đợi đủ lời nói và nét viết; pause/skip/thoát không để âm hay callback cũ chạy tiếp; thiếu MP3 có xử lý rõ ràng; low graphics vẫn hoạt động; không có request nào tới `localhost:5050` trong phiên tham quan, kể cả lần đầu mở detail.
 
 Phạm vi lần ghi context này: lưu kế hoạch và endpoint mẫu, **chưa gọi TTS, chưa generate MP3 và chưa triển khai mode thuyết trình**.

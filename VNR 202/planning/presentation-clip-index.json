@@ -1,18 +1,20 @@
 {
   "course": "VNR202",
+  "revision": 2,
   "status": "plan-only",
-  "expectedClipCount": 75,
-  "pieceCount": 15,
-  "stepCount": 60,
+  "expectedClipCount": 48,
+  "pieceCount": 10,
+  "stepCount": 38,
   "clips": [
     {
       "clipId": "vnr-p01-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p01",
       "pieceIndex": 0,
-      "title": "Bối cảnh và những ngả đường",
+      "title": "Tìm đường cứu nước",
       "expectedFile": "audio/presentation/vnr-p01/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p01-s01",
@@ -21,9 +23,10 @@
       "pieceIndex": 0,
       "stepId": "vnr-p01-s01",
       "stepIndex": 0,
-      "title": "Thế giới thay đổi",
+      "title": "Bài toán độc lập",
       "expectedFile": "audio/presentation/vnr-p01/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p01-s02",
@@ -32,9 +35,10 @@
       "pieceIndex": 0,
       "stepId": "vnr-p01-s02",
       "stepIndex": 1,
-      "title": "Xã hội thuộc địa",
+      "title": "Bước ngoặt năm 1920",
       "expectedFile": "audio/presentation/vnr-p01/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p01-s03",
@@ -43,9 +47,10 @@
       "pieceIndex": 0,
       "stepId": "vnr-p01-s03",
       "stepIndex": 2,
-      "title": "Những ngả đường yêu nước",
+      "title": "Chuẩn bị một lực lượng mới",
       "expectedFile": "audio/presentation/vnr-p01/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p01-s04",
@@ -54,18 +59,20 @@
       "pieceIndex": 0,
       "stepId": "vnr-p01-s04",
       "stepIndex": 3,
-      "title": "Vấn đề đặt ra",
+      "title": "Gắn lý luận với phong trào",
       "expectedFile": "audio/presentation/vnr-p01/s04.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p02-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p02",
       "pieceIndex": 1,
-      "title": "Chuẩn bị cho sự ra đời của Đảng",
+      "title": "Đảng ra đời",
       "expectedFile": "audio/presentation/vnr-p02/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p02-s01",
@@ -74,9 +81,10 @@
       "pieceIndex": 1,
       "stepId": "vnr-p02-s01",
       "stepIndex": 0,
-      "title": "Tìm đường cứu nước",
+      "title": "Thống nhất tổ chức",
       "expectedFile": "audio/presentation/vnr-p02/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p02-s02",
@@ -85,9 +93,10 @@
       "pieceIndex": 1,
       "stepId": "vnr-p02-s02",
       "stepIndex": 1,
-      "title": "Tư tưởng và chính trị",
+      "title": "Độc lập là nhiệm vụ hàng đầu",
       "expectedFile": "audio/presentation/vnr-p02/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p02-s03",
@@ -96,9 +105,10 @@
       "pieceIndex": 1,
       "stepId": "vnr-p02-s03",
       "stepIndex": 2,
-      "title": "Xây dựng tổ chức",
+      "title": "Tập hợp lực lượng rộng rãi",
       "expectedFile": "audio/presentation/vnr-p02/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p02-s04",
@@ -107,18 +117,20 @@
       "pieceIndex": 1,
       "stepId": "vnr-p02-s04",
       "stepIndex": 3,
-      "title": "Lý luận gặp phong trào",
+      "title": "Chấm dứt khủng hoảng đường lối",
       "expectedFile": "audio/presentation/vnr-p02/s04.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p03-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p03",
       "pieceIndex": 2,
-      "title": "Thống nhất các tổ chức cộng sản",
+      "title": "Xô viết Nghệ–Tĩnh",
       "expectedFile": "audio/presentation/vnr-p03/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p03-s01",
@@ -127,9 +139,10 @@
       "pieceIndex": 2,
       "stepId": "vnr-p03-s01",
       "stepIndex": 0,
-      "title": "Ba tổ chức năm 1929",
+      "title": "Từ đấu tranh đến cao trào",
       "expectedFile": "audio/presentation/vnr-p03/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p03-s02",
@@ -138,9 +151,10 @@
       "pieceIndex": 2,
       "stepId": "vnr-p03-s02",
       "stepIndex": 1,
-      "title": "Hội nghị hợp nhất",
+      "title": "Sức mạnh công–nông",
       "expectedFile": "audio/presentation/vnr-p03/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p03-s03",
@@ -149,18 +163,20 @@
       "pieceIndex": 2,
       "stepId": "vnr-p03-s03",
       "stepIndex": 2,
-      "title": "Hoàn thành thống nhất",
+      "title": "Kinh nghiệm trong thử thách",
       "expectedFile": "audio/presentation/vnr-p03/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p04-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p04",
       "pieceIndex": 3,
-      "title": "Cương lĩnh chính trị đầu tiên",
+      "title": "Luận cương và khôi phục",
       "expectedFile": "audio/presentation/vnr-p04/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p04-s01",
@@ -169,9 +185,10 @@
       "pieceIndex": 3,
       "stepId": "vnr-p04-s01",
       "stepIndex": 0,
-      "title": "Mục tiêu chiến lược",
+      "title": "Luận cương tháng 10",
       "expectedFile": "audio/presentation/vnr-p04/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p04-s02",
@@ -180,9 +197,10 @@
       "pieceIndex": 3,
       "stepId": "vnr-p04-s02",
       "stepIndex": 1,
-      "title": "Độc lập ở hàng đầu",
+      "title": "Khác biệt trong cách tập hợp",
       "expectedFile": "audio/presentation/vnr-p04/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p04-s03",
@@ -191,9 +209,10 @@
       "pieceIndex": 3,
       "stepId": "vnr-p04-s03",
       "stepIndex": 2,
-      "title": "Tập hợp lực lượng",
+      "title": "Giữ lực lượng trong nhà tù",
       "expectedFile": "audio/presentation/vnr-p04/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p04-s04",
@@ -202,18 +221,20 @@
       "pieceIndex": 3,
       "stepId": "vnr-p04-s04",
       "stepIndex": 3,
-      "title": "Ý nghĩa của khởi đầu",
+      "title": "Phục hồi hệ thống tổ chức",
       "expectedFile": "audio/presentation/vnr-p04/s04.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p05-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p05",
       "pieceIndex": 4,
-      "title": "Cao trào và Xô viết Nghệ–Tĩnh",
+      "title": "Dân chủ, cơm áo, hòa bình",
       "expectedFile": "audio/presentation/vnr-p05/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p05-s01",
@@ -222,9 +243,10 @@
       "pieceIndex": 4,
       "stepId": "vnr-p05-s01",
       "stepIndex": 0,
-      "title": "Từ đấu tranh đến cao trào",
+      "title": "Nhiệm vụ trước mắt thay đổi",
       "expectedFile": "audio/presentation/vnr-p05/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p05-s02",
@@ -233,9 +255,10 @@
       "pieceIndex": 4,
       "stepId": "vnr-p05-s02",
       "stepIndex": 1,
-      "title": "Chính quyền ở cơ sở",
+      "title": "Bước đột phá về nhận thức",
       "expectedFile": "audio/presentation/vnr-p05/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p05-s03",
@@ -244,18 +267,32 @@
       "pieceIndex": 4,
       "stepId": "vnr-p05-s03",
       "stepIndex": 2,
-      "title": "Kinh nghiệm và tổn thất",
+      "title": "Mở rộng hình thức đấu tranh",
       "expectedFile": "audio/presentation/vnr-p05/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
+    },
+    {
+      "clipId": "vnr-p05-s04",
+      "kind": "step",
+      "pieceId": "vnr-p05",
+      "pieceIndex": 4,
+      "stepId": "vnr-p05-s04",
+      "stepIndex": 3,
+      "title": "Tích lũy lực lượng chính trị",
+      "expectedFile": "audio/presentation/vnr-p05/s04.mp3",
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p06-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p06",
       "pieceIndex": 5,
-      "title": "Luận cương tháng 10/1930",
+      "title": "Chuyển hướng chiến lược",
       "expectedFile": "audio/presentation/vnr-p06/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p06-s01",
@@ -264,9 +301,10 @@
       "pieceIndex": 5,
       "stepId": "vnr-p06-s01",
       "stepIndex": 0,
-      "title": "Hội nghị Trung ương đầu tiên",
+      "title": "Chiến tranh đổi tình thế",
       "expectedFile": "audio/presentation/vnr-p06/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p06-s02",
@@ -275,9 +313,10 @@
       "pieceIndex": 5,
       "stepId": "vnr-p06-s02",
       "stepIndex": 1,
-      "title": "Nội dung cơ bản",
+      "title": "Dân tộc là ưu tiên cấp bách",
       "expectedFile": "audio/presentation/vnr-p06/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p06-s03",
@@ -286,9 +325,10 @@
       "pieceIndex": 5,
       "stepId": "vnr-p06-s03",
       "stepIndex": 2,
-      "title": "So sánh cùng tiêu chí",
+      "title": "Quyền tự quyết và Việt Minh",
       "expectedFile": "audio/presentation/vnr-p06/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p06-s04",
@@ -297,18 +337,20 @@
       "pieceIndex": 5,
       "stepId": "vnr-p06-s04",
       "stepIndex": 3,
-      "title": "Giới hạn trong nhận thức",
+      "title": "Nhà nước và con đường giành quyền",
       "expectedFile": "audio/presentation/vnr-p06/s04.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p07-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p07",
       "pieceIndex": 6,
-      "title": "Giữ tổ chức trong thử thách",
+      "title": "Chuẩn bị cho khởi nghĩa",
       "expectedFile": "audio/presentation/vnr-p07/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p07-s01",
@@ -317,9 +359,10 @@
       "pieceIndex": 6,
       "stepId": "vnr-p07-s01",
       "stepIndex": 0,
-      "title": "Tổn thất sau cao trào",
+      "title": "Lực lượng chính trị và văn hóa",
       "expectedFile": "audio/presentation/vnr-p07/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p07-s02",
@@ -328,9 +371,10 @@
       "pieceIndex": 6,
       "stepId": "vnr-p07-s02",
       "stepIndex": 1,
-      "title": "Học tập trong nhà tù",
+      "title": "Nối các vùng căn cứ",
       "expectedFile": "audio/presentation/vnr-p07/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p07-s03",
@@ -339,18 +383,20 @@
       "pieceIndex": 6,
       "stepId": "vnr-p07-s03",
       "stepIndex": 2,
-      "title": "Giữ lực lượng, sửa sai",
+      "title": "Đội quân cách mạng ra đời",
       "expectedFile": "audio/presentation/vnr-p07/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p08-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p08",
       "pieceIndex": 7,
-      "title": "Khôi phục và Đại hội I",
+      "title": "Kháng Nhật cứu nước",
       "expectedFile": "audio/presentation/vnr-p08/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p08-s01",
@@ -359,9 +405,10 @@
       "pieceIndex": 7,
       "stepId": "vnr-p08-s01",
       "stepIndex": 0,
-      "title": "Chương trình hành động",
+      "title": "Tình thế sau ngày 9 tháng 3",
       "expectedFile": "audio/presentation/vnr-p08/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p08-s02",
@@ -370,9 +417,10 @@
       "pieceIndex": 7,
       "stepId": "vnr-p08-s02",
       "stepIndex": 1,
-      "title": "Ban Chỉ huy ở ngoài",
+      "title": "Xác định kẻ thù trực tiếp",
       "expectedFile": "audio/presentation/vnr-p08/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p08-s03",
@@ -381,18 +429,32 @@
       "pieceIndex": 7,
       "stepId": "vnr-p08-s03",
       "stepIndex": 2,
-      "title": "Đại hội I và giới hạn",
+      "title": "Khởi nghĩa gắn với dân sinh",
       "expectedFile": "audio/presentation/vnr-p08/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
+    },
+    {
+      "clipId": "vnr-p08-s04",
+      "kind": "step",
+      "pieceId": "vnr-p08",
+      "pieceIndex": 7,
+      "stepId": "vnr-p08-s04",
+      "stepIndex": 3,
+      "title": "Thống nhất và mở rộng căn cứ",
+      "expectedFile": "audio/presentation/vnr-p08/s04.mp3",
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p09-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p09",
       "pieceIndex": 8,
-      "title": "Sách lược mới trước tình hình mới",
+      "title": "Tổng khởi nghĩa Tháng Tám",
       "expectedFile": "audio/presentation/vnr-p09/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p09-s01",
@@ -401,9 +463,10 @@
       "pieceIndex": 8,
       "stepId": "vnr-p09-s01",
       "stepIndex": 0,
-      "title": "Điều kiện thay đổi",
+      "title": "Thời cơ và sự chủ động",
       "expectedFile": "audio/presentation/vnr-p09/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p09-s02",
@@ -412,9 +475,10 @@
       "pieceIndex": 8,
       "stepId": "vnr-p09-s02",
       "stepIndex": 1,
-      "title": "Nhiệm vụ trước mắt",
+      "title": "Quyết định tại Tân Trào",
       "expectedFile": "audio/presentation/vnr-p09/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p09-s03",
@@ -423,9 +487,10 @@
       "pieceIndex": 8,
       "stepId": "vnr-p09-s03",
       "stepIndex": 2,
-      "title": "Chiến sách mới",
+      "title": "Giành chính quyền ở các đô thị",
       "expectedFile": "audio/presentation/vnr-p09/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p09-s04",
@@ -434,18 +499,20 @@
       "pieceIndex": 8,
       "stepId": "vnr-p09-s04",
       "stepIndex": 3,
-      "title": "Vận động dân nguyện",
+      "title": "Xác lập chính quyền mới",
       "expectedFile": "audio/presentation/vnr-p09/s04.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p10-intro",
       "kind": "piece-intro",
       "pieceId": "vnr-p10",
       "pieceIndex": 9,
-      "title": "Mặt trận dân chủ và kinh nghiệm",
+      "title": "Độc lập và bài học",
       "expectedFile": "audio/presentation/vnr-p10/intro.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p10-s01",
@@ -454,9 +521,10 @@
       "pieceIndex": 9,
       "stepId": "vnr-p10-s01",
       "stepIndex": 0,
-      "title": "Mở rộng mặt trận",
+      "title": "Tuyên ngôn Độc lập",
       "expectedFile": "audio/presentation/vnr-p10/s01.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p10-s02",
@@ -465,9 +533,10 @@
       "pieceIndex": 9,
       "stepId": "vnr-p10-s02",
       "stepIndex": 1,
-      "title": "Nhiều hình thức đấu tranh",
+      "title": "Tính chất và ý nghĩa",
       "expectedFile": "audio/presentation/vnr-p10/s02.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p10-s03",
@@ -476,9 +545,10 @@
       "pieceIndex": 9,
       "stepId": "vnr-p10-s03",
       "stepIndex": 2,
-      "title": "Văn hóa và tự phê bình",
+      "title": "Bốn bài học",
       "expectedFile": "audio/presentation/vnr-p10/s03.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     },
     {
       "clipId": "vnr-p10-s04",
@@ -487,318 +557,10 @@
       "pieceIndex": 9,
       "stepId": "vnr-p10-s04",
       "stepIndex": 3,
-      "title": "Lực lượng và kinh nghiệm",
+      "title": "Mạch đường lối 1930–1945",
       "expectedFile": "audio/presentation/vnr-p10/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p11-intro",
-      "kind": "piece-intro",
-      "pieceId": "vnr-p11",
-      "pieceIndex": 10,
-      "title": "Chuyển hướng trong chiến tranh",
-      "expectedFile": "audio/presentation/vnr-p11/intro.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p11-s01",
-      "kind": "step",
-      "pieceId": "vnr-p11",
-      "pieceIndex": 10,
-      "stepId": "vnr-p11-s01",
-      "stepIndex": 0,
-      "title": "Chiến tranh và hai tầng áp bức",
-      "expectedFile": "audio/presentation/vnr-p11/s01.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p11-s02",
-      "kind": "step",
-      "pieceId": "vnr-p11",
-      "pieceIndex": 10,
-      "stepId": "vnr-p11-s02",
-      "stepIndex": 1,
-      "title": "Bước đầu tháng 11/1939",
-      "expectedFile": "audio/presentation/vnr-p11/s02.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p11-s03",
-      "kind": "step",
-      "pieceId": "vnr-p11",
-      "pieceIndex": 10,
-      "stepId": "vnr-p11-s03",
-      "stepIndex": 2,
-      "title": "Bước tiếp tháng 11/1940",
-      "expectedFile": "audio/presentation/vnr-p11/s03.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p11-s04",
-      "kind": "step",
-      "pieceId": "vnr-p11",
-      "pieceIndex": 10,
-      "stepId": "vnr-p11-s04",
-      "stepIndex": 3,
-      "title": "Ba tiếng súng báo hiệu",
-      "expectedFile": "audio/presentation/vnr-p11/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-intro",
-      "kind": "piece-intro",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "title": "Trung ương 8: sáu nội dung",
-      "expectedFile": "audio/presentation/vnr-p12/intro.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s01",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s01",
-      "stepIndex": 0,
-      "title": "Mâu thuẫn cấp bách",
-      "expectedFile": "audio/presentation/vnr-p12/s01.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s02",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s02",
-      "stepIndex": 1,
-      "title": "Giải phóng dân tộc hàng đầu",
-      "expectedFile": "audio/presentation/vnr-p12/s02.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s03",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s03",
-      "stepIndex": 2,
-      "title": "Quyền dân tộc tự quyết",
-      "expectedFile": "audio/presentation/vnr-p12/s03.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s04",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s04",
-      "stepIndex": 3,
-      "title": "Mặt trận Việt Minh",
-      "expectedFile": "audio/presentation/vnr-p12/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s05",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s05",
-      "stepIndex": 4,
-      "title": "Nhà nước của toàn dân tộc",
-      "expectedFile": "audio/presentation/vnr-p12/s05.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p12-s06",
-      "kind": "step",
-      "pieceId": "vnr-p12",
-      "pieceIndex": 11,
-      "stepId": "vnr-p12-s06",
-      "stepIndex": 5,
-      "title": "Chuẩn bị khởi nghĩa",
-      "expectedFile": "audio/presentation/vnr-p12/s06.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p13-intro",
-      "kind": "piece-intro",
-      "pieceId": "vnr-p13",
-      "pieceIndex": 12,
-      "title": "Chuẩn bị lực lượng và căn cứ",
-      "expectedFile": "audio/presentation/vnr-p13/intro.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p13-s01",
-      "kind": "step",
-      "pieceId": "vnr-p13",
-      "pieceIndex": 12,
-      "stepId": "vnr-p13-s01",
-      "stepIndex": 0,
-      "title": "Lực lượng chính trị",
-      "expectedFile": "audio/presentation/vnr-p13/s01.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p13-s02",
-      "kind": "step",
-      "pieceId": "vnr-p13",
-      "pieceIndex": 12,
-      "stepId": "vnr-p13-s02",
-      "stepIndex": 1,
-      "title": "Văn hóa và trí thức",
-      "expectedFile": "audio/presentation/vnr-p13/s02.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p13-s03",
-      "kind": "step",
-      "pieceId": "vnr-p13",
-      "pieceIndex": 12,
-      "stepId": "vnr-p13-s03",
-      "stepIndex": 2,
-      "title": "Căn cứ và hành lang liên lạc",
-      "expectedFile": "audio/presentation/vnr-p13/s03.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p13-s04",
-      "kind": "step",
-      "pieceId": "vnr-p13",
-      "pieceIndex": 12,
-      "stepId": "vnr-p13-s04",
-      "stepIndex": 3,
-      "title": "Đội quân ra đời",
-      "expectedFile": "audio/presentation/vnr-p13/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-intro",
-      "kind": "piece-intro",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "title": "Kháng Nhật và thời cơ khởi nghĩa",
-      "expectedFile": "audio/presentation/vnr-p14/intro.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-s01",
-      "kind": "step",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "stepId": "vnr-p14-s01",
-      "stepIndex": 0,
-      "title": "Đảo chính và chỉ thị",
-      "expectedFile": "audio/presentation/vnr-p14/s01.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-s02",
-      "kind": "step",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "stepId": "vnr-p14-s02",
-      "stepIndex": 1,
-      "title": "Khởi nghĩa và dân sinh",
-      "expectedFile": "audio/presentation/vnr-p14/s02.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-s03",
-      "kind": "step",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "stepId": "vnr-p14-s03",
-      "stepIndex": 2,
-      "title": "Thống nhất lực lượng",
-      "expectedFile": "audio/presentation/vnr-p14/s03.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-s04",
-      "kind": "step",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "stepId": "vnr-p14-s04",
-      "stepIndex": 3,
-      "title": "Nhận định thời cơ",
-      "expectedFile": "audio/presentation/vnr-p14/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p14-s05",
-      "kind": "step",
-      "pieceId": "vnr-p14",
-      "pieceIndex": 13,
-      "stepId": "vnr-p14-s05",
-      "stepIndex": 4,
-      "title": "Quyết định tại Tân Trào",
-      "expectedFile": "audio/presentation/vnr-p14/s05.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-intro",
-      "kind": "piece-intro",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "title": "Độc lập và bài học đường lối",
-      "expectedFile": "audio/presentation/vnr-p15/intro.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-s01",
-      "kind": "step",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "stepId": "vnr-p15-s01",
-      "stepIndex": 0,
-      "title": "Làn sóng giành chính quyền",
-      "expectedFile": "audio/presentation/vnr-p15/s01.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-s02",
-      "kind": "step",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "stepId": "vnr-p15-s02",
-      "stepIndex": 1,
-      "title": "Nhà nước độc lập ra đời",
-      "expectedFile": "audio/presentation/vnr-p15/s02.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-s03",
-      "kind": "step",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "stepId": "vnr-p15-s03",
-      "stepIndex": 2,
-      "title": "Tính chất và ý nghĩa",
-      "expectedFile": "audio/presentation/vnr-p15/s03.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-s04",
-      "kind": "step",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "stepId": "vnr-p15-s04",
-      "stepIndex": 3,
-      "title": "Bốn bài học",
-      "expectedFile": "audio/presentation/vnr-p15/s04.mp3",
-      "status": "planned-not-generated"
-    },
-    {
-      "clipId": "vnr-p15-s05",
-      "kind": "step",
-      "pieceId": "vnr-p15",
-      "pieceIndex": 14,
-      "stepId": "vnr-p15-s05",
-      "stepIndex": 4,
-      "title": "Năm mốc đường lối",
-      "expectedFile": "audio/presentation/vnr-p15/s05.mp3",
-      "status": "planned-not-generated"
+      "status": "planned-not-generated",
+      "revision": 2
     }
   ]
 }

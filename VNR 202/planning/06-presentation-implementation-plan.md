@@ -1,16 +1,16 @@
 # Kế hoạch triển khai mode thuyết trình VNR202
 
-Trạng thái: **kế hoạch triển khai, chưa viết controller, chưa generate MP3**. Áp dụng riêng `vnr202/VNR 202/`, dựa trên 15 tranh / 60 step hiện đã có. Số step thay đổi theo tranh, từ 3 đến 6; không hard-code 3 step/tranh. Không sửa base hoặc bản MLN131. Các API, file và lệnh ghi là đề xuất dưới đây chưa tồn tại, trừ khi mục hiện trạng nói rõ đã có.
+Trạng thái: **kế hoạch triển khai, chưa viết controller, chưa generate MP3**. Áp dụng riêng `vnr202/VNR 202/`, dựa trên 10 tranh / 38 step hiện đã có. Số step thay đổi theo tranh, từ 3 đến 4; không hard-code 3 step/tranh. Không sửa base hoặc bản MLN131. Revision 2 đã gộp lại nội dung và đánh lại ID; mọi script/manifest phải khóa revision và hash nội dung, không dùng audio revision 1 theo cùng chuỗi ID. Các API, file và lệnh ghi là đề xuất dưới đây chưa tồn tại, trừ khi mục hiện trạng nói rõ đã có.
 
 ## 1. Kết quả người dùng cần nhận được
 
-Sau intro, người dùng bấm **Thuyết trình**. Camera đi mượt qua từng tranh, nói lời giới thiệu, mở bảng ghim rồi nói lần lượt từng step. Xong một tranh thì đóng bảng, đi sang tranh kế; hết tranh 15 thì kết thúc.
+Sau intro, người dùng bấm **Thuyết trình**. Camera đi mượt qua từng tranh, nói lời giới thiệu, mở bảng ghim rồi nói lần lượt từng step. Xong một tranh thì đóng bảng, đi sang tranh kế; hết tranh 10 thì kết thúc.
 
 **MP3 phải được tạo sẵn trước buổi học.** Trong lúc tham quan không gọi TTS, kể cả lần đầu mở detail. Detail ở đây là bảng ghim `StoryBoard`; không khôi phục drawer cũ, Flat View hoặc quiz.
 
-Danh mục đầu ra theo ID thực tế: [presentation-clip-index.json](presentation-clip-index.json), gồm đủ 75 clip dự kiến; file này là chỉ mục planning, không phải manifest audio sẵn sàng phát.
+Danh mục đầu ra theo ID thực tế: [presentation-clip-index.json](presentation-clip-index.json), gồm đủ 48 clip dự kiến; file này là chỉ mục planning, không phải manifest audio sẵn sàng phát.
 
-MVP bắt đầu từ tranh 01, dùng một giọng `vi-VN-NamMinhNeural`. Mỗi tranh một lời dẫn và mỗi step một clip: **15 + 60 = 75 MP3**. Khi người dùng chủ động chọn bước khác, controller chuyển vị trí tương ứng và phát lại clip bước đó từ đầu. Chưa làm đồng bộ nhiều người, nhận diện giọng nói, lưu tiến trình qua lần tải lại hoặc chọn nhiều giọng.
+MVP bắt đầu từ tranh 01, dùng một giọng `vi-VN-NamMinhNeural`. Mỗi tranh một lời dẫn và mỗi step một clip: **10 + 38 = 48 MP3**. Khi người dùng chủ động chọn bước khác, controller chuyển vị trí tương ứng và phát lại clip bước đó từ đầu. Chưa làm đồng bộ nhiều người, nhận diện giọng nói, lưu tiến trình qua lần tải lại hoặc chọn nhiều giọng.
 
 ### Trình tự một tranh
 
@@ -20,32 +20,32 @@ MVP bắt đầu từ tranh 01, dùng một giọng `vi-VN-NamMinhNeural`. Mỗi
 4. Mở bảng ghim; chờ khởi tạo, dựng thẻ và camera tới thẻ đầu tiên.
 5. Bắt đầu lời nói của step đồng thời với tiến trình viết thẻ.
 6. Chờ **audio ended VÀ writer.done** rồi mới chuyển step.
-7. Sau step cuối, quay lại bước 1 cho tranh tiếp theo. Sau tranh 15, dừng và hiện hoàn tất, không tự vòng lại.
+7. Sau step cuối, quay lại bước 1 cho tranh tiếp theo. Sau tranh 10, dừng và hiện hoàn tất, không tự vòng lại.
 
 Nếu viết nhanh hơn lời nói, giữ thẻ cho người nghe. Nếu lời nói hết trước, tiếp tục chờ nét viết. Không dùng độ dài văn bản hoặc `setTimeout(duration)` thay cho sự kiện kết thúc audio.
 
 ## Đặc thù nội dung và số bước VNR202
 
-| Tranh | Số step | Phần/người theo bài nhóm |
+| Tranh | Số step | Trục nội dung |
 |---|---:|---|
-| 01–04 | 4, 4, 3, 4 | I / Người 1 |
-| 05–08 | 3, 4, 3, 3 | II / Người 2 |
-| 09–10 | 4, 4 | III / Người 3 |
-| 11–13 | 4, 6, 4 | IV / Người 4 |
-| 14–15 | 5, 5 | V / Người 5 |
+| 01–02 | 4, 4 | Trước 1930 và Đảng ra đời |
+| 03–04 | 3, 4 | Cao trào, Luận cương và phục hồi |
+| 05 | 4 | Dân chủ 1936–1939 |
+| 06–07 | 4, 3 | Chuyển hướng và chuẩn bị |
+| 08–10 | 4, 4, 4 | Kháng Nhật, tổng khởi nghĩa, độc lập |
 
-Lấy thứ tự và độ dài từ STORY_DATA/getStory, đối chiếu planning/content-index.json. Việc hiển thị step 6/6, xác định cuối tranh, skip và previous đều phải theo độ dài thực tế. Không sao chép giả định 3 step/tranh từ MLN131.
+Lấy thứ tự và độ dài từ STORY_DATA/getStory, đối chiếu planning/content-index.json. Việc hiển thị step 4/4, xác định cuối tranh, skip và previous đều phải theo độ dài thực tế. Không sao chép giả định 3 step/tranh từ MLN131.
 
-Kịch bản đọc bám [05-narration-plan.md](05-narration-plan.md), bản pilot có sẵn chưa phải đủ 75 đoạn. Các mốc phải theo [audit nguồn](04-source-audit.md): phân biệt hai tổ chức dự hội nghị hợp nhất và Liên đoàn gia nhập sau; Hội Truyền bá Quốc ngữ năm 1938; Hội nghị quân sự tháng 4/1945 khác hợp nhất lực lượng tháng 5; 35.009 là hội viên quần chúng. Không đọc số thương vong Hưng Nguyên chưa chốt. Giữ trục mục tiêu–lực lượng–phương pháp và năm mốc đường lối, không chỉ đọc niên biểu.
+Kịch bản đọc bám [05-narration-plan.md](05-narration-plan.md), bản pilot có sẵn chưa phải đủ 48 đoạn. Các mốc phải theo [audit nguồn](04-source-audit.md): phân biệt hai tổ chức dự hội nghị hợp nhất và Liên đoàn gia nhập sau; Hội Truyền bá Quốc ngữ năm 1938; Hội nghị quân sự tháng 4/1945 khác hợp nhất lực lượng tháng 5; 35.009 là hội viên quần chúng. Không đọc số thương vong Hưng Nguyên chưa chốt. Giữ trục mục tiêu–lực lượng–phương pháp và năm mốc đường lối, không chỉ đọc niên biểu.
 
-Không đưa các ghi chú kiểm chứng, tên file, loại ảnh hay câu nhắc người biên tập vào lời nói. Ảnh tư liệu và sơ đồ biên soạn đã phân loại; voice không gọi sơ đồ là ảnh chụp lịch sử. Tên riêng và cách đọc như Nguyễn Ái Quốc, Hương Cảng, Phai Khắt, Nà Ngần, Cương lĩnh, Luận cương cần có mẫu nghe thử trước batch.
+Không đưa các ghi chú kiểm chứng, tên file, loại ảnh hay câu nhắc người biên tập vào lời nói. Ảnh tư liệu, tranh tái hiện và ảnh di tích hiện đại đã phân loại; voice giữ đúng loại tư liệu. Tên riêng và cách đọc như Nguyễn Ái Quốc, Hương Cảng, Phai Khắt, Nà Ngần, Cương lĩnh, Luận cương cần có mẫu nghe thử trước batch.
 
 ## 2. Hiện trạng và khoảng trống đã đọc trong mã
 
 | File / cơ chế hiện có | Khoảng trống cần sửa |
 |---|---|
-| `museum-3d-single-02.js` có 15 `contentId` vnr-p01…vnr-p15 | Chưa có kịch bản lời dẫn hoặc đường dẫn audio thuyết trình. |
-| `museum-3d-single-03.js` có 60 step ID vnr-pNN-sNN | Dùng ID này làm khóa; không suy khóa từ title hoặc chỉ số text. |
+| `museum-3d-single-02.js` có 10 `contentId` vnr-p01…vnr-p10 | Chưa có kịch bản lời dẫn hoặc đường dẫn audio thuyết trình. |
+| `museum-3d-single-03.js` có 38 step ID vnr-pNN-sNN | Dùng ID này làm khóa; không suy khóa từ title hoặc chỉ số text. |
 | `flyToPiece()` trong `-09.js` đặt đích rồi tạo `pendingBoardTimer` | Timer không chứng minh camera đã tới nơi; tour cần chờ tín hiệu đến đích và tự quyết định mở bảng. |
 | `animateMuseum()` lerp vị trí/góc; vòng lặp tiếp tục chạy | Cần pause chuyển động có chủ đích mà không dừng các listener hoặc tạo thêm RAF loop. |
 | `StoryBoard.open()` là async | Promise hiện kết thúc trước khi camera bay tới thẻ đầu; không được dùng trực tiếp làm bằng chứng step-ready. |
@@ -61,9 +61,9 @@ Không đưa các ghi chú kiểm chứng, tên file, loại ảnh hay câu nh�
 
 | File mới | Vai trò |
 |---|---|
-| `presentation/presentation-script.json` | Nguồn duy nhất của 75 đoạn lời nói đã biên tập; không chứa API key. |
+| `presentation/presentation-script.json` | Nguồn duy nhất của 48 đoạn lời nói đã biên tập; không chứa API key. |
 | `scripts/generate-presentation-audio.mjs` | Chạy local trước buổi học: gọi TTS, lưu MP3, ghi manifest. |
-| `scripts/check-presentation-audio.mjs` | Kiểm tra ID, nội dung/hash, file, metadata giải mã và độ phủ 75 clip. |
+| `scripts/check-presentation-audio.mjs` | Kiểm tra ID, nội dung/hash, file, metadata giải mã và độ phủ 48 clip. |
 | `presentation/presentation-audio.json` | Manifest phục vụ công cụ kiểm tra, không fetch ở runtime file://. |
 | `presentation/presentation-audio.js` | Cùng manifest ở dạng classic-script `PRESENTATION_AUDIO`; có thể nạp bằng script src trên file:// và HTTP. |
 | `audio/presentation/vnr-p01/…mp3` | Tài nguyên đã generate, triển khai cùng trang. |
@@ -96,7 +96,7 @@ Giữ `writing-with-pencil.mp3` và các hiệu ứng hiện tại. Không đón
 }
 ```
 
-Ví dụ trên minh họa schema của tranh 01 có 4 step, không phải kịch bản đủ 15 tranh. Tool phải từ chối bản thiếu tranh/step, trùng ID hoặc text placeholder. Lời nói dựa trên ý nghĩa thẻ, không tự bóc tất cả text canvas rồi coi là kịch bản hoàn chỉnh.
+Ví dụ trên minh họa schema của tranh 01 có 4 step, không phải kịch bản đủ 10 tranh. Tool phải từ chối bản thiếu tranh/step, trùng ID hoặc text placeholder. Lời nói dựa trên ý nghĩa thẻ, không tự bóc tất cả text canvas rồi coi là kịch bản hoàn chỉnh.
 
 Manifest mỗi clip cần có `clipId`, `pieceId`, `stepId` nếu có, `src`, `textHash`, `model`, `voice`, `bytes`, `durationSeconds` lấy từ MP3 thật và trạng thái ready. Hash cache bao gồm text, model, voice và định dạng. Ghi thêm dấu vân tay nội dung tranh/step để tool check phát hiện thẻ đã đổi nhưng voice chưa được biên tập lại.
 
@@ -116,12 +116,12 @@ Content-Type: application/json
 
 Quy trình:
 
-1. Đọc kịch bản, đối chiếu IDs với MUSEUM_PIECES/STORY_DATA thực tế. Đủ 15 intro/60 step rồi mới chạy batch.
+1. Đọc kịch bản, đối chiếu IDs với MUSEUM_PIECES/STORY_DATA thực tế. Đủ 10 intro/38 step rồi mới chạy batch.
 2. Chạy thử một intro, một đoạn có ngày tháng, một đoạn có tên riêng, ngày tháng và thuật ngữ văn kiện; nghe kiểm tra phát âm, ngắt câu và âm lượng.
 3. Generate với giới hạn đồng thời 1–2 request. Mỗi request có timeout, kiểm tra HTTP và không ghi body lỗi JSON/HTML thành MP3. Retry giới hạn cho lỗi tạm thời, không retry vô hạn lỗi key/input.
 4. Nhận binary, ghi tệp tạm, kiểm tra MP3 giải mã được rồi đưa vào tên file chứa hash. Chỉ đánh dấu ready sau thành công; không phá file tốt cũ khi request mới lỗi.
 5. Bỏ qua clip có cùng cache key và file hợp lệ. Nếu text/voice/model đổi thì tạo clip mới; không chỉ kiểm tra tên file tồn tại.
-6. Sinh JSON và JS manifest từ cùng dữ liệu. Bản manifest hoàn chỉnh chỉ được phát hành khi kiểm tra đủ 75 clip. Batch lỗi lưu báo cáo để chạy tiếp, không âm thầm đánh dấu thiếu clip là đạt.
+6. Sinh JSON và JS manifest từ cùng dữ liệu. Bản manifest hoàn chỉnh chỉ được phát hành khi kiểm tra đủ 48 clip. Batch lỗi lưu báo cáo để chạy tiếp, không âm thầm đánh dấu thiếu clip là đạt.
 7. Chạy check và nghe thử. Sau đó tắt TTS local và kiểm tra bài vẫn chạy từ MP3 sẵn có.
 
 Lệnh dự kiến, chưa chạy trong đợt planning:
@@ -201,7 +201,7 @@ Tab ẩn tự pause. Quay lại tab vẫn paused, chờ người dùng Tiếp t�
 
 ## 7. Voice player và âm lượng
 
-`museum-narration.js` sở hữu tối đa hai HTMLAudioElement: clip hiện tại và clip kế đang preload; xử lý metadata/canplay, play rejection, ended, error và stalled có watchdog. Không tải cả 75 file vào bộ nhớ và không fetch MP3 local thành blob chỉ để phát; HTMLAudioElement src relative chạy trên file://.
+`museum-narration.js` sở hữu tối đa hai HTMLAudioElement: clip hiện tại và clip kế đang preload; xử lý metadata/canplay, play rejection, ended, error và stalled có watchdog. Không tải cả 48 file vào bộ nhớ và không fetch MP3 local thành blob chỉ để phát; HTMLAudioElement src relative chạy trên file://.
 
 Giữ nguyên tốc độ/cao độ của voice trong MVP. Không thêm thanh seek/rate ngay giai đoạn đầu. Stop/seek phải pause, xóa listeners và dừng clip cũ trước khi gắn clip mới. Sau mỗi trạng thái error phải có cleanup; không tiếp tục dùng ended của element cũ.
 
@@ -216,7 +216,7 @@ Giữ nguyên tốc độ/cao độ của voice trong MVP. Không thêm thanh se
 
 Nút Thuyết trình xuất hiện sau intro ở phòng và vẫn truy cập được khi đang ở bảng ghim. Khi bấm từ bảng đang mở, controller đóng bảng an toàn rồi bắt đầu từ tranh 01. Không mở thêm một intro dài.
 
-Toolbar gọn trong tour: Tạm dừng/Tiếp tục, Trước, Tiếp, Thoát, chỉ báo `Tranh 12/15 · Bước 06/06`, thanh thời gian clip hiện tại và trạng thái ngắn. Không thêm modal chứa lại toàn bộ bài học.
+Toolbar gọn trong tour: Tạm dừng/Tiếp tục, Trước, Tiếp, Thoát, chỉ báo `Tranh 06/10 · Bước 04/04`, thanh thời gian clip hiện tại và trạng thái ngắn. Không thêm modal chứa lại toàn bộ bài học.
 
 Quy tắc điều hướng MVP:
 
@@ -225,7 +225,7 @@ Quy tắc điều hướng MVP:
 - Trước ở bất kỳ step từ 02 trở đi: về step trước, phát lại từ đầu. Trước ở step đầu: về lời dẫn cùng tranh. Trước ở lời dẫn: về step cuối tranh trước; ở lời dẫn đầu tiên thì disabled.
 - Mỗi lần quay lại step, reset writer và trạng thái visited của đúng step để viết lại đồng bộ voice; không reset mọi thẻ đang xem. Nét viết của thẻ khác vẫn có thể giữ trên bảng.
 - Skip liên tiếp phải gộp theo cursor logic, không chạy nhiều chuỗi open/close chồng nhau. Chỉ operation mới nhất được quyền thay phase.
-- Hoàn tất: dừng audio, trả điều khiển, hiện Đã hoàn tất 15 tranh và nút Phát lại; không tự replay.
+- Hoàn tất: dừng audio, trả điều khiển, hiện Đã hoàn tất 10 tranh và nút Phát lại; không tự replay.
 
 Trạng thái lỗi/thiếu audio: nói rõ tranh/step lỗi, có Thử lại, Bỏ qua đoạn, Thoát. Thử lại clip đó từ đầu; không tự chạy generator. Skip clip lỗi được xem như audio barrier đã được người dùng bỏ qua, nhưng vẫn cần xử lý thẻ/chuyển cảnh theo điều khiển đã chọn.
 
@@ -235,27 +235,27 @@ Giữ nguyên intro hiện tại. Sau `-02.js` và `-03.js`, nạp manifest JS, 
 
 Không để thiếu manifest MP3 làm boot toàn bảo tàng thất bại. Ship manifest JS rỗng có `status: not-generated` trước giai đoạn generate, hoặc bắt riêng lỗi tải tài nguyên tính năng và hiện nút Thuyết trình chưa sẵn sàng; khám phá tự do vẫn chạy. Không dùng catch chung rồi nuốt lỗi lập trình scene.
 
-Runtime kiểm tra đủ IDs/version/manifest trước khi bật tour; công cụ check trước triển khai chịu trách nhiệm kiểm tra đủ file thật. Không HEAD/fetch 75 MP3 ngay đầu trên file://. Khi chạy, kiểm tra clip hiện tại và preload clip kế; thiếu file được xử lý tại chỗ bằng UI lỗi.
+Runtime kiểm tra đủ IDs/version/manifest trước khi bật tour; công cụ check trước triển khai chịu trách nhiệm kiểm tra đủ file thật. Không HEAD/fetch 48 MP3 ngay đầu trên file://. Khi chạy, kiểm tra clip hiện tại và preload clip kế; thiếu file được xử lý tại chỗ bằng UI lỗi.
 
 ## 10. Work package và điểm dừng
 
 | Gói | File/chỗ sửa | Hoàn tất khi |
 |---|---|---|
-| A — Kịch bản | presentation-script.json | Đủ 75 đoạn, đúng ID, giữ các phân biệt lịch sử/quan điểm trong bài; không có placeholder. |
-| B — Generate/check | Hai script Node + manifest + audio/ | Dry-run đúng, sinh thử nghe được, full batch đủ 75 MP3, chạy lại không gọi lại clip không đổi. |
+| A — Kịch bản | presentation-script.json | Đủ 48 đoạn, đúng ID, giữ các phân biệt lịch sử/quan điểm trong bài; không có placeholder. |
+| B — Generate/check | Hai script Node + manifest + audio/ | Dry-run đúng, sinh thử nghe được, full batch đủ 48 MP3, chạy lại không gọi lại clip không đổi. |
 | C — Voice player | museum-narration.js | play/pause/resume/stop, mute, preload, lỗi và AbortSignal hoạt động độc lập scene. |
 | D — Scene adapter | -08.js, -09.js; -07.js nếu cần reset writer | Có arrived/step-ready/written/closed, freeze/resume thật; khám phá tự do không đổi hành vi. |
-| E — Controller | museum-presentation.js | Đi đúng 15/60, completion barrier và cancellation đúng, chỉ một tour sở hữu scene. |
+| E — Controller | museum-presentation.js | Đi đúng 10/38, completion barrier và cancellation đúng, chỉ một tour sở hữu scene. |
 | F — UI và tích hợp | HTML/CSS, museum-intro.js, MuseumSound | Nút/toolbar, input routing, ducking, master mute, thiếu voice vẫn mở bảo tàng được. |
 | G — Nghiệm thu | tests, CONTEXT, README | Qua ma trận bên dưới và cập nhật đúng trạng thái triển khai. |
 
-Không triển khai tour full rồi mới phát hiện thiếu MP3. Có thể dùng audio fixture ngắn trong test C–E, nhưng không thay fixture bằng lời giảng thật và ghi tính năng đã hoàn tất nếu batch 75 MP3 chưa có.
+Không triển khai tour full rồi mới phát hiện thiếu MP3. Có thể dùng audio fixture ngắn trong test C–E, nhưng không thay fixture bằng lời giảng thật và ghi tính năng đã hoàn tất nếu batch 48 MP3 chưa có.
 
 ## 11. Ma trận kiểm thử cần có
 
 ### Logic với scene/voice giả
 
-- Đúng thứ tự 15 tranh, 60 step và 15 intro; kết thúc một lần, không vòng lại.
+- Đúng thứ tự 10 tranh, 38 step và 10 intro; kết thúc một lần, không vòng lại.
 - Camera chưa arrived thì chưa phát lời dẫn; thẻ chưa ready thì chưa phát voice step.
 - Voice hết trước writer / writer hết trước voice / cả hai xong: chỉ chuyển khi đủ hai điều kiện.
 - Pause trong moving, intro, opening, step và closing; ended sát pause; resume không nhảy pose/time.
@@ -266,7 +266,7 @@ Không triển khai tour full rồi mới phát hiện thiếu MP3. Có thể d�
 
 ### Trình duyệt với tài nguyên thật
 
-- Đi thử tranh 01, 03, 06, 10, 12, 14, 15: bối cảnh, hợp nhất tổ chức, Luận cương, dân chủ, Trung ương 8, cao trào và tổng kết khớp voice/thẻ; cuối cùng chạy đủ một tour, đặc biệt đủ 6 step của tranh 12 và 5 step ở tranh 14–15.
+- Đi thử tranh 01, 02, 04, 05, 06, 08, 10: bối cảnh, hợp nhất, Luận cương, dân chủ, Trung ương 8, cao trào và tổng kết khớp voice/thẻ; sau đó chạy đủ tour 10 tranh/38 step, gồm cả tranh 3 bước và tranh 4 bước.
 - Bắt đầu từ phòng và từ một bảng đã mở; thoát rồi WASD/chuột dùng bình thường; deep link board cũ không tranh quyền tour.
 - Tab ẩn/tải lại trang; bật/tắt âm; đổi low/high trong lúc pause và chạy.
 - Desktop/mobile: toolbar không che nội dung, nút đủ dễ bấm, điều khiển cũ không làm lệch tour.
@@ -276,6 +276,6 @@ Không triển khai tour full rồi mới phát hiện thiếu MP3. Có thể d�
 
 ## 12. Tiêu chí hoàn thành
 
-Tính năng chỉ được đánh dấu hoàn tất khi có **75 MP3 được generate trước và kiểm tra**, tour chạy hết 15 tranh/60 step đúng thứ tự, voice không chồng, camera và writer pause/resume đúng, lỗi và skip không để callback cũ sống lại, file:// lẫn HTTP hoạt động, và chế độ khám phá không bị hỏng. Không mở lại quiz, drawer hoặc Flat View.
+Tính năng chỉ được đánh dấu hoàn tất khi có **48 MP3 được generate trước và kiểm tra**, tour chạy hết 10 tranh/38 step đúng thứ tự, voice không chồng, camera và writer pause/resume đúng, lỗi và skip không để callback cũ sống lại, file:// lẫn HTTP hoạt động, và chế độ khám phá không bị hỏng. Không mở lại quiz, drawer hoặc Flat View.
 
 Đợt này chỉ bàn giao kế hoạch. Chưa gọi TTS, chưa tạo kịch bản đầy đủ, chưa sinh MP3, chưa sửa API scene hoặc UI runtime.

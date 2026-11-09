@@ -28,25 +28,29 @@
         <noscript>Bật JavaScript trong trình duyệt để khám phá bảo tàng 3D.</noscript>
     </section>
     <main id="museumApp" inert aria-hidden="true">
-    <!-- VNR202: dữ liệu tranh -02.js, 60 step -03.js; xem planning/. -->
+    <!-- VNR202: dữ liệu tranh -02.js, nội dung bảng ghim -03.js; xem planning/. -->
 
     <!-- ==================== 1. THREE.JS 3D REALISTIC MUSEUM VIEWPORT ==================== -->
     <div id="museumCanvasContainer"></div>
+    <div id="paintingTooltip" class="painting-tooltip" role="tooltip" hidden>
+        <strong id="paintingTooltipTitle"></strong>
+        <span id="paintingTooltipDate"></span>
+    </div>
 
     <!-- ==================== 2. HUD MINIMALIST 1:1 NHƯ ẢNH MẪU ==================== -->
     <!-- Góc trên bên trái: Trạng thái vị trí / Hướng dẫn nhanh -->
     <div class="museum-location fixed top-5 left-6 z-20 pointer-events-none flex items-center gap-3">
         <div class="pointer-events-auto bg-black/45 backdrop-blur-md border border-white/15 px-3.5 py-1.5 rounded-full flex items-center gap-2.5 text-xs text-stone-200">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
             <span id="hudNearestPiece" class="font-medium">Click vào tranh bất kỳ để mở bảng ghim 3D</span>
         </div>
 
     </div>
 
-    <!-- Góc trên bên phải: THE VNR202 MUSEUM · 15 PIECES (Giống hệt ảnh mẫu) -->
+    <!-- Góc trên bên phải: Nhãn bảo tàng và số tác phẩm từ dữ liệu -->
     <div class="fixed top-6 right-7 z-20 pointer-events-none text-right">
         <div class="font-mono-museum text-[11px] md:text-xs tracking-[0.22em] text-stone-200/85 uppercase drop-shadow">
-            BẢO TÀNG VNR202 &middot; 15 TRANH
+            BẢO TÀNG VNR202 &middot; <span id="museumPieceCount">TRƯNG BÀY</span>
         </div>
         <div class="font-mono-museum text-[10px] tracking-[0.14em] text-stone-300/60 uppercase mt-0.5">
             ĐƯỜNG LỐI CÁCH MẠNG &middot; 1930 – 1945 &middot; NHÓM 1

@@ -21,12 +21,13 @@ let activePieceIndex = 0;
 const HALL_WIDTH = 16;
 const HALL_HEIGHT = 10.5;
 const BAY_LENGTH = 11.5;
-const NUM_BAYS = 8;
+const NUM_BAYS = Math.max(1, Math.ceil(MUSEUM_PIECES.length / 2));
 const HALL_LENGTH = NUM_BAYS * BAY_LENGTH + 16;
 const BAY_START_Z = (NUM_BAYS - 1) * BAY_LENGTH * 0.5;
 
-let camPos = new THREE.Vector3(0, 2.75, 44);
-let camTargetPos = new THREE.Vector3(0, 2.75, 44);
+const ENTRY_Z = BAY_START_Z + BAY_LENGTH * 0.65;
+let camPos = new THREE.Vector3(0, 2.75, ENTRY_Z);
+let camTargetPos = new THREE.Vector3(0, 2.75, ENTRY_Z);
 let yaw = 0, pitch = 0, targetYaw = 0, targetPitch = 0;
 let isDraggingLook = false;
 let prevMouse = { x: 0, y: 0 };
@@ -35,63 +36,34 @@ let isAutoFlying = false;
 
 const MuseumScene = { sunLight: null, lastShadowZ: Infinity, reflector: null, floor: null };
 
-// ---------- Ảnh tranh: placeholder sang trọng, tải URL nếu có ----------
+// ---------- Tác phẩm trong khung: chỉ ảnh, không vẽ slide/UI lên bề mặt ----------
 function createArtworkCanvasTexture(piece) {
+    const ratio = THREE.MathUtils.clamp(piece.imageAspect || 4 / 3, 0.6, 1.9);
     const c = document.createElement('canvas');
-    c.width = 1024; c.height = 742;
+    c.width = 1024; c.height = Math.round(c.width / ratio);
     const ctx = c.getContext('2d');
     const W = c.width, H = c.height;
-    const draw = (img) => {
-        ctx.fillStyle = '#e6dcc4'; ctx.fillRect(0, 0, W, H);
-        ctx.strokeStyle = '#b6a17b'; ctx.lineWidth = 2; ctx.strokeRect(22, 22, W - 44, H - 44);
-        ctx.fillStyle = '#752f26'; ctx.textAlign = 'left';
-        ctx.font = '600 21px "Be Vietnam Pro", sans-serif';
-        ctx.fillText(`${piece.code}  /  VNR202`, 52, 65);
-        const box = { x: 48, y: 92, w: 435, h: 544 };
-        ctx.fillStyle = '#d2c6a8'; ctx.fillRect(box.x, box.y, box.w, box.h);
-        if (img) {
-            const r = Math.min(box.w / img.width, box.h / img.height);
-            ctx.drawImage(img, box.x + (box.w - img.width * r) / 2, box.y + (box.h - img.height * r) / 2, img.width * r, img.height * r);
-        }
-        ctx.fillStyle = '#752f26'; ctx.font = '600 23px "Be Vietnam Pro", sans-serif';
-        ctx.fillText(piece.date, 524, 131);
-        ctx.fillStyle = '#28291f'; ctx.font = '700 40px "Be Vietnam Pro", sans-serif';
-        wrapCanvasText(ctx, piece.title, 524, 215, 435, 53);
-        ctx.fillStyle = '#4f5141'; ctx.font = '400 26px "Be Vietnam Pro", sans-serif';
-        wrapCanvasText(ctx, piece.subtitle, 524, 445, 430, 39);
-        ctx.fillStyle = '#68604d'; ctx.font = '400 18px "Be Vietnam Pro", sans-serif';
-        wrapCanvasText(ctx, piece.imageCaption || 'Sơ đồ nội dung', 48, 652, 435, 22);
-        ctx.strokeStyle = '#b6a17b'; ctx.beginPath(); ctx.moveTo(48, 684); ctx.lineTo(W - 48, 684); ctx.stroke();
-        ctx.font = '600 19px "Be Vietnam Pro", sans-serif'; ctx.fillStyle = '#752f26';
-        ctx.fillText(`CHẠM TRANH ĐỂ KHÁM PHÁ  /  ${getStory(piece.id).steps.length} THẺ TƯ LIỆU`, 48, 716);
-    };
-    draw(null);
+    ctx.fillStyle = '#25231e'; ctx.fillRect(0, 0, W, H);
     const tex = FX.canvasTexture(c);
     if (piece.imageUrl) {
         const img = new Image();
         if (/^https?:/i.test(piece.imageUrl)) img.crossOrigin = 'anonymous';
-        img.onload = () => { draw(img); tex.needsUpdate = true; };
-        img.onerror = () => { console.warn('Không tải được ảnh tranh:', piece.imageUrl); };
+        img.onload = () => {
+            ctx.fillStyle = '#25231e'; ctx.fillRect(0, 0, W, H);
+            const inset = 7, r = Math.min((W - inset * 2) / img.width, (H - inset * 2) / img.height);
+            ctx.drawImage(img, (W - img.width * r) / 2, (H - img.height * r) / 2, img.width * r, img.height * r);
+            tex.needsUpdate = true;
+        };
+        img.onerror = () => console.warn('Không tải được tác phẩm:', piece.imageUrl);
         img.src = museumImageSrc(piece.imageUrl);
     }
     return tex;
 }
 
-function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
-    const words = String(text).split(' ');
-    let line = '';
-    for (let n = 0; n < words.length; n++) {
-        const test = line + words[n] + ' ';
-        if (ctx.measureText(test).width > maxWidth && n > 0) {
-            ctx.fillText(line, x, y); line = words[n] + ' '; y += lineHeight;
-        } else line = test;
-    }
-    ctx.fillText(line, x, y);
-}
-
 // ---------- Khởi tạo ----------
 function initThreeMuseum() {
     const container = document.getElementById('museumCanvasContainer');
+    document.getElementById('museumPieceCount').textContent = MUSEUM_PIECES.length + ' TÁC PHẨM';
     const low = FX.isLowPower;
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x2c3029);
@@ -289,7 +261,7 @@ function buildWallsAndArt() {
         const bayZ = BAY_START_Z - b * BAY_LENGTH;
         [-1, 1].forEach(side => {
             const wallX = side * (HALL_WIDTH / 2);
-            const pieceIndex = (b * 2 + (side === -1 ? 0 : 1)) % MUSEUM_PIECES.length;
+            const pieceIndex = b * 2 + (side === -1 ? 0 : 1);
             const rotY = side === -1 ? Math.PI / 2 : -Math.PI / 2;
 
             const bay = new THREE.Mesh(new THREE.PlaneGeometry(BAY_LENGTH, HALL_HEIGHT), wallMat);
@@ -300,6 +272,8 @@ function buildWallsAndArt() {
 
             buildPilasterColumn(wallX, side, bayZ + BAY_LENGTH / 2, pilasterMat, baseMat, corniceMat);
             if (b === NUM_BAYS - 1) buildPilasterColumn(wallX, side, bayZ - BAY_LENGTH / 2, pilasterMat, baseMat, corniceMat);
+
+            if (pieceIndex >= MUSEUM_PIECES.length) return; // Vẫn dựng tường ở khoang lẻ.
 
             // Đèn rọi thật cho từng bức tranh
             const trackX = side * (HALL_WIDTH / 2 - 2.35);
@@ -322,7 +296,9 @@ function buildWallsAndArt() {
 
             // Khung tranh mạ vàng (đùn khối có vát cạnh) + tranh
             const piece = MUSEUM_PIECES[pieceIndex];
-            const fw = 3.9, fh = 2.85;
+            const aspect = THREE.MathUtils.clamp(piece.imageAspect || 4 / 3, 0.6, 1.9);
+            const fw = aspect < 1 ? 3.35 * aspect : 4.15;
+            const fh = aspect < 1 ? 3.35 : fw / aspect;
             const frame = new THREE.Group();
             const outer = gildedRing(fw + 0.62, fh + 0.62, fw + 0.12, fh + 0.12, 0.05, 0.1, goldMat);
             const inner = gildedRing(fw + 0.14, fh + 0.14, fw, fh, 0.03, 0.03, darkGoldMat);
@@ -334,9 +310,9 @@ function buildWallsAndArt() {
             art.position.z = 0.075;
             art.userData = { isArtwork: true, pieceIndex };
             paintingMeshes.push(art);
-            const plac = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.25, 0.015),
+            const plac = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.6, 0.015),
                 new THREE.MeshStandardMaterial({ map: MuseumTextures.placard(piece), roughness: 0.8 }));
-            plac.position.set(fw / 2 + 0.75, -0.75, -0.03);
+            plac.position.set(fw / 2 + 0.85, -fh / 2 + 0.15, -0.03);
             frame.add(outer, inner, liner, art, plac);
             frame.traverse(o => { if (o.isMesh) o.castShadow = true; });
             frame.position.set(wallX - side * 0.04, 3.55, bayZ);

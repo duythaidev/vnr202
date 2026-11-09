@@ -1,652 +1,322 @@
-// 15 tranh, 60 thẻ hoàn chỉnh. Không sinh story mock.
-const STORY_CONFIG = { writeSpeed: 1, flightSpeed: 1, motionBlur: 1, decorCards: 5, autoAdvance: false };
+// Bản (2): mỗi thẻ giữ một luận điểm chính; nguồn là đoạn tài liệu đã trích xuất.
+const STORY_CONFIG = { writeSpeed: 1, flightSpeed: 1, motionBlur: 1, decorCards: 4, autoAdvance: false };
 const STORY_DATA = {
     "0": {
         "id": "vnr-p01",
-        "seed": 117,
+        "seed": 313,
         "steps": [
             {
-                "title": "Thế giới thay đổi",
-                "source": "Bài VNR202 · đoạn 022–026",
+                "title": "Bài toán độc lập",
                 "blocks": [
                     {
-                        "type": "timeline",
+                        "type": "bullets",
                         "items": [
-                            {
-                                "date": "Cuối XIX",
-                                "text": "Đế quốc mở rộng thuộc địa."
-                            },
-                            {
-                                "date": "1917",
-                                "text": "Cách mạng Tháng Mười Nga."
-                            },
-                            {
-                                "date": "1919",
-                                "text": "Quốc tế Cộng sản ra đời."
-                            }
+                            "Khai thác thuộc địa làm mâu thuẫn dân tộc ngày càng gay gắt.",
+                            "Các phong trào yêu nước nối tiếp nhưng chưa tìm được đường lối và tổ chức đủ sức giành thắng lợi."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Những biến đổi quốc tế tác động tới phong trào giải phóng dân tộc."
                     }
                 ],
                 "id": "vnr-p01-s01",
-                "label": "01 / Trước 1930"
+                "label": "01 / Trước 1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 022–052"
             },
             {
-                "title": "Xã hội thuộc địa",
-                "source": "Bài VNR202 · đoạn 027–039",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Hai cuộc khai thác thuộc địa làm biến đổi kinh tế và cơ cấu xã hội Việt Nam.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Pháp duy trì bộ máy cai trị và khai thác thuộc địa.",
-                            "Các giai cấp, tầng lớp phân hóa; mâu thuẫn dân tộc trở nên gay gắt."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Độc lập dân tộc là yêu cầu nổi bật của xã hội thuộc địa."
-                    }
-                ],
-                "id": "vnr-p01-s02",
-                "label": "02 / Trước 1930"
-            },
-            {
-                "title": "Những ngả đường yêu nước",
-                "source": "Bài VNR202 · đoạn 040–045",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Cần Vương, Yên Thế: đấu tranh vũ trang kéo dài.",
-                            "Đông Du, Duy Tân: tìm những cách cứu nước khác nhau.",
-                            "Việt Nam Quốc dân Đảng: khuynh hướng dân chủ tư sản."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Các phong trào khác nhau về tổ chức và phương pháp, không chỉ về thời điểm."
-                    }
-                ],
-                "id": "vnr-p01-s03",
-                "label": "03 / Trước 1930"
-            },
-            {
-                "title": "Vấn đề đặt ra",
-                "source": "Bài VNR202 · đoạn 046",
-                "blocks": [
-                    {
-                        "type": "flow",
-                        "from": "Khát vọng",
-                        "to": "Con đường",
-                        "caption": "Cần đường lối, tổ chức và phương pháp phù hợp"
-                    },
-                    {
-                        "type": "text",
-                        "text": "Theo bài nhóm, những giới hạn của các phong trào đặt ra yêu cầu tìm một hướng đi mới.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Từ đây, câu chuyện chuyển sang hành trình của Nguyễn Ái Quốc."
-                    }
-                ],
-                "id": "vnr-p01-s04",
-                "label": "04 / Trước 1930"
-            }
-        ]
-    },
-    "1": {
-        "id": "vnr-p02",
-        "seed": 148,
-        "steps": [
-            {
-                "title": "Tìm đường cứu nước",
-                "source": "Bài VNR202 · đoạn 047–048",
+                "title": "Bước ngoặt năm 1920",
                 "blocks": [
                     {
                         "type": "timeline",
                         "items": [
                             {
                                 "date": "1911",
-                                "text": "Ra đi tìm đường cứu nước."
+                                "text": "Nguyễn Tất Thành ra đi."
                             },
                             {
                                 "date": "1919",
-                                "text": "Gửi Yêu sách của nhân dân An Nam."
+                                "text": "Yêu sách của nhân dân An Nam."
                             },
                             {
                                 "date": "1920",
-                                "text": "Đọc Luận cương; tham gia Đại hội Tours."
+                                "text": "Luận cương Lênin và Đại hội Tours."
                             }
                         ]
                     },
                     {
-                        "type": "note",
-                        "text": "Năm 1920 đánh dấu một bước chuyển quan trọng trong lựa chọn con đường."
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/nguyen-ai-quoc-tours-1920.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Nguyễn Ái Quốc tại Đại hội Tours, 1920."
                     }
                 ],
-                "id": "vnr-p02-s01",
-                "label": "01 / 1911–1929"
+                "id": "vnr-p01-s02",
+                "label": "02 / Trước 1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 022–052"
             },
             {
-                "title": "Tư tưởng và chính trị",
-                "source": "Bài VNR202 · đoạn 049–051; ảnh: BTLSQG",
+                "title": "Chuẩn bị một lực lượng mới",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Tố cáo chủ nghĩa thực dân qua báo chí và hoạt động quốc tế.",
-                            "Truyền bá chủ nghĩa Mác–Lênin vào phong trào yêu nước.",
-                            "Phát triển nhận thức về cách mạng giải phóng dân tộc."
+                            "Hội Việt Nam Cách mạng Thanh niên (1925): tổ chức, báo chí và huấn luyện cán bộ.",
+                            "Đường Kách mệnh 1927: hệ thống những vấn đề cơ bản của cách mạng.",
+                            "Vô sản hóa 1928: đưa cán bộ gắn với phong trào công nhân."
                         ]
-                    },
-                    {
-                        "type": "image",
-                        "col": "right",
-                        "src": "assets/images/verified/bao-thanh-nien-1926.webp",
-                        "caption": "Báo Thanh Niên · số 3/10/1926",
-                        "h": 330,
-                        "keepColor": true,
-                        "fit": "contain"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Lý luận được tiếp nhận trong quá trình tìm lời giải cho thực tiễn Việt Nam."
                     }
                 ],
-                "id": "vnr-p02-s02",
-                "label": "02 / 1911–1929",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
+                "id": "vnr-p01-s03",
+                "label": "03 / Trước 1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 022–052"
             },
             {
-                "title": "Xây dựng tổ chức",
-                "source": "Bài VNR202 · đoạn 052; ảnh: BTLSQG",
-                "blocks": [
-                    {
-                        "type": "timeline",
-                        "items": [
-                            {
-                                "date": "1925",
-                                "text": "Hội Việt Nam Cách mạng Thanh niên; báo Thanh Niên."
-                            },
-                            {
-                                "date": "1927",
-                                "text": "Đường Kách mệnh tập hợp các bài giảng."
-                            }
-                        ]
-                    },
-                    {
-                        "type": "image",
-                        "col": "right",
-                        "src": "assets/images/verified/duong-kach-menh-1927.webp",
-                        "caption": "Trang sách Đường Kách mệnh · 1927",
-                        "h": 330,
-                        "keepColor": true,
-                        "fit": "contain"
-                    },
-                    {
-                        "type": "text",
-                        "text": "Các lớp huấn luyện ở Quảng Châu góp phần chuẩn bị cán bộ và tổ chức.",
-                        "size": "lg"
-                    }
-                ],
-                "id": "vnr-p02-s03",
-                "label": "03 / 1911–1929",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
-            },
-            {
-                "title": "Lý luận gặp phong trào",
-                "source": "Bài VNR202 · đoạn 052; ảnh: BTLSQG",
+                "title": "Gắn lý luận với phong trào",
                 "blocks": [
                     {
                         "type": "flow",
-                        "from": "Cán bộ",
-                        "to": "Công nhân",
-                        "caption": "Vô sản hóa · 1928"
-                    },
-                    {
-                        "type": "image",
-                        "col": "right",
-                        "src": "assets/images/verified/nha-huan-luyen-quang-chau.webp",
-                        "caption": "Di tích nhà huấn luyện ở Quảng Châu",
-                        "h": 330,
-                        "keepColor": true,
-                        "fit": "contain"
+                        "from": "Lý luận",
+                        "to": "Phong trào",
+                        "caption": "Tư tưởng · Chính trị · Tổ chức"
                     },
                     {
                         "type": "text",
-                        "text": "Cán bộ vào nhà máy, hầm mỏ, đồn điền để rèn luyện và vận động quần chúng.",
+                        "text": "Sự chuẩn bị của Nguyễn Ái Quốc gắn con đường giải phóng dân tộc với một tổ chức lãnh đạo mới.",
+                        "size": "lg"
+                    }
+                ],
+                "id": "vnr-p01-s04",
+                "label": "04 / Trước 1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 022–052"
+            }
+        ]
+    },
+    "1": {
+        "id": "vnr-p02",
+        "seed": 350,
+        "steps": [
+            {
+                "title": "Thống nhất tổ chức",
+                "blocks": [
+                    {
+                        "type": "bullets",
+                        "items": [
+                            "Nguyễn Ái Quốc chủ trì hội nghị hợp nhất đầu năm 1930 tại Hương Cảng.",
+                            "Đại biểu Đông Dương Cộng sản Đảng và An Nam Cộng sản Đảng tham dự.",
+                            "Ngày 24/2, Đông Dương Cộng sản Liên đoàn gia nhập."
+                        ]
+                    },
+                    {
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/hoi-nghi-thanh-lap-dang-phi-hoanh.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Hội nghị thành lập Đảng — tranh Phi Hoanh."
+                    }
+                ],
+                "id": "vnr-p02-s01",
+                "label": "01 / 02/1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 053–065"
+            },
+            {
+                "title": "Độc lập là nhiệm vụ hàng đầu",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Cương lĩnh đầu tiên đặt nhiệm vụ chống đế quốc, giành độc lập dân tộc lên hàng đầu.",
                         "size": "lg"
                     },
                     {
                         "type": "note",
-                        "text": "Chuẩn bị tư tưởng, chính trị và tổ chức gắn liền với nhau."
+                        "text": "Mục tiêu trước mắt được đặt trong phương hướng cách mạng lâu dài."
+                    }
+                ],
+                "id": "vnr-p02-s02",
+                "label": "02 / 02/1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 053–065"
+            },
+            {
+                "title": "Tập hợp lực lượng rộng rãi",
+                "blocks": [
+                    {
+                        "type": "bullets",
+                        "items": [
+                            "Công–nông là lực lượng cơ bản.",
+                            "Tranh thủ tiểu tư sản, trí thức và những lực lượng có thể tham gia chống đế quốc.",
+                            "Đoàn kết dân tộc gắn với vai trò lãnh đạo của Đảng."
+                        ]
+                    }
+                ],
+                "id": "vnr-p02-s03",
+                "label": "03 / 02/1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 053–065"
+            },
+            {
+                "title": "Chấm dứt khủng hoảng đường lối",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Sự ra đời của Đảng thống nhất tổ chức lãnh đạo và xác lập đường lối cứu nước.",
+                        "size": "lg"
+                    },
+                    {
+                        "type": "flow",
+                        "from": "Tổ chức",
+                        "to": "Đường lối",
+                        "caption": "Một bước ngoặt của phong trào cách mạng"
                     }
                 ],
                 "id": "vnr-p02-s04",
-                "label": "04 / 1911–1929",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
+                "label": "04 / 02/1930",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 053–065"
             }
         ]
     },
     "2": {
         "id": "vnr-p03",
-        "seed": 179,
-        "steps": [
-            {
-                "title": "Ba tổ chức năm 1929",
-                "source": "Bài VNR202 · đoạn 053–058",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Đông Dương Cộng sản Đảng.",
-                            "An Nam Cộng sản Đảng.",
-                            "Đông Dương Cộng sản Liên đoàn."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Sự phát triển của phong trào đặt ra yêu cầu thống nhất tổ chức."
-                    }
-                ],
-                "id": "vnr-p03-s01",
-                "label": "01 / 1929–02/1930"
-            },
-            {
-                "title": "Hội nghị hợp nhất",
-                "source": "Lịch sử biên niên Đảng · Tập 2; bài nhóm đoạn 059",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Nguyễn Ái Quốc chủ trì Hội nghị đầu năm 1930 tại Hương Cảng.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Đại biểu Đông Dương Cộng sản Đảng và An Nam Cộng sản Đảng tham dự.",
-                            "Thống nhất thành lập Đảng Cộng sản Việt Nam và thông qua các văn kiện cơ bản."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Không đồng nhất quá trình thống nhất ba tổ chức với thành phần dự Hội nghị."
-                    }
-                ],
-                "id": "vnr-p03-s02",
-                "label": "02 / 1929–02/1930"
-            },
-            {
-                "title": "Hoàn thành thống nhất",
-                "source": "Văn kiện Đảng toàn tập · Tập 2, tr.26",
-                "blocks": [
-                    {
-                        "type": "timeline",
-                        "items": [
-                            {
-                                "date": "03/02",
-                                "text": "Ngày kỷ niệm thành lập Đảng."
-                            },
-                            {
-                                "date": "24/02/1930",
-                                "text": "Đông Dương Cộng sản Liên đoàn gia nhập."
-                            }
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Sự thống nhất tổ chức tạo điều kiện tập trung lãnh đạo phong trào."
-                    }
-                ],
-                "id": "vnr-p03-s03",
-                "label": "03 / 1929–02/1930"
-            }
-        ]
-    },
-    "3": {
-        "id": "vnr-p04",
-        "seed": 210,
-        "steps": [
-            {
-                "title": "Mục tiêu chiến lược",
-                "source": "Bài VNR202 · đoạn 060–061",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Cương lĩnh chính trị đầu tiên xác định phương hướng cách mạng dân quyền và thổ địa, tiến tới xã hội cộng sản.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Phân biệt mục tiêu lâu dài với nhiệm vụ cần giải quyết trước mắt."
-                    }
-                ],
-                "id": "vnr-p04-s01",
-                "label": "01 / 02/1930"
-            },
-            {
-                "title": "Độc lập ở hàng đầu",
-                "source": "Bài VNR202 · đoạn 062",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Đánh đổ đế quốc Pháp và phong kiến, làm cho Việt Nam độc lập.",
-                            "Đề ra nhiệm vụ về kinh tế, xã hội và quyền tự do của nhân dân."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Đặt nhiệm vụ chống đế quốc ở vị trí hàng đầu không có nghĩa bỏ mọi nhiệm vụ dân chủ."
-                    }
-                ],
-                "id": "vnr-p04-s02",
-                "label": "02 / 02/1930"
-            },
-            {
-                "title": "Tập hợp lực lượng",
-                "source": "Bài VNR202 · đoạn 063–064",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Công nhân và nông dân là lực lượng cơ bản; đồng thời tranh thủ các lực lượng yêu nước rộng rãi.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "flow",
-                        "from": "Nền tảng",
-                        "to": "Đoàn kết",
-                        "caption": "Tập hợp lực lượng theo điều kiện cụ thể"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Chính sách lực lượng là một điểm quan trọng để so sánh các văn kiện."
-                    }
-                ],
-                "id": "vnr-p04-s03",
-                "label": "03 / 02/1930"
-            },
-            {
-                "title": "Ý nghĩa của khởi đầu",
-                "source": "Bài VNR202 · đoạn 065",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Giải quyết cuộc khủng hoảng về đường lối và tổ chức lãnh đạo.",
-                            "Kết hợp chủ nghĩa Mác–Lênin với phong trào công nhân và yêu nước.",
-                            "Xác lập con đường cách mạng và lực lượng lãnh đạo."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Mốc đường lối thứ nhất của hành trình."
-                    }
-                ],
-                "id": "vnr-p04-s04",
-                "label": "04 / 02/1930"
-            }
-        ]
-    },
-    "4": {
-        "id": "vnr-p05",
-        "seed": 241,
+        "seed": 387,
         "steps": [
             {
                 "title": "Từ đấu tranh đến cao trào",
-                "source": "Bài VNR202 · đoạn 067–071",
                 "blocks": [
                     {
                         "type": "timeline",
                         "items": [
                             {
                                 "date": "Đầu 1930",
-                                "text": "Đấu tranh của công nhân và nông dân."
+                                "text": "Công nhân và nông dân đấu tranh."
                             },
                             {
-                                "date": "05–08/1930",
+                                "date": "05–08",
                                 "text": "Phong trào phát triển mạnh."
                             },
                             {
                                 "date": "09/1930",
-                                "text": "Đỉnh cao tại Nghệ An, Hà Tĩnh."
+                                "text": "Đỉnh cao ở Nghệ An, Hà Tĩnh."
                             }
                         ]
                     },
                     {
-                        "type": "note",
-                        "text": "Khủng hoảng kinh tế và sự đàn áp làm tình hình xã hội thêm gay gắt."
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/xo-viet-nghe-tinh-tranh.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Xô viết Nghệ Tĩnh — tranh sơn mài tái hiện."
                     }
                 ],
-                "id": "vnr-p05-s01",
-                "label": "01 / 1930–1931"
+                "id": "vnr-p03-s01",
+                "label": "01 / 1930–1931",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 067–073"
             },
             {
-                "title": "Chính quyền ở cơ sở",
-                "source": "Bài VNR202 · đoạn 072",
+                "title": "Sức mạnh công–nông",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Ở một số địa phương Nghệ An, Hà Tĩnh, tổ chức cách mạng và nông hội thực hiện chức năng quản lý đời sống.",
+                        "text": "Ở một số thôn, xã, tổ chức cách mạng và nông hội đứng ra quản lý đời sống.",
                         "size": "lg"
                     },
                     {
                         "type": "bullets",
                         "items": [
-                            "Tổ chức hoạt động xã hội ở thôn, xã.",
-                            "Thể hiện năng lực tổ chức và sức mạnh quần chúng."
+                            "Liên minh công–nông được rèn luyện qua đấu tranh.",
+                            "Quần chúng thể hiện khả năng tổ chức và xây dựng chính quyền."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Không phải toàn bộ hai tỉnh đều đã nằm dưới một chính quyền thống nhất."
                     }
                 ],
-                "id": "vnr-p05-s02",
-                "label": "02 / 1930–1931"
+                "id": "vnr-p03-s02",
+                "label": "02 / 1930–1931",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 067–073"
             },
             {
-                "title": "Kinh nghiệm và tổn thất",
-                "source": "Bài VNR202 · đoạn 072–073",
+                "title": "Kinh nghiệm trong thử thách",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Củng cố liên minh công–nông và kinh nghiệm vận động quần chúng.",
-                            "Để lại bài học về lãnh đạo, tổ chức và kết hợp hình thức đấu tranh.",
-                            "Phong trào chịu đàn áp và tổn thất nặng nề."
+                            "Cao trào khẳng định vai trò lãnh đạo và sức mạnh quần chúng.",
+                            "Đàn áp gây tổn thất nặng nề, đặt ra yêu cầu bảo vệ lực lượng.",
+                            "Bài học: kết hợp mục tiêu, tổ chức và điều kiện hành động."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Hưng Nguyên 12/9/1930 bị đàn áp đẫm máu; không dùng số thương vong chưa chốt."
                     }
                 ],
-                "id": "vnr-p05-s03",
-                "label": "03 / 1930–1931"
+                "id": "vnr-p03-s03",
+                "label": "03 / 1930–1931",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 067–073"
             }
         ]
     },
-    "5": {
-        "id": "vnr-p06",
-        "seed": 272,
+    "3": {
+        "id": "vnr-p04",
+        "seed": 424,
         "steps": [
             {
-                "title": "Hội nghị Trung ương đầu tiên",
-                "source": "Bài VNR202 · đoạn 074–075",
+                "title": "Luận cương tháng 10",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Hội nghị Ban Chấp hành Trung ương lần thứ nhất họp tháng 10/1930.",
-                            "Đổi tên thành Đảng Cộng sản Đông Dương.",
-                            "Bầu Trần Phú làm Tổng Bí thư và thông qua Luận cương."
+                            "Nhấn mạnh nhiệm vụ phản đế và cách mạng thổ địa.",
+                            "Xác định động lực công–nông, vai trò của Đảng và phương pháp đấu tranh."
                         ]
-                    }
-                ],
-                "id": "vnr-p06-s01",
-                "label": "01 / 10/1930"
-            },
-            {
-                "title": "Nội dung cơ bản",
-                "source": "Bài VNR202 · đoạn 076–081; ảnh: BTLSQG",
-                "blocks": [
+                    },
                     {
-                        "type": "bullets",
-                        "items": [
-                            "Nêu nhiệm vụ phản đế và cách mạng thổ địa.",
-                            "Xác định động lực công–nông, vai trò của Đảng.",
-                            "Bàn phương pháp cách mạng và quan hệ quốc tế."
-                        ]
+                        "type": "note",
+                        "text": "Vấn đề thổ địa được coi là cái cốt của cách mạng tư sản dân quyền."
                     },
                     {
                         "type": "image",
+                        "src": "assets/images/exhibition-10/tran-phu-chan-dung.webp",
                         "col": "right",
-                        "src": "assets/images/verified/luan-cuong-1930.webp",
-                        "caption": "Ảnh văn kiện Luận cương · 10/1930",
-                        "h": 330,
+                        "h": 300,
+                        "fit": "contain",
                         "keepColor": true,
-                        "fit": "contain"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Đọc nội dung và đóng góp trước khi phân tích giới hạn."
+                        "caption": "Trần Phú (1904–1931), Tổng Bí thư đầu tiên."
                     }
                 ],
-                "id": "vnr-p06-s02",
-                "label": "02 / 10/1930",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
+                "id": "vnr-p04-s01",
+                "label": "01 / 1930–1935",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 074–088"
             },
             {
-                "title": "So sánh cùng tiêu chí",
-                "source": "Bài VNR202 · đoạn 082–084",
+                "title": "Khác biệt trong cách tập hợp",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Cương lĩnh tháng 2: ưu tiên độc lập dân tộc, tập hợp lực lượng rộng rãi.",
-                            "Luận cương tháng 10: nhấn mạnh đấu tranh giai cấp và vấn đề thổ địa."
+                            "Cương lĩnh tháng 2: đề cao độc lập dân tộc và lực lượng rộng rãi.",
+                            "Luận cương tháng 10: nặng về đấu tranh giai cấp, chưa đánh giá đầy đủ khả năng yêu nước của các tầng lớp khác."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "So sánh nhiệm vụ ưu tiên và chính sách lực lượng, không chỉ so hai tên văn kiện."
                     }
                 ],
-                "id": "vnr-p06-s03",
-                "label": "03 / 10/1930"
+                "id": "vnr-p04-s02",
+                "label": "02 / 1930–1935",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 074–088"
             },
             {
-                "title": "Giới hạn trong nhận thức",
-                "source": "Bài VNR202 · đoạn 083–085",
+                "title": "Giữ lực lượng trong nhà tù",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Theo bài nhóm, Luận cương chưa làm rõ đầy đủ mâu thuẫn dân tộc và khả năng tập hợp các lực lượng yêu nước.",
+                        "text": "Bị khủng bố, các chiến sĩ vẫn duy trì tổ chức, học tập lý luận và báo chí trong tù.",
                         "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Nặng về đấu tranh giai cấp và cách mạng ruộng đất.",
-                            "Đặt ra bài học nhận thức đúng thực tiễn thuộc địa."
-                        ]
-                    }
-                ],
-                "id": "vnr-p06-s04",
-                "label": "04 / 10/1930"
-            }
-        ]
-    },
-    "6": {
-        "id": "vnr-p07",
-        "seed": 303,
-        "steps": [
-            {
-                "title": "Tổn thất sau cao trào",
-                "source": "Bài VNR202 · đoạn 086–091",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Sự khủng bố làm nhiều cán bộ bị bắt, hệ thống tổ chức bị tổn thất.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Giữ liên lạc và bảo vệ lực lượng.",
-                            "Duy trì ý chí hoạt động trong hoàn cảnh khó khăn."
-                        ]
                     },
                     {
                         "type": "note",
-                        "text": "Khôi phục không chỉ là tăng số lượng, mà còn giữ được tổ chức và phương hướng."
+                        "text": "Bảo vệ con người và tổ chức trở thành điều kiện để phục hồi phong trào."
                     }
                 ],
-                "id": "vnr-p07-s01",
-                "label": "01 / 1931–1934"
+                "id": "vnr-p04-s03",
+                "label": "03 / 1930–1935",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 074–088"
             },
             {
-                "title": "Học tập trong nhà tù",
-                "source": "Bài VNR202 · đoạn 092",
+                "title": "Phục hồi hệ thống tổ chức",
                 "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Lập các tổ chức bí mật và tổ chức học lý luận.",
-                            "Biên soạn, dịch tài liệu; duy trì báo chí trong tù.",
-                            "Bồi dưỡng cán bộ, củng cố niềm tin và khả năng tổ chức."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Nhà tù trở thành một môi trường đấu tranh và học tập đặc biệt."
-                    }
-                ],
-                "id": "vnr-p07-s02",
-                "label": "02 / 1931–1934"
-            },
-            {
-                "title": "Giữ lực lượng, sửa sai",
-                "source": "Bài VNR202 · đoạn 088–090",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Trung ương phê phán những chủ trương sai lầm trong công tác tổ chức, đồng thời chống khủng bố và bảo vệ phong trào.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Bảo vệ lực lượng đi cùng điều chỉnh phương pháp và cách tập hợp quần chúng."
-                    }
-                ],
-                "id": "vnr-p07-s03",
-                "label": "03 / 1931–1934"
-            }
-        ]
-    },
-    "7": {
-        "id": "vnr-p08",
-        "seed": 334,
-        "steps": [
-            {
-                "title": "Chương trình hành động",
-                "source": "Bài VNR202 · đoạn 093–095",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Chương trình hành động năm 1932 đặt nhiệm vụ khôi phục tổ chức và phong trào quần chúng.",
-                        "size": "lg"
-                    },
                     {
                         "type": "timeline",
                         "items": [
@@ -655,548 +325,242 @@ const STORY_DATA = {
                                 "text": "Chương trình hành động."
                             },
                             {
-                                "date": "1933",
-                                "text": "Tiếp tục củng cố lý luận và tổ chức."
-                            }
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Không nhầm văn kiện này với Cương lĩnh tháng 2/1930."
-                    }
-                ],
-                "id": "vnr-p08-s01",
-                "label": "01 / 1932–1935"
-            },
-            {
-                "title": "Ban Chỉ huy ở ngoài",
-                "source": "Bài VNR202 · đoạn 096",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Đầu năm 1934, Ban Chỉ huy ở ngoài được thành lập để chỉ đạo và nối lại hoạt động.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "flow",
-                        "from": "Liên lạc",
-                        "to": "Khôi phục",
-                        "caption": "Gắn cơ quan chỉ đạo với phong trào trong nước"
-                    }
-                ],
-                "id": "vnr-p08-s02",
-                "label": "02 / 1932–1935"
-            },
-            {
-                "title": "Đại hội I và giới hạn",
-                "source": "Bài VNR202 · đoạn 097–098",
-                "blocks": [
-                    {
-                        "type": "timeline",
-                        "items": [
+                                "date": "1934",
+                                "text": "Ban Chỉ huy ở ngoài."
+                            },
                             {
                                 "date": "03/1935",
                                 "text": "Đại hội I tại Ma Cao."
-                            },
-                            {
-                                "date": "Nhiệm vụ",
-                                "text": "Củng cố Đảng, vận động quần chúng, tuyên truyền."
                             }
                         ]
                     },
                     {
                         "type": "note",
-                        "text": "Phục hồi tổ chức là kết quả quan trọng; bài nhóm cũng chỉ ra hạn chế đường lối còn tồn tại."
+                        "text": "Tổ chức được phục hồi, nhưng những hạn chế đường lối chưa được khắc phục đầy đủ."
                     }
                 ],
-                "id": "vnr-p08-s03",
-                "label": "03 / 1932–1935"
+                "id": "vnr-p04-s04",
+                "label": "04 / 1930–1935",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 074–088"
             }
         ]
     },
-    "8": {
-        "id": "vnr-p09",
-        "seed": 365,
+    "4": {
+        "id": "vnr-p05",
+        "seed": 461,
         "steps": [
             {
-                "title": "Điều kiện thay đổi",
-                "source": "Bài VNR202 · đoạn 099–105",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Nguy cơ phát xít và chiến tranh gia tăng.",
-                            "Đại hội VII Quốc tế Cộng sản đề cao mặt trận rộng rãi.",
-                            "Mặt trận Nhân dân Pháp thắng cử năm 1936."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Điều kiện mới mở ra khả năng hoạt động, không tự động bảo đảm mọi quyền ở thuộc địa."
-                    }
-                ],
-                "id": "vnr-p09-s01",
-                "label": "01 / 1935–1937"
-            },
-            {
-                "title": "Nhiệm vụ trước mắt",
-                "source": "Bài VNR202 · đoạn 106–113",
+                "title": "Nhiệm vụ trước mắt thay đổi",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Chống phát xít, chống chiến tranh, chống phản động thuộc địa; đòi tự do, dân chủ, cơm áo và hòa bình.",
+                        "text": "Trước nguy cơ phát xít và chiến tranh, Đảng tập trung đòi tự do, dân chủ, cơm áo, hòa bình.",
                         "size": "lg"
                     },
                     {
-                        "type": "flow",
-                        "from": "Mục tiêu",
-                        "to": "Sách lược",
-                        "caption": "Nhiệm vụ trước mắt phù hợp hoàn cảnh"
-                    },
-                    {
                         "type": "note",
-                        "text": "Kết hợp công khai, hợp pháp với bí mật; không thay thế hoàn toàn một hình thức bằng hình thức khác."
+                        "text": "Điều chỉnh sách lược để phù hợp tình hình, không từ bỏ mục tiêu lâu dài."
                     }
                 ],
-                "id": "vnr-p09-s02",
-                "label": "02 / 1935–1937"
+                "id": "vnr-p05-s01",
+                "label": "01 / 1936–1939",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 089–117"
             },
             {
-                "title": "Chiến sách mới",
-                "source": "Bài VNR202 · đoạn 114–117",
+                "title": "Bước đột phá về nhận thức",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Văn kiện Chung quanh vấn đề chiến sách mới tháng 10/1936 thể hiện nhận thức linh hoạt hơn về nhiệm vụ dân tộc và ruộng đất.",
+                        "text": "Chung quanh vấn đề chiến sách mới tháng 10/1936 nhìn lại quan hệ giữa giải phóng dân tộc và nhiệm vụ ruộng đất.",
                         "size": "lg"
                     },
                     {
                         "type": "bullets",
                         "items": [
-                            "Không ràng buộc cứng nhắc hai nhiệm vụ trong mọi hoàn cảnh.",
-                            "Tập trung lực lượng vào đối tượng nguy hiểm cần giải quyết trước."
+                            "Không buộc hai nhiệm vụ vào một trình tự cứng nhắc.",
+                            "Tập trung vào đối tượng nguy hiểm cần giải quyết trước."
                         ]
                     }
                 ],
-                "id": "vnr-p09-s03",
-                "label": "03 / 1935–1937"
+                "id": "vnr-p05-s02",
+                "label": "02 / 1936–1939",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 089–117"
             },
             {
-                "title": "Vận động dân nguyện",
-                "source": "Bài VNR202 · đoạn 118–121",
+                "title": "Mở rộng hình thức đấu tranh",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Phong trào Đông Dương Đại hội thu thập yêu cầu của nhân dân.",
-                            "Tổ chức các ủy ban hành động và vận động quần chúng.",
-                            "Biểu dương lực lượng, bãi công và các hình thức đấu tranh dân sinh."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Điểm nhấn là khả năng tập hợp rộng rãi, không phải một con số riêng lẻ."
-                    }
-                ],
-                "id": "vnr-p09-s04",
-                "label": "04 / 1935–1937"
-            }
-        ]
-    },
-    "9": {
-        "id": "vnr-p10",
-        "seed": 396,
-        "steps": [
-            {
-                "title": "Mở rộng mặt trận",
-                "source": "Bài VNR202 · đoạn 112;118–123",
-                "blocks": [
-                    {
-                        "type": "timeline",
-                        "items": [
-                            {
-                                "date": "1936",
-                                "text": "Chủ trương mặt trận rộng rãi."
-                            },
-                            {
-                                "date": "1938",
-                                "text": "Mặt trận Dân chủ Đông Dương."
-                            }
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Tên gọi và hình thức tổ chức phát triển theo từng giai đoạn."
-                    }
-                ],
-                "id": "vnr-p10-s01",
-                "label": "01 / 1937–1939"
-            },
-            {
-                "title": "Nhiều hình thức đấu tranh",
-                "source": "Bài VNR202 · đoạn 119–123; ảnh: BTLSQG",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Mít tinh, bãi công và biểu tình quần chúng.",
-                            "Báo chí công khai, vận động nghị trường.",
-                            "Hoạt động tương tế, ái hữu và các tổ chức xã hội."
+                            "Mặt trận rộng rãi; kết hợp công khai với bí mật.",
+                            "Dân nguyện, báo chí, nghị trường, mít tinh và bãi công.",
+                            "Đấu Xảo 1/5/1938: một cuộc biểu dương lực lượng tiêu biểu."
                         ]
                     },
                     {
                         "type": "image",
+                        "src": "assets/images/exhibition-10/dau-xao-1938.webp",
                         "col": "right",
-                        "src": "assets/images/verified/dau-xao-1938.webp",
-                        "caption": "Mít tinh Đấu Xảo · 1/5/1938",
-                        "h": 330,
+                        "h": 300,
+                        "fit": "contain",
                         "keepColor": true,
-                        "fit": "contain"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Mít tinh Đấu Xảo 1/5/1938 là một sự kiện tiêu biểu."
+                        "caption": "Mít tinh Đấu Xảo, Hà Nội, 1/5/1938."
                     }
                 ],
-                "id": "vnr-p10-s02",
-                "label": "02 / 1937–1939",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
+                "id": "vnr-p05-s03",
+                "label": "03 / 1936–1939",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 089–117"
             },
             {
-                "title": "Văn hóa và tự phê bình",
-                "source": "Hội Truyền bá Quốc ngữ, 1938; Tự chỉ trích, 1939",
+                "title": "Tích lũy lực lượng chính trị",
+                "blocks": [
+                    {
+                        "type": "bullets",
+                        "items": [
+                            "Vận động quần chúng qua yêu cầu dân sinh, dân chủ.",
+                            "Hội Truyền bá Quốc ngữ 1938; Tự chỉ trích 1939.",
+                            "Tích lũy kinh nghiệm mặt trận và tổ chức cho chặng sau."
+                        ]
+                    }
+                ],
+                "id": "vnr-p05-s04",
+                "label": "04 / 1936–1939",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 089–117"
+            }
+        ]
+    },
+    "5": {
+        "id": "vnr-p06",
+        "seed": 498,
+        "steps": [
+            {
+                "title": "Chiến tranh đổi tình thế",
                 "blocks": [
                     {
                         "type": "timeline",
                         "items": [
                             {
-                                "date": "1938",
-                                "text": "Hội Truyền bá Quốc ngữ."
+                                "date": "11/1939",
+                                "text": "Mở đầu chuyển hướng."
                             },
                             {
-                                "date": "1939",
-                                "text": "Nguyễn Văn Cừ viết Tự chỉ trích."
-                            }
-                        ]
-                    },
-                    {
-                        "type": "text",
-                        "text": "Vận động văn hóa và tự phê bình bổ sung cho hoạt động chính trị, tổ chức.",
-                        "size": "lg"
-                    }
-                ],
-                "id": "vnr-p10-s03",
-                "label": "03 / 1937–1939"
-            },
-            {
-                "title": "Lực lượng và kinh nghiệm",
-                "source": "Văn kiện Đảng toàn tập · Tập 6, tr.375–376",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Báo cáo thời kỳ 1938 ghi 35.009 hội viên trong các tổ chức quần chúng.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Đây không phải số đảng viên hoặc số người tại một mít tinh.",
-                            "Tích lũy kinh nghiệm mặt trận, tổ chức và kết hợp hình thức đấu tranh."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Tháng 9/1939, chiến tranh làm thay đổi điều kiện hoạt động."
-                    }
-                ],
-                "id": "vnr-p10-s04",
-                "label": "04 / 1937–1939"
-            }
-        ]
-    },
-    "10": {
-        "id": "vnr-p11",
-        "seed": 427,
-        "steps": [
-            {
-                "title": "Chiến tranh và hai tầng áp bức",
-                "source": "Bài VNR202 · đoạn 128–131",
-                "blocks": [
-                    {
-                        "type": "timeline",
-                        "items": [
-                            {
-                                "date": "09/1939",
-                                "text": "Chiến tranh thế giới thứ hai bùng nổ."
+                                "date": "11/1940",
+                                "text": "Tiếp tục điều chỉnh."
                             },
                             {
-                                "date": "09/1940",
-                                "text": "Nhật vào Đông Dương; Pháp tiếp tục bộ máy cai trị."
+                                "date": "05/1941",
+                                "text": "Trung ương 8 hoàn chỉnh chủ trương."
                             }
                         ]
                     },
                     {
                         "type": "note",
-                        "text": "Nhân dân chịu ách áp bức Pháp–Nhật trong điều kiện thời chiến."
+                        "text": "Pháp–Nhật thống trị; các cuộc nổi dậy Bắc Sơn, Nam Kỳ, Đô Lương báo hiệu tinh thần đấu tranh."
                     }
                 ],
-                "id": "vnr-p11-s01",
-                "label": "01 / 1939–1941"
+                "id": "vnr-p06-s01",
+                "label": "01 / 1939–1941",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 118–148"
             },
             {
-                "title": "Bước đầu tháng 11/1939",
-                "source": "Bài VNR202 · đoạn 132–138",
+                "title": "Dân tộc là ưu tiên cấp bách",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Đề cao nhiệm vụ giải phóng dân tộc và chống ngoại xâm.",
-                            "Điều chỉnh khẩu hiệu ruộng đất cho phù hợp.",
-                            "Chủ trương mặt trận dân tộc thống nhất phản đế."
+                            "Xác định mâu thuẫn dân tộc là vấn đề cấp bách.",
+                            "Đặt giải phóng dân tộc lên hàng đầu; điều chỉnh nhiệm vụ ruộng đất để phục vụ cứu nước."
                         ]
                     },
                     {
-                        "type": "note",
-                        "text": "Đây là bước mở đầu chuyển hướng, chưa phải toàn bộ nội dung hoàn chỉnh năm 1941."
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/pac-bo-suoi-le-nin-hien-nay.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Suối Lê-nin, Pác Bó — ảnh hiện đại."
                     }
                 ],
-                "id": "vnr-p11-s02",
-                "label": "02 / 1939–1941"
+                "id": "vnr-p06-s02",
+                "label": "02 / 1939–1941",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 118–148"
             },
             {
-                "title": "Bước tiếp tháng 11/1940",
-                "source": "Bài VNR202 · đoạn 139–141",
+                "title": "Quyền tự quyết và Việt Minh",
                 "blocks": [
                     {
-                        "type": "text",
-                        "text": "Hội nghị tháng 11/1940 tiếp tục điều chỉnh tổ chức và chủ trương trong hoàn cảnh mới.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Theo bài nhóm, quan hệ giữa phản đế và thổ địa vẫn còn những điểm chưa dứt khoát."
-                    }
-                ],
-                "id": "vnr-p11-s03",
-                "label": "03 / 1939–1941"
-            },
-            {
-                "title": "Ba tiếng súng báo hiệu",
-                "source": "Bài VNR202 · đoạn 154–158",
-                "blocks": [
-                    {
-                        "type": "timeline",
+                        "type": "bullets",
                         "items": [
-                            {
-                                "date": "27/9/1940",
-                                "text": "Bắc Sơn."
-                            },
-                            {
-                                "date": "23/11/1940",
-                                "text": "Nam Kỳ."
-                            },
-                            {
-                                "date": "13/1/1941",
-                                "text": "Binh biến Đô Lương."
-                            }
+                            "Giải quyết vấn đề dân tộc trong khuôn khổ từng nước Đông Dương.",
+                            "Thành lập Việt Minh, tập hợp rộng rãi các lực lượng yêu nước."
                         ]
                     },
                     {
                         "type": "note",
-                        "text": "Tinh thần đấu tranh đi cùng bài học về điều kiện và thời điểm khởi nghĩa."
+                        "text": "Mục tiêu cứu nước là cơ sở đoàn kết toàn dân tộc."
                     }
                 ],
-                "id": "vnr-p11-s04",
-                "label": "04 / 1939–1941"
+                "id": "vnr-p06-s03",
+                "label": "03 / 1939–1941",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 118–148"
+            },
+            {
+                "title": "Nhà nước và con đường giành quyền",
+                "blocks": [
+                    {
+                        "type": "bullets",
+                        "items": [
+                            "Hướng tới nhà nước Việt Nam Dân chủ Cộng hòa của toàn dân tộc.",
+                            "Chuẩn bị khởi nghĩa vũ trang là nhiệm vụ trung tâm.",
+                            "Đi từ khởi nghĩa từng phần đến tổng khởi nghĩa khi đủ điều kiện."
+                        ]
+                    }
+                ],
+                "id": "vnr-p06-s04",
+                "label": "04 / 1939–1941",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 118–148"
             }
         ]
     },
-    "11": {
-        "id": "vnr-p12",
-        "seed": 458,
+    "6": {
+        "id": "vnr-p07",
+        "seed": 535,
         "steps": [
             {
-                "title": "Mâu thuẫn cấp bách",
-                "source": "Bài VNR202 · đoạn 142–144",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Hội nghị Trung ương 8 đặt vấn đề sinh tồn của dân tộc trong hoàn cảnh Pháp–Nhật thống trị.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Quyền lợi và vận mệnh toàn dân tộc trở thành điểm xuất phát để xác định nhiệm vụ."
-                    }
-                ],
-                "id": "vnr-p12-s01",
-                "label": "01 / 05/1941"
-            },
-            {
-                "title": "Giải phóng dân tộc hàng đầu",
-                "source": "Bài VNR202 · đoạn 145",
+                "title": "Lực lượng chính trị và văn hóa",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Tập trung giải quyết nhiệm vụ dân tộc giải phóng.",
-                            "Điều chỉnh khẩu hiệu ruộng đất để phục vụ nhiệm vụ trước mắt."
+                            "Việt Minh và các đoàn thể cứu quốc mở rộng tổ chức quần chúng.",
+                            "Báo chí, vận động trí thức và Đề cương văn hóa 1943 góp phần chuẩn bị tư tưởng."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Tạm gác một nhiệm vụ không có nghĩa xóa bỏ nhiệm vụ đó vĩnh viễn."
                     }
                 ],
-                "id": "vnr-p12-s02",
-                "label": "02 / 05/1941"
+                "id": "vnr-p07-s01",
+                "label": "01 / 1941–1944",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 149–161"
             },
             {
-                "title": "Quyền dân tộc tự quyết",
-                "source": "Bài VNR202 · đoạn 146",
+                "title": "Nối các vùng căn cứ",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Giải quyết vấn đề dân tộc trong khuôn khổ từng nước Đông Dương, tôn trọng quyền tự quyết.",
+                        "text": "Cao Bằng, Bắc Sơn–Võ Nhai và hướng Nam tiến tạo liên hệ giữa cơ sở, lực lượng và địa bàn.",
                         "size": "lg"
                     },
                     {
                         "type": "note",
-                        "text": "Chủ trương liên minh không đồng nghĩa áp một mô hình quốc gia duy nhất cho mọi dân tộc."
+                        "text": "Chuẩn bị khởi nghĩa bao gồm tổ chức, con người, liên lạc và căn cứ."
                     }
                 ],
-                "id": "vnr-p12-s03",
-                "label": "03 / 05/1941"
+                "id": "vnr-p07-s02",
+                "label": "02 / 1941–1944",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 149–161"
             },
             {
-                "title": "Mặt trận Việt Minh",
-                "source": "Bài VNR202 · đoạn 147",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Thành lập Việt Minh, tập hợp rộng rãi những người yêu nước và các đoàn thể cứu quốc.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Lấy mục tiêu cứu nước để đoàn kết lực lượng.",
-                            "Mở rộng mặt trận trên nền tảng công–nông."
-                        ]
-                    }
-                ],
-                "id": "vnr-p12-s04",
-                "label": "04 / 05/1941"
-            },
-            {
-                "title": "Nhà nước của toàn dân tộc",
-                "source": "Bài VNR202 · đoạn 148",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Sau khi giành độc lập, chủ trương xây dựng nước Việt Nam Dân chủ Cộng hòa của toàn dân tộc.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Phân biệt hình thức nhà nước dự kiến này với chính quyền Xô viết ở giai đoạn trước."
-                    }
-                ],
-                "id": "vnr-p12-s05",
-                "label": "05 / 05/1941"
-            },
-            {
-                "title": "Chuẩn bị khởi nghĩa",
-                "source": "Bài VNR202 · đoạn 149–153",
-                "blocks": [
-                    {
-                        "type": "flow",
-                        "from": "Từng phần",
-                        "to": "Toàn quốc",
-                        "caption": "Chuẩn bị và hành động khi đủ điều kiện"
-                    },
-                    {
-                        "type": "text",
-                        "text": "Chuẩn bị khởi nghĩa vũ trang là nhiệm vụ trung tâm; phát triển lực lượng để đón thời cơ.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "note",
-                        "text": "Chốt quan hệ nhiệm vụ, lực lượng và phương pháp."
-                    }
-                ],
-                "id": "vnr-p12-s06",
-                "label": "06 / 05/1941"
-            }
-        ]
-    },
-    "12": {
-        "id": "vnr-p13",
-        "seed": 489,
-        "steps": [
-            {
-                "title": "Lực lượng chính trị",
-                "source": "Bài VNR202 · đoạn 159–163;165",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Phát triển Việt Minh và các đoàn thể cứu quốc.",
-                            "Đẩy mạnh báo chí, tuyên truyền và tổ chức quần chúng.",
-                            "Vận động trí thức, thanh niên và các tầng lớp yêu nước."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Lực lượng chính trị là nền tảng quần chúng, không chỉ các cơ quan lãnh đạo."
-                    }
-                ],
-                "id": "vnr-p13-s01",
-                "label": "01 / 1941–1944"
-            },
-            {
-                "title": "Văn hóa và trí thức",
-                "source": "Bài VNR202 · đoạn 164–165",
-                "blocks": [
-                    {
-                        "type": "text",
-                        "text": "Đề cương về văn hóa Việt Nam năm 1943 nêu ba nguyên tắc: dân tộc, khoa học, đại chúng.",
-                        "size": "lg"
-                    },
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Vận động văn hóa gắn với mục tiêu giải phóng dân tộc.",
-                            "Tập hợp trí thức và lực lượng văn hóa cứu quốc."
-                        ]
-                    }
-                ],
-                "id": "vnr-p13-s02",
-                "label": "02 / 1941–1944"
-            },
-            {
-                "title": "Căn cứ và hành lang liên lạc",
-                "source": "Bài VNR202 · đoạn 166–169",
-                "blocks": [
-                    {
-                        "type": "bullets",
-                        "items": [
-                            "Duy trì, phát triển lực lượng ở Bắc Sơn–Võ Nhai và Cao Bằng.",
-                            "Mở rộng cơ sở, nối các vùng căn cứ bằng hướng Nam tiến.",
-                            "Chuẩn bị địa bàn, liên lạc và tổ chức cho khởi nghĩa."
-                        ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Căn cứ địa gắn con người, tổ chức và không gian hoạt động."
-                    }
-                ],
-                "id": "vnr-p13-s03",
-                "label": "03 / 1941–1944"
-            },
-            {
-                "title": "Đội quân ra đời",
-                "source": "Bài VNR202 · đoạn 170–171; ảnh: BTLSQG",
+                "title": "Đội quân cách mạng ra đời",
                 "blocks": [
                     {
                         "type": "timeline",
@@ -1212,77 +576,94 @@ const STORY_DATA = {
                         ]
                     },
                     {
-                        "type": "image",
-                        "col": "right",
-                        "src": "assets/images/verified/doi-tuyen-truyen-giai-phong-quan-1944.webp",
-                        "caption": "Ngày thành lập Đội · 22/12/1944",
-                        "h": 330,
-                        "keepColor": true,
-                        "fit": "contain"
+                        "type": "note",
+                        "text": "Lực lượng chính trị và vũ trang được xây dựng trong cùng một quá trình."
                     },
                     {
-                        "type": "note",
-                        "text": "Chính trị và quân sự gắn với nhau trong quá trình chuẩn bị lực lượng."
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/doi-tuyen-truyen-giai-phong-quan-1944.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Đội Việt Nam Tuyên truyền Giải phóng quân, 22/12/1944."
                     }
                 ],
-                "id": "vnr-p13-s04",
-                "label": "04 / 1941–1944",
-                "imageSource": "Bảo tàng Lịch sử Quốc gia"
+                "id": "vnr-p07-s03",
+                "label": "03 / 1941–1944",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 149–161"
             }
         ]
     },
-    "13": {
-        "id": "vnr-p14",
-        "seed": 520,
+    "7": {
+        "id": "vnr-p08",
+        "seed": 572,
         "steps": [
             {
-                "title": "Đảo chính và chỉ thị",
-                "source": "Bài VNR202 · đoạn 172–179",
+                "title": "Tình thế sau ngày 9 tháng 3",
                 "blocks": [
                     {
                         "type": "timeline",
                         "items": [
                             {
-                                "date": "09/3/1945",
+                                "date": "09/3",
                                 "text": "Nhật đảo chính Pháp."
                             },
                             {
-                                "date": "12/3/1945",
+                                "date": "12/3",
                                 "text": "Chỉ thị Nhật–Pháp bắn nhau và hành động của chúng ta."
                             }
                         ]
                     },
                     {
-                        "type": "note",
-                        "text": "Xác định phát xít Nhật là kẻ thù trực tiếp trước mắt; phát động cao trào kháng Nhật cứu nước."
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/chi-thi-nhat-phap-ban-nhau-1945.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Sách in Chỉ thị ngày 12/3/1945."
                     }
                 ],
-                "id": "vnr-p14-s01",
-                "label": "01 / 03–08/1945"
+                "id": "vnr-p08-s01",
+                "label": "01 / 03–08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 162–176"
             },
             {
-                "title": "Khởi nghĩa và dân sinh",
-                "source": "Bài VNR202 · đoạn 180–186",
+                "title": "Xác định kẻ thù trực tiếp",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Chỉ thị tập trung mũi nhọn vào phát xít Nhật, phát động cao trào kháng Nhật cứu nước.",
+                        "size": "lg"
+                    },
+                    {
+                        "type": "note",
+                        "text": "Cao trào là tiền đề cho tổng khởi nghĩa, chưa phải lệnh tổng khởi nghĩa ngay lập tức."
+                    }
+                ],
+                "id": "vnr-p08-s02",
+                "label": "02 / 03–08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 162–176"
+            },
+            {
+                "title": "Khởi nghĩa gắn với dân sinh",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Khởi nghĩa từng phần, chiến tranh du kích cục bộ.",
-                            "Phá kho thóc giải quyết nạn đói.",
-                            "Phát triển lực lượng và các hình thức chính quyền cách mạng."
+                            "Khởi nghĩa từng phần, du kích cục bộ phát triển.",
+                            "Phá kho thóc giải quyết nạn đói gắn yêu cầu cứu nước với nhu cầu sống còn.",
+                            "Quần chúng tham gia và chính quyền cách mạng được hình thành ở nhiều nơi."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Gắn nhiệm vụ cứu nước với yêu cầu cấp bách của đời sống nhân dân."
                     }
                 ],
-                "id": "vnr-p14-s02",
-                "label": "02 / 03–08/1945"
+                "id": "vnr-p08-s03",
+                "label": "03 / 03–08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 162–176"
             },
             {
-                "title": "Thống nhất lực lượng",
-                "source": "Nghị quyết Hội nghị quân sự Bắc Kỳ, 4/1945; bài nhóm đoạn 182–185",
+                "title": "Thống nhất và mở rộng căn cứ",
                 "blocks": [
                     {
                         "type": "timeline",
@@ -1300,38 +681,36 @@ const STORY_DATA = {
                                 "text": "Khu giải phóng Việt Bắc."
                             }
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Quyết định tại hội nghị và ngày thực hiện hợp nhất là hai mốc khác nhau."
                     }
                 ],
-                "id": "vnr-p14-s03",
-                "label": "03 / 03–08/1945"
-            },
+                "id": "vnr-p08-s04",
+                "label": "04 / 03–08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 162–176"
+            }
+        ]
+    },
+    "8": {
+        "id": "vnr-p09",
+        "seed": 609,
+        "steps": [
             {
-                "title": "Nhận định thời cơ",
-                "source": "Bài VNR202 · đoạn 187–191",
+                "title": "Thời cơ và sự chủ động",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Nhật tuyên bố đầu hàng Đồng minh ngày 15/8/1945.",
+                            "Nhật đầu hàng Đồng minh; bộ máy thống trị hoang mang.",
                             "Lực lượng cách mạng đã được chuẩn bị qua nhiều năm.",
-                            "Cần hành động trước khi quân Đồng minh vào Đông Dương."
+                            "Cần hành động kịp thời trước khi quân Đồng minh vào Đông Dương."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Thời cơ khách quan chỉ trở thành thắng lợi khi có sự chuẩn bị và hành động kịp thời."
                     }
                 ],
-                "id": "vnr-p14-s04",
-                "label": "04 / 03–08/1945"
+                "id": "vnr-p09-s01",
+                "label": "01 / 08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 177–190"
             },
             {
                 "title": "Quyết định tại Tân Trào",
-                "source": "Bài VNR202 · đoạn 192–195",
                 "blocks": [
                     {
                         "type": "timeline",
@@ -1352,21 +731,15 @@ const STORY_DATA = {
                     },
                     {
                         "type": "note",
-                        "text": "Tập trung, thống nhất, kịp thời: quyết định đi cùng tổ chức thực hiện."
+                        "text": "Tập trung · Thống nhất · Kịp thời"
                     }
                 ],
-                "id": "vnr-p14-s05",
-                "label": "05 / 03–08/1945"
-            }
-        ]
-    },
-    "14": {
-        "id": "vnr-p15",
-        "seed": 551,
-        "steps": [
+                "id": "vnr-p09-s02",
+                "label": "02 / 08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 177–190"
+            },
             {
-                "title": "Làn sóng giành chính quyền",
-                "source": "Bài VNR202 · đoạn 196–199",
+                "title": "Giành chính quyền ở các đô thị",
                 "blocks": [
                     {
                         "type": "timeline",
@@ -1387,88 +760,113 @@ const STORY_DATA = {
                     },
                     {
                         "type": "note",
-                        "text": "Ba mốc tiêu biểu nằm trong phong trào khởi nghĩa rộng khắp nhiều địa phương."
+                        "text": "Thắng lợi ở các trung tâm lớn nằm trong làn sóng khởi nghĩa rộng khắp."
+                    },
+                    {
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/ha-noi-phu-kham-sai-19-8-1945.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Nhân dân Hà Nội chiếm Phủ Khâm sai, 19/8/1945."
                     }
                 ],
-                "id": "vnr-p15-s01",
-                "label": "01 / 08–09/1945"
+                "id": "vnr-p09-s03",
+                "label": "03 / 08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 177–190"
             },
             {
-                "title": "Nhà nước độc lập ra đời",
-                "source": "Bài VNR202 · đoạn 200",
+                "title": "Xác lập chính quyền mới",
                 "blocks": [
                     {
-                        "type": "timeline",
-                        "items": [
-                            {
-                                "date": "08/1945",
-                                "text": "Chính phủ lâm thời được hình thành."
-                            },
-                            {
-                                "date": "30/8",
-                                "text": "Bảo Đại thoái vị."
-                            },
-                            {
-                                "date": "02/9",
-                                "text": "Tuyên ngôn Độc lập tại Ba Đình."
-                            }
-                        ]
+                        "type": "text",
+                        "text": "Chính phủ lâm thời được hình thành; ngày 30/8, Bảo Đại thoái vị.",
+                        "size": "lg"
                     },
                     {
                         "type": "note",
-                        "text": "Giành chính quyền nối với xác lập một nhà nước độc lập."
+                        "text": "Giành chính quyền được nối tiếp bằng việc tổ chức nhà nước độc lập."
                     }
                 ],
-                "id": "vnr-p15-s02",
-                "label": "02 / 08–09/1945"
+                "id": "vnr-p09-s04",
+                "label": "04 / 08/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 177–190"
+            }
+        ]
+    },
+    "9": {
+        "id": "vnr-p10",
+        "seed": 646,
+        "steps": [
+            {
+                "title": "Tuyên ngôn Độc lập",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Ngày 2/9/1945 tại Ba Đình, Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.",
+                        "size": "lg"
+                    },
+                    {
+                        "type": "note",
+                        "text": "Mở ra kỷ nguyên độc lập, tự do của dân tộc."
+                    },
+                    {
+                        "type": "image",
+                        "src": "assets/images/exhibition-10/le-doc-lap-ba-dinh-2-9-1945.webp",
+                        "col": "right",
+                        "h": 300,
+                        "fit": "contain",
+                        "keepColor": true,
+                        "caption": "Lễ Độc lập tại Ba Đình, 2/9/1945."
+                    }
+                ],
+                "id": "vnr-p10-s01",
+                "label": "01 / 02/09/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 190–209"
             },
             {
                 "title": "Tính chất và ý nghĩa",
-                "source": "Bài VNR202 · đoạn 201–208",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
                             "Cách mạng giải phóng dân tộc mang tính chất dân chủ mới.",
-                            "Chấm dứt ách thống trị thuộc địa, chế độ quân chủ; mở kỷ nguyên độc lập.",
-                            "Nhân dân trở thành người làm chủ đất nước."
+                            "Chấm dứt ách thống trị thuộc địa và chế độ quân chủ; nhân dân làm chủ đất nước.",
+                            "Những nhiệm vụ kinh tế, xã hội còn được tiếp tục giải quyết."
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Không đồng nhất thắng lợi này với hoàn tất mọi nhiệm vụ ruộng đất và xã hội."
                     }
                 ],
-                "id": "vnr-p15-s03",
-                "label": "03 / 08–09/1945"
+                "id": "vnr-p10-s02",
+                "label": "02 / 02/09/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 190–209"
             },
             {
                 "title": "Bốn bài học",
-                "source": "Bài VNR202 · đoạn 209–213",
                 "blocks": [
                     {
                         "type": "bullets",
                         "items": [
-                            "Chỉ đạo chiến lược: đề cao giải phóng dân tộc.",
-                            "Lực lượng: phát huy đoàn kết toàn dân trên nền tảng công–nông.",
-                            "Phương pháp: kết hợp chính trị, vũ trang và chớp thời cơ.",
-                            "Xây dựng Đảng: vững mạnh, gắn bó với quần chúng."
+                            "Chiến lược: đề cao giải phóng dân tộc.",
+                            "Lực lượng: đoàn kết toàn dân trên nền tảng công–nông.",
+                            "Phương pháp: kết hợp chính trị, vũ trang và thời cơ.",
+                            "Lãnh đạo: xây dựng Đảng vững mạnh, gắn với quần chúng."
                         ]
                     }
                 ],
-                "id": "vnr-p15-s04",
-                "label": "04 / 08–09/1945"
+                "id": "vnr-p10-s03",
+                "label": "03 / 02/09/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 190–209"
             },
             {
-                "title": "Năm mốc đường lối",
-                "source": "Bài VNR202 · đoạn 214–219",
+                "title": "Mạch đường lối 1930–1945",
                 "blocks": [
                     {
                         "type": "timeline",
                         "items": [
                             {
                                 "date": "02/1930",
-                                "text": "Cương lĩnh đầu tiên."
+                                "text": "Cương lĩnh."
                             },
                             {
                                 "date": "10/1930",
@@ -1485,27 +883,24 @@ const STORY_DATA = {
                         "items": [
                             {
                                 "date": "1939–1941",
-                                "text": "Chuyển hướng chiến lược."
+                                "text": "Chuyển hướng."
                             },
                             {
                                 "date": "1945",
                                 "text": "Chớp thời cơ."
                             }
                         ]
-                    },
-                    {
-                        "type": "note",
-                        "text": "Nhìn lại quan hệ mục tiêu, lực lượng, phương pháp và thời điểm hành động."
                     }
                 ],
-                "id": "vnr-p15-s05",
-                "label": "05 / 08–09/1945"
+                "id": "vnr-p10-s04",
+                "label": "04 / 02/09/1945",
+                "source": "Tài liệu VNR202 nhóm 1 · bản (2), đoạn 190–209"
             }
         ]
     }
 };
 function getStory(pieceIndex) {
     const story = STORY_DATA[pieceIndex];
-    if (!story) throw new Error('Không có nội dung VNR202 cho tranh ' + pieceIndex);
+    if (!story) throw new Error("Không có nội dung VNR202 cho tranh " + pieceIndex);
     return story;
 }

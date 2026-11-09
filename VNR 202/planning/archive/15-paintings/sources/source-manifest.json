@@ -1,0 +1,7 @@
+{
+  "source": "mlngame/docs/VNR202 - Nh\u00f3m 1.docx",
+  "sha256": "f6163022ff74f4796e4c69ca0770dfa83f5c5872f55ac27946e412a15d3fe0f1",
+  "extraction": "presentation-paragraphs.txt",
+  "paragraphNumbering": "Non-empty w:p in document.xml order, includes table paragraphs",
+  "embeddedImageCount": 0
+}
