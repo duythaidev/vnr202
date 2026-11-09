@@ -1,0 +1,197 @@
+[
+  {
+    "file": "assets/images/diagrams/vnr-p01.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      1
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/verified/duong-kach-menh-1927.webp",
+    "type": "document-photo",
+    "caption": "Trang sách Đường Kách mệnh, tác phẩm xuất bản năm 1927; ảnh hiện vật do Bảo tàng Lịch sử Quốc gia giới thiệu.",
+    "sourcePage": "https://baotanglichsuquocgia.vn/vi/Articles/1001/28315/sach-djuong-kach-menh.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [
+      2
+    ],
+    "steps": [
+      "vnr-p02-s03"
+    ]
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p03.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      3
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p04.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      4
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p05.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      5
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/verified/luan-cuong-1930.webp",
+    "type": "document-photo",
+    "caption": "Ảnh văn kiện Luận cương chính trị do Trần Phú dự thảo, tháng 10/1930, được Bảo tàng Lịch sử Quốc gia giới thiệu.",
+    "sourcePage": "https://baotanglichsu.vn/vi/Articles/3098/19407/tran-phu-tong-bi-thu-djau-tien-cua-djang.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [
+      6
+    ],
+    "steps": [
+      "vnr-p06-s02"
+    ]
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p07.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      7
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p08.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      8
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p09.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      9
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/verified/dau-xao-1938.webp",
+    "type": "historical-photo",
+    "caption": "Cuộc mít tinh ngày 1/5/1938 tại khu Đấu xảo Hà Nội, theo chú thích của Bảo tàng Lịch sử Quốc gia.",
+    "sourcePage": "https://baotanglichsuquocgia.vn/vi/Articles/3097/14191/ngay-1-5-trong-qua-trinh-djau-tranh-cach-mang-viet-nam.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [
+      10
+    ],
+    "steps": [
+      "vnr-p10-s02"
+    ]
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p11.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      11
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p12.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      12
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/verified/doi-tuyen-truyen-giai-phong-quan-1944.webp",
+    "type": "historical-photo",
+    "caption": "Ảnh Đội Việt Nam Tuyên truyền Giải phóng quân được bảo tàng chú thích ở mốc thành lập ngày 22/12/1944.",
+    "sourcePage": "https://baotanglichsu.vn/vi/Articles/2002/68108/lung-bo-noi-lanh-tu-ho-chi-minh-quyet-djinh-thanh-lap-djoi-viet-nam-tuyen-truyen-giai-phong-quan.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [
+      13
+    ],
+    "steps": [
+      "vnr-p13-s04"
+    ]
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p14.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      14
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/diagrams/vnr-p15.svg",
+    "type": "authored-content-diagram",
+    "caption": "Sơ đồ nội dung biên soạn từ bài nhóm; không phải ảnh tư liệu.",
+    "sourcePage": null,
+    "credit": "Biên soạn từ bài VNR202 của nhóm",
+    "primaryForPieces": [
+      15
+    ],
+    "steps": []
+  },
+  {
+    "file": "assets/images/verified/bao-thanh-nien-1926.webp",
+    "type": "document-photo",
+    "caption": "Ảnh chụp báo Thanh niên, số ngày 3/10/1926, từ bài giới thiệu của Bảo tàng Lịch sử Quốc gia.",
+    "sourcePage": "https://baotanglichsu.vn/vi/Articles/1001/19692/cuon-djuong-kach-menh-cua-nguyen-ai-quoc-su-xuat-hien-va-hanh-trinh.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [],
+    "steps": [
+      "vnr-p02-s02"
+    ]
+  },
+  {
+    "file": "assets/images/verified/nha-huan-luyen-quang-chau.webp",
+    "type": "heritage-site-photo",
+    "caption": "Di tích nhà trên đường Văn Minh, Quảng Châu, nơi từng mở lớp huấn luyện chính trị trong giai đoạn 1925–1927.",
+    "sourcePage": "https://baotanglichsu.vn/vi/Articles/1001/19692/cuon-djuong-kach-menh-cua-nguyen-ai-quoc-su-xuat-hien-va-hanh-trinh.html",
+    "credit": "Bảo tàng Lịch sử Quốc gia",
+    "primaryForPieces": [],
+    "steps": [
+      "vnr-p02-s04"
+    ]
+  }
+]

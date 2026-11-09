@@ -1,0 +1,122 @@
+
+* { box-sizing: border-box; user-select: none; -webkit-user-select: none; }
+html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    overflow: hidden; background: #141612; color: #eee6d1;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+#museumCanvasContainer { position: fixed; inset: 0; z-index: 1; }
+canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+canvas:active { cursor: grabbing; }
+.font-serif-museum { font-family: 'Playfair Display', Georgia, serif; }
+.font-mono-museum { font-family: 'JetBrains Mono', monospace; }
+
+.museum-pill {
+    background: rgba(235, 233, 226, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #1f211d;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    transition: all 0.2s ease;
+}
+.museum-pill:hover { background: rgba(248, 246, 240, 0.96); transform: translateY(-1px); }
+.museum-pill:active { transform: translateY(0) scale(0.98); }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+::-webkit-scrollbar-thumb { background: rgba(184, 147, 66, 0.6); border-radius: 999px; }
+
+/* ===================== BẢNG GHIM 3D ===================== */
+.board-overlay {
+    position: fixed; inset: 0; z-index: 35;
+    background: #070a09;
+    opacity: 0; visibility: hidden;
+    transform: scale(1.06);
+    transition: opacity 0.6s ease, transform 0.9s cubic-bezier(.2, .7, .2, 1), visibility 0s linear 0.6s;
+}
+.board-overlay.open {
+    opacity: 1; visibility: visible; transform: none;
+    transition: opacity 0.6s ease, transform 0.9s cubic-bezier(.2, .7, .2, 1), visibility 0s;
+}
+#boardCanvasWrap { position: absolute; inset: 0; }
+#boardCanvasWrap canvas { cursor: default; }
+
+.board-top, .board-bottom, .board-hint { position: absolute; left: 0; right: 0; pointer-events: none; }
+.board-top { top: 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 18px 22px; }
+.board-crumb { display: flex; flex-direction: column; gap: 4px; max-width: min(560px, 62vw); color: #e9dcc0; text-shadow: 0 2px 10px #000; }
+.board-crumb #boardPieceCode { font-size: 11px; letter-spacing: .22em; color: #d9a54a; }
+.board-crumb #boardPieceTitle { font-size: 13px; line-height: 1.4; color: rgba(233, 220, 192, .78); }
+
+.board-bottom {
+    bottom: 18px; display: flex; justify-content: center; align-items: center; gap: 8px;
+    flex-wrap: wrap; padding: 0 16px;
+}
+.board-btn {
+    pointer-events: auto;
+    background: rgba(20, 18, 14, 0.62);
+    color: #efe4c9;
+    border: 1px solid rgba(233, 205, 150, 0.22);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 999px; padding: 9px 16px;
+    font: 600 12px/1 'Be Vietnam Pro', sans-serif; letter-spacing: .02em;
+    cursor: pointer; transition: background .2s, transform .15s, opacity .2s;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, .45);
+}
+.board-btn:hover { background: rgba(60, 46, 28, 0.8); transform: translateY(-1px); }
+.board-btn:disabled { opacity: .35; pointer-events: none; }
+.board-btn.primary { background: #b3211b; border-color: #e0574e; color: #fff4e8; }
+.board-btn.primary:hover { background: #cc2d25; }
+.board-btn kbd {
+    font: 500 10px 'JetBrains Mono', monospace; margin-left: 6px; padding: 2px 5px;
+    border-radius: 4px; background: rgba(255, 255, 255, .12);
+}
+#boardDots { display: flex; gap: 6px; pointer-events: auto; }
+.board-dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid rgba(233, 205, 150, .3); background: rgba(20, 18, 14, .6);
+    color: #cdbf9f; font: 600 12px 'JetBrains Mono', monospace; cursor: pointer;
+    transition: all .2s;
+}
+.board-dot.done { border-color: #c0141b; color: #f1d7c5; }
+.board-dot.on { background: #c0141b; color: #fff; border-color: #ff6a5f; box-shadow: 0 0 0 4px rgba(192, 20, 27, .25); }
+.board-hint {
+    bottom: 66px; text-align: center; font-size: 10px; letter-spacing: .2em;
+    color: rgba(233, 220, 192, .45);
+}
+@media (max-width: 640px) {
+    .board-hint { display: none; }
+    .board-top { padding: 12px 14px; }
+    .board-crumb #boardPieceTitle { display: none; }
+    .board-btn { padding: 8px 12px; font-size: 11px; }
+}
+
+
+/* Luôn truy cập được trong bảo tàng và bảng ghim. */
+.graphics-quality-toggle {
+    position: fixed;
+    left: max(12px, env(safe-area-inset-left));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 70;
+    min-height: 40px;
+    padding: 9px 14px;
+    border: 1px solid rgba(230, 199, 134, .4);
+    border-radius: 999px;
+    background: #181710;
+    color: #eadbb9;
+    font: 600 12px 'Be Vietnam Pro', sans-serif;
+    cursor: pointer;
+}
+.graphics-quality-toggle:hover { background: #302b1c; }
+.graphics-quality-toggle:focus-visible { outline: 2px solid #fbbf24; outline-offset: 3px; }
+.graphics-quality-toggle[aria-pressed="true"] { border-color: #fbbf24; color: #fcd34d; }
+@media (max-width: 760px) {
+    .graphics-quality-toggle { bottom: auto; top: 100px; }
+}
+
+.museum-location { max-width: min(60vw, 780px); }
+#hudNearestPiece { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 700px) {
+    .museum-location { top: 14px; left: 12px; max-width: calc(100vw - 24px); }
+    .museum-location + div { display: none; }
+}

@@ -2,6 +2,18 @@
 
 Tất cả đường dẫn dưới đây nằm trong cùng thư mục `vnr202/`. Hai trang HTML là điểm vào độc lập; CSS và JavaScript được tách nguyên nội dung từ HTML tương ứng.
 
+## Tổ chức base và hai bản môn học
+
+Thư mục chứa toàn bộ các bản là `E:\Web\mln131\vnr202` (thư mục hiện tại). Hai thư mục môn học cùng nằm trực tiếp bên trong thư mục này:
+
+- `VNR 202/`: bản để triển khai nội dung môn VNR 202; mở `VNR 202/museum-3d-single.html`.
+- `MLN 131/`: bản để triển khai nội dung môn MLN 131; mở `MLN 131/museum-3d-single.html`.
+- Các file HTML/CSS/JS/MP3 ở ngay thư mục cha tiếp tục là **base** hiện tại, được giữ lại làm nguồn tham khảo.
+
+Hai bản môn học khởi đầu từ cùng base, gồm cả intro, đồ họa, âm thanh và trang tham khảo. Mỗi bản có tài nguyên riêng để chạy độc lập. Chúng chưa có nội dung môn học mới: bản MLN 131 hiện vẫn chứa dữ liệu/nhãn VNR202 kế thừa từ base, cần thay khi biên soạn. Khác biệt dự kiến chủ yếu nằm ở nội dung tranh và step; giữ khung trải nghiệm tương đồng.
+
+Khi làm nội dung môn nào, sửa trong thư mục môn đó; đọc `CONTEXT.md` ngay trong thư mục môn trước. Bản sao không tự đồng bộ: sửa base không tự cập nhật hai môn, sửa một môn không tác động môn còn lại. Kế hoạch thuyết trình bên dưới dùng chung về hướng thiết kế; kịch bản và MP3 sau này thuộc từng môn.
+
 ## Bảo tàng 3D
 
 - `museum-3d-single.html`: cấu trúc trang, intro và giao diện bảo tàng.

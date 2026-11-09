@@ -1,0 +1,227 @@
+
+        * { box-sizing: border-box; user-select: none; -webkit-user-select: none; }
+        html, body {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 45%, #17152b 0%, #0b0a14 55%, #050509 100%);
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: #f8f5ec;
+        }
+
+        .font-editorial { font-family: 'Playfair Display', Georgia, serif; }
+        .font-astrology { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+        /* Vòng tròn chiêm tinh xoay nhẹ dưới nền */
+        @keyframes slowSpinCW {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes slowSpinCCW {
+            from { transform: translate(-50%, -50%) rotate(360deg); }
+            to { transform: translate(-50%, -50%) rotate(0deg); }
+        }
+        .astro-ring-cw { animation: slowSpinCW 90s linear infinite; }
+        .astro-ring-ccw { animation: slowSpinCCW 120s linear infinite; }
+
+        /* Hiệu ứng chữ Intro 1: "Xin chào" (Hiện mờ dần tại chỗ + tan biến) */
+        .intro-text-base {
+            position: absolute;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+            pointer-events: none;
+            opacity: 0;
+            will-change: transform, opacity, filter;
+        }
+
+        /* Trạng thái hiện "Xin chào" */
+        .fade-in-center {
+            animation: animFadeInCenter 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .fade-out-center {
+            animation: animFadeOutCenter 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes animFadeInCenter {
+            0% { opacity: 0; transform: scale(0.92); filter: blur(10px); }
+            100% { opacity: 1; transform: scale(1); filter: blur(0px); }
+        }
+        @keyframes animFadeOutCenter {
+            0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+            100% { opacity: 0; transform: scale(1.06); filter: blur(12px); }
+        }
+
+        /* Trạng thái từ dưới đi lên ("tất cả các bạn" & "Hôm nay chúng ta sẽ cùng học bài nhé") */
+        .slide-up-in {
+            animation: animSlideUpIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .slide-up-out {
+            animation: animSlideUpOut 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes animSlideUpIn {
+            0% { opacity: 0; transform: translateY(56px) scale(0.96); filter: blur(10px); }
+            100% { opacity: 1; transform: translateY(0px) scale(1); filter: blur(0px); }
+        }
+        @keyframes animSlideUpOut {
+            0% { opacity: 1; transform: translateY(0px) scale(1); filter: blur(0px); }
+            100% { opacity: 0; transform: translateY(-38px) scale(1.03); filter: blur(10px); }
+        }
+
+        /* Vệt sáng vút ngang màn hình khi chuyển cảnh sang cuốn sách */
+        .whoosh-streak {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 35;
+            opacity: 0;
+            background: linear-gradient(100deg, transparent 10%, rgba(251, 191, 36, 0.12) 40%, rgba(254, 240, 138, 0.65) 50%, rgba(167, 139, 250, 0.18) 60%, transparent 90%);
+            transform: translateX(-120%) skewX(-18deg);
+        }
+        .whoosh-active {
+            animation: whooshSweep 3.8s cubic-bezier(0.22, 0.85, 0.25, 1) forwards;
+        }
+        @keyframes whooshSweep {
+            0% { opacity: 0; transform: translateX(-120%) skewX(-18deg); }
+            25% { opacity: 0.9; }
+            55% { opacity: 1; filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.6)); }
+            80% { opacity: 0.85; }
+            100% { opacity: 0; transform: translateX(120%) skewX(-18deg); }
+        }
+
+        /* ==================== CUỐN SÁCH 3D HIỆN LÊN & MỞ TRANG ==================== */
+        .book-stage {
+            perspective: 1800px;
+            opacity: 0;
+            transform: translateY(80px) scale(0.78) rotateX(18deg);
+            transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+        .book-stage.visible {
+            opacity: 1;
+            transform: translateY(0px) scale(1) rotateX(8deg);
+            pointer-events: auto;
+        }
+
+        .book-3d-wrapper {
+            position: relative;
+            width: 340px;
+            height: 450px;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        /* Khi sách mở ra thì dịch sang phải 50% để 2 trang cân giữa màn hình */
+        .book-3d-wrapper.is-open {
+            transform: translateX(50%) rotateX(6deg);
+        }
+
+        @media (max-width: 768px) {
+            .book-3d-wrapper { width: 250px; height: 340px; }
+            .book-3d-wrapper.is-open { transform: translateX(35%) scale(0.82) rotateX(6deg); }
+        }
+
+        /* Bìa trước của sách (Xoay mở quanh gáy trái) */
+        .book-front-cover {
+            position: absolute;
+            inset: 0;
+            transform-origin: left center;
+            transform-style: preserve-3d;
+            transition: transform 1.45s cubic-bezier(0.3, 0.85, 0.25, 1);
+            z-index: 20;
+            cursor: pointer;
+        }
+        .book-3d-wrapper.is-open .book-front-cover {
+            transform: rotateY(-165deg);
+        }
+
+        .cover-outer, .cover-inner {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 6px 18px 18px 6px;
+        }
+
+        /* Mặt ngoài bìa sách: Da xanh cổ điển mạ vàng chiêm tinh */
+        .cover-outer {
+            background: linear-gradient(135deg, #1e1b38 0%, #121024 55%, #090814 100%);
+            border: 2px solid #d4af37;
+            box-shadow:
+                inset 14px 0 24px rgba(0,0,0,0.65),
+                inset 0 0 0 6px rgba(212, 175, 55, 0.18),
+                0 28px 60px rgba(0, 0, 0, 0.75),
+                0 0 45px rgba(245, 197, 66, 0.18);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 24px;
+        }
+
+        /* Mặt trong của bìa trước (Trở thành trang bên trái khi mở sách) */
+        .cover-inner {
+            transform: rotateY(180deg);
+            background: linear-gradient(to right, #e5dcc5 0%, #f6f1e3 18%, #fbf8f1 100%);
+            border: 1px solid #d4c5a1;
+            border-radius: 16px 4px 4px 16px;
+            box-shadow: inset -18px 0 30px rgba(120, 95, 50, 0.18);
+            color: #2c2418;
+            padding: 28px 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Trang bên phải cố định trên thân sách */
+        .book-right-page {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #dfd5bc 0%, #f5efe0 12%, #fcfaf4 100%);
+            border-radius: 4px 16px 16px 4px;
+            border: 1px solid #d4c5a1;
+            box-shadow:
+                inset 18px 0 28px rgba(110, 85, 45, 0.2),
+                12px 12px 0 #cfc4a8,
+                22px 28px 55px rgba(0, 0, 0, 0.75);
+            color: #2c2418;
+            padding: 28px 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        /* Gáy sách mạ vàng */
+        .book-spine {
+            position: absolute;
+            left: -16px;
+            top: 2px;
+            bottom: 2px;
+            width: 18px;
+            background: linear-gradient(to right, #0e0c1d, #2a244d, #151229);
+            border-left: 2px solid #d4af37;
+            border-radius: 6px 0 0 6px;
+            transform: translateZ(-2px);
+        }
+
+        /* Hào quang lấp lánh dưới cuốn sách */
+        @keyframes pulseAura {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.55; }
+            50% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.85; }
+        }
+        .book-aura {
+            position: absolute;
+            left: 50%; top: 50%;
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, rgba(245, 197, 66, 0.22) 0%, rgba(139, 92, 246, 0.1) 45%, transparent 72%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pulseAura 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #fff6d6 0%, #f5c85b 45%, #d99b26 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    

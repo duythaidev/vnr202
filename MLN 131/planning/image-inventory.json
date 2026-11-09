@@ -1,0 +1,312 @@
+[
+  {
+    "file": "era1.webp",
+    "original": "mlngame/public/art/era1.webp",
+    "bytes": 137322,
+    "sha256": "17eb34e4be3d3fed3b993f6f62608e9c177f62fe113828de9c36ab1047fa2777",
+    "primaryForPieces": []
+  },
+  {
+    "file": "era2.webp",
+    "original": "mlngame/public/art/era2.webp",
+    "bytes": 112322,
+    "sha256": "89cac8e8902e36ea67a112bc46a41fd03c350d0fc0736d35c49633f54db9d742",
+    "primaryForPieces": []
+  },
+  {
+    "file": "era3.webp",
+    "original": "mlngame/public/art/era3.webp",
+    "bytes": 138566,
+    "sha256": "7c02c2a85ff1262cacf54ea8b041ce2a54cdeca56cdb4589147b7a0e37e141b8",
+    "primaryForPieces": []
+  },
+  {
+    "file": "era4.webp",
+    "original": "mlngame/public/art/era4.webp",
+    "bytes": 133210,
+    "sha256": "ad24c18874f8ba3751e215d3902058d860e8d3e669c8a4823ebe5c44d0491fb5",
+    "primaryForPieces": []
+  },
+  {
+    "file": "era5.webp",
+    "original": "mlngame/public/art/era5.webp",
+    "bytes": 130148,
+    "sha256": "4a5e6f226dc1c4fe9d607fe76f4121a2664c70c866bb207d55739c6e85c59e9c",
+    "primaryForPieces": []
+  },
+  {
+    "file": "hero.webp",
+    "original": "mlngame/public/art/hero.webp",
+    "bytes": 116158,
+    "sha256": "8e73054ac4bfe7036a4d75b490fc2c6420db8f311faf29751a4761e36bb250b5",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l1p1.webp",
+    "original": "mlngame/public/art/l1p1.webp",
+    "bytes": 116370,
+    "sha256": "331f07025812cb7166944bfd6d830dda9414ac33975885490dc10aca1e8847d9",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l1p2.jpg",
+    "original": "mlngame/public/art/l1p2.jpg",
+    "bytes": 25232,
+    "sha256": "1897ec2e8555831f8bac1e808f31388105e56af3d67346587a1dcf802d47fe61",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l1p2.webp",
+    "original": "mlngame/public/art/l1p2.webp",
+    "bytes": 147600,
+    "sha256": "a8b57b8ee16af37ae26a2cc14b1907a0317a8d44d2906be64c46fc8d9a488048",
+    "primaryForPieces": [
+      1
+    ]
+  },
+  {
+    "file": "l1p3.webp",
+    "original": "mlngame/public/art/l1p3.webp",
+    "bytes": 135888,
+    "sha256": "de02ccbb7c5acb040d926c400c5a0779133692e7e1f98337bfe0a2cb38b3b306",
+    "primaryForPieces": [
+      2
+    ]
+  },
+  {
+    "file": "l1p4.webp",
+    "original": "mlngame/public/art/l1p4.webp",
+    "bytes": 101524,
+    "sha256": "dea9e3718eac133b10ab9f5dcd25b1d6b6edf43ab871f9e95fa7a3a8d4464108",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l1p5.jpg",
+    "original": "mlngame/public/art/l1p5.jpg",
+    "bytes": 15797,
+    "sha256": "5b91b8442546d2708fbfc315205c4fd167eb929c5f930b7d51e6d281db62c831",
+    "primaryForPieces": [
+      3
+    ]
+  },
+  {
+    "file": "l1p5.webp",
+    "original": "mlngame/public/art/l1p5.webp",
+    "bytes": 126042,
+    "sha256": "78a0b7f2fe12c2535474a969d66c37e3a58ea3e56361863a365b0019bbd71221",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l2p1.webp",
+    "original": "mlngame/public/art/l2p1.webp",
+    "bytes": 136302,
+    "sha256": "2b61f364ef314fdf7b17948989e9f8d5ed22d5704f371fe0bf51134da327cf38",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l2p2.jpg",
+    "original": "mlngame/public/art/l2p2.jpg",
+    "bytes": 97042,
+    "sha256": "6ff9862b416ca77f934774860ac381c6fafca4f9ab489b818201ddfdca9d1a80",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l2p2.webp",
+    "original": "mlngame/public/art/l2p2.webp",
+    "bytes": 124690,
+    "sha256": "72a4df5903fa2621e1bb64e20e15cc4a670bee7d6d1464118b8f40c5ace01591",
+    "primaryForPieces": [
+      4
+    ]
+  },
+  {
+    "file": "l2p3.webp",
+    "original": "mlngame/public/art/l2p3.webp",
+    "bytes": 119506,
+    "sha256": "b7097570a48c8225f43e514ccde620aa17d2a70ec960a1f7bb2a373627158af0",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l2p4.jpg",
+    "original": "mlngame/public/art/l2p4.jpg",
+    "bytes": 55987,
+    "sha256": "0e6d9a4e573327e042f59ce1b6b06ab3bceb4609d3754991b1cb5e726bb5a457",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l2p4.webp",
+    "original": "mlngame/public/art/l2p4.webp",
+    "bytes": 108892,
+    "sha256": "e7f087b0e2778e4e377d72732ee04c8ec476e1984086902bce1e609de20a7db9",
+    "primaryForPieces": [
+      5
+    ]
+  },
+  {
+    "file": "l2p5.webp",
+    "original": "mlngame/public/art/l2p5.webp",
+    "bytes": 128798,
+    "sha256": "2c7ac905bc180c391c5241e5f600b209e215203438143e739fd258d8f6074712",
+    "primaryForPieces": [
+      6
+    ]
+  },
+  {
+    "file": "l3p1.webp",
+    "original": "mlngame/public/art/l3p1.webp",
+    "bytes": 136362,
+    "sha256": "c4a5facf9f2e28c68e09ee206c4995269d0ac35125c68e113f726d0eb09e7a0b",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l3p2.jpg",
+    "original": "mlngame/public/art/l3p2.jpg",
+    "bytes": 70558,
+    "sha256": "a8afdbaea1c254d20a2e8a744543d32c06585f4f1a9d20bc738f89a68fbd5958",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l3p2.webp",
+    "original": "mlngame/public/art/l3p2.webp",
+    "bytes": 83516,
+    "sha256": "dabd29e58dba8c0629debddb8907e41c3299590f63e1fa2f7a4e1dacf9ec9ae4",
+    "primaryForPieces": [
+      7
+    ]
+  },
+  {
+    "file": "l3p3.webp",
+    "original": "mlngame/public/art/l3p3.webp",
+    "bytes": 136154,
+    "sha256": "55a1339fcbed161cef03443c8a3d06729c9ba38c2ff4c9af385b64fbd787eab4",
+    "primaryForPieces": [
+      8
+    ]
+  },
+  {
+    "file": "l3p4.webp",
+    "original": "mlngame/public/art/l3p4.webp",
+    "bytes": 152948,
+    "sha256": "7e4750e802b2f0d07dcfd676c7db252151a83dcb2fb83138e12248a7734b2c1a",
+    "primaryForPieces": [
+      9
+    ]
+  },
+  {
+    "file": "l3p5.webp",
+    "original": "mlngame/public/art/l3p5.webp",
+    "bytes": 137854,
+    "sha256": "e59a3b2d0f33b2f2675fc19d6993ad9e18c632ff9829dbc3fc591997b51d97c4",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l4p1.webp",
+    "original": "mlngame/public/art/l4p1.webp",
+    "bytes": 129394,
+    "sha256": "fdf4dfde89f6e6bfa4e10b775d48cfcd1ab1ecdc00585eedd15ee351f4f85b38",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l4p2.webp",
+    "original": "mlngame/public/art/l4p2.webp",
+    "bytes": 133560,
+    "sha256": "caed1f41ee3fa30c98985e423dc92d49066a403538b0f4418b586b3c15da31e4",
+    "primaryForPieces": [
+      10
+    ]
+  },
+  {
+    "file": "l4p3.jpg",
+    "original": "mlngame/public/art/l4p3.jpg",
+    "bytes": 131666,
+    "sha256": "a60c0fd951440947b7e69096071cc8e99efc0bf56800b980211ee776c41b2dd2",
+    "primaryForPieces": [
+      11
+    ]
+  },
+  {
+    "file": "l4p3.webp",
+    "original": "mlngame/public/art/l4p3.webp",
+    "bytes": 114834,
+    "sha256": "644b3aa397a9c010f7762b6c1fca22cebd199d2805bae35d5869ff0d4e7b358a",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l4p4.jpg",
+    "original": "mlngame/public/art/l4p4.jpg",
+    "bytes": 120770,
+    "sha256": "9e92a575328e0ebbf8f76535b652a9c455385745a3b28f6217f648de5f546e4d",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l4p4.webp",
+    "original": "mlngame/public/art/l4p4.webp",
+    "bytes": 131654,
+    "sha256": "b10c688167db1474759dfd0a8bf4cc3e09afa3e04a91e4895deb626099d83bed",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l4p5.webp",
+    "original": "mlngame/public/art/l4p5.webp",
+    "bytes": 101262,
+    "sha256": "9271e835cbb890db65669277d7850fd4a58fef190fa8975cd70e2850499f93e3",
+    "primaryForPieces": [
+      12
+    ]
+  },
+  {
+    "file": "l5p1.webp",
+    "original": "mlngame/public/art/l5p1.webp",
+    "bytes": 117426,
+    "sha256": "3635b7fa440ba060f1516e73986d73f76fcd4a74fbf16c07f8289b6abce31f4f",
+    "primaryForPieces": [
+      13
+    ]
+  },
+  {
+    "file": "l5p2.webp",
+    "original": "mlngame/public/art/l5p2.webp",
+    "bytes": 134944,
+    "sha256": "e686cd1fbfd62a64a95413e7c55425a3557405f3683caa2913a5a87faa76b8a2",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l5p3.jpg",
+    "original": "mlngame/public/art/l5p3.jpg",
+    "bytes": 130026,
+    "sha256": "bd1eef58689d62f25955e1684d9e21139c4770227b9a6342a99bae0b5d00f89f",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l5p3.webp",
+    "original": "mlngame/public/art/l5p3.webp",
+    "bytes": 122440,
+    "sha256": "1bd04a21649156010f61d2e8dbd43ab208a3bb5d3a8b578bee5b4d3709d1ecb0",
+    "primaryForPieces": [
+      14
+    ]
+  },
+  {
+    "file": "l5p4.webp",
+    "original": "mlngame/public/art/l5p4.webp",
+    "bytes": 142704,
+    "sha256": "d8066a9baeb9f120e2e9644e46ef322d7d593e65d147d1dac4b64033bbf476bf",
+    "primaryForPieces": []
+  },
+  {
+    "file": "l5p5.webp",
+    "original": "mlngame/public/art/l5p5.webp",
+    "bytes": 131572,
+    "sha256": "429da265b0dcea2d75c1d8ddd13b445874b6b5ea4380855bebfb68fb66bf3598",
+    "primaryForPieces": [
+      15
+    ]
+  },
+  {
+    "file": "poster.webp",
+    "original": "mlngame/public/art/poster.webp",
+    "bytes": 115354,
+    "sha256": "36b00ba48b32b743499952c6466fbef57e029b88ef2c9a1de3d8ba9e03b022ba",
+    "primaryForPieces": []
+  }
+]

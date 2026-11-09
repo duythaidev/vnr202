@@ -1,0 +1,90 @@
+[
+  {
+    "source": "mlngame/public/bacHodoctuyenngon.webp",
+    "file": "declaration-candidate.webp",
+    "sourceWidth": 1024,
+    "sourceHeight": 785,
+    "sourceBytes": 53580,
+    "sourceSha256": "89878a4bac31d5b10551b00b8f7a289765608285bf4409d8d7122d871a59b5dd",
+    "bytes": 51024,
+    "sha256": "103de5707642d354f2c55d9c759b0777bccedc0886680a2fbd57c4a59cfa3301",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/doi1945.png",
+    "file": "famine-candidate.webp",
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "sourceBytes": 2383867,
+    "sourceSha256": "14cfbd5c6325899b8c0c4c1226d4db21d422d7d544928a8995aad30955ce89bd",
+    "bytes": 32564,
+    "sha256": "f9c00ab36f5356dd895eb7f4c68b41258e4bf088aa54341f0e6c6e8191816545",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/kehoach.jpg",
+    "file": "map-meeting-unverified.webp",
+    "sourceWidth": 870,
+    "sourceHeight": 580,
+    "sourceBytes": 137600,
+    "sourceSha256": "96640ed258529a3c62b084af76c58cea09409ce0685ab6e233fe8e98818afaf7",
+    "bytes": 73872,
+    "sha256": "c9562ca6dbeb630c692078f8279fb2985727f958ce331e59a39683b5c0bd0179",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/nhathavuki.png",
+    "file": "weapons-scene-unverified.webp",
+    "sourceWidth": 737,
+    "sourceHeight": 558,
+    "sourceBytes": 188239,
+    "sourceSha256": "cd4f7a557f280b02efacc2e29aa4e561d6ea454a752790ffaae9b8b54863f5ba",
+    "bytes": 98452,
+    "sha256": "ee0cd804bdeba5819f56d3509099f0bdcd210392b5fd5a92486333b1d54659be",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/nole.png",
+    "file": "colonial-labor-candidate.webp",
+    "sourceWidth": 640,
+    "sourceHeight": 472,
+    "sourceBytes": 442614,
+    "sourceSha256": "a8b9ccbf36a27bb91b354945e00dd0147a85ae5e64945e9121f9ddb4d1419d35",
+    "bytes": 55084,
+    "sha256": "a17f17bc7f24c6c3c3d3f0c9f45b04c21e96c069ba0b9a533fb4e5db6bf5e422",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/phapnhat.png",
+    "file": "occupation-illustration.webp",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048,
+    "sourceBytes": 9318903,
+    "sourceSha256": "c82099222534dd6d7236acf725655381aefb417ae514d0fdd1239bc7189865bf",
+    "bytes": 171838,
+    "sha256": "6f28be6642643e653451ad917e671d69e41197d678a5e6981fdeb175478ba9eb",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/quangtruong.jpg",
+    "file": "building-unverified.webp",
+    "sourceWidth": 600,
+    "sourceHeight": 372,
+    "sourceBytes": 159493,
+    "sourceSha256": "6ee8b32eaefec5d5b2de285a89e3d469d381e1bed89d9507055a8373dfee3c7f",
+    "bytes": 52536,
+    "sha256": "ff2818d6d5d001f18c973cf1752f27c3e08bc0b0ff391ca3c2c314484f0f9436",
+    "status": "candidate-not-assigned-to-runtime"
+  },
+  {
+    "source": "mlngame/public/thoico.jpg",
+    "file": "time-window-illustration.webp",
+    "sourceWidth": 1024,
+    "sourceHeight": 1024,
+    "sourceBytes": 212495,
+    "sourceSha256": "a9fdac977049ca27be5aeab951d6e6a65940ea40b7a9fbbfa33c23881f989f55",
+    "bytes": 80092,
+    "sha256": "288f9df36dcb06da5869f8f07109d0bb796575b4ba554db4492e5aaf519b4920",
+    "status": "candidate-not-assigned-to-runtime"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "vnr-p01",
+    "index": 0,
+    "title": "Bối cảnh thuộc địa và những ngả đường cứu nước",
+    "sourceParagraphs": "022–046",
+    "stepIds": [
+      "vnr-p01-s01",
+      "vnr-p01-s02",
+      "vnr-p01-s03",
+      "vnr-p01-s04"
+    ]
+  },
+  {
+    "id": "vnr-p02",
+    "index": 1,
+    "title": "Nguyễn Ái Quốc chuẩn bị cho sự ra đời của Đảng",
+    "sourceParagraphs": "047–052",
+    "stepIds": [
+      "vnr-p02-s01",
+      "vnr-p02-s02",
+      "vnr-p02-s03",
+      "vnr-p02-s04"
+    ]
+  },
+  {
+    "id": "vnr-p03",
+    "index": 2,
+    "title": "Từ các tổ chức cộng sản đến một chính đảng",
+    "sourceParagraphs": "053–059",
+    "stepIds": [
+      "vnr-p03-s01",
+      "vnr-p03-s02",
+      "vnr-p03-s03"
+    ]
+  },
+  {
+    "id": "vnr-p04",
+    "index": 3,
+    "title": "Cương lĩnh đầu tiên: độc lập và tập hợp lực lượng",
+    "sourceParagraphs": "060–065",
+    "stepIds": [
+      "vnr-p04-s01",
+      "vnr-p04-s02",
+      "vnr-p04-s03",
+      "vnr-p04-s04"
+    ]
+  },
+  {
+    "id": "vnr-p05",
+    "index": 4,
+    "title": "Cao trào cách mạng và Xô viết Nghệ–Tĩnh",
+    "sourceParagraphs": "067–073",
+    "stepIds": [
+      "vnr-p05-s01",
+      "vnr-p05-s02",
+      "vnr-p05-s03"
+    ]
+  },
+  {
+    "id": "vnr-p06",
+    "index": 5,
+    "title": "Luận cương và sự khác biệt với Cương lĩnh",
+    "sourceParagraphs": "074–085",
+    "stepIds": [
+      "vnr-p06-s01",
+      "vnr-p06-s02",
+      "vnr-p06-s03",
+      "vnr-p06-s04"
+    ]
+  },
+  {
+    "id": "vnr-p07",
+    "index": 6,
+    "title": "Giữ tổ chức và đấu tranh trong nhà tù",
+    "sourceParagraphs": "086–092",
+    "stepIds": [
+      "vnr-p07-s01",
+      "vnr-p07-s02",
+      "vnr-p07-s03"
+    ]
+  },
+  {
+    "id": "vnr-p08",
+    "index": 7,
+    "title": "Khôi phục tổ chức và Đại hội I",
+    "sourceParagraphs": "093–098",
+    "stepIds": [
+      "vnr-p08-s01",
+      "vnr-p08-s02",
+      "vnr-p08-s03"
+    ]
+  },
+  {
+    "id": "vnr-p09",
+    "index": 8,
+    "title": "Từ bối cảnh chống phát xít đến sách lược mới",
+    "sourceParagraphs": "099–117",
+    "stepIds": [
+      "vnr-p09-s01",
+      "vnr-p09-s02",
+      "vnr-p09-s03",
+      "vnr-p09-s04"
+    ]
+  },
+  {
+    "id": "vnr-p10",
+    "index": 9,
+    "title": "Mặt trận dân chủ, báo chí và kinh nghiệm tổ chức",
+    "sourceParagraphs": "118–127",
+    "stepIds": [
+      "vnr-p10-s01",
+      "vnr-p10-s02",
+      "vnr-p10-s03",
+      "vnr-p10-s04"
+    ]
+  },
+  {
+    "id": "vnr-p11",
+    "index": 10,
+    "title": "Chuyển hướng trong hoàn cảnh chiến tranh",
+    "sourceParagraphs": "128–141;154–158",
+    "stepIds": [
+      "vnr-p11-s01",
+      "vnr-p11-s02",
+      "vnr-p11-s03",
+      "vnr-p11-s04"
+    ]
+  },
+  {
+    "id": "vnr-p12",
+    "index": 11,
+    "title": "Hội nghị Trung ương 8: sáu nội dung trọng tâm",
+    "sourceParagraphs": "142–153",
+    "stepIds": [
+      "vnr-p12-s01",
+      "vnr-p12-s02",
+      "vnr-p12-s03",
+      "vnr-p12-s04",
+      "vnr-p12-s05",
+      "vnr-p12-s06"
+    ]
+  },
+  {
+    "id": "vnr-p13",
+    "index": 12,
+    "title": "Chuẩn bị lực lượng và căn cứ địa",
+    "sourceParagraphs": "159–171",
+    "stepIds": [
+      "vnr-p13-s01",
+      "vnr-p13-s02",
+      "vnr-p13-s03",
+      "vnr-p13-s04"
+    ]
+  },
+  {
+    "id": "vnr-p14",
+    "index": 13,
+    "title": "Kháng Nhật cứu nước và chuẩn bị tổng khởi nghĩa",
+    "sourceParagraphs": "172–195",
+    "stepIds": [
+      "vnr-p14-s01",
+      "vnr-p14-s02",
+      "vnr-p14-s03",
+      "vnr-p14-s04",
+      "vnr-p14-s05"
+    ]
+  },
+  {
+    "id": "vnr-p15",
+    "index": 14,
+    "title": "Giành chính quyền, độc lập và bài học đường lối",
+    "sourceParagraphs": "196–219",
+    "stepIds": [
+      "vnr-p15-s01",
+      "vnr-p15-s02",
+      "vnr-p15-s03",
+      "vnr-p15-s04",
+      "vnr-p15-s05"
+    ]
+  }
+]
