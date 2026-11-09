@@ -59,6 +59,14 @@ const Presentation = (() => {
         return out.filter(Boolean).join(' ').replace(/→\s*/g, '');
     }
 
+    // MP3 đã tạo sẵn (presentation-audio.js). Thiếu clip → Narrator chạy đồng hồ phụ đề.
+    const audioOf = (clipId) => {
+        const c = (typeof PRESENTATION_AUDIO !== 'undefined') && PRESENTATION_AUDIO[clipId];
+        return c ? { src: c.file, duration: c.duration } : {};
+    };
+    const introClip = (p) => audioOf(`${getStory(p).id}-intro`);
+    const stepClip = (p, s) => audioOf(getStory(p).steps[s].id);
+
     function buildSegments() {
         segs = [];
         MUSEUM_PIECES.forEach((_, p) => {
@@ -130,8 +138,9 @@ const Presentation = (() => {
             setPhase('intro');
             const text = introText(p);
             showIntroCard(p, true);
-            MuseumTour.startDrift(p, Narrator.durationFor(text), introShift());
-            await Narrator.play(text, { signal });
+            const clip = introClip(p);
+            MuseumTour.startDrift(p, clip.duration || Narrator.durationFor(text), introShift());
+            await Narrator.play(text, { signal, ...clip });
             await delay(0.35, signal);
             showIntroCard(p, false);
             return;
@@ -155,7 +164,7 @@ const Presentation = (() => {
         setPhase('step');
         const written = StoryBoard.isWritten(s) ? Promise.resolve() : waitBoard('written', d => d.piece === p && d.index === s, signal, 120);
         // HÀNG RÀO: chỉ đi tiếp khi người dẫn đọc xong VÀ bút viết xong
-        await Promise.all([Narrator.play(stepText(p, s), { signal }), written]);
+        await Promise.all([Narrator.play(stepText(p, s), { signal, ...stepClip(p, s) }), written]);
         setPhase('finishing');
         await delay(0.7, signal);
     }
@@ -293,6 +302,7 @@ const Presentation = (() => {
         status = s;
         const paused = s !== 'running';
         MuseumTour.paused = paused;
+        Narrator.setPaused(paused);
         StoryBoard.setPaused(paused && s !== 'idle');
         notify();
     }

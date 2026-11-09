@@ -109,42 +109,67 @@ const MuseumTour = (() => {
     };
 })();
 
-// ---------------- Người dẫn (bản im lặng, có phụ đề) ----------------
+// ---------------- Người dẫn: phát MP3 đã tạo sẵn; không có MP3 thì chạy đồng hồ phụ đề ----------------
 const Narrator = (() => {
-    let cur = null, rate = 1;
-    const WORDS_PER_SEC = 3.4;    // voice TTS tiếng Việt đọc nhanh (~200 từ/phút); chỉ là đồng hồ mô phỏng khi chưa có MP3
+    let cur = null, rate = 1, paused = false;
+    const WORDS_PER_SEC = 3.6;    // voice TTS đo thật ~3,7 từ/giây; chỉ dùng cho đồng hồ dự phòng khi thiếu MP3
 
     function durationFor(text) {
         const words = String(text || '').trim().split(/\s+/).filter(Boolean).length;
         return THREE.MathUtils.clamp(words / WORDS_PER_SEC + 0.8, 3, 60);
     }
+    function dropAudio(c) {
+        const a = c && c.audio;
+        if (!a) return;
+        c.audio = null;
+        a.pause(); a.removeAttribute('src'); a.load();
+    }
 
-    function play(text, { signal } = {}) {
+    // opts.src: đường dẫn MP3 relative; opts.duration: thời lượng (giây) từ manifest
+    function play(text, { signal, src, duration } = {}) {
         stop();
         if (signal && signal.aborted) return Promise.reject(abortError());
         return new Promise((resolve, reject) => {
-            const me = { text, t: 0, dur: durationFor(text), resolve, reject };
+            const me = { text, t: 0, dur: duration || durationFor(text), resolve, reject, audio: null };
             cur = me;
+            if (src) {
+                const a = new Audio(src);
+                me.audio = a;
+                a.preload = 'auto';
+                // MP3 lỗi/bị chặn: chuyển sang đồng hồ để tour không đứng, không gọi TTS
+                me.fallback = (why) => { if (cur === me && me.audio) { console.warn('Voice không phát được, dùng đồng hồ:', src, why); dropAudio(me); me.t = 0; } };
+                a.addEventListener('ended', () => { if (cur === me && me.audio) { dropAudio(me); cur = null; resolve(); } });
+                a.addEventListener('error', () => me.fallback('error'));
+                a.addEventListener('loadedmetadata', () => { if (cur === me && isFinite(a.duration) && a.duration > 0) me.dur = a.duration; });
+                if (!paused) a.play().catch(e => me.fallback(e.name));
+            }
             if (signal) signal.addEventListener('abort', () => {
-                if (cur === me) { cur = null; reject(abortError()); }
+                if (cur === me) { dropAudio(me); cur = null; reject(abortError()); }
             }, { once: true });
         });
     }
-    // chỉ được gọi khi tour đang chạy (pause = không gọi tick)
+    // chỉ được gọi khi tour đang chạy (pause = không gọi tick). Có MP3 thì `ended` mới là tín hiệu kết thúc.
     function tick(dt) {
-        if (!cur) return;
+        if (!cur || cur.audio) return;
         cur.t += dt * rate;
         if (cur.t >= cur.dur) { const c = cur; cur = null; c.resolve(); }
     }
-    function stop() { if (cur) { const c = cur; cur = null; c.reject(abortError()); } }
-    function skip() { if (cur) cur.t = cur.dur; }
+    function setPaused(v) {
+        paused = !!v;
+        const a = cur && cur.audio;
+        if (!a) return;
+        if (paused) a.pause(); else a.play().catch(e => cur && cur.fallback && cur.fallback(e.name));
+    }
+    function stop() { if (cur) { const c = cur; cur = null; dropAudio(c); c.reject(abortError()); } }
+    function skip() { if (cur) { const c = cur; cur = null; dropAudio(c); c.resolve(); } }
+    const elapsed = () => (cur.audio ? cur.audio.currentTime : cur.t);
 
     return {
-        play, tick, stop, skip, durationFor,
+        play, tick, stop, skip, durationFor, setPaused,
         set rate(v) { rate = v; },
         get active() { return !!cur; },
         get text() { return cur ? cur.text : ''; },
-        get progress() { return cur ? FX.clamp01(cur.t / cur.dur) : 0; },
-        get remaining() { return cur ? Math.max(0, (cur.dur - cur.t) / rate) : 0; }
+        get progress() { return cur ? FX.clamp01(elapsed() / cur.dur) : 0; },
+        get remaining() { return cur ? Math.max(0, (cur.dur - elapsed()) / (cur.audio ? 1 : rate)) : 0; }
     };
 })();

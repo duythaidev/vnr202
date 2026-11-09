@@ -1,7 +1,7 @@
 {
   "course": "VNR202",
   "revision": 3,
-  "status": "plan-only",
+  "status": "generated",
   "expectedClipCount": 48,
   "pieceCount": 10,
   "stepCount": 38,
@@ -12,9 +12,10 @@
       "pieceId": "vnr-p01",
       "pieceIndex": 0,
       "title": "Tìm đường cứu nước",
-      "expectedFile": "audio/presentation/vnr-p01/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p01-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 9
     },
     {
       "clipId": "vnr-p01-s01",
@@ -24,10 +25,11 @@
       "stepId": "vnr-p01-s01",
       "stepIndex": 0,
       "title": "Ách thống trị và mâu thuẫn dân tộc",
-      "expectedFile": "audio/presentation/vnr-p01/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p01-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Dưới ách thực dân Pháp, mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở thành mâu thuẫn chủ yếu, gay gắt nhất."
+      "thesis": "Dưới ách thực dân Pháp, mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở thành mâu thuẫn chủ yếu, gay gắt nhất.",
+      "duration": 16.25
     },
     {
       "clipId": "vnr-p01-s02",
@@ -37,10 +39,11 @@
       "stepId": "vnr-p01-s02",
       "stepIndex": 1,
       "title": "Giai cấp mới, con đường cũ bế tắc",
-      "expectedFile": "audio/presentation/vnr-p01/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p01-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Giai cấp công nhân ra đời sớm và kiên cường; các phong trào yêu nước trước đó đều thất bại vì thiếu đường lối và tổ chức đúng đắn."
+      "thesis": "Giai cấp công nhân ra đời sớm và kiên cường; các phong trào yêu nước trước đó đều thất bại vì thiếu đường lối và tổ chức đúng đắn.",
+      "duration": 16.61
     },
     {
       "clipId": "vnr-p01-s03",
@@ -50,10 +53,11 @@
       "stepId": "vnr-p01-s03",
       "stepIndex": 2,
       "title": "Nguyễn Ái Quốc tìm đường cứu nước",
-      "expectedFile": "audio/presentation/vnr-p01/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p01-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Từ 1911 đến 1920, Nguyễn Ái Quốc tìm ra con đường cứu nước: giải phóng dân tộc gắn với cách mạng vô sản."
+      "thesis": "Từ 1911 đến 1920, Nguyễn Ái Quốc tìm ra con đường cứu nước: giải phóng dân tộc gắn với cách mạng vô sản.",
+      "duration": 15.82
     },
     {
       "clipId": "vnr-p01-s04",
@@ -63,10 +67,11 @@
       "stepId": "vnr-p01-s04",
       "stepIndex": 3,
       "title": "Chuẩn bị tư tưởng, chính trị, tổ chức",
-      "expectedFile": "audio/presentation/vnr-p01/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p01-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Nguyễn Ái Quốc chuẩn bị đồng thời ba mặt để thành lập một đảng cách mạng chân chính."
+      "thesis": "Nguyễn Ái Quốc chuẩn bị đồng thời ba mặt để thành lập một đảng cách mạng chân chính.",
+      "duration": 17.28
     },
     {
       "clipId": "vnr-p02-intro",
@@ -74,9 +79,10 @@
       "pieceId": "vnr-p02",
       "pieceIndex": 1,
       "title": "Đảng ra đời",
-      "expectedFile": "audio/presentation/vnr-p02/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p02-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 8.38
     },
     {
       "clipId": "vnr-p02-s01",
@@ -86,10 +92,11 @@
       "stepId": "vnr-p02-s01",
       "stepIndex": 0,
       "title": "Ba tổ chức cộng sản năm 1929",
-      "expectedFile": "audio/presentation/vnr-p02/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p02-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Phong trào công nhân đòi hỏi một đảng thống nhất: năm 1929 ba tổ chức cộng sản cùng xuất hiện."
+      "thesis": "Phong trào công nhân đòi hỏi một đảng thống nhất: năm 1929 ba tổ chức cộng sản cùng xuất hiện.",
+      "duration": 14.23
     },
     {
       "clipId": "vnr-p02-s02",
@@ -99,10 +106,11 @@
       "stepId": "vnr-p02-s02",
       "stepIndex": 1,
       "title": "Hội nghị thành lập Đảng",
-      "expectedFile": "audio/presentation/vnr-p02/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p02-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Hội nghị hợp nhất ở Cửu Long (Hồng Kông) thống nhất các tổ chức thành Đảng Cộng sản Việt Nam."
+      "thesis": "Hội nghị hợp nhất ở Cửu Long (Hồng Kông) thống nhất các tổ chức thành Đảng Cộng sản Việt Nam.",
+      "duration": 14.33
     },
     {
       "clipId": "vnr-p02-s03",
@@ -112,10 +120,11 @@
       "stepId": "vnr-p02-s03",
       "stepIndex": 2,
       "title": "Cương lĩnh chính trị đầu tiên",
-      "expectedFile": "audio/presentation/vnr-p02/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p02-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Cương lĩnh đặt nhiệm vụ chống đế quốc, giành độc lập dân tộc lên hàng đầu và đại đoàn kết toàn dân tộc."
+      "thesis": "Cương lĩnh đặt nhiệm vụ chống đế quốc, giành độc lập dân tộc lên hàng đầu và đại đoàn kết toàn dân tộc.",
+      "duration": 14.57
     },
     {
       "clipId": "vnr-p02-s04",
@@ -125,10 +134,11 @@
       "stepId": "vnr-p02-s04",
       "stepIndex": 3,
       "title": "Chấm dứt khủng hoảng đường lối",
-      "expectedFile": "audio/presentation/vnr-p02/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p02-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Thành lập Đảng chấm dứt cuộc khủng hoảng về đường lối và tổ chức lãnh đạo kéo dài từ cuối thế kỷ XIX."
+      "thesis": "Thành lập Đảng chấm dứt cuộc khủng hoảng về đường lối và tổ chức lãnh đạo kéo dài từ cuối thế kỷ XIX.",
+      "duration": 13.8
     },
     {
       "clipId": "vnr-p03-intro",
@@ -136,9 +146,10 @@
       "pieceId": "vnr-p03",
       "pieceIndex": 2,
       "title": "Xô viết Nghệ–Tĩnh",
-      "expectedFile": "audio/presentation/vnr-p03/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p03-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 11.4
     },
     {
       "clipId": "vnr-p03-s01",
@@ -148,10 +159,11 @@
       "stepId": "vnr-p03-s01",
       "stepIndex": 0,
       "title": "Cao trào cách mạng 1930–1931",
-      "expectedFile": "audio/presentation/vnr-p03/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p03-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Khủng hoảng kinh tế 1929–1933 và khủng bố trắng đẩy mâu thuẫn tới đỉnh điểm; Đảng vừa ra đời đã kịp phát động quần chúng."
+      "thesis": "Khủng hoảng kinh tế 1929–1933 và khủng bố trắng đẩy mâu thuẫn tới đỉnh điểm; Đảng vừa ra đời đã kịp phát động quần chúng.",
+      "duration": 14.45
     },
     {
       "clipId": "vnr-p03-s02",
@@ -161,10 +173,11 @@
       "stepId": "vnr-p03-s02",
       "stepIndex": 1,
       "title": "Xô viết Nghệ–Tĩnh",
-      "expectedFile": "audio/presentation/vnr-p03/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p03-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Đỉnh cao là Xô viết Nghệ–Tĩnh: chi bộ và nông hội đứng ra làm chức năng chính quyền công nông thu nhỏ."
+      "thesis": "Đỉnh cao là Xô viết Nghệ–Tĩnh: chi bộ và nông hội đứng ra làm chức năng chính quyền công nông thu nhỏ.",
+      "duration": 14.38
     },
     {
       "clipId": "vnr-p03-s03",
@@ -174,10 +187,11 @@
       "stepId": "vnr-p03-s03",
       "stepIndex": 2,
       "title": "Đàn áp và ý nghĩa lịch sử",
-      "expectedFile": "audio/presentation/vnr-p03/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p03-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Dù tổn thất nặng nề, cao trào khẳng định trên thực tế quyền lãnh đạo của giai cấp công nhân và rèn luyện lực lượng cho các giai đoạn sau."
+      "thesis": "Dù tổn thất nặng nề, cao trào khẳng định trên thực tế quyền lãnh đạo của giai cấp công nhân và rèn luyện lực lượng cho các giai đoạn sau.",
+      "duration": 13.8
     },
     {
       "clipId": "vnr-p04-intro",
@@ -185,9 +199,10 @@
       "pieceId": "vnr-p04",
       "pieceIndex": 3,
       "title": "Luận cương và khôi phục",
-      "expectedFile": "audio/presentation/vnr-p04/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p04-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 9.55
     },
     {
       "clipId": "vnr-p04-s01",
@@ -197,10 +212,11 @@
       "stepId": "vnr-p04-s01",
       "stepIndex": 0,
       "title": "Luận cương chính trị 10/1930",
-      "expectedFile": "audio/presentation/vnr-p04/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p04-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Hội nghị Trung ương đầu tiên thông qua Luận cương chính trị do Trần Phú soạn thảo."
+      "thesis": "Hội nghị Trung ương đầu tiên thông qua Luận cương chính trị do Trần Phú soạn thảo.",
+      "duration": 15.62
     },
     {
       "clipId": "vnr-p04-s02",
@@ -210,10 +226,11 @@
       "stepId": "vnr-p04-s02",
       "stepIndex": 1,
       "title": "Hạn chế: chưa đặt độc lập lên hàng đầu",
-      "expectedFile": "audio/presentation/vnr-p04/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p04-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Luận cương chưa đặt nhiệm vụ giải phóng dân tộc lên hàng đầu: một bước chuyển “tả” khuynh so với Cương lĩnh 2/1930."
+      "thesis": "Luận cương chưa đặt nhiệm vụ giải phóng dân tộc lên hàng đầu: một bước chuyển “tả” khuynh so với Cương lĩnh 2/1930.",
+      "duration": 14.66
     },
     {
       "clipId": "vnr-p04-s03",
@@ -223,10 +240,11 @@
       "stepId": "vnr-p04-s03",
       "stepIndex": 2,
       "title": "Giữ vững khí tiết 1931–1933",
-      "expectedFile": "audio/presentation/vnr-p04/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p04-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Dưới khủng bố trắng, cán bộ, đảng viên giữ vững khí tiết và biến nhà tù thành trường học cộng sản."
+      "thesis": "Dưới khủng bố trắng, cán bộ, đảng viên giữ vững khí tiết và biến nhà tù thành trường học cộng sản.",
+      "duration": 16.46
     },
     {
       "clipId": "vnr-p04-s04",
@@ -236,10 +254,11 @@
       "stepId": "vnr-p04-s04",
       "stepIndex": 3,
       "title": "Khôi phục tổ chức và Đại hội I",
-      "expectedFile": "audio/presentation/vnr-p04/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p04-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Từ 1932 đến 1935, Đảng khôi phục hệ thống tổ chức; đỉnh cao là Đại hội đại biểu lần thứ I (3/1935, Ma Cao)."
+      "thesis": "Từ 1932 đến 1935, Đảng khôi phục hệ thống tổ chức; đỉnh cao là Đại hội đại biểu lần thứ I (3/1935, Ma Cao).",
+      "duration": 15.5
     },
     {
       "clipId": "vnr-p05-intro",
@@ -247,9 +266,10 @@
       "pieceId": "vnr-p05",
       "pieceIndex": 4,
       "title": "Dân chủ, cơm áo, hòa bình",
-      "expectedFile": "audio/presentation/vnr-p05/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p05-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 11.02
     },
     {
       "clipId": "vnr-p05-s01",
@@ -259,10 +279,11 @@
       "stepId": "vnr-p05-s01",
       "stepIndex": 0,
       "title": "Bối cảnh: nguy cơ phát xít",
-      "expectedFile": "audio/presentation/vnr-p05/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p05-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Nguy cơ phát xít và chiến tranh thế giới buộc Đảng xác định lại kẻ thù và hình thức đấu tranh."
+      "thesis": "Nguy cơ phát xít và chiến tranh thế giới buộc Đảng xác định lại kẻ thù và hình thức đấu tranh.",
+      "duration": 14.98
     },
     {
       "clipId": "vnr-p05-s02",
@@ -272,10 +293,11 @@
       "stepId": "vnr-p05-s02",
       "stepIndex": 1,
       "title": "Chủ trương mới của Đảng",
-      "expectedFile": "audio/presentation/vnr-p05/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p05-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Các hội nghị Trung ương 7/1936, 1937, 1938 xác định kẻ thù, nhiệm vụ, mặt trận và hình thức đấu tranh mới."
+      "thesis": "Các hội nghị Trung ương 7/1936, 1937, 1938 xác định kẻ thù, nhiệm vụ, mặt trận và hình thức đấu tranh mới.",
+      "duration": 17.09
     },
     {
       "clipId": "vnr-p05-s03",
@@ -285,10 +307,11 @@
       "stepId": "vnr-p05-s03",
       "stepIndex": 2,
       "title": "Bước đột phá nhận thức lý luận",
-      "expectedFile": "audio/presentation/vnr-p05/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p05-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Văn kiện “Chung quanh vấn đề chiến sách mới” (10/1936) tách giải phóng dân tộc khỏi sự ràng buộc cứng nhắc với cách mạng điền địa."
+      "thesis": "Văn kiện “Chung quanh vấn đề chiến sách mới” (10/1936) tách giải phóng dân tộc khỏi sự ràng buộc cứng nhắc với cách mạng điền địa.",
+      "duration": 15.22
     },
     {
       "clipId": "vnr-p05-s04",
@@ -298,10 +321,11 @@
       "stepId": "vnr-p05-s04",
       "stepIndex": 3,
       "title": "Đấu tranh phong phú, lực lượng lớn mạnh",
-      "expectedFile": "audio/presentation/vnr-p05/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p05-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Phong trào dân chủ rèn luyện đội quân chính trị hàng triệu người, chuẩn bị cho Cách mạng Tháng Tám."
+      "thesis": "Phong trào dân chủ rèn luyện đội quân chính trị hàng triệu người, chuẩn bị cho Cách mạng Tháng Tám.",
+      "duration": 17.02
     },
     {
       "clipId": "vnr-p06-intro",
@@ -309,9 +333,10 @@
       "pieceId": "vnr-p06",
       "pieceIndex": 5,
       "title": "Chuyển hướng chiến lược",
-      "expectedFile": "audio/presentation/vnr-p06/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p06-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 8.74
     },
     {
       "clipId": "vnr-p06-s01",
@@ -321,10 +346,11 @@
       "stepId": "vnr-p06-s01",
       "stepIndex": 0,
       "title": "Chiến tranh và “một cổ hai tròng”",
-      "expectedFile": "audio/presentation/vnr-p06/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p06-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Chiến tranh thế giới thứ hai đặt nhân dân Đông Dương dưới hai tầng áp bức Pháp – Nhật."
+      "thesis": "Chiến tranh thế giới thứ hai đặt nhân dân Đông Dương dưới hai tầng áp bức Pháp – Nhật.",
+      "duration": 17.21
     },
     {
       "clipId": "vnr-p06-s02",
@@ -334,10 +360,11 @@
       "stepId": "vnr-p06-s02",
       "stepIndex": 1,
       "title": "Ba bước chuyển hướng chiến lược",
-      "expectedFile": "audio/presentation/vnr-p06/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p06-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Sự chuyển hướng diễn ra qua ba hội nghị Trung ương và được hoàn chỉnh tại Hội nghị Trung ương 8 do Nguyễn Ái Quốc chủ trì."
+      "thesis": "Sự chuyển hướng diễn ra qua ba hội nghị Trung ương và được hoàn chỉnh tại Hội nghị Trung ương 8 do Nguyễn Ái Quốc chủ trì.",
+      "duration": 19.08
     },
     {
       "clipId": "vnr-p06-s03",
@@ -347,10 +374,11 @@
       "stepId": "vnr-p06-s03",
       "stepIndex": 2,
       "title": "Bốn nội dung chuyển hướng cốt lõi",
-      "expectedFile": "audio/presentation/vnr-p06/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p06-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Hội nghị Trung ương 8 đặt giải phóng dân tộc lên tối cao với bốn nội dung cốt lõi."
+      "thesis": "Hội nghị Trung ương 8 đặt giải phóng dân tộc lên tối cao với bốn nội dung cốt lõi.",
+      "duration": 13.25
     },
     {
       "clipId": "vnr-p06-s04",
@@ -360,10 +388,11 @@
       "stepId": "vnr-p06-s04",
       "stepIndex": 3,
       "title": "Việt Minh và nhà nước của toàn dân",
-      "expectedFile": "audio/presentation/vnr-p06/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p06-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Mặt trận Việt Minh tập hợp mọi người yêu nước; nhà nước tương lai là của toàn thể dân tộc, không phải chính quyền Xôviết."
+      "thesis": "Mặt trận Việt Minh tập hợp mọi người yêu nước; nhà nước tương lai là của toàn thể dân tộc, không phải chính quyền Xôviết.",
+      "duration": 16.01
     },
     {
       "clipId": "vnr-p07-intro",
@@ -371,9 +400,10 @@
       "pieceId": "vnr-p07",
       "pieceIndex": 6,
       "title": "Chuẩn bị cho khởi nghĩa",
-      "expectedFile": "audio/presentation/vnr-p07/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p07-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 8.59
     },
     {
       "clipId": "vnr-p07-s01",
@@ -383,10 +413,11 @@
       "stepId": "vnr-p07-s01",
       "stepIndex": 0,
       "title": "Ba tiếng súng báo hiệu",
-      "expectedFile": "audio/presentation/vnr-p07/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p07-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Ba cuộc nổi dậy đầu tiên là “những tiếng súng báo hiệu cho cuộc khởi nghĩa toàn quốc”, dù đều bị đàn áp."
+      "thesis": "Ba cuộc nổi dậy đầu tiên là “những tiếng súng báo hiệu cho cuộc khởi nghĩa toàn quốc”, dù đều bị đàn áp.",
+      "duration": 15.86
     },
     {
       "clipId": "vnr-p07-s02",
@@ -396,10 +427,11 @@
       "stepId": "vnr-p07-s02",
       "stepIndex": 1,
       "title": "Xây dựng lực lượng chính trị, văn hóa",
-      "expectedFile": "audio/presentation/vnr-p07/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p07-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Mặt trận Việt Minh lan rộng, kết hợp lực lượng chính trị với báo chí, văn hóa và binh vận."
+      "thesis": "Mặt trận Việt Minh lan rộng, kết hợp lực lượng chính trị với báo chí, văn hóa và binh vận.",
+      "duration": 17.11
     },
     {
       "clipId": "vnr-p07-s03",
@@ -409,10 +441,11 @@
       "stepId": "vnr-p07-s03",
       "stepIndex": 2,
       "title": "Lực lượng vũ trang và căn cứ địa",
-      "expectedFile": "audio/presentation/vnr-p07/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p07-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Lực lượng vũ trang và căn cứ địa mở rộng; 22/12/1944 ra đời Đội Việt Nam tuyên truyền giải phóng quân."
+      "thesis": "Lực lượng vũ trang và căn cứ địa mở rộng; 22/12/1944 ra đời Đội Việt Nam tuyên truyền giải phóng quân.",
+      "duration": 13.66
     },
     {
       "clipId": "vnr-p08-intro",
@@ -420,9 +453,10 @@
       "pieceId": "vnr-p08",
       "pieceIndex": 7,
       "title": "Kháng Nhật cứu nước",
-      "expectedFile": "audio/presentation/vnr-p08/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p08-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 10.15
     },
     {
       "clipId": "vnr-p08-s01",
@@ -432,10 +466,11 @@
       "stepId": "vnr-p08-s01",
       "stepIndex": 0,
       "title": "Nhật đảo chính Pháp ngày 9/3/1945",
-      "expectedFile": "audio/presentation/vnr-p08/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p08-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Đêm 9/3/1945 Nhật đảo chính Pháp, độc chiếm Đông Dương; Đảng lập tức họp để điều chỉnh sách lược."
+      "thesis": "Đêm 9/3/1945 Nhật đảo chính Pháp, độc chiếm Đông Dương; Đảng lập tức họp để điều chỉnh sách lược.",
+      "duration": 16.99
     },
     {
       "clipId": "vnr-p08-s02",
@@ -445,10 +480,11 @@
       "stepId": "vnr-p08-s02",
       "stepIndex": 1,
       "title": "Chỉ thị ngày 12/3/1945",
-      "expectedFile": "audio/presentation/vnr-p08/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p08-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Chỉ thị “Nhật – Pháp bắn nhau và hành động của chúng ta” xác định kẻ thù duy nhất và phát động cao trào."
+      "thesis": "Chỉ thị “Nhật – Pháp bắn nhau và hành động của chúng ta” xác định kẻ thù duy nhất và phát động cao trào.",
+      "duration": 14.28
     },
     {
       "clipId": "vnr-p08-s03",
@@ -458,10 +494,11 @@
       "stepId": "vnr-p08-s03",
       "stepIndex": 2,
       "title": "Cao trào lan rộng, căn cứ địa mở rộng",
-      "expectedFile": "audio/presentation/vnr-p08/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p08-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Cao trào kháng Nhật cứu nước nổ ra khắp nơi: khởi nghĩa từng phần, thống nhất lực lượng và hình thành Khu giải phóng Việt Bắc."
+      "thesis": "Cao trào kháng Nhật cứu nước nổ ra khắp nơi: khởi nghĩa từng phần, thống nhất lực lượng và hình thành Khu giải phóng Việt Bắc.",
+      "duration": 14.5
     },
     {
       "clipId": "vnr-p08-s04",
@@ -471,10 +508,11 @@
       "stepId": "vnr-p08-s04",
       "stepIndex": 3,
       "title": "Đô thị và đồng bằng cùng vùng dậy",
-      "expectedFile": "audio/presentation/vnr-p08/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p08-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Cao trào lan từ miền núi xuống đô thị và đồng bằng, huy động hàng triệu quần chúng làm tê liệt bộ máy tay sai."
+      "thesis": "Cao trào lan từ miền núi xuống đô thị và đồng bằng, huy động hàng triệu quần chúng làm tê liệt bộ máy tay sai.",
+      "duration": 11.16
     },
     {
       "clipId": "vnr-p09-intro",
@@ -482,9 +520,10 @@
       "pieceId": "vnr-p09",
       "pieceIndex": 8,
       "title": "Tổng khởi nghĩa Tháng Tám",
-      "expectedFile": "audio/presentation/vnr-p09/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p09-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 8.71
     },
     {
       "clipId": "vnr-p09-s01",
@@ -494,10 +533,11 @@
       "stepId": "vnr-p09-s01",
       "stepIndex": 0,
       "title": "Thời cơ và nguy cơ",
-      "expectedFile": "audio/presentation/vnr-p09/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p09-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Thời cơ giành chính quyền chỉ tồn tại ở nửa cuối tháng 8/1945, từ khi Nhật đầu hàng đến trước khi Đồng minh vào Đông Dương."
+      "thesis": "Thời cơ giành chính quyền chỉ tồn tại ở nửa cuối tháng 8/1945, từ khi Nhật đầu hàng đến trước khi Đồng minh vào Đông Dương.",
+      "duration": 14.54
     },
     {
       "clipId": "vnr-p09-s02",
@@ -507,10 +547,11 @@
       "stepId": "vnr-p09-s02",
       "stepIndex": 1,
       "title": "Quyết sách lịch sử tại Tân Trào",
-      "expectedFile": "audio/presentation/vnr-p09/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p09-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Đảng nắm đúng thời cơ: chỉ trong vài ngày ra lệnh khởi nghĩa, họp Hội nghị toàn quốc và Đại hội quốc dân."
+      "thesis": "Đảng nắm đúng thời cơ: chỉ trong vài ngày ra lệnh khởi nghĩa, họp Hội nghị toàn quốc và Đại hội quốc dân.",
+      "duration": 17.71
     },
     {
       "clipId": "vnr-p09-s03",
@@ -520,10 +561,11 @@
       "stepId": "vnr-p09-s03",
       "stepIndex": 2,
       "title": "Thắng lợi thần tốc ở các đô thị",
-      "expectedFile": "audio/presentation/vnr-p09/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p09-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Từ 14 đến 25/8/1945, khởi nghĩa thắng lợi nhanh chóng từ các địa phương đến Hà Nội, Huế và Sài Gòn."
+      "thesis": "Từ 14 đến 25/8/1945, khởi nghĩa thắng lợi nhanh chóng từ các địa phương đến Hà Nội, Huế và Sài Gòn.",
+      "duration": 15.98
     },
     {
       "clipId": "vnr-p09-s04",
@@ -533,10 +575,11 @@
       "stepId": "vnr-p09-s04",
       "stepIndex": 3,
       "title": "Chính quyền cách mạng ra đời",
-      "expectedFile": "audio/presentation/vnr-p09/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p09-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Cuối tháng 8/1945, chính quyền cách mạng được xác lập trong cả nước."
+      "thesis": "Cuối tháng 8/1945, chính quyền cách mạng được xác lập trong cả nước.",
+      "duration": 15.48
     },
     {
       "clipId": "vnr-p10-intro",
@@ -544,9 +587,10 @@
       "pieceId": "vnr-p10",
       "pieceIndex": 9,
       "title": "Độc lập và bài học",
-      "expectedFile": "audio/presentation/vnr-p10/intro.mp3",
-      "status": "planned-not-generated",
-      "revision": 3
+      "expectedFile": "audio/presentation/vnr-p10-intro.mp3",
+      "status": "generated",
+      "revision": 3,
+      "duration": 8.02
     },
     {
       "clipId": "vnr-p10-s01",
@@ -556,10 +600,11 @@
       "stepId": "vnr-p10-s01",
       "stepIndex": 0,
       "title": "Tuyên ngôn Độc lập 2/9/1945",
-      "expectedFile": "audio/presentation/vnr-p10/s01.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p10-s01.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Ngày 2/9/1945 tại Quảng trường Ba Đình, Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa."
+      "thesis": "Ngày 2/9/1945 tại Quảng trường Ba Đình, Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.",
+      "duration": 15.12
     },
     {
       "clipId": "vnr-p10-s02",
@@ -569,10 +614,11 @@
       "stepId": "vnr-p10-s02",
       "stepIndex": 1,
       "title": "Tính chất và ý nghĩa",
-      "expectedFile": "audio/presentation/vnr-p10/s02.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p10-s02.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Cách mạng Tháng Tám là cuộc cách mạng giải phóng dân tộc điển hình, mang tính chất dân chủ mới."
+      "thesis": "Cách mạng Tháng Tám là cuộc cách mạng giải phóng dân tộc điển hình, mang tính chất dân chủ mới.",
+      "duration": 15.48
     },
     {
       "clipId": "vnr-p10-s03",
@@ -582,10 +628,11 @@
       "stepId": "vnr-p10-s03",
       "stepIndex": 2,
       "title": "Bốn bài học kinh nghiệm",
-      "expectedFile": "audio/presentation/vnr-p10/s03.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p10-s03.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Thắng lợi 1930–1945 để lại bốn bài học kinh nghiệm quý báu."
+      "thesis": "Thắng lợi 1930–1945 để lại bốn bài học kinh nghiệm quý báu.",
+      "duration": 18.41
     },
     {
       "clipId": "vnr-p10-s04",
@@ -595,10 +642,11 @@
       "stepId": "vnr-p10-s04",
       "stepIndex": 3,
       "title": "Mạch chuyển dịch đường lối 1930–1945",
-      "expectedFile": "audio/presentation/vnr-p10/s04.mp3",
-      "status": "planned-not-generated",
+      "expectedFile": "audio/presentation/vnr-p10-s04.mp3",
+      "status": "generated",
       "revision": 3,
-      "thesis": "Đường lối của Đảng chuyển dịch qua năm cột mốc, từ đúng đắn ban đầu đến đỉnh cao nghệ thuật chỉ đạo."
+      "thesis": "Đường lối của Đảng chuyển dịch qua năm cột mốc, từ đúng đắn ban đầu đến đỉnh cao nghệ thuật chỉ đạo.",
+      "duration": 16.9
     }
   ],
   "contentBasis": "STORY_DATA bản 3 ý chính (thesis + ý phụ)"
