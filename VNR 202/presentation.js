@@ -16,7 +16,7 @@
 // =============================================================================
 const Presentation = (() => {
     const $ = (id) => document.getElementById(id);
-    const SPEEDS = [0.75, 1, 1.25, 1.5];
+    const SPEEDS = [1, 1.25, 1.5, 2];   // mặc định 1.25× (idx 1): voice TTS đọc nhanh, bút và camera phải theo kịp
     let status = 'idle';          // idle | running | paused | error | completed
     let phase = '';               // closing | moving | intro | opening | step | finishing
     let segs = [], idx = 0, runId = 0, opCtl = null, speedIdx = 1;
@@ -42,7 +42,19 @@ const Presentation = (() => {
             else if (b.type === 'quote') out.push(endDot(`"${strip(b.text)}"${b.by ? ', ' + strip(b.by) : ''}`));
             else if (b.type === 'flow') out.push(endDot([`Từ ${strip(b.from)} đến ${strip(b.to)}`, strip(b.caption), strip(b.sub)].filter(Boolean).join(': ')));
             else if (b.type === 'stat') out.push(endDot(`${strip(b.value)} ${strip(b.text)}`));
-            else if (b.type === 'timeline') (b.items || []).forEach(i => out.push(endDot(`${strip(i.date)}: ${strip(i.text)}`)));
+            else if (b.type === 'timeline' || b.type === 'vtimeline') (b.items || []).forEach(i => out.push(endDot(`${strip(i.date)}: ${strip(i.text)}`)));
+            else if (b.type === 'thesis') out.push(endDot(strip(b.text)));
+            else if (b.type === 'stats') (b.items || []).forEach(i => out.push(endDot(`${strip(i.value)} ${strip(i.text)}`)));
+            else if (b.type === 'checklist') (b.items || []).forEach(i => out.push(endDot(strip(i))));
+            else if (b.type === 'chain' || b.type === 'hub') {
+                if (b.center) out.push(endDot(strip(b.center)));
+                (b.items || []).forEach(i => out.push(endDot(typeof i === 'string' ? strip(i) : [strip(i.head), strip(i.text)].filter(Boolean).join(': '))));
+            }
+            else if (b.type === 'grid') (b.items || []).forEach(i => out.push(endDot([strip(i.head), strip(i.text)].filter(Boolean).join(': '))));
+            else if (b.type === 'ladder') (b.items || []).forEach(i => out.push(endDot([strip(i.tag), strip(i.date), strip(i.text)].filter(Boolean).join(', '))));
+            else if (b.type === 'rail') (b.items || []).forEach(i => out.push(endDot([strip(i.date), strip(i.head), strip(i.text)].filter(Boolean).join(', '))));
+            else if (b.type === 'versus') (b.rows || []).forEach(r => out.push(endDot(`${strip(b.left)}: ${strip(r.l)} ${strip(b.right)}: ${strip(r.r)}`)));
+            else if (b.type === 'table') (b.rows || []).forEach(r => out.push(endDot(r.map(strip).join(': '))));
         });
         return out.filter(Boolean).join(' ').replace(/→\s*/g, '');
     }

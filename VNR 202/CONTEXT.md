@@ -14,6 +14,8 @@ Phòng tự dài theo số tác phẩm: 2 tranh/khoang, ceil(N/2) khoang, mỗi 
 
 - **Tranh/tác phẩm**: một mục MUSEUM_PIECES ở `museum-3d-single-02.js`, có contentId, ảnh, tiêu đề, nguồn và revision.
 - **Story/detail**: bảng ghim 3D của tranh. STORY_DATA trong `-03.js` gồm 38 step, số bước `[4,4,3,4,4,4,3,4,4,4]`. Không còn drawer cũ, quiz hoặc Flat View.
+- **Cấu trúc nội dung (bản 3 ý chính)**: tranh 1–2 = Mở đầu; tranh 3–4 = Ý chính 1 (1930–35); tranh 5 = Ý chính 2 (1936–39); tranh 6–9 = Ý chính 3 (1939–45); tranh 10 = Kết. Mỗi thẻ có một khối `thesis` (câu ý chính theo bản (3)) rồi các ý phụ lấy từ bản (2). Thẻ không còn dòng "Nguồn" ở chân. `head` của step chọn kiểu đầu thẻ (`plain|underline|box|numeral|band`), mỗi tranh một kiểu.
+- **Kiểu khối trong `-07.js`**: `text note bullets flow image timeline stat quote chart` cùng các khối mới `thesis chain grid versus ladder hub rail vtimeline checklist stats table`. Thêm khối mới phải thêm nhánh tương ứng trong `layout()` và trong `stepText()` của `presentation.js`. Dàn trang tự thu nhỏ khi tràn và phóng chữ lên khi thẻ thưa. `-02.js` giữ `chapter`, `hotspots` (tên + mô tả ngắn, dùng cho thẻ trang trí) khớp tiêu đề step; đổi tiêu đề step thì sửa cả hai.
 - **Khoang**: một cặp vị trí trái/phải trong phòng; tính từ số tác phẩm.
 - `-01.js`: FX và quality; `-04.js`: texture nhãn; `-05.js`: phòng, khung, ảnh, ánh sáng; `-06.js`: giấy; `-07.js`: bút/dàn thẻ; `-08.js`: StoryBoard; `-09.js`: điều khiển, camera, vòng lặp, bootstrap.
 - `museum-intro.js/css`: intro từng bước, lazy boot và âm thanh. `writing-with-pencil.mp3`: loop bút. `tham-khao-intro-sound.*`: tài liệu tham khảo, không phải entry của môn.
@@ -33,8 +35,8 @@ ID vnr-p01…p10 của revision 2 đã sắp xếp lại; **không dùng voice/c
 
 File mới: `museum-tour.js` (camera + Narrator mô phỏng), `presentation.js` (điều phối), `presentation.css` (UI). Loader nạp sau -09, UI init trong MuseumApp.prepare; không gắn window.load vì trang dùng lazy boot. -08 có Promise close, sự kiện stepReady/written, pause/timeScale/inputHook; -09 nhường quyền camera và hủy pendingBoardTimer.
 
-Nút **Thuyết trình** chạy từ tranh đầu; nút trong detail chạy từ tranh hiện tại. Có pause, tốc độ, chọn đoạn, CC, phím Space/←/→/PageUp/PageDown/Esc; kết thúc lùi camera về toàn cảnh. Tổng **48 segment = 10 giới thiệu + 38 step**, lấy từ dữ liệu chứ không hard-code 3 bước/tranh.
+Nút **Thuyết trình** chạy từ tranh đầu; nút trong detail chạy từ tranh hiện tại. Có pause, tốc độ (mặc định 1,25×, voice đọc nhanh), chọn đoạn, CC, phím Space/←/→/PageUp/PageDown/Esc; kết thúc lùi camera về toàn cảnh. Tổng **48 segment = 10 giới thiệu + 38 step**, lấy từ dữ liệu chứ không hard-code 3 bước/tranh.
 
-**Chưa phát giọng đọc:** Narrator của tham khảo là đồng hồ phụ đề, không có MP3. Chỉ mục 48 clip vẫn planned-not-generated; chưa có công cụ generate hoặc audio thuyết trình. MP3 phải generate trước qua service local, key nằm ngoài frontend; không gọi TTS khi tham quan. Khi thêm voice thật, đợi audio ended và writer.done thay cho đồng hồ mô phỏng hiện tại.
+**Chưa phát giọng đọc (đã có kịch bản nháp 48 lời ở `planning/presentation-script.json`, chưa duyệt):** Narrator của tham khảo là đồng hồ phụ đề, không có MP3. Chỉ mục 48 clip vẫn planned-not-generated; chưa có công cụ generate hoặc audio thuyết trình. MP3 phải generate trước qua service local, key nằm ngoài frontend; không gọi TTS khi tham quan. Khi thêm voice thật, đợi audio ended và writer.done thay cho đồng hồ mô phỏng hiện tại.
 
 Giữ cơ chế intro, âm thanh và low graphic/MSAA kế thừa base. Vai trò file/kiến trúc chung có thêm tại [context base](../CONTEXT.md), nhưng số lượng và dữ liệu VNR202 lấy tài liệu tại thư mục này.

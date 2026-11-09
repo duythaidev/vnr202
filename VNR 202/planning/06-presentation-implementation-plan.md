@@ -32,7 +32,7 @@ Bắt đầu → đóng detail nếu đang mở → camera tới tranh → giớ
 - StoryBoard dùng gen để vô hiệu callbacks của phiên đóng/mở cũ; stepReady/written có piece/index/gen. `isOpening` ngăn seek nhầm vào bảng chưa dựng xong trong lúc đợi font.
 - Close trả Promise, có thể được nhiều bên đợi cùng lúc. Seek trong lúc camera kết thúc được quay lại vòng lặp, không bị đánh dấu completed sai.
 - Pause dừng đồng hồ tour, camera, flight và writer; tắt loop tiếng bút khi pause. Resize vẫn cập nhật kích thước viewport. Ẩn tab tự tạm dừng.
-- Tốc độ 0.75× / 1× / 1.25× / 1.5× áp dụng cùng tour, flight và bút. `window.__tourScale` chỉ là hệ số thử nghiệm từ tham khảo, mặc định 1, không đặt trong cấu hình production.
+- Tốc độ 1× / 1,25× (mặc định) / 1,5× / 2× áp dụng cùng tour, flight và bút. `window.__tourScale` chỉ là hệ số thử nghiệm từ tham khảo, mặc định 1, không đặt trong cấu hình production.
 - Thoát trả camera target về vị trí hiện tại, reset timeScale/inputHook/tourActive, đóng bảng và dừng Narrator.
 
 ## API và điều khiển
@@ -52,6 +52,16 @@ Các điều khiển khám phá bị ẩn khi chạy tour được đặt inert 
 - Sau tinh chỉnh UI: kiểm tra riêng controller + Narrator thật trong browser với adapter camera/bảng giả lập, không cần mạng. 390px: các nút chính trong viewport, Tab không lọt vào điều khiển bị ẩn, focus/inert được khôi phục, pause và transform progress hoạt động. Đây không thay cho kiểm tra render cảnh 3D trên điện thoại thật.
 - Lượt HTTP/ảnh chụp mobile đầy đủ cuối không hoàn tất do DNS không phân giải được cdn.tailwindcss.com và fonts.googleapis.com; startup dừng trước thư viện đầu tiên (progress 0). Không ghi lượt này là pass, không thay CDN/bootstrap ngoài phạm vi chuyển tính năng.
 - JS đã qua node --check; diff --check không có lỗi whitespace. Chưa có benchmark FPS hoặc kiểm tra giọng đọc vì chưa có MP3 thuyết trình.
+
+## Nhịp thuyết trình nhanh (cập nhật 10/11/2026)
+
+Voice TTS đọc nhanh nên tour phải gọn hơn:
+
+- Mặc định chạy **1,25×** (danh sách tốc độ nay là 1× / 1,25× / 1,5× / 2×; bỏ 0,75×). Tốc độ áp dụng cùng camera, bút và đồng hồ phụ đề.
+- Đồng hồ Narrator mô phỏng đọc **3,4 từ mỗi giây** (trước là 2,5) cho tới khi có MP3; đây chỉ là đồng hồ tạm.
+- Thẻ nay dày hơn (thesis + ý phụ, khoảng 12–19 giây viết ở 1×), nên đồng bộ với voice là việc phải làm khi gắn MP3: khi biết `duration` của clip, đặt `StoryBoard.timeScale = clamp(Writer.total / duration, 1, 2.2) × tốc độ người dùng` để bút xong gần cùng lúc lời nói. Nếu voice dài hơn bút thì giữ 1× (không làm chậm bút). Rào chuyển step vẫn là `ended` **và** `writer.done`.
+- Độ dài lời nói theo [05-narration-plan.md](05-narration-plan.md): step 40–60 từ, lời dẫn tranh 25–35 từ.
+- Thẻ nay có thêm khối `thesis chain grid versus ladder hub rail vtimeline checklist stats table`; phụ đề lấy từ `stepText()` đã hỗ trợ các khối này. Phụ đề chỉ là phương án tạm: lời nói đã duyệt đặt vào `step.narration` / `story.intro`.
 
 ## Giọng đọc MP3 · phần tiếp theo
 

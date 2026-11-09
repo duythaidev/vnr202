@@ -41,6 +41,8 @@ const BoardWriter = (() => {
         return out;
     }
 
+    const numStr = (step) => String((step.label || '').split('/')[0]).trim();
+
     // Đường tròn vẽ tay (hơi lệch, vượt quá 1 vòng)
     function handCircle(cx, cy, rx, ry, seed) {
         const rand = FX.rng(seed);
@@ -75,18 +77,59 @@ const BoardWriter = (() => {
         };
         const fadeOp = (draw, anchor, dur = 0.7) => ops.push({ kind: 'fade', draw, anchor, dur: dur / speed });
 
+        const wrap = (text, w, font) => { ctx.font = font; return wrapLines(ctx, text, w); };
+        // khung chữ nhật vẽ tay (hơi lệch, nét cuối vượt góc)
+        const wobbleRect = (rx, ry, rw, rh, sd) => {
+            const r = FX.rng(sd), j = () => (r() - 0.5) * S(7);
+            return [[rx + j(), ry + j()], [rx + rw + j(), ry + j()], [rx + rw + j(), ry + rh + j()], [rx + j(), ry + rh + j()], [rx + j(), ry - S(5) + j()]];
+        };
+        const arrowOps = (ax, ay, bx, by, color = RED, w = S(7)) => {
+            strokeOp([[ax, ay], [bx, by]], color, w, 1300);
+            const a = Math.atan2(by - ay, bx - ax), L = S(26);
+            strokeOp([[bx - Math.cos(a - 0.5) * L, by - Math.sin(a - 0.5) * L], [bx, by], [bx - Math.cos(a + 0.5) * L, by - Math.sin(a + 0.5) * L]], color, w, 900);
+        };
+        const HILITE = '#f0cd62';
+
         // label nhỏ
         let y = S(132);
         if (step.label) textOp(step.label.toUpperCase(), X0, y, `600 ${S(30)}px ${SANS}`, S(30), SOFT, 1300);
-        // tiêu đề lớn
+        // tiêu đề: 5 kiểu đầu thẻ (step.head) để mỗi tranh một giọng riêng
+        const headStyle = step.head || 'plain';
         if (step.title) {
-            let size = S(116);
+            const T = step.title.toUpperCase();
+            const numeral = headStyle === 'numeral';
+            const tx = X0 + (numeral ? S(215) : 0);
+            const maxW = 1360 - (numeral ? S(215) : 0) - (headStyle === 'box' ? S(44) : 0);
+            let size = S(88);
             ctx.font = `800 ${size}px ${SANS}`;
-            while (ctx.measureText(step.title.toUpperCase()).width > 1360 && size > S(80)) { size -= 4; ctx.font = `800 ${size}px ${SANS}`; }
-            const lines = wrapLines(ctx, step.title.toUpperCase(), 1360);
-            lines.forEach(line => { y += size * 1.02; textOp(line, X0, y, `800 ${size}px ${SANS}`, size, INK, 750); });
+            while (ctx.measureText(T).width > maxW && size > S(58)) { size -= 3; ctx.font = `800 ${size}px ${SANS}`; }
+            const font = `800 ${size}px ${SANS}`;
+            const lines = wrapLines(ctx, T, maxW);
+            const widths = lines.map(l => { ctx.font = font; return ctx.measureText(l).width; });
+            const maxLW = Math.max(...widths);
+            const top = y + size * 0.1 + (headStyle === 'box' ? S(16) : 0), pad = headStyle === 'box' ? S(22) : 0;
+            let by = y + pad + (numeral ? S(52) : 0);
+            lines.forEach((line, li) => {
+                by += size * 1.04;
+                if (headStyle === 'band') strokeOp([[tx - S(12), by - size * 0.32], [tx + widths[li] + S(12), by - size * 0.32 + 2]], HILITE, size * 0.92, 2400, { alpha: 0.5 });
+                textOp(line, tx + pad, by, font, size, INK, 780);
+            });
+            if (numeral) {
+                const ns = S(138), nf = `800 ${ns}px ${SANS}`, nw = (ctx.font = nf, ctx.measureText(numStr(step)).width);
+                textOp(numStr(step), X0, by + S(6), nf, ns, RED, 520);
+                strokeOp([[X0 - S(4), by + S(26)], [X0 + nw + S(8), by + S(22)]], INK, S(6), 1500);
+            }
+            if (headStyle === 'underline') {
+                strokeOp([[tx - S(4), by + S(16)], [tx + maxLW + S(8), by + S(11)]], RED, S(9), 2200);
+                strokeOp([[tx + S(40), by + S(33)], [tx + maxLW * 0.7, by + S(30)]], RED, S(5), 2200);
+            }
+            if (headStyle === 'box') {
+                strokeOp(wobbleRect(tx - S(8), top, maxLW + pad * 2 + S(16), by - top + S(18) + pad * 0.3, seed + 7), RED, S(7), 2600);
+                by += pad;
+            }
+            y = by + (headStyle === 'underline' ? S(26) : 0);
         }
-        y += S(56);
+        y += S(44);
         const cursor = { left: y, right: y };
 
         (step.blocks || []).forEach((b, bi) => {
@@ -111,7 +154,7 @@ const BoardWriter = (() => {
                 cy += S(isNote ? 20 : 14);
             }
             else if (b.type === 'bullets') {
-                const sz = S(44), font = `500 ${sz}px ${SANS}`;
+                const sz = S(b.size === 'sm' ? 36 : 44), font = `500 ${sz}px ${SANS}`;
                 ctx.font = font;
                 (b.items || []).forEach(item => {
                     cy += sz * 1.35;
@@ -248,11 +291,239 @@ const BoardWriter = (() => {
                 bars.forEach((r, i) => {
                     const bx = x + S(40) + bw * i + bw * 0.5;
                     const top = base - (r.value / max) * (ch - S(40));
-                    strokeOp([[bx, base - S(4)], [bx + S(2), top]], r.color || RED, bw * 0.55, 900, { alpha: 0.82 });
+                    const hw = Math.min(bw * 0.275, (base - top) / 2 - 1);
+                    strokeOp([[bx, base - hw - S(3)], [bx + S(2), top + hw]], r.color || RED, bw * 0.55, 900, { alpha: 0.82 });
                     textOp(String(r.value), bx - bw * 0.25, top - S(16), `800 ${S(32)}px ${SANS}`, S(32), INK, 900);
                     textOp(String(r.label), bx - bw * 0.35, base + S(42), `500 ${S(26)}px ${SANS}`, S(26), INK, 1300);
                 });
                 cy = base + S(70);
+            }
+            else if (b.type === 'thesis') {
+                // Ý CHÍNH: câu khẳng định, vạch đỏ bên trái + bút dạ quang
+                const sz = S(b.size || 40), font = `700 ${sz}px ${SANS}`, pad = S(34), lh = sz * 1.42;
+                const lines = wrap(b.text, cw - pad - S(8), font);
+                const top = cy + S(8);
+                strokeOp([[x + S(8), top], [x + S(10), top + lines.length * lh + S(2)]], RED, S(9), 1800);
+                lines.forEach((line, li) => {
+                    const base = top + lh * (li + 1) - S(8);
+                    ctx.font = font;
+                    const w = ctx.measureText(line).width;
+                    strokeOp([[x + pad - S(6), base - sz * 0.32], [x + pad + w + S(6), base - sz * 0.32 + 2]], HILITE, sz * 0.98, 2400, { alpha: 0.5 });
+                    textOp(line, x + pad, base, font, sz, INK, 1500);
+                });
+                cy = top + lines.length * lh + S(18);
+            }
+            else if (b.type === 'chain') {
+                // các hộp nối nhau bằng mũi tên: nguyên nhân → hệ quả
+                const items = (b.items || []).map(it => typeof it === 'string' ? { text: it } : it);
+                const n = items.length, gap = S(60), bw = (cw - gap * (n - 1)) / n, pad = S(18);
+                const hs = S(31), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const wr = items.map(it => ({ h: it.head ? wrap(it.head, bw - pad * 2, hf) : [], t: wrap(it.text || '', bw - pad * 2, tf) }));
+                const bh = pad * 2 + Math.max(...wr.map(w => w.h.length * hs * 1.3 + w.t.length * ts * 1.3)) + S(8);
+                const top = cy + S(12);
+                items.forEach((it, i) => {
+                    const bx = x + i * (bw + gap);
+                    strokeOp(wobbleRect(bx, top, bw, bh, bseed + i), INK, S(4), 2600);
+                    let ty = top + pad;
+                    wr[i].h.forEach(l => { ty += hs * 1.3; textOp(l, bx + pad, ty, hf, hs, RED, 1400); });
+                    wr[i].t.forEach(l => { ty += ts * 1.3; textOp(l, bx + pad, ty, tf, ts, INK, 1800); });
+                    if (i < n - 1) arrowOps(bx + bw + S(8), top + bh / 2, bx + bw + gap - S(8), top + bh / 2 + S(3));
+                });
+                cy = top + bh + S(22);
+            }
+            else if (b.type === 'grid') {
+                // lưới ô đánh số (2 hoặc 3 cột)
+                const cols = b.cols || 2, items = b.items || [], gap = S(28), cwid = (cw - gap * (cols - 1)) / cols, pad = S(20);
+                const hs = S(b.hs || 33), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const numW = (cols < 3 && b.numbered !== false) ? S(60) : 0;
+                const cells = items.map(it => ({ h: wrap(it.head || '', cwid - pad * 2 - numW, hf), t: wrap(it.text || '', cwid - pad * 2, tf) }));
+                let top = cy + S(12);
+                for (let r = 0; r * cols < items.length; r++) {
+                    const row = cells.slice(r * cols, r * cols + cols);
+                    const headH = (c) => Math.max(c.h.length * hs * 1.25, numW ? S(54) : 0);
+                    const rh = pad * 2 + Math.max(...row.map(c => headH(c) + c.t.length * ts * 1.3)) + S(8);
+                    row.forEach((c, k) => {
+                        const idx = r * cols + k, it = items[idx], bx = x + k * (cwid + gap);
+                        strokeOp(wobbleRect(bx, top, cwid, rh, bseed + idx), INK, S(4), 2600);
+                        let ty = top + pad;
+                        if (numW) {
+                            strokeOp(handCircle(bx + pad + S(22), ty + S(27), S(24), S(24), bseed + idx), RED, S(5), 900);
+                            textOp(String(it.n || idx + 1), bx + pad + S(12), ty + S(39), `800 ${S(32)}px ${SANS}`, S(32), RED, 800);
+                        }
+                        const hh = headH(c), hy0 = ty + (hh - c.h.length * hs * 1.25) / 2;
+                        c.h.forEach((l, li) => textOp(l, bx + pad + numW, hy0 + hs * 1.1 + li * hs * 1.25, hf, hs, INK, 1100));
+                        ty += hh;
+                        c.t.forEach(l => { ty += ts * 1.3; textOp(l, bx + pad, ty, tf, ts, INK, 1800); });
+                    });
+                    top += rh + gap * 0.6;
+                }
+                cy = top - gap * 0.6 + S(18);
+            }
+            else if (b.type === 'versus') {
+                // hai cột đối chiếu theo hàng: Trước/Sau, Cương lĩnh/Luận cương...
+                const rows = b.rows || [], mid = S(b.arrow ? 90 : 70), colW = (cw - mid) / 2, pad = S(14);
+                const hs = S(34), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const lx = x, rx = x + colW + mid;
+                let top = cy + S(10);
+                const hl = wrap(b.left || '', colW - pad * 2, hf), hr = wrap(b.right || '', colW - pad * 2, hf);
+                const hh = Math.max(hl.length, hr.length) * hs * 1.25 + pad * 2;
+                strokeOp(wobbleRect(lx, top, colW, hh, bseed), INK, S(5), 2600);
+                strokeOp(wobbleRect(rx, top, colW, hh, bseed + 1), RED, S(5), 2600);
+                hl.forEach((l, i) => textOp(l, lx + pad, top + pad + hs * 1.1 + i * hs * 1.25, hf, hs, INK, 1200));
+                hr.forEach((l, i) => textOp(l, rx + pad, top + pad + hs * 1.1 + i * hs * 1.25, hf, hs, RED, 1200));
+                if (b.arrow) arrowOps(lx + colW + S(14), top + hh / 2, rx - S(14), top + hh / 2 + S(2));
+                else { ctx.font = `800 ${S(30)}px ${SANS}`; textOp('VS', lx + colW + (mid - ctx.measureText('VS').width) / 2, top + hh / 2 + S(11), `800 ${S(30)}px ${SANS}`, S(30), SOFT, 600); }
+                top += hh + S(8);
+                rows.forEach((row, ri) => {
+                    const ll = wrap(row.l || '', colW - pad * 2 - S(10), tf), rl = wrap(row.r || '', colW - pad * 2 - S(10), tf);
+                    const rh = Math.max(ll.length, rl.length) * ts * 1.3 + S(26);
+                    let ty = top + S(8);
+                    ll.forEach(l => { ty += ts * 1.3; textOp(l, lx + pad + S(10), ty, tf, ts, INK, 1800); });
+                    ty = top + S(8);
+                    rl.forEach(l => { ty += ts * 1.3; textOp(l, rx + pad + S(10), ty, tf, ts, INK, 1800); });
+                    strokeOp([[lx, top + rh - S(4)], [rx + colW, top + rh - S(2)]], '#988367', S(2.5), 3000, { alpha: 0.6 });
+                    top += rh;
+                });
+                cy = top + S(12);
+            }
+            else if (b.type === 'ladder') {
+                // bậc thang: các mốc tăng dần (hội nghị, bước chuẩn bị)
+                const items = b.items || [], n = items.length, gap = S(18), colW = (cw - gap * (n - 1)) / n, pad = S(16), rise = S(b.rise || 44);
+                const tf = `500 ${S(31)}px ${SANS}`, ts = S(31), tagf = `800 ${S(34)}px ${SANS}`, dtf = `700 ${S(26)}px ${SANS}`;
+                const wr = items.map(it => wrap(it.text || '', colW - pad * 2, tf));
+                const base = cy + S(14);
+                const need = items.map((it, i) => (n - 1 - i) * rise + pad + S(44) + (it.date ? S(34) : 0) + wr[i].length * ts * 1.3 + pad);
+                const bottom = base + Math.max(...need);
+                items.forEach((it, i) => {
+                    const bx = x + i * (colW + gap), top = base + (n - 1 - i) * rise;
+                    strokeOp(wobbleRect(bx, top, colW, bottom - top, bseed + i), i === n - 1 ? RED : INK, S(i === n - 1 ? 6 : 4), 2600);
+                    let ty = top + pad;
+                    ty += S(38); textOp(String(it.tag || ''), bx + pad, ty, tagf, S(34), RED, 900);
+                    if (it.date) { ty += S(34); textOp(String(it.date), bx + pad, ty, dtf, S(26), SOFT, 1200); }
+                    wr[i].forEach(l => { ty += ts * 1.3; textOp(l, bx + pad, ty, tf, ts, INK, 1800); });
+                });
+                cy = bottom + S(20);
+            }
+            else if (b.type === 'hub') {
+                // một trung tâm, nhiều nan hoa
+                const items = (b.items || []).map(it => typeof it === 'string' ? { text: it } : it);
+                const R = S(b.r || 128), lx0 = x + R + S(20), tx = x + R * 2 + S(110), tw = cw - (tx - x);
+                const hs = S(31), ts = S(28), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const wr = items.map(it => ({ h: it.head ? wrap(it.head, tw, hf) : [], t: wrap(it.text || '', tw, tf) }));
+                const hts = wr.map(w => w.h.length * hs * 1.25 + w.t.length * ts * 1.28 + S(16));
+                const total = hts.reduce((a, v) => a + v, 0), blockH = Math.max(total, R * 2 + S(30));
+                const top = cy + S(10), cyy = top + blockH / 2;
+                strokeOp(handCircle(lx0, cyy, R, R, bseed), RED, S(7), 1800);
+                strokeOp(handCircle(lx0, cyy, R - S(14), R - S(14), bseed + 3), RED, S(3), 1800, { alpha: 0.55 });
+                const cl = wrap(b.center || '', R * 1.5, `800 ${S(34)}px ${SANS}`);
+                cl.forEach((l, i) => {
+                    ctx.font = `800 ${S(34)}px ${SANS}`;
+                    textOp(l, lx0 - ctx.measureText(l).width / 2, cyy + (i - (cl.length - 1) / 2) * S(42) + S(12), `800 ${S(34)}px ${SANS}`, S(34), INK, 900);
+                });
+                let ty = top + (blockH - total) / 2;
+                items.forEach((it, i) => {
+                    const midY = ty + hts[i] / 2 - S(4);
+                    strokeOp([[lx0 + R * 0.96, cyy + (midY - cyy) * 0.25], [tx - S(46), midY]], RED, S(5), 1500);
+                    let yy = ty;
+                    wr[i].h.forEach(l => { yy += hs * 1.25; textOp(l, tx, yy, hf, hs, RED, 1300); });
+                    wr[i].t.forEach(l => { yy += ts * 1.28; textOp(l, tx, yy, tf, ts, INK, 1800); });
+                    ty += hts[i];
+                });
+                cy = top + blockH + S(18);
+            }
+            else if (b.type === 'rail') {
+                // đường ray ngang có mốc đánh số: ngày, tiêu đề ngắn, giải thích
+                const items = b.items || [], n = items.length, colW = cw / n, pad = S(12);
+                const hs = S(30), ts = S(27), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const ly = cy + S(86);
+                strokeOp([[x, ly], [x + cw - S(26), ly + S(3)]], INK, S(5), 2600);
+                arrowOps(x + cw - S(60), ly + S(3), x + cw - S(6), ly + S(3), INK, S(5));
+                let maxB = ly;
+                items.forEach((it, i) => {
+                    const px = x + colW * i;
+                    strokeOp(handCircle(px + S(24), ly + S(1), S(22), S(22), bseed + i), RED, S(5), 900);
+                    textOp(String(i + 1), px + S(15), ly + S(12), `800 ${S(28)}px ${SANS}`, S(28), RED, 700);
+                    textOp(String(it.date || ''), px + S(2), ly - S(34), `800 ${S(31)}px ${SANS}`, S(31), RED, 1100);
+                    let ty = ly + S(44);
+                    wrap(it.head || '', colW - S(24), hf).forEach(l => { ty += hs * 1.25; textOp(l, px + S(2), ty, hf, hs, INK, 1300); });
+                    wrap(it.text || '', colW - S(24), tf).forEach(l => { ty += ts * 1.3; textOp(l, px + S(2), ty, tf, ts, INK, 1800); });
+                    maxB = Math.max(maxB, ty);
+                });
+                cy = maxB + S(26);
+            }
+            else if (b.type === 'vtimeline') {
+                // trục dọc: cột ngày bên trái, diễn biến bên phải
+                const items = b.items || [], dw = S(b.dw || 196), ts = S(b.ts || 30), tf = `500 ${ts}px ${SANS}`, df = `800 ${S(29)}px ${SANS}`;
+                const wr = items.map(it => wrap(it.text || '', cw - dw - S(44), tf));
+                const dr = items.map(it => wrap(String(it.date || ''), dw - S(14), df));
+                const rh = items.map((it, i) => Math.max(wr[i].length * ts * 1.3, dr[i].length * S(34)) + S(24));
+                const top = cy + S(10), total = rh.reduce((a, v) => a + v, 0), lineX = x + dw + S(10);
+                strokeOp([[lineX, top + S(6)], [lineX + S(2), top + total - S(10)]], INK, S(4), 2600);
+                let ty = top;
+                items.forEach((it, i) => {
+                    strokeOp(handCircle(lineX + S(1), ty + S(22), S(11), S(11), bseed + i), RED, S(5), 900);
+                    dr[i].forEach((l, li) => textOp(l, x, ty + S(32) + li * S(34), df, S(29), RED, 1200));
+                    wr[i].forEach((l, li) => textOp(l, lineX + S(34), ty + S(32) + li * ts * 1.3, tf, ts, INK, 1800));
+                    ty += rh[i];
+                });
+                cy = top + total + S(10);
+            }
+            else if (b.type === 'checklist') {
+                // dấu tick (nội dung) hoặc dấu gạch chéo (hạn chế)
+                const sz = S(b.size || 34), font = `500 ${sz}px ${SANS}`, cross = b.mark === 'cross';
+                (b.items || []).forEach(item => {
+                    const lines = wrap(item, cw - S(62), font);
+                    const ty0 = cy + sz * 1.3;
+                    const mx = x + S(4), my = ty0 - sz * 0.32;
+                    if (cross) {
+                        strokeOp([[mx + S(2), my - S(14)], [mx + S(26), my + S(10)]], RED, S(7), 800);
+                        strokeOp([[mx + S(26), my - S(14)], [mx + S(2), my + S(10)]], RED, S(7), 800);
+                    } else {
+                        strokeOp([[mx, my], [mx + S(12), my + S(13)], [mx + S(36), my - S(24)]], RED, S(8), 900);
+                    }
+                    lines.forEach((l, li) => { cy += sz * 1.3; textOp(l, x + S(54), cy, font, sz, INK, 1800); });
+                    cy += S(7);
+                });
+                cy += S(10);
+            }
+            else if (b.type === 'stats') {
+                // hàng 2–3 con số lớn, mỗi số một chú thích
+                const items = b.items || [], n = items.length, colW = cw / n, vs = S(b.vs || 92), ts = S(28), tf = `500 ${ts}px ${SANS}`;
+                const base = cy + vs * 1.0 + S(8);
+                let maxB = base;
+                items.forEach((it, i) => {
+                    const px = x + colW * i;
+                    let size = vs, f = `800 ${size}px ${SANS}`;
+                    ctx.font = f;
+                    while (ctx.measureText(String(it.value)).width > colW - S(30) && size > S(46)) { size -= 4; f = `800 ${size}px ${SANS}`; ctx.font = f; }
+                    const vw = ctx.measureText(String(it.value)).width;
+                    textOp(String(it.value), px, base, f, size, INK, 520);
+                    strokeOp([[px - S(4), base + S(16)], [px + vw * 0.6, base + S(11)], [px + vw + S(6), base + S(18)]], RED, S(7), 1500);
+                    let ty = base + S(18);
+                    wrap(it.text || '', colW - S(30), tf).forEach(l => { ty += ts * 1.3; textOp(l, px, ty, tf, ts, INK, 1800); });
+                    maxB = Math.max(maxB, ty);
+                });
+                cy = maxB + S(24);
+            }
+            else if (b.type === 'table') {
+                // sổ kẻ tay: hàng tiêu đề + các hàng nội dung
+                const cols = b.cols || [], ws = b.widths || cols.map(() => 1 / cols.length), ts = S(b.ts || 29), tf = `500 ${ts}px ${SANS}`, bf = `800 ${ts}px ${SANS}`;
+                const colX = []; let acc = 0;
+                ws.forEach(w => { colX.push(x + acc * cw); acc += w; });
+                const colW = ws.map(w => w * cw - S(24));
+                let top = cy + S(8);
+                cols.forEach((c, i) => textOp(String(c).toUpperCase(), colX[i] + S(6), top + S(34), `800 ${S(25)}px ${SANS}`, S(25), RED, 1100));
+                top += S(46);
+                strokeOp([[x, top], [x + cw, top + S(3)]], INK, S(5), 3000);
+                (b.rows || []).forEach((row) => {
+                    const cells = row.map((c, i) => wrap(String(c), colW[i], i === 0 && b.boldFirst !== false ? bf : tf));
+                    const rh = Math.max(...cells.map(c => c.length)) * ts * 1.3 + S(22);
+                    cells.forEach((lines, i) => lines.forEach((l, li) =>
+                        textOp(l, colX[i] + S(6), top + S(10) + (li + 1) * ts * 1.3, i === 0 && b.boldFirst !== false ? bf : tf, ts, INK, 1800)));
+                    top += rh;
+                    strokeOp([[x, top], [x + cw, top + S(2)]], '#988367', S(2.5), 3000, { alpha: 0.7 });
+                });
+                cy = top + S(14);
             }
             if (right) cursor.right = cy; else cursor.left = cy;
         });
@@ -343,7 +614,16 @@ const BoardWriter = (() => {
             this.canvas = canvas; this.ctx = canvas.getContext('2d');
             this.paper = paper; this.step = step; this.seed = seed;
             let res, scale = 1;
-            for (let i = 0; i < 9; i++) { res = layout(this.ctx, step, scale, seed); if (res.bottom < H - (step.source ? 125 : 60)) break; if (i < 8) scale *= 0.9; }
+            for (let i = 0; i < 16; i++) { res = layout(this.ctx, step, scale, seed); if (res.bottom < H - (step.source ? 125 : 60)) break; if (i < 15) scale *= 0.96; }
+            // thẻ thưa thì phóng chữ lên cho dễ đọc từ xa
+            if (scale === 1 && res.bottom < H * 0.82) {
+                for (const up of [1.08, 1.16, 1.24]) {
+                    const r2 = layout(this.ctx, step, up, seed);
+                    if (r2.bottom > H * 0.92) break;
+                    res = r2; scale = up;
+                }
+                if (scale === 1) res = layout(this.ctx, step, 1, seed);
+            }
             this.layoutScale = scale; this.contentBottom = res.bottom;
             // chèn quãng di chuyển bút giữa các op (nhấc bút lên)
             this.timeline = [];
@@ -417,7 +697,7 @@ const BoardWriter = (() => {
         c.globalCompositeOperation = 'multiply';
         c.fillStyle = 'rgba(60,50,40,0.35)';
         c.font = `600 34px ${SANS}`;
-        c.fillText(`${String(index + 1).padStart(2, '0')} / ${step.label ? step.label.split('/').pop().trim().toUpperCase() : ''}`, 120, 132);
+        c.fillText(`${String(index + 1).padStart(2, '0')} / ${step.label ? step.label.replace(/^\s*\d+\s*\/\s*/, '').toUpperCase() : ''}`, 120, 132);
         c.restore();
     }
 

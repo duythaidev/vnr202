@@ -1,0 +1,220 @@
+{
+  "course": "VNR202",
+  "revision": 3,
+  "voice": "vi-VN-NamMinhNeural",
+  "status": "draft-unapproved",
+  "pieces": [
+    {
+      "pieceId": "vnr-p01",
+      "intro": "Trước năm một nghìn chín trăm ba mươi, dân tộc ta đã có lòng yêu nước nhưng chưa có đường lối đúng. Nguyễn Ái Quốc tìm con đường ấy như thế nào?",
+      "steps": [
+        {
+          "stepId": "vnr-p01-s01",
+          "text": "Từ năm một nghìn tám trăm năm mươi tám, Pháp xâm lược rồi đặt ách thống trị lên đất nước. Chúng chia ba kỳ, vơ vét tài nguyên, thi hành chính sách ngu dân. Vì thế mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở thành mâu thuẫn chủ yếu, gay gắt nhất."
+        },
+        {
+          "stepId": "vnr-p01-s02",
+          "text": "Công nhân ra đời sớm, đến cuối năm một nghìn chín trăm hai mươi chín đã hơn hai mươi hai vạn người, xuất thân từ nông dân và nhanh chóng trở nên tự giác. Trong khi đó Cần Vương, Yên Thế, Đông Du hay Yên Bái đều thất bại, vì thiếu đường lối đúng, tổ chức tiên phong và phương pháp thích hợp."
+        },
+        {
+          "stepId": "vnr-p01-s03",
+          "text": "Năm một nghìn chín trăm mười một, Nguyễn Tất Thành ra đi tìm đường cứu nước. Năm một nghìn chín trăm hai mươi, Người đọc Luận cương của Lênin và tại Đại hội Tours trở thành người cộng sản đầu tiên của Việt Nam. Từ đó, giải phóng dân tộc gắn với cách mạng vô sản."
+        },
+        {
+          "stepId": "vnr-p01-s04",
+          "text": "Từ năm một nghìn chín trăm hai mươi mốt đến hai mươi chín, Nguyễn Ái Quốc chuẩn bị ba mặt. Về tư tưởng là báo chí và truyền bá chủ nghĩa Mác Lênin. Về chính trị là những luận điểm sáng tạo. Về tổ chức là Hội Thanh niên, Đường Kách mệnh và phong trào vô sản hóa."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p02",
+      "intro": "Từ ba tổ chức cộng sản riêng rẽ năm một nghìn chín trăm hai mươi chín, Đảng Cộng sản Việt Nam ra đời với một cương lĩnh đặt độc lập dân tộc lên hàng đầu.",
+      "steps": [
+        {
+          "stepId": "vnr-p02-s01",
+          "text": "Năm một nghìn chín trăm hai mươi chín, ba tổ chức cộng sản lần lượt ra đời: Đông Dương Cộng sản Đảng, An Nam Cộng sản Đảng và Đông Dương Cộng sản Liên đoàn. Phong trào rất cần một đảng thống nhất, nên Nguyễn Ái Quốc triệu tập hội nghị hợp nhất."
+        },
+        {
+          "stepId": "vnr-p02-s02",
+          "text": "Hội nghị họp ở Cửu Long, Hồng Kông, từ mồng sáu tháng một đến mồng bảy tháng hai năm một nghìn chín trăm ba mươi. Hội nghị thống nhất các tổ chức thành Đảng Cộng sản Việt Nam, thông qua Chánh cương, Sách lược, Chương trình tóm tắt và Điều lệ vắn tắt."
+        },
+        {
+          "stepId": "vnr-p02-s03",
+          "text": "Cương lĩnh đầu tiên đặt nhiệm vụ đánh đổ đế quốc Pháp và phong kiến, giành độc lập dân tộc lên hàng đầu. Lực lượng là đại đoàn kết toàn dân tộc, lấy công nông làm gốc, dưới sự lãnh đạo của giai cấp công nhân, và dùng bạo lực cách mạng của quần chúng."
+        },
+        {
+          "stepId": "vnr-p02-s04",
+          "text": "Việc thành lập Đảng chấm dứt cuộc khủng hoảng về đường lối và tổ chức lãnh đạo kéo dài từ cuối thế kỷ mười chín. Đảng là sản phẩm của sự kết hợp chủ nghĩa Mác Lênin với phong trào công nhân và phong trào yêu nước, khẳng định con đường cách mạng vô sản."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p03",
+      "intro": "Ý chính thứ nhất: cao trào cách mạng một nghìn chín trăm ba mươi, một nghìn chín trăm ba mươi mốt. Đảng vừa ra đời đã đối mặt với khủng hoảng và khủng bố, và Xô viết Nghệ Tĩnh là đỉnh cao.",
+      "steps": [
+        {
+          "stepId": "vnr-p03-s01",
+          "text": "Khủng hoảng kinh tế và khủng bố trắng đẩy mâu thuẫn tới đỉnh điểm, nhưng Đảng vừa ra đời đã kịp phát động quần chúng. Từ bãi công đầu năm, ngày Quốc tế Lao động mồng một tháng năm, đến tổng bãi công Bến Thủy Vinh tháng tám, phong trào lên thành cao trào."
+        },
+        {
+          "stepId": "vnr-p03-s02",
+          "text": "Đỉnh cao là Xô viết Nghệ Tĩnh tháng chín năm một nghìn chín trăm ba mươi. Chi bộ và nông hội đứng ra làm chức năng chính quyền công nông thu nhỏ. Cuộc biểu tình ở Hưng Nguyên bị máy bay Pháp ném bom, một trăm bảy mươi mốt người hy sinh."
+        },
+        {
+          "stepId": "vnr-p03-s03",
+          "text": "Pháp khủng bố khốc liệt, tháng tư năm một nghìn chín trăm ba mươi mốt toàn bộ Ban Chấp hành Trung ương bị bắt. Dù tổn thất nặng, cao trào khẳng định quyền lãnh đạo của giai cấp công nhân, củng cố liên minh công nông và để lại nhiều kinh nghiệm quý."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p04",
+      "intro": "Luận cương tháng mười năm một nghìn chín trăm ba mươi khác Cương lĩnh ở đâu? Và Đảng khôi phục tổ chức thế nào để tới Đại hội thứ nhất năm một nghìn chín trăm ba mươi lăm?",
+      "steps": [
+        {
+          "stepId": "vnr-p04-s01",
+          "text": "Tháng mười năm một nghìn chín trăm ba mươi, Hội nghị Trung ương đầu tiên họp ở Hương Cảng, đổi tên Đảng thành Đảng Cộng sản Đông Dương và bầu Trần Phú làm Tổng Bí thư. Luận cương nêu cách mạng tư sản dân quyền, lấy thổ địa làm cái cốt, rồi tiến thẳng lên xã hội chủ nghĩa."
+        },
+        {
+          "stepId": "vnr-p04-s02",
+          "text": "Hạn chế là Luận cương chưa đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, nặng đấu tranh giai cấp và ruộng đất, đánh giá chưa đúng tiểu tư sản và tư sản dân tộc. Đó là bước chuyển tả khuynh so với Cương lĩnh tháng hai, do hiểu chưa đầy đủ thực tiễn thuộc địa."
+        },
+        {
+          "stepId": "vnr-p04-s03",
+          "text": "Dưới khủng bố trắng, nhiều đồng chí giữ vững khí tiết. Trần Phú hy sinh với lời dặn hãy giữ vững chí khí chiến đấu, Lý Tự Trọng khẳng định con đường của thanh niên chỉ có thể là con đường cách mạng. Trong tù, đảng viên lập chi bộ và biến nhà tù thành trường học cộng sản."
+        },
+        {
+          "stepId": "vnr-p04-s04",
+          "text": "Từ Chương trình hành động tháng sáu năm một nghìn chín trăm ba mươi hai đến Ban Chỉ huy ở ngoài, Đảng khôi phục dần tổ chức. Tháng ba năm một nghìn chín trăm ba mươi lăm, Đại hội thứ nhất ở Ma Cao bầu Lê Hồng Phong làm Tổng Bí thư, nhưng vẫn chưa đặt độc lập dân tộc lên hàng đầu."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p05",
+      "intro": "Ý chính thứ hai: giai đoạn một nghìn chín trăm ba mươi sáu đến ba mươi chín. Trước nguy cơ phát xít, Đảng điều chỉnh chiến lược, đòi dân chủ, cơm áo, hòa bình.",
+      "steps": [
+        {
+          "stepId": "vnr-p05-s01",
+          "text": "Phát xít thắng thế ở Đức, Italia, Tây Ban Nha sau khủng hoảng kinh tế. Đại hội bảy Quốc tế Cộng sản năm một nghìn chín trăm ba mươi lăm xác định kẻ thù trước mắt là phát xít, còn Mặt trận nhân dân Pháp thắng cử mở ra khả năng đấu tranh dân chủ ở thuộc địa."
+        },
+        {
+          "stepId": "vnr-p05-s02",
+          "text": "Các hội nghị Trung ương từ năm một nghìn chín trăm ba mươi sáu đến ba mươi tám xác định kẻ thù trước mắt là phát xít và phản động thuộc địa. Nhiệm vụ là đòi tự do, dân chủ, cơm áo, hòa bình. Đảng lập Mặt trận Dân chủ Đông Dương và kết hợp đấu tranh công khai với bí mật."
+        },
+        {
+          "stepId": "vnr-p05-s03",
+          "text": "Tháng mười năm một nghìn chín trăm ba mươi sáu, văn kiện Chung quanh vấn đề chiến sách mới nêu rõ: dân tộc giải phóng không nhất định phải kết chặt với cách mạng điền địa. Phải chọn kẻ thù chính, nguy hiểm nhất để tập trung lực lượng, bước đầu khắc phục tả khuynh của Luận cương."
+        },
+        {
+          "stepId": "vnr-p05-s04",
+          "text": "Phong trào dân chủ rất sôi nổi: Đông Dương đại hội, bãi công vùng mỏ, báo chí, tranh cử nghị trường. Đến tháng tư năm một nghìn chín trăm ba mươi tám, Đảng có hơn một nghìn năm trăm đảng viên bí mật và hơn ba mươi lăm nghìn hội viên, thành đội quân chính trị chuẩn bị cho Cách mạng Tháng Tám."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p06",
+      "intro": "Ý chính thứ ba: từ năm một nghìn chín trăm ba mươi chín, Đảng chuyển hướng chiến lược, đặt giải phóng dân tộc lên trên hết, qua ba hội nghị Trung ương.",
+      "steps": [
+        {
+          "stepId": "vnr-p06-s01",
+          "text": "Chiến tranh thế giới thứ hai đặt nhân dân Đông Dương dưới hai tầng áp bức Pháp và Nhật. Tháng chín năm một nghìn chín trăm ba mươi chín, Pháp cấm tuyên truyền cộng sản; một năm sau, Nhật vào Đông Dương. Đảng rút vào bí mật và xác định: hoàn cảnh sẽ tiến đến vấn đề dân tộc giải phóng."
+        },
+        {
+          "stepId": "vnr-p06-s02",
+          "text": "Sự chuyển hướng đi qua ba hội nghị. Trung ương sáu, tháng mười một năm một nghìn chín trăm ba mươi chín, đặt giải phóng dân tộc lên tối cao. Trung ương bảy còn chưa dứt khoát. Trung ương tám, tháng năm một nghìn chín trăm bốn mươi mốt, do Nguyễn Ái Quốc chủ trì ở Cao Bằng, hoàn chỉnh triệt để."
+        },
+        {
+          "stepId": "vnr-p06-s03",
+          "text": "Hội nghị Trung ương tám chốt bốn nội dung: đặt giải phóng dân tộc lên hàng đầu; tạm gác cách mạng ruộng đất; lập Mặt trận Việt Minh; và coi khởi nghĩa vũ trang là nhiệm vụ trung tâm, đi từ khởi nghĩa từng phần tiến lên tổng khởi nghĩa."
+        },
+        {
+          "stepId": "vnr-p06-s04",
+          "text": "Việt Minh tập hợp mọi người yêu nước, từ thợ thuyền đến địa chủ và tư bản bản xứ. Nhà nước tương lai là Việt Nam Dân chủ Cộng hòa, của toàn dân tộc, không phải chính quyền Xôviết. Chuyển hướng này khắc phục hạn chế của Luận cương và phát triển Cương lĩnh đầu tiên."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p07",
+      "intro": "Chuyển hướng rồi thì phải chuẩn bị lực lượng: từ những tiếng súng đầu tiên năm một nghìn chín trăm bốn mươi đến đội quân giải phóng cuối năm một nghìn chín trăm bốn mươi bốn.",
+      "steps": [
+        {
+          "stepId": "vnr-p07-s01",
+          "text": "Năm một nghìn chín trăm bốn mươi, bốn mươi mốt có ba cuộc nổi dậy: Bắc Sơn, Nam Kỳ và Đô Lương. Chúng đều bị đàn áp nhưng là những tiếng súng báo hiệu cho khởi nghĩa toàn quốc. Đảng mất nhiều lãnh tụ, song ý chí đấu tranh vẫn được giữ vững."
+        },
+        {
+          "stepId": "vnr-p07-s02",
+          "text": "Việt Minh công bố Tuyên ngôn và Chương trình cứu nước tháng mười năm một nghìn chín trăm bốn mươi mốt. Năm một nghìn chín trăm bốn mươi ba, Đảng ra Đề cương về văn hóa với ba nguyên tắc dân tộc, khoa học, đại chúng. Báo chí cách mạng và các tổ chức văn hóa, trí thức cũng lớn mạnh."
+        },
+        {
+          "stepId": "vnr-p07-s03",
+          "text": "Cứu quốc quân ở Bắc Sơn Võ Nhai và đội vũ trang ở Cao Bằng mở rộng căn cứ địa. Ngày hai mươi hai tháng mười hai năm một nghìn chín trăm bốn mươi bốn, Đội Việt Nam tuyên truyền giải phóng quân ra đời, thắng liền hai trận Phai Khắt và Nà Ngần."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p08",
+      "intro": "Đêm chín tháng ba năm một nghìn chín trăm bốn mươi lăm, Nhật đảo chính Pháp. Đảng phản ứng ngay bằng chỉ thị ngày mười hai tháng ba và phát động cao trào kháng Nhật cứu nước.",
+      "steps": [
+        {
+          "stepId": "vnr-p08-s01",
+          "text": "Đầu năm một nghìn chín trăm bốn mươi lăm, Hồng quân Liên Xô tiến về Béclin, Anh Mỹ đánh Nhật ở Thái Bình Dương. Đêm chín tháng ba, Nhật đảo chính lật đổ Pháp, độc chiếm Đông Dương và dựng chính phủ Trần Trọng Kim. Ngay đêm đó, Ban Thường vụ Trung ương họp ở Đình Bảng."
+        },
+        {
+          "stepId": "vnr-p08-s02",
+          "text": "Chỉ thị ngày mười hai tháng ba xác định đây là cuộc tranh giành giữa hai đế quốc, kẻ thù duy nhất, trước mắt là phát xít Nhật. Khẩu hiệu đổi thành đánh đuổi phát xít Nhật, đồng thời phát động cao trào kháng Nhật cứu nước, sẵn sàng chuyển lên tổng khởi nghĩa."
+        },
+        {
+          "stepId": "vnr-p08-s03",
+          "text": "Từ giữa tháng ba, khởi nghĩa từng phần nổ ra khắp nơi, có khởi nghĩa Ba Tơ ở Quảng Ngãi. Tháng năm, hội nghị ở Hiệp Hòa thống nhất lực lượng vũ trang, và ngày bốn tháng sáu Khu giải phóng Việt Bắc thành lập, trở thành căn cứ địa chính của cả nước."
+        },
+        {
+          "stepId": "vnr-p08-s04",
+          "text": "Cao trào lan xuống đô thị và đồng bằng. Khẩu hiệu phá kho thóc, giải quyết nạn đói huy động hàng triệu người đứng lên, làm tê liệt bộ máy tay sai của Nhật từ lý trưởng đến tỉnh trưởng."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p09",
+      "intro": "Tháng tám năm một nghìn chín trăm bốn mươi lăm, thời cơ chỉ kéo dài khoảng nửa tháng. Đảng đã nắm bắt thế nào để giành chính quyền trong cả nước?",
+      "steps": [
+        {
+          "stepId": "vnr-p09-s01",
+          "text": "Đức đầu hàng, Mỹ ném bom nguyên tử xuống Nhật, ngày mười lăm tháng tám Nhật tuyên bố đầu hàng. Nhưng quân Trung Hoa Dân quốc và quân Anh sắp vào giải giáp, Pháp toan quay lại. Vì vậy thời cơ chỉ tồn tại trong nửa cuối tháng tám."
+        },
+        {
+          "stepId": "vnr-p09-s02",
+          "text": "Tại Tân Trào, ngày mười ba tháng tám ban Quân lệnh số một phát lệnh tổng khởi nghĩa. Hội nghị toàn quốc nêu ba nguyên tắc: tập trung, thống nhất, kịp thời. Ngày mười sáu, Đại hội quốc dân thông qua mười chính sách Việt Minh và lập Ủy ban giải phóng dân tộc do Hồ Chí Minh làm Chủ tịch."
+        },
+        {
+          "stepId": "vnr-p09-s03",
+          "text": "Từ mười bốn đến hai mươi lăm tháng tám, khởi nghĩa thắng nhanh. Hà Nội giành chính quyền ngày mười chín, Huế ngày hai mươi ba, Sài Gòn ngày hai mươi lăm với hơn một triệu người xuống đường. Hải Dương, Bắc Giang, Hà Tĩnh, Quảng Nam giành chính quyền sớm nhất."
+        },
+        {
+          "stepId": "vnr-p09-s04",
+          "text": "Ngày hai mươi lăm tháng tám, Hồ Chí Minh và Trung ương Đảng về Hà Nội. Ngày hai mươi bảy, hai mươi tám lập Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa; ngày ba mươi, vua Bảo Đại thoái vị. Chính quyền cách mạng được xác lập trong cả nước."
+        }
+      ]
+    },
+    {
+      "pieceId": "vnr-p10",
+      "intro": "Độc lập, rồi bài học: cách mạng ấy mang tính chất gì, để lại bốn bài học nào, và đường lối đã chuyển dịch qua năm cột mốc ra sao?",
+      "steps": [
+        {
+          "stepId": "vnr-p10-s01",
+          "text": "Ngày hai tháng chín năm một nghìn chín trăm bốn mươi lăm, tại Quảng trường Ba Đình, Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa. Bản Tuyên ngôn được soạn ở nhà số bốn mươi tám phố Hàng Ngang và lấy ý kiến tập thể ngày ba mươi tháng tám."
+        },
+        {
+          "stepId": "vnr-p10-s02",
+          "text": "Cách mạng Tháng Tám là cách mạng giải phóng dân tộc điển hình, mang tính chất dân chủ mới. Nó đập tan xiềng xích đế quốc gần một thế kỷ, chấm dứt chế độ quân chủ, lập nhà nước nhân dân đầu tiên ở Đông Nam Á. Một đảng mới mười lăm tuổi đã lãnh đạo thành công."
+        },
+        {
+          "stepId": "vnr-p10-s03",
+          "text": "Có bốn bài học. Về chỉ đạo chiến lược, giương cao ngọn cờ giải phóng dân tộc. Về lực lượng, tập hợp mọi người yêu nước trong mặt trận rộng rãi. Về phương pháp, kết hợp chính trị với vũ trang và chớp thời cơ. Về xây dựng Đảng, gắn bó máu thịt với quần chúng."
+        },
+        {
+          "stepId": "vnr-p10-s04",
+          "text": "Đường lối đi qua năm cột mốc: Cương lĩnh đầu tiên đúng đắn; Luận cương tả khuynh; bước đột phá nhận thức năm một nghìn chín trăm ba mươi sáu; chuyển hướng triệt để năm một nghìn chín trăm bốn mươi mốt; và chớp thời cơ năm một nghìn chín trăm bốn mươi lăm. Quy luật là đặt giải phóng dân tộc lên hàng đầu."
+        }
+      ]
+    }
+  ]
+}

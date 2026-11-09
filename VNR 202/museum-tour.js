@@ -112,7 +112,7 @@ const MuseumTour = (() => {
 // ---------------- Người dẫn (bản im lặng, có phụ đề) ----------------
 const Narrator = (() => {
     let cur = null, rate = 1;
-    const WORDS_PER_SEC = 2.5;    // tốc độ đọc thuyết trình tiếng Việt (~150 từ/phút)
+    const WORDS_PER_SEC = 3.4;    // voice TTS tiếng Việt đọc nhanh (~200 từ/phút); chỉ là đồng hồ mô phỏng khi chưa có MP3
 
     function durationFor(text) {
         const words = String(text || '').trim().split(/\s+/).filter(Boolean).length;
