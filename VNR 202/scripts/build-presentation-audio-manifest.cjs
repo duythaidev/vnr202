@@ -54,6 +54,7 @@ fs.writeFileSync(path.join(ROOT, 'presentation-audio.js'),
 
 const idxPath = path.join(ROOT, 'planning/presentation-clip-index.json');
 const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8'));
+idx.revision = script.revision;
 idx.status = missing.length ? 'partial' : 'generated';
 idx.clips.forEach(c => {
     const m = clips[c.clipId];

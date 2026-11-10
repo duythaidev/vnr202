@@ -1,6 +1,6 @@
-# Planning voice VNR202 - revision 4 (8 tranh, 26 thẻ)
+# Planning voice VNR202 - revision 5 (8 tranh, 26 thẻ)
 
-Trạng thái: nội dung đã gọn lại còn **8 tranh, 26 thẻ**. Kịch bản **34 lời nói** (8 lời dẫn và 26 lời step, khoảng 41 từ mỗi lời, tổng khoảng 6 phút 20 giây) nằm trong [presentation-script.json](presentation-script.json) và trong trường `intro` / `narration` của `museum-3d-single-03.js`. **Chưa duyệt, chưa có MP3 cho bản này.** 48 MP3 của bản 10 tranh đã chuyển sang `audio/archive-10-paintings/`, không còn khớp nội dung, không dùng lại. Phụ đề tour hiện đúng các lời này; voice chạy đồng hồ dự phòng cho tới khi tạo MP3 mới. Danh mục 34 clip ở [presentation-clip-index.json](presentation-clip-index.json).
+Trạng thái 11/11/2026: đã tạo đủ 34 MP3 giọng nam `vi-VN-NamMinhNeural` cho revision 5, tổng khoảng 416 giây. Lời hiển thị lấy từ `intro` / `narration` trong `museum-3d-single-03.js`; `scripts/build-presentation-script.cjs` tạo bản đọc số bằng chữ để gửi TTS. Manifest khớp hash và thời lượng, 34/34 ready. Bộ 10 tranh cũ ở `audio/archive-10-paintings/`. Phần kiểm tra chạy nền và toàn bộ tour cần xem kết quả mới nhất trong context.
 
 ## Cấu trúc nói theo ý chính
 

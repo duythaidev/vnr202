@@ -8,7 +8,7 @@
 
 Ảnh trong khung là ảnh tư liệu, chân dung, ảnh hiện vật, hai tranh lịch sử tái hiện và một ảnh di tích Pác Bó hiện đại. **Không vẽ slide, sơ đồ, title hoặc UI lên ảnh trong khung.** Nhãn riêng bên cạnh ghi tên, niên đại, loại ảnh và nguồn. Bộ ảnh hiện hành ở [assets/images/exhibition-8/](assets/images/exhibition-8/) (nguồn và giấy phép ở README-SOURCES.md trong đó); thư mục exhibition-10 là bản cũ. Ảnh cũ/diagrams chưa dùng có thể còn trong kho, không tự gắn lại.
 
-Phòng tự dài theo số tác phẩm: 2 tranh/khoang, ceil(N/2) khoang, mỗi khoang 11.5 đơn vị + 16 khoảng đầu/cuối. Hiện 5 khoang, dài 73.5. Số lẻ không nhân đôi tranh cuối. Thay số tranh phải sửa dữ liệu và story tương ứng, không kéo giãn tọa độ thủ công.
+Phòng tự dài theo số tác phẩm: 2 tranh/khoang, ceil(N/2) khoang, mỗi khoang 11.5 đơn vị + 16 khoảng đầu/cuối. Hiện 4 khoang, dài 62 đơn vị. Số lẻ không nhân đôi tranh cuối. Thay số tranh phải sửa dữ liệu và story tương ứng, không kéo giãn tọa độ thủ công.
 
 ## File và thuật ngữ
 
@@ -23,7 +23,7 @@ Phòng tự dài theo số tác phẩm: 2 tranh/khoang, ceil(N/2) khoang, mỗi 
 
 Hover tranh trong phòng hiện tooltip hai dòng: tên và niên đại từ `MUSEUM_PIECES`. HTML/CSS dùng `paintingTooltip`/`.painting-tooltip`; raycast và đóng tooltip khi rời tranh, kéo nhìn, di chuyển hoặc mở detail nằm trong `-09.js`. Không thêm mô tả dài, ảnh hay âm thanh riêng cho tooltip.
 
-ID vnr-p01…p10 của revision 2 đã sắp xếp lại; **không dùng voice/cache revision 1 chỉ vì cùng ID**. `mergedFrom` trong dữ liệu trỏ vào bản cũ, còn nguồn đoạn trong thẻ trỏ vào snapshot 209 đoạn hiện hành.
+ID vnr-p01…p08 của revision 5 đã sắp xếp lại; **không dùng voice/cache của bản cũ chỉ vì cùng ID**. `mergedFrom` trong dữ liệu trỏ vào bản cũ, còn nguồn đoạn trong thẻ trỏ vào snapshot 209 đoạn hiện hành.
 
 ## Điểm bắt đầu cho agent
 
@@ -37,6 +37,6 @@ File mới: `museum-tour.js` (camera + Narrator phát MP3 và đồng hồ dự 
 
 Nút **Thuyết trình** chạy từ tranh đầu; nút trong detail chạy từ tranh hiện tại. Có pause, tốc độ (mặc định 1,25×, voice đọc nhanh), chọn đoạn, CC, phím Space/←/→/PageUp/PageDown/Esc; kết thúc lùi camera về toàn cảnh. Tổng **34 segment = 8 giới thiệu + 26 step**, lấy từ dữ liệu chứ không hard-code 3 bước/tranh.
 
-**Voice:** tour phát MP3 trong `audio/presentation/` qua `presentation-audio.js` (sinh bởi `scripts/build-presentation-audio-manifest.cjs`); clip thiếu thì chạy đồng hồ phụ đề. **Đã tạo đủ 34 MP3 bản 8 tranh**, giọng nam vi-VN-NamMinhNeural; 48 MP3 cũ ở `audio/archive-10-paintings/`. Manifest revision 4 có đủ 34 clip ready. Tạo bằng `scripts/generate-presentation-audio.mjs`, kịch bản ở `planning/presentation-script.json`. Tốc độ tour mặc định 1,25×, voice 1×.
+**Voice:** tour phát MP3 trong `audio/presentation/` qua `presentation-audio.js` (sinh bởi `scripts/build-presentation-audio-manifest.cjs`); clip thiếu thì chạy đồng hồ phụ đề. **Đã tạo đủ 34 MP3 bản 8 tranh**, giọng nam vi-VN-NamMinhNeural; 48 MP3 cũ ở `audio/archive-10-paintings/`. Manifest revision 5 có đủ 34 clip ready, tạo bằng `node scripts/build-presentation-script.cjs`, `node scripts/generate-presentation-audio.cjs` và `node scripts/build-presentation-audio-manifest.cjs`. Nguồn nội dung ở `museum-3d-single-03.js`: phụ đề giữ chữ số, `scripts/spoken-text.cjs` chuyển sang chữ khi gọi TTS. Kịch bản phát sinh ở `planning/presentation-script.json`. Tốc độ tour mặc định 1,25×, voice 1×. Ngày 11/11/2026 đã kiểm tra trên browser với tab ẩn mô phỏng và requestAnimationFrame bị ngừng: MP3 và tiến trình viết đều tiếp tục; chưa thay thế thử tab nền thực trên máy người dùng, vì trình duyệt có thể giới hạn timer.
 
 Giữ cơ chế intro, âm thanh và low graphic/MSAA kế thừa base. Vai trò file/kiến trúc chung có thêm tại [context base](../CONTEXT.md), nhưng số lượng và dữ liệu VNR202 lấy tài liệu tại thư mục này.
