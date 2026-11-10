@@ -44,7 +44,7 @@ body.tour-on .tour-letterbox { transform: none; }
 /* phụ đề lời dẫn kiểu karaoke */
 .tour-caption {
     position: absolute; left: 50%; bottom: calc(9vh + 88px); transform: translate(-50%, 10px);
-    width: min(860px, calc(100vw - 32px)); text-align: center;
+    width: min(1200px, calc(100vw - 32px)); text-align: center;
     font-size: clamp(15px, 1.5vw, 19px); line-height: 1.55; color: rgba(243, 234, 214, .38);
     background: rgba(8, 8, 6, .55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     padding: 10px 18px; border-radius: 12px; opacity: 0; transition: opacity .4s, transform .4s;
