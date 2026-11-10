@@ -517,7 +517,7 @@ const StoryBoard = (() => {
     // ---------------- Vòng lặp ----------------
     function loop() {
         raf = requestAnimationFrame(loop);
-        const realDt = Math.min(0.05, clock.getDelta());
+        const realDt = Math.min(document.hidden ? 0.5 : 0.05, clock.getDelta());
         const dt = st.paused ? 0 : realDt * (api.timeScale || 1) * (window.__tourScale || 1);   // tạm dừng: đóng băng bay + bút
         if (!st.paused) { updateFlight(dt); applyCamera(realDt); updateWriting(dt); }
         else MuseumSound.writing(false);

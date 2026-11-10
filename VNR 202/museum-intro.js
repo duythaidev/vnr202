@@ -379,7 +379,7 @@ const MuseumIntro = (() => {
         document.getElementById('introWelcome').hidden = true;
         stage.hidden = false;
         await delay(300);
-        for (const [i, text] of ['Xin chào tất cả các bạn', 'Chào mừng đến với bài thuyết trình của nhóm 1'].entries()) {
+        for (const [i, text] of ['Xin chào!', 'Chúng ta sẽ cùng tham quan bảo tàng lịch sử nhé!'].entries()) {
             if (failed) break;
             await showStep(text, i);
         }

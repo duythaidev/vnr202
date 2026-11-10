@@ -166,7 +166,7 @@ const museumClock = new THREE.Clock();
 let footDistance = 0, wheelWalkUntil = 0;
 function animateMuseum() {
     requestAnimationFrame(animateMuseum);
-    const dt = Math.min(0.05, museumClock.getDelta());
+    const dt = Math.min(document.hidden ? 0.5 : 0.05, museumClock.getDelta());
     if (StoryBoard.isOpen && hoveredPainting) hidePaintingTooltip();
     if (StoryBoard.isOpen && !StoryBoard.isTransitioning) return; // bảng ghim đang chiếm màn hình
 

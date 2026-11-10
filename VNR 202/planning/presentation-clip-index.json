@@ -16,7 +16,7 @@
       "expectedFile": "audio/presentation/vnr-p01-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 8.88
+      "duration": 14.21
     },
     {
       "clipId": "vnr-p01-s01",
@@ -83,7 +83,7 @@
       "expectedFile": "audio/presentation/vnr-p02-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 6.34
+      "duration": 11.52
     },
     {
       "clipId": "vnr-p02-s01",
@@ -97,7 +97,7 @@
       "expectedFile": "audio/presentation/vnr-p02-s01.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 11.93
+      "duration": 11.95
     },
     {
       "clipId": "vnr-p02-s02",
@@ -136,7 +136,7 @@
       "expectedFile": "audio/presentation/vnr-p03-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 7.3
+      "duration": 11.64
     },
     {
       "clipId": "vnr-p03-s01",
@@ -178,7 +178,7 @@
       "expectedFile": "audio/presentation/vnr-p03-s03.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 14.66
+      "duration": 14.78
     },
     {
       "clipId": "vnr-p04-intro",
@@ -189,7 +189,7 @@
       "expectedFile": "audio/presentation/vnr-p04-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 11.02
+      "duration": 9.79
     },
     {
       "clipId": "vnr-p04-s01",
@@ -242,7 +242,7 @@
       "expectedFile": "audio/presentation/vnr-p05-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 7.2
+      "duration": 8.35
     },
     {
       "clipId": "vnr-p05-s01",
@@ -256,7 +256,7 @@
       "expectedFile": "audio/presentation/vnr-p05-s01.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 17.57
+      "duration": 17.71
     },
     {
       "clipId": "vnr-p05-s02",
@@ -348,7 +348,7 @@
       "expectedFile": "audio/presentation/vnr-p07-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 7.7
+      "duration": 10.01
     },
     {
       "clipId": "vnr-p07-s01",
@@ -415,7 +415,7 @@
       "expectedFile": "audio/presentation/vnr-p08-intro.mp3",
       "status": "generated",
       "revision": 4,
-      "duration": 7.13
+      "duration": 6.55
     },
     {
       "clipId": "vnr-p08-s01",

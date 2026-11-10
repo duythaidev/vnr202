@@ -1,6 +1,6 @@
 {
   "course": "VNR202",
-  "revision": 4,
+  "revision": 5,
   "voice": "vi-VN-NamMinhNeural",
   "generatedBy": "scripts/build-presentation-audio-manifest.cjs",
   "clips": {
@@ -9,9 +9,9 @@
       "pieceId": "vnr-p01",
       "file": "audio/presentation/vnr-p01-intro.mp3",
       "status": "ready",
-      "duration": 8.88,
-      "bytes": 53280,
-      "textHash": "94c09d62c6c32e25"
+      "duration": 14.21,
+      "bytes": 85248,
+      "textHash": "2cb79ebe0efa19354874950f503abe4c923f3d3b19e64dec15466f70d8f9984d"
     },
     "vnr-p01-s01": {
       "kind": "step",
@@ -21,7 +21,7 @@
       "status": "ready",
       "duration": 12.1,
       "bytes": 72576,
-      "textHash": "87a7ca3cdd0ffc41"
+      "textHash": "628b6762dfdfbf4294d4113139f579e0abe75422062f36fbc56d9c7e38da5825"
     },
     "vnr-p01-s02": {
       "kind": "step",
@@ -31,7 +31,7 @@
       "status": "ready",
       "duration": 12.62,
       "bytes": 75744,
-      "textHash": "9ad564786695404e"
+      "textHash": "77c47f7bbc3e642c89d5b4359ddc72d42b7d61c13fc894e87c8f11e65d3f3493"
     },
     "vnr-p01-s03": {
       "kind": "step",
@@ -41,7 +41,7 @@
       "status": "ready",
       "duration": 11.35,
       "bytes": 68112,
-      "textHash": "e8f8b45b6a6425dc"
+      "textHash": "6a173e9acdba64affb736ab2b5bf0563c8de27c600de3d5e1c0886ad5e45c22a"
     },
     "vnr-p01-s04": {
       "kind": "step",
@@ -51,16 +51,16 @@
       "status": "ready",
       "duration": 12.14,
       "bytes": 72864,
-      "textHash": "6c2bf8bf2f833f78"
+      "textHash": "84344559f58355d567212a1f171e73ee8ef8130e87ced107ddd960b50f38e920"
     },
     "vnr-p02-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p02",
       "file": "audio/presentation/vnr-p02-intro.mp3",
       "status": "ready",
-      "duration": 6.34,
-      "bytes": 38016,
-      "textHash": "4e0a6ec6d993c71b"
+      "duration": 11.52,
+      "bytes": 69120,
+      "textHash": "89d136d9682fa15b02703e1343b3cfc86884a067bfae8923a861026775503dbf"
     },
     "vnr-p02-s01": {
       "kind": "step",
@@ -68,9 +68,9 @@
       "stepId": "vnr-p02-s01",
       "file": "audio/presentation/vnr-p02-s01.mp3",
       "status": "ready",
-      "duration": 11.93,
-      "bytes": 71568,
-      "textHash": "0add5d35067c538f"
+      "duration": 11.95,
+      "bytes": 71712,
+      "textHash": "0f5ec97964c985cfcfe70f64a0ed694fd086ec149123824bfdf0c493ca07d17c"
     },
     "vnr-p02-s02": {
       "kind": "step",
@@ -80,7 +80,7 @@
       "status": "ready",
       "duration": 13.1,
       "bytes": 78624,
-      "textHash": "28cef57cc6fb013e"
+      "textHash": "865fd7fd8e65ccfdfce304d582dc0d890812dcb53d7a4a0478f456f90349bb34"
     },
     "vnr-p02-s03": {
       "kind": "step",
@@ -90,16 +90,16 @@
       "status": "ready",
       "duration": 11.26,
       "bytes": 67536,
-      "textHash": "31ccbf616c703d9d"
+      "textHash": "eccd868206c34a8178622e751d1e3ca4ecc778d657f2970b8121ee2c120cb368"
     },
     "vnr-p03-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p03",
       "file": "audio/presentation/vnr-p03-intro.mp3",
       "status": "ready",
-      "duration": 7.3,
-      "bytes": 43776,
-      "textHash": "3a0607a6d3e09770"
+      "duration": 11.64,
+      "bytes": 69840,
+      "textHash": "0de7557de96d80eb1fbc4d2a52e8ff57646317c6cba844151cbd7698b167425a"
     },
     "vnr-p03-s01": {
       "kind": "step",
@@ -109,7 +109,7 @@
       "status": "ready",
       "duration": 12.17,
       "bytes": 73008,
-      "textHash": "c35999a532e8ed11"
+      "textHash": "5590ebc409382db6f83811ca4ae404953058e7030d0d64501c29acae0a146f57"
     },
     "vnr-p03-s02": {
       "kind": "step",
@@ -119,7 +119,7 @@
       "status": "ready",
       "duration": 13.46,
       "bytes": 80784,
-      "textHash": "1d2610e2be44ea3e"
+      "textHash": "4f7bc74c82fee59478f09d39ec4aadb5cc8ec0cb7cfc521063a4a6075cd977a5"
     },
     "vnr-p03-s03": {
       "kind": "step",
@@ -127,18 +127,18 @@
       "stepId": "vnr-p03-s03",
       "file": "audio/presentation/vnr-p03-s03.mp3",
       "status": "ready",
-      "duration": 14.66,
-      "bytes": 87984,
-      "textHash": "c8d2b49904538464"
+      "duration": 14.78,
+      "bytes": 88704,
+      "textHash": "46c839ee295818f9afc8f8e106b84218e281d5b75b40810a3d1e225550e95246"
     },
     "vnr-p04-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p04",
       "file": "audio/presentation/vnr-p04-intro.mp3",
       "status": "ready",
-      "duration": 11.02,
-      "bytes": 66096,
-      "textHash": "398ca08916c67b1b"
+      "duration": 9.79,
+      "bytes": 58752,
+      "textHash": "599a67ddaaf4a22192e32b3f6c81a8676d8a94e8b70c37f567a5faf581650669"
     },
     "vnr-p04-s01": {
       "kind": "step",
@@ -148,7 +148,7 @@
       "status": "ready",
       "duration": 13.92,
       "bytes": 83520,
-      "textHash": "0c55ab3ce3626e42"
+      "textHash": "aaa42d027d3f39c89d710ae7255595cd7e712f9101a4a446c01fedf5041398f0"
     },
     "vnr-p04-s02": {
       "kind": "step",
@@ -158,7 +158,7 @@
       "status": "ready",
       "duration": 15.31,
       "bytes": 91872,
-      "textHash": "00e611a633e97102"
+      "textHash": "2be8d36c53708abb6dd93ee1a6291532d47fb8325cee94c96b5391168faf8d82"
     },
     "vnr-p04-s03": {
       "kind": "step",
@@ -168,16 +168,16 @@
       "status": "ready",
       "duration": 14.02,
       "bytes": 84096,
-      "textHash": "23bf4b5f6ccbaf64"
+      "textHash": "2452c9cda906def85249760b1c4d3ef47bc237791e4da1f931daea3dd5e9d7fa"
     },
     "vnr-p05-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p05",
       "file": "audio/presentation/vnr-p05-intro.mp3",
       "status": "ready",
-      "duration": 7.2,
-      "bytes": 43200,
-      "textHash": "b4e981cfb1b6e39c"
+      "duration": 8.35,
+      "bytes": 50112,
+      "textHash": "24808aa62aa3fc8a5f09b1e7e48efcaef8bd37c09a5f25a25e5c2dfc8a65942c"
     },
     "vnr-p05-s01": {
       "kind": "step",
@@ -185,9 +185,9 @@
       "stepId": "vnr-p05-s01",
       "file": "audio/presentation/vnr-p05-s01.mp3",
       "status": "ready",
-      "duration": 17.57,
-      "bytes": 105408,
-      "textHash": "e7a6e6a914276df9"
+      "duration": 17.71,
+      "bytes": 106272,
+      "textHash": "abedce0f9a7dd8d6ca83e82d69ab767b3a96248f89c130c9a506e496ecb4963e"
     },
     "vnr-p05-s02": {
       "kind": "step",
@@ -197,7 +197,7 @@
       "status": "ready",
       "duration": 10.42,
       "bytes": 62496,
-      "textHash": "5343d82de9f6225f"
+      "textHash": "8e142a1ff7a9223503616d5ffbdb98ce5d89fa525e98e575940593d8b910d905"
     },
     "vnr-p05-s03": {
       "kind": "step",
@@ -207,7 +207,7 @@
       "status": "ready",
       "duration": 13.27,
       "bytes": 79632,
-      "textHash": "0f1689e3c3e208fd"
+      "textHash": "46963926d4e9759a1381cc4bf1cdadac9bb85372c18668b5a287cf8d69bf5891"
     },
     "vnr-p06-intro": {
       "kind": "piece-intro",
@@ -216,7 +216,7 @@
       "status": "ready",
       "duration": 8.59,
       "bytes": 51552,
-      "textHash": "1c6a578a309ab4fc"
+      "textHash": "a6635007ae45ff0992ee8264190d714a712670dbfcfe5780f3f09e7ce20a82fb"
     },
     "vnr-p06-s01": {
       "kind": "step",
@@ -226,7 +226,7 @@
       "status": "ready",
       "duration": 13.63,
       "bytes": 81792,
-      "textHash": "c1302f174bb0437f"
+      "textHash": "1e50ce02ebf4477b754cb17d3cc1cd3b4bf534839b0b0c7363ed6ceab764bc98"
     },
     "vnr-p06-s02": {
       "kind": "step",
@@ -236,7 +236,7 @@
       "status": "ready",
       "duration": 11.06,
       "bytes": 66384,
-      "textHash": "058ee2aab7376564"
+      "textHash": "f2f87ebdc991bd0c684d20fe8870d48317b0bdc7e084fffc6ff51dd4e1332e6c"
     },
     "vnr-p06-s03": {
       "kind": "step",
@@ -246,16 +246,16 @@
       "status": "ready",
       "duration": 12.22,
       "bytes": 73296,
-      "textHash": "f784eb9b920985f1"
+      "textHash": "9ca730707d3659ff593288221a1a56a7e09d5d401ee34d298b092aa9e8775f41"
     },
     "vnr-p07-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p07",
       "file": "audio/presentation/vnr-p07-intro.mp3",
       "status": "ready",
-      "duration": 7.7,
-      "bytes": 46224,
-      "textHash": "2edc2f834c78d92a"
+      "duration": 10.01,
+      "bytes": 60048,
+      "textHash": "14621c2e51ad248c2b7ff095b130c3f18714f8b660b74f7cd716c224b5a03734"
     },
     "vnr-p07-s01": {
       "kind": "step",
@@ -265,7 +265,7 @@
       "status": "ready",
       "duration": 11.26,
       "bytes": 67536,
-      "textHash": "57af83d4ee026973"
+      "textHash": "92b5a59babd67511b87920be452c65098a0c217e28d76fdac85a93574b204d7b"
     },
     "vnr-p07-s02": {
       "kind": "step",
@@ -275,7 +275,7 @@
       "status": "ready",
       "duration": 12.29,
       "bytes": 73728,
-      "textHash": "7df207ea3d4e3400"
+      "textHash": "0a0d716e2b2326f29ed2e5733dd33819dfc390c0ef1e3ebe4809f3d61881a8c4"
     },
     "vnr-p07-s03": {
       "kind": "step",
@@ -285,7 +285,7 @@
       "status": "ready",
       "duration": 11.71,
       "bytes": 70272,
-      "textHash": "79a2ef5d17a09eca"
+      "textHash": "4223b518862dacf7b4a923f3fd3f94c7469e30cab380e1813155526233d32220"
     },
     "vnr-p07-s04": {
       "kind": "step",
@@ -295,16 +295,16 @@
       "status": "ready",
       "duration": 12.38,
       "bytes": 74304,
-      "textHash": "94a6ffa0850b14f4"
+      "textHash": "dc19da446b3c9ecd4097ebeee946145d7a2cca144eb3c0d5ffa3f388d83a24e8"
     },
     "vnr-p08-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p08",
       "file": "audio/presentation/vnr-p08-intro.mp3",
       "status": "ready",
-      "duration": 7.13,
-      "bytes": 42768,
-      "textHash": "9b17fbb4c984a021"
+      "duration": 6.55,
+      "bytes": 39312,
+      "textHash": "b96098c4702d2fc5c67d654a2281bc7c3c0eeceeefef2f055ca25ec747c8c91b"
     },
     "vnr-p08-s01": {
       "kind": "step",
@@ -314,7 +314,7 @@
       "status": "ready",
       "duration": 14.16,
       "bytes": 84960,
-      "textHash": "2e345b3143c4b161"
+      "textHash": "f040c6b9770ea56bee4385c5836fea9e39b4b32c422926d7797924dccb5c7697"
     },
     "vnr-p08-s02": {
       "kind": "step",
@@ -324,7 +324,7 @@
       "status": "ready",
       "duration": 14.98,
       "bytes": 89856,
-      "textHash": "e466e53edd402d54"
+      "textHash": "8aabf1fa5d0740087cce98e20e6afd50193dbd2898a2469aab911aae96a2a537"
     },
     "vnr-p08-s03": {
       "kind": "step",
@@ -334,7 +334,7 @@
       "status": "ready",
       "duration": 12.17,
       "bytes": 73008,
-      "textHash": "d40291c37a3cbb5b"
+      "textHash": "96a86f8e3ec6d0a28028a89ac20515dfe37b014fef539f65fe712dfa7ba0d13f"
     }
   }
 }

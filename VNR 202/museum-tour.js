@@ -1,3 +1,17 @@
+// Tab bị ẩn thì requestAnimationFrame dừng hẳn. Thêm bộ hẹn giờ dự phòng để chế độ thuyết trình vẫn chạy khi người xem chuyển tab/cửa sổ.
+(() => {
+    const raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+    const live = new Map();
+    window.requestAnimationFrame = (cb) => {
+        let id;
+        const timer = setTimeout(() => run(), 100);
+        const run = (t) => { if (!live.has(id)) return; live.delete(id); clearTimeout(timer); caf(id); cb(t || performance.now()); };
+        id = raf(run);
+        live.set(id, timer);
+        return id;
+    };
+    window.cancelAnimationFrame = (id) => { if (live.has(id)) { clearTimeout(live.get(id)); live.delete(id); } caf(id); };
+})();
 // Port từ museum-3d-single.html tham khảo. Narrator hiện là đồng hồ phụ đề, chưa phát MP3.
 const abortError = () => new DOMException('Đã huỷ', 'AbortError');
 

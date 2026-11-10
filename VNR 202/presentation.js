@@ -115,7 +115,7 @@ const Presentation = (() => {
 
     function tick(now) {
         rafId = requestAnimationFrame(tick);
-        const dt = Math.min(0.1, (now - (lastT || now)) / 1000);
+        const dt = Math.min(document.hidden ? 0.5 : 0.1, (now - (lastT || now)) / 1000);
         lastT = now;
         if (status === 'running') {
             const sdt = dt * SPEEDS[speedIdx] * (window.__tourScale || 1);
@@ -461,7 +461,6 @@ const Presentation = (() => {
         if (fn) { e.preventDefault(); e.stopImmediatePropagation(); if (!e.repeat) fn(); }
         else if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown'].includes(e.code)) e.stopImmediatePropagation();
     }, true);
-    document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
 
     function init() { buildUI(); }
 

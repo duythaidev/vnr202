@@ -1,157 +1,207 @@
 {
   "course": "VNR202",
-  "revision": 4,
+  "revision": 5,
   "voice": "vi-VN-NamMinhNeural",
   "status": "draft-unapproved",
   "pieces": [
     {
       "pieceId": "vnr-p01",
-      "intro": "Trước năm một nghìn chín trăm ba mươi, dân tộc ta chưa có đường lối đúng. Nguyễn Ái Quốc đã tìm ra con đường ấy và lập nên Đảng như thế nào?",
+      "intro": {
+        "display": "Gần một thế kỷ bị thực dân đô hộ, nhiều thế hệ đã đứng lên đấu tranh nhưng vẫn chưa giành được độc lập. Vì sao vậy? Để trả lời, ta quay lại bối cảnh trước năm 1930, rồi xem Đảng ra đời như thế nào.",
+        "text": "Gần một thế kỷ bị thực dân đô hộ, nhiều thế hệ đã đứng lên đấu tranh nhưng vẫn chưa giành được độc lập. Vì sao vậy? Để trả lời, ta quay lại bối cảnh trước năm một nghìn chín trăm ba mươi, rồi xem Đảng ra đời như thế nào."
+      },
       "steps": [
         {
           "stepId": "vnr-p01-s01",
+          "display": "Dưới ách thực dân Pháp, mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở nên gay gắt nhất. Các phong trào Cần Vương, Đông Du, Yên Bái đều thất bại vì thiếu đường lối đúng và tổ chức tiên phong.",
           "text": "Dưới ách thực dân Pháp, mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở nên gay gắt nhất. Các phong trào Cần Vương, Đông Du, Yên Bái đều thất bại vì thiếu đường lối đúng và tổ chức tiên phong."
         },
         {
           "stepId": "vnr-p01-s02",
+          "display": "Năm 1911, Nguyễn Tất Thành ra đi tìm đường cứu nước. Đọc Luận cương của Lênin, dự Đại hội Tours, rồi lập Hội Thanh niên ở Quảng Châu, Người gắn giải phóng dân tộc với cách mạng vô sản.",
           "text": "Năm một nghìn chín trăm mười một, Nguyễn Tất Thành ra đi tìm đường cứu nước. Đọc Luận cương của Lênin, dự Đại hội Tours, rồi lập Hội Thanh niên ở Quảng Châu, Người gắn giải phóng dân tộc với cách mạng vô sản."
         },
         {
           "stepId": "vnr-p01-s03",
+          "display": "Năm 1929 xuất hiện ba tổ chức cộng sản. Đầu năm 1930, Nguyễn Ái Quốc triệu tập hội nghị ở Hồng Kông, hợp nhất thành Đảng Cộng sản Việt Nam.",
           "text": "Năm một nghìn chín trăm hai mươi chín xuất hiện ba tổ chức cộng sản. Đầu năm một nghìn chín trăm ba mươi, Nguyễn Ái Quốc triệu tập hội nghị ở Hồng Kông, hợp nhất thành Đảng Cộng sản Việt Nam."
         },
         {
           "stepId": "vnr-p01-s04",
+          "display": "Cương lĩnh đầu tiên đặt nhiệm vụ đánh đổ đế quốc và phong kiến, giành độc lập dân tộc lên hàng đầu, đoàn kết mọi tầng lớp yêu nước. Nó chấm dứt khủng hoảng đường lối kéo dài từ cuối thế kỷ 19.",
           "text": "Cương lĩnh đầu tiên đặt nhiệm vụ đánh đổ đế quốc và phong kiến, giành độc lập dân tộc lên hàng đầu, đoàn kết mọi tầng lớp yêu nước. Nó chấm dứt khủng hoảng đường lối kéo dài từ cuối thế kỷ mười chín."
         }
       ]
     },
     {
       "pieceId": "vnr-p02",
-      "intro": "Ý chính thứ nhất, phần một: cao trào cách mạng một nghìn chín trăm ba mươi và đỉnh cao Xô viết Nghệ Tĩnh.",
+      "intro": {
+        "display": "Đảng vừa ra đời đã phải đối mặt với khủng hoảng kinh tế và khủng bố trắng. Câu chuyện bắt đầu từ cao trào cách mạng 1930-1931 và đỉnh cao Xô viết Nghệ Tĩnh.",
+        "text": "Đảng vừa ra đời đã phải đối mặt với khủng hoảng kinh tế và khủng bố trắng. Câu chuyện bắt đầu từ cao trào cách mạng một nghìn chín trăm ba mươi đến một nghìn chín trăm ba mươi mốt và đỉnh cao Xô viết Nghệ Tĩnh."
+      },
       "steps": [
         {
           "stepId": "vnr-p02-s01",
-          "text": "Khủng hoảng kinh tế và khủng bố trắng đẩy mâu thuẫn lên cao. Đảng vừa ra đời đã phát động quần chúng: bãi công khắp nơi, ngày Quốc tế Lao động mồng một tháng năm, tổng bãi công Bến Thủy Vinh tháng tám."
+          "display": "Khủng hoảng kinh tế và khủng bố trắng đẩy mâu thuẫn lên cao. Đảng vừa ra đời đã phát động quần chúng: bãi công khắp nơi, ngày Quốc tế Lao động mùng 1 tháng 5, tổng bãi công Bến Thủy Vinh tháng 8.",
+          "text": "Khủng hoảng kinh tế và khủng bố trắng đẩy mâu thuẫn lên cao. Đảng vừa ra đời đã phát động quần chúng: bãi công khắp nơi, ngày Quốc tế Lao động mùng một tháng năm, tổng bãi công Bến Thủy Vinh tháng tám."
         },
         {
           "stepId": "vnr-p02-s02",
+          "display": "Đỉnh cao là Xô viết Nghệ Tĩnh, tháng 9 năm 1930. Chi bộ và nông hội đứng ra làm chính quyền công nông thu nhỏ. Ở Hưng Nguyên, 171 người hy sinh dưới bom Pháp.",
           "text": "Đỉnh cao là Xô viết Nghệ Tĩnh, tháng chín năm một nghìn chín trăm ba mươi. Chi bộ và nông hội đứng ra làm chính quyền công nông thu nhỏ. Ở Hưng Nguyên, một trăm bảy mươi mốt người hy sinh dưới bom Pháp."
         },
         {
           "stepId": "vnr-p02-s03",
-          "text": "Pháp khủng bố, tháng tư năm một nghìn chín trăm ba mươi mốt toàn bộ Ban Chấp hành Trung ương bị bắt. Nhưng cao trào đã khẳng định quyền lãnh đạo của giai cấp công nhân và củng cố liên minh công nông."
+          "display": "Pháp khủng bố, tháng 4 năm 1931 toàn bộ Ban Chấp hành Trung ương bị bắt. Nhưng cao trào đã khẳng định quyền lãnh đạo của giai cấp công nhân và củng cố liên minh công nông.",
+          "text": "Pháp khủng bố, tháng bốn năm một nghìn chín trăm ba mươi mốt toàn bộ Ban Chấp hành Trung ương bị bắt. Nhưng cao trào đã khẳng định quyền lãnh đạo của giai cấp công nhân và củng cố liên minh công nông."
         }
       ]
     },
     {
       "pieceId": "vnr-p03",
-      "intro": "Ý chính thứ nhất, phần hai: Luận cương tháng mười, thử thách trong tù và quá trình khôi phục tổ chức đến Đại hội thứ nhất.",
+      "intro": {
+        "display": "Sau cao trào, Đảng gặp nhiều thử thách. Luận cương tháng 10 năm 1930 khác Cương lĩnh ở đâu, và Đảng khôi phục tổ chức thế nào để tới Đại hội thứ nhất năm 1935?",
+        "text": "Sau cao trào, Đảng gặp nhiều thử thách. Luận cương tháng mười năm một nghìn chín trăm ba mươi khác Cương lĩnh ở đâu, và Đảng khôi phục tổ chức thế nào để tới Đại hội thứ nhất năm một nghìn chín trăm ba mươi lăm?"
+      },
       "steps": [
         {
           "stepId": "vnr-p03-s01",
+          "display": "Luận cương tháng 10 do Trần Phú soạn thảo, lấy thổ địa làm cái cốt. Nhưng nó chưa đặt độc lập dân tộc lên hàng đầu, nặng đấu tranh giai cấp, nên là bước chuyển tả khuynh so với Cương lĩnh tháng 2.",
           "text": "Luận cương tháng mười do Trần Phú soạn thảo, lấy thổ địa làm cái cốt. Nhưng nó chưa đặt độc lập dân tộc lên hàng đầu, nặng đấu tranh giai cấp, nên là bước chuyển tả khuynh so với Cương lĩnh tháng hai."
         },
         {
           "stepId": "vnr-p03-s02",
+          "display": "Dưới khủng bố trắng, nhiều đồng chí giữ vững khí tiết. Trần Phú dặn hãy giữ vững chí khí chiến đấu. Trong các nhà tù, đảng viên lập chi bộ, dịch kinh điển và biến nhà tù thành trường học cộng sản.",
           "text": "Dưới khủng bố trắng, nhiều đồng chí giữ vững khí tiết. Trần Phú dặn hãy giữ vững chí khí chiến đấu. Trong các nhà tù, đảng viên lập chi bộ, dịch kinh điển và biến nhà tù thành trường học cộng sản."
         },
         {
           "stepId": "vnr-p03-s03",
-          "text": "Từ Chương trình hành động năm một nghìn chín trăm ba mươi hai đến Ban Chỉ huy ở ngoài, Đảng khôi phục tổ chức. Đại hội thứ nhất ở Ma Cao, tháng ba một nghìn chín trăm ba mươi lăm, bầu Lê Hồng Phong làm Tổng Bí thư, nhưng vẫn chưa đặt độc lập lên hàng đầu."
+          "display": "Từ Chương trình hành động năm 1932 đến Ban Chỉ huy ở ngoài, Đảng khôi phục tổ chức. Đại hội thứ nhất ở Ma Cao, tháng 3 năm 1935, bầu Lê Hồng Phong làm Tổng Bí thư, nhưng vẫn chưa đặt độc lập lên hàng đầu.",
+          "text": "Từ Chương trình hành động năm một nghìn chín trăm ba mươi hai đến Ban Chỉ huy ở ngoài, Đảng khôi phục tổ chức. Đại hội thứ nhất ở Ma Cao, tháng ba năm một nghìn chín trăm ba mươi lăm, bầu Lê Hồng Phong làm Tổng Bí thư, nhưng vẫn chưa đặt độc lập lên hàng đầu."
         }
       ]
     },
     {
       "pieceId": "vnr-p04",
-      "intro": "Ý chính thứ hai: giai đoạn một nghìn chín trăm ba mươi sáu đến ba mươi chín. Trước nguy cơ phát xít, Đảng điều chỉnh chiến lược, đòi dân chủ, cơm áo, hòa bình.",
+      "intro": {
+        "display": "Từ năm 1936 đến năm 1939, trước nguy cơ phát xít, Đảng thay đổi cách đấu tranh: đòi dân chủ, cơm áo và hòa bình.",
+        "text": "Từ năm một nghìn chín trăm ba mươi sáu đến năm một nghìn chín trăm ba mươi chín, trước nguy cơ phát xít, Đảng thay đổi cách đấu tranh: đòi dân chủ, cơm áo và hòa bình."
+      },
       "steps": [
         {
           "stepId": "vnr-p04-s01",
+          "display": "Phát xít thắng thế ở châu Âu. Đại hội 7 Quốc tế Cộng sản năm 1935 chủ trương lập Mặt trận nhân dân, và Mặt trận nhân dân Pháp lên cầm quyền. Đảng cũng phải xác định lại kẻ thù và cách đấu tranh.",
           "text": "Phát xít thắng thế ở châu Âu. Đại hội bảy Quốc tế Cộng sản năm một nghìn chín trăm ba mươi lăm chủ trương lập Mặt trận nhân dân, và Mặt trận nhân dân Pháp lên cầm quyền. Đảng cũng phải xác định lại kẻ thù và cách đấu tranh."
         },
         {
           "stepId": "vnr-p04-s02",
+          "display": "Các hội nghị Trung ương xác định kẻ thù trước mắt là phát xít và phản động thuộc địa, đòi tự do, dân chủ, cơm áo, hòa bình. Tháng mười năm 1936, Đảng nêu rõ giải phóng dân tộc không nhất định phải kết chặt với cách mạng điền địa.",
           "text": "Các hội nghị Trung ương xác định kẻ thù trước mắt là phát xít và phản động thuộc địa, đòi tự do, dân chủ, cơm áo, hòa bình. Tháng mười năm một nghìn chín trăm ba mươi sáu, Đảng nêu rõ giải phóng dân tộc không nhất định phải kết chặt với cách mạng điền địa."
         },
         {
           "stepId": "vnr-p04-s03",
+          "display": "Đông Dương đại hội, bãi công, báo chí, tranh cử: phong trào dân chủ rất sôi nổi. Đảng có hơn 1500 đảng viên bí mật, hơn 35 nghìn hội viên, thành đội quân chính trị chuẩn bị cho Cách mạng Tháng Tám.",
           "text": "Đông Dương đại hội, bãi công, báo chí, tranh cử: phong trào dân chủ rất sôi nổi. Đảng có hơn một nghìn năm trăm đảng viên bí mật, hơn ba mươi lăm nghìn hội viên, thành đội quân chính trị chuẩn bị cho Cách mạng Tháng Tám."
         }
       ]
     },
     {
       "pieceId": "vnr-p05",
-      "intro": "Ý chính thứ ba bắt đầu từ đây: Đảng chuyển hướng chiến lược, đặt giải phóng dân tộc lên trên hết qua ba hội nghị Trung ương.",
+      "intro": {
+        "display": "Chiến tranh thế giới bùng nổ, Pháp và Nhật cùng thống trị. Đảng phải chọn hướng đi mới, đặt giải phóng dân tộc lên trên hết.",
+        "text": "Chiến tranh thế giới bùng nổ, Pháp và Nhật cùng thống trị. Đảng phải chọn hướng đi mới, đặt giải phóng dân tộc lên trên hết."
+      },
       "steps": [
         {
           "stepId": "vnr-p05-s01",
-          "text": "Chiến tranh thế giới và ách Pháp Nhật buộc Đảng chuyển hướng qua ba hội nghị. Trung ương sáu đặt giải phóng dân tộc lên tối cao. Trung ương bảy còn chưa dứt khoát. Trung ương tám, tháng năm một nghìn chín trăm bốn mươi mốt, do Nguyễn Ái Quốc chủ trì, hoàn chỉnh triệt để."
+          "display": "Chiến tranh thế giới và ách Pháp Nhật buộc Đảng chuyển hướng qua ba hội nghị. Trung ương 6 đặt giải phóng dân tộc lên tối cao. Trung ương 7 còn chưa dứt khoát. Trung ương 8, tháng 5 năm 1941, do Nguyễn Ái Quốc chủ trì, hoàn chỉnh triệt để.",
+          "text": "Chiến tranh thế giới và ách Pháp Nhật buộc Đảng chuyển hướng qua ba hội nghị. Trung ương sáu đặt giải phóng dân tộc lên tối cao. Trung ương bảy còn chưa dứt khoát. Trung ương tám, tháng năm năm một nghìn chín trăm bốn mươi mốt, do Nguyễn Ái Quốc chủ trì, hoàn chỉnh triệt để."
         },
         {
           "stepId": "vnr-p05-s02",
+          "display": "Hội nghị Trung ương 8 chốt bốn nội dung: giải phóng dân tộc lên hàng đầu, tạm gác cách mạng ruộng đất, lập Mặt trận Việt Minh, và coi khởi nghĩa vũ trang là nhiệm vụ trung tâm.",
           "text": "Hội nghị Trung ương tám chốt bốn nội dung: giải phóng dân tộc lên hàng đầu, tạm gác cách mạng ruộng đất, lập Mặt trận Việt Minh, và coi khởi nghĩa vũ trang là nhiệm vụ trung tâm."
         },
         {
           "stepId": "vnr-p05-s03",
+          "display": "Việt Minh tập hợp mọi người yêu nước, từ thợ thuyền đến địa chủ. Nhà nước tương lai là Việt Nam Dân chủ Cộng hòa của toàn dân tộc, không phải chính quyền Xôviết. Chuyển hướng này khắc phục tả khuynh của Luận cương.",
           "text": "Việt Minh tập hợp mọi người yêu nước, từ thợ thuyền đến địa chủ. Nhà nước tương lai là Việt Nam Dân chủ Cộng hòa của toàn dân tộc, không phải chính quyền Xôviết. Chuyển hướng này khắc phục tả khuynh của Luận cương."
         }
       ]
     },
     {
       "pieceId": "vnr-p06",
-      "intro": "Chuyển hướng rồi thì phải chuẩn bị lực lượng, từ những tiếng súng đầu tiên năm một nghìn chín trăm bốn mươi đến đội quân giải phóng cuối năm một nghìn chín trăm bốn mươi bốn.",
+      "intro": {
+        "display": "Chuyển hướng rồi thì phải chuẩn bị lực lượng, từ những tiếng súng đầu tiên năm 1940 đến đội quân giải phóng cuối năm 1944.",
+        "text": "Chuyển hướng rồi thì phải chuẩn bị lực lượng, từ những tiếng súng đầu tiên năm một nghìn chín trăm bốn mươi đến đội quân giải phóng cuối năm một nghìn chín trăm bốn mươi bốn."
+      },
       "steps": [
         {
           "stepId": "vnr-p06-s01",
+          "display": "Năm 1940 có ba cuộc nổi dậy: Bắc Sơn, Nam Kỳ và Đô Lương. Đều bị đàn áp, nhưng là những tiếng súng báo hiệu khởi nghĩa toàn quốc. Đảng mất nhiều lãnh tụ mà ý chí vẫn vững.",
           "text": "Năm một nghìn chín trăm bốn mươi có ba cuộc nổi dậy: Bắc Sơn, Nam Kỳ và Đô Lương. Đều bị đàn áp, nhưng là những tiếng súng báo hiệu khởi nghĩa toàn quốc. Đảng mất nhiều lãnh tụ mà ý chí vẫn vững."
         },
         {
           "stepId": "vnr-p06-s02",
+          "display": "Việt Minh công bố Tuyên ngôn và Chương trình cứu nước. Đảng ra Đề cương về văn hóa với ba nguyên tắc dân tộc, khoa học, đại chúng, lập Đảng Dân chủ và Hội Văn hóa cứu quốc.",
           "text": "Việt Minh công bố Tuyên ngôn và Chương trình cứu nước. Đảng ra Đề cương về văn hóa với ba nguyên tắc dân tộc, khoa học, đại chúng, lập Đảng Dân chủ và Hội Văn hóa cứu quốc."
         },
         {
           "stepId": "vnr-p06-s03",
+          "display": "Căn cứ địa mở rộng ở Bắc Sơn Võ Nhai và Cao Bằng. Ngày 22 tháng 12 năm 1944, Đội Việt Nam tuyên truyền giải phóng quân ra đời và thắng liền hai trận Phai Khắt, Nà Ngần.",
           "text": "Căn cứ địa mở rộng ở Bắc Sơn Võ Nhai và Cao Bằng. Ngày hai mươi hai tháng mười hai năm một nghìn chín trăm bốn mươi bốn, Đội Việt Nam tuyên truyền giải phóng quân ra đời và thắng liền hai trận Phai Khắt, Nà Ngần."
         }
       ]
     },
     {
       "pieceId": "vnr-p07",
-      "intro": "Năm một nghìn chín trăm bốn mươi lăm: Nhật đảo chính Pháp, Đảng phát động cao trào kháng Nhật và chớp thời cơ Tổng khởi nghĩa Tháng Tám.",
+      "intro": {
+        "display": "Năm 1945, Nhật đảo chính Pháp và thời cuộc đổi thay rất nhanh. Đảng phát động cao trào kháng Nhật và chớp thời cơ Tổng khởi nghĩa Tháng Tám.",
+        "text": "Năm một nghìn chín trăm bốn mươi lăm, Nhật đảo chính Pháp và thời cuộc đổi thay rất nhanh. Đảng phát động cao trào kháng Nhật và chớp thời cơ Tổng khởi nghĩa Tháng Tám."
+      },
       "steps": [
         {
           "stepId": "vnr-p07-s01",
+          "display": "Đêm 9 tháng 3 năm 1945, Nhật đảo chính Pháp. Chỉ thị ngày 12 tháng 3 xác định kẻ thù duy nhất là phát xít Nhật và phát động cao trào kháng Nhật cứu nước.",
           "text": "Đêm chín tháng ba năm một nghìn chín trăm bốn mươi lăm, Nhật đảo chính Pháp. Chỉ thị ngày mười hai tháng ba xác định kẻ thù duy nhất là phát xít Nhật và phát động cao trào kháng Nhật cứu nước."
         },
         {
           "stepId": "vnr-p07-s02",
+          "display": "Khởi nghĩa từng phần nổ ra khắp nơi, như Ba Tơ. Ngày 4 tháng 6, Khu giải phóng Việt Bắc thành lập. Khẩu hiệu phá kho thóc, giải quyết nạn đói đưa hàng triệu người đứng lên.",
           "text": "Khởi nghĩa từng phần nổ ra khắp nơi, như Ba Tơ. Ngày bốn tháng sáu, Khu giải phóng Việt Bắc thành lập. Khẩu hiệu phá kho thóc, giải quyết nạn đói đưa hàng triệu người đứng lên."
         },
         {
           "stepId": "vnr-p07-s03",
+          "display": "Nhật đầu hàng ngày 15 tháng 8, thời cơ chỉ kéo dài nửa tháng vì Đồng minh sắp vào. Tại Tân Trào, Quân lệnh số 1, Hội nghị toàn quốc và Đại hội quốc dân quyết định tổng khởi nghĩa.",
           "text": "Nhật đầu hàng ngày mười lăm tháng tám, thời cơ chỉ kéo dài nửa tháng vì Đồng minh sắp vào. Tại Tân Trào, Quân lệnh số một, Hội nghị toàn quốc và Đại hội quốc dân quyết định tổng khởi nghĩa."
         },
         {
           "stepId": "vnr-p07-s04",
+          "display": "Hà Nội giành chính quyền ngày 19, Huế ngày 23, Sài Gòn ngày 25 tháng 8. Ngày 30, vua Bảo Đại thoái vị. Chính quyền cách mạng được xác lập trong cả nước.",
           "text": "Hà Nội giành chính quyền ngày mười chín, Huế ngày hai mươi ba, Sài Gòn ngày hai mươi lăm tháng tám. Ngày ba mươi, vua Bảo Đại thoái vị. Chính quyền cách mạng được xác lập trong cả nước."
         }
       ]
     },
     {
       "pieceId": "vnr-p08",
-      "intro": "Cuối cùng là Tuyên ngôn Độc lập, ý nghĩa của Cách mạng Tháng Tám, bốn bài học và mạch chuyển dịch đường lối qua năm cột mốc.",
+      "intro": {
+        "display": "Cuối cùng là Tuyên ngôn Độc lập, ý nghĩa của Cách mạng Tháng Tám, bốn bài học và năm cột mốc của đường lối.",
+        "text": "Cuối cùng là Tuyên ngôn Độc lập, ý nghĩa của Cách mạng Tháng Tám, bốn bài học và năm cột mốc của đường lối."
+      },
       "steps": [
         {
           "stepId": "vnr-p08-s01",
+          "display": "Ngày 2 tháng 9 năm 1945, Hồ Chí Minh đọc Tuyên ngôn độc lập tại Ba Đình. Cách mạng Tháng Tám là cách mạng giải phóng dân tộc điển hình, chấm dứt chế độ quân chủ, và một đảng mới 15 tuổi đã lãnh đạo thành công.",
           "text": "Ngày hai tháng chín năm một nghìn chín trăm bốn mươi lăm, Hồ Chí Minh đọc Tuyên ngôn độc lập tại Ba Đình. Cách mạng Tháng Tám là cách mạng giải phóng dân tộc điển hình, chấm dứt chế độ quân chủ, và một đảng mới mười lăm tuổi đã lãnh đạo thành công."
         },
         {
           "stepId": "vnr-p08-s02",
+          "display": "Có bốn bài học. Giương cao ngọn cờ giải phóng dân tộc. Tập hợp mọi lực lượng yêu nước trong mặt trận rộng rãi. Kết hợp chính trị với vũ trang và chớp thời cơ. Xây dựng Đảng gắn bó máu thịt với quần chúng.",
           "text": "Có bốn bài học. Giương cao ngọn cờ giải phóng dân tộc. Tập hợp mọi lực lượng yêu nước trong mặt trận rộng rãi. Kết hợp chính trị với vũ trang và chớp thời cơ. Xây dựng Đảng gắn bó máu thịt với quần chúng."
         },
         {
           "stepId": "vnr-p08-s03",
+          "display": "Đường lối đi qua năm cột mốc: Cương lĩnh đúng đắn, Luận cương tả khuynh, bước đột phá năm 1936, chuyển hướng năm 1941, và chớp thời cơ năm 1945.",
           "text": "Đường lối đi qua năm cột mốc: Cương lĩnh đúng đắn, Luận cương tả khuynh, bước đột phá năm một nghìn chín trăm ba mươi sáu, chuyển hướng năm một nghìn chín trăm bốn mươi mốt, và chớp thời cơ năm một nghìn chín trăm bốn mươi lăm."
         }
       ]

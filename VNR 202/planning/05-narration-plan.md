@@ -27,6 +27,13 @@ Voice `vi-VN-NamMinhNeural` đọc nhanh, khoảng 3,7 từ mỗi giây (đo tr�
 
 ## Generate trước, phát sau
 
-Công cụ: `node scripts/generate-presentation-audio.mjs` (cần biến môi trường `TTS_API_KEY`, endpoint mặc định `http://localhost:5050/v1/audio/speech`, model `tts-1`, voice `vi-VN-NamMinhNeural`, mp3). Công cụ chỉ tạo clip mới hoặc đổi nội dung, ghi `audio/presentation/<clipId>.mp3` và `hashes.json`, tối đa 2 request đồng thời. Sau đó chạy `node scripts/build-presentation-audio-manifest.cjs` để đo thời lượng và sinh `presentation-audio.js` (chỉ clip có hash khớp kịch bản mới được tính là sẵn sàng). Không gọi TTS trong phiên tham quan.
+Công cụ: `node scripts/build-presentation-script.cjs` rồi `node scripts/generate-presentation-audio.cjs` (biến môi trường `VNR_TTS_API_KEY`, endpoint `http://localhost:5050/v1/audio/speech`, model `tts-1`, voice `vi-VN-NamMinhNeural`). Công cụ chỉ tạo clip mới hoặc đổi nội dung, ghi `audio/presentation/<clipId>.mp3` cùng file `.sha256` của bản đọc, tối đa 2 request đồng thời. Sau đó chạy `node scripts/build-presentation-audio-manifest.cjs` để đo thời lượng và sinh `presentation-audio.js` (chỉ clip có hash khớp kịch bản mới được tính là sẵn sàng). Không gọi TTS trong phiên tham quan.
 
 Thứ tự: duyệt script, generate, nghe thử, chạy manifest. Thiếu clip thì tour chạy đồng hồ phụ đề cho clip đó, không tự gọi TTS. Pause, bỏ qua và thoát phải hủy clip cũ và ngăn callback `ended` trễ.
+
+## Cập nhật (11/11/2026)
+
+- Nguồn duy nhất của lời thuyết trình là `museum-3d-single-03.js` (`intro` và `narration`, viết số bằng chữ số để phụ đề hiện 1939 thay vì chữ). Chạy `node scripts/build-presentation-script.cjs` để sinh `presentation-script.json`: mỗi clip có `display` (chữ số, hiện phụ đề) và `text` (số đọc thành chữ, gửi TTS và tính hash). Quy tắc đọc số ở `scripts/spoken-text.cjs`.
+- Lời nói không dùng nhãn "ý chính". Lời dẫn tranh 1 mở bằng câu hỏi dẫn vào bối cảnh: vì sao nhiều thế hệ đấu tranh mà chưa giành được độc lập, rồi mới quay lại trước năm 1930.
+- Nhãn nhóm trên thẻ giới thiệu là Mở đầu, Giai đoạn 1930-1935, 1936-1939, 1939-1945, Kết luận.
+- Chế độ thuyết trình không còn tự tạm dừng khi chuyển tab hay cửa sổ; vòng lặp có bộ hẹn giờ dự phòng khi tab bị ẩn (chậm hơn khi tab ẩn, trình duyệt có thể giới hạn tốc độ).

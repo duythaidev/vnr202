@@ -28,9 +28,9 @@ const missing = [];
 function add(clipId, kind, pieceId, stepId, text) {
     const rel = `${AUDIO_DIR}/${clipId}.mp3`;
     const abs = path.join(ROOT, rel);
-    const want = crypto.createHash('sha1').update([script.voice, MODEL, text].join('|')).digest('hex').slice(0, 16);
+    const want = crypto.createHash('sha256').update(text).digest('hex');
     // clip chỉ "ready" khi file có VÀ hash nội dung khớp kịch bản hiện hành (tránh phát voice của bản cũ)
-    const ok = fs.existsSync(abs) && fs.statSync(abs).size > 0 && hashes[clipId] === want;
+    const ok = fs.existsSync(abs) && fs.statSync(abs).size > 1000 && fs.existsSync(abs + '.sha256') && fs.readFileSync(abs + '.sha256', 'utf8') === want;
     const dur = ok ? duration(abs) : null;
     if (!ok || !dur) missing.push(clipId);
     clips[clipId] = {
@@ -41,7 +41,7 @@ function add(clipId, kind, pieceId, stepId, text) {
     };
 }
 script.pieces.forEach(p => {
-    add(`${p.pieceId}-intro`, 'piece-intro', p.pieceId, null, p.intro);
+    add(`${p.pieceId}-intro`, 'piece-intro', p.pieceId, null, p.intro.text);
     p.steps.forEach(s => add(s.stepId, 'step', p.pieceId, s.stepId, s.text));
 });
 

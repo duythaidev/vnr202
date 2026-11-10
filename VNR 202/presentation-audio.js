@@ -2,7 +2,7 @@
 const PRESENTATION_AUDIO = {
     "vnr-p01-intro": {
         "file": "audio/presentation/vnr-p01-intro.mp3",
-        "duration": 8.88
+        "duration": 14.21
     },
     "vnr-p01-s01": {
         "file": "audio/presentation/vnr-p01-s01.mp3",
@@ -22,11 +22,11 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p02-intro": {
         "file": "audio/presentation/vnr-p02-intro.mp3",
-        "duration": 6.34
+        "duration": 11.52
     },
     "vnr-p02-s01": {
         "file": "audio/presentation/vnr-p02-s01.mp3",
-        "duration": 11.93
+        "duration": 11.95
     },
     "vnr-p02-s02": {
         "file": "audio/presentation/vnr-p02-s02.mp3",
@@ -38,7 +38,7 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p03-intro": {
         "file": "audio/presentation/vnr-p03-intro.mp3",
-        "duration": 7.3
+        "duration": 11.64
     },
     "vnr-p03-s01": {
         "file": "audio/presentation/vnr-p03-s01.mp3",
@@ -50,11 +50,11 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p03-s03": {
         "file": "audio/presentation/vnr-p03-s03.mp3",
-        "duration": 14.66
+        "duration": 14.78
     },
     "vnr-p04-intro": {
         "file": "audio/presentation/vnr-p04-intro.mp3",
-        "duration": 11.02
+        "duration": 9.79
     },
     "vnr-p04-s01": {
         "file": "audio/presentation/vnr-p04-s01.mp3",
@@ -70,11 +70,11 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p05-intro": {
         "file": "audio/presentation/vnr-p05-intro.mp3",
-        "duration": 7.2
+        "duration": 8.35
     },
     "vnr-p05-s01": {
         "file": "audio/presentation/vnr-p05-s01.mp3",
-        "duration": 17.57
+        "duration": 17.71
     },
     "vnr-p05-s02": {
         "file": "audio/presentation/vnr-p05-s02.mp3",
@@ -102,7 +102,7 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p07-intro": {
         "file": "audio/presentation/vnr-p07-intro.mp3",
-        "duration": 7.7
+        "duration": 10.01
     },
     "vnr-p07-s01": {
         "file": "audio/presentation/vnr-p07-s01.mp3",
@@ -122,7 +122,7 @@ const PRESENTATION_AUDIO = {
     },
     "vnr-p08-intro": {
         "file": "audio/presentation/vnr-p08-intro.mp3",
-        "duration": 7.13
+        "duration": 6.55
     },
     "vnr-p08-s01": {
         "file": "audio/presentation/vnr-p08-s01.mp3",
