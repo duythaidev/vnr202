@@ -1,0 +1,50 @@
+/* Popup hướng dẫn nhanh: hai demo con trỏ chuột chạy bằng CSS (transform và opacity) trên ảnh chụp màn hình thật */
+.guide { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: #0009; backdrop-filter: blur(3px); opacity: 0; transition: opacity .35s; }
+.guide.show { opacity: 1; }
+.guide[hidden] { display: none; }
+.guide-box { width: min(920px, 100%); max-height: calc(100vh - 40px); overflow: auto; padding: 26px 28px 22px; border-radius: 16px; background: #1b211c; border: 1px solid #c7ac6840; color: #eae1cb; font-family: 'Be Vietnam Pro', sans-serif; box-shadow: 0 24px 80px #000a; transform: translateY(14px); transition: transform .35s; }
+.guide.show .guide-box { transform: none; }
+.guide-box h2 { margin: 0 0 18px; font: 600 24px 'Playfair Display', Georgia, serif; color: #e7ce8f; }
+.guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.guide-card figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: #d9d2bd; }
+.guide-card figcaption b { display: block; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #c7ac68; margin-bottom: 2px; font-weight: 600; }
+.guide-stage { position: relative; aspect-ratio: 1440 / 860; overflow: hidden; border-radius: 10px; border: 1px solid #ffffff22; background: #000; }
+.guide-view, .guide-view img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.guide-view { transform-origin: 74.3% 45.6%; will-change: transform; }
+.guide-hl { position: absolute; border: 2px solid #f0cd62; border-radius: 4px; box-shadow: 0 0 14px #f0cd62aa; opacity: 0; }
+.g-frame { left: 71.4%; top: 34.5%; width: 7.8%; height: 22.5%; }
+.g-btn { left: 43.8%; top: 92.4%; width: 9%; height: 6.8%; border-radius: 999px; border-color: #ff6a5a; box-shadow: 0 0 14px #ff4a3acc; }
+.guide-cursor { position: absolute; width: 22px; height: 22px; left: 0; top: 0; z-index: 3; filter: drop-shadow(0 2px 3px #0009); will-change: transform; opacity: 0; }
+.guide-ripple { position: absolute; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; border: 2px solid #fff; opacity: 0; z-index: 2; }
+.guide-sub { position: absolute; left: 8%; right: 8%; bottom: 13%; padding: 7px 10px; border-radius: 8px; background: #000b; color: #fff; font-size: 11px; text-align: center; opacity: 0; transform: translateY(12px); }
+.guide-bar { position: absolute; left: 0; right: 0; height: 9%; background: #000; opacity: 0; }
+.guide-bar.t { top: 0; } .guide-bar.b { bottom: 0; }
+/* demo 1: con trỏ tới khung tranh, click, góc nhìn bay tới tranh. Vị trí con trỏ tính theo % của 22px: 1050% = 231px (khoảng 74% chiều ngang). */
+.d1 .guide-cursor { animation: d1-cursor 6.4s ease-in-out infinite; }
+.d1 .guide-ripple { left: 74.3%; top: 45.6%; animation: d1-ripple 6.4s ease-out infinite; }
+.d1 .guide-view { animation: d1-view 6.4s cubic-bezier(.6, 0, .2, 1) infinite; }
+.d1 .g-frame { animation: d1-hl 6.4s ease infinite; }
+/* demo 2: con trỏ bấm nút Thuyết trình, vào chế độ thuyết trình có phụ đề */
+.d2 .guide-cursor { animation: d2-cursor 6.4s ease-in-out infinite; }
+.d2 .guide-ripple { left: 48.3%; top: 95.3%; animation: d2-ripple 6.4s ease-out infinite; }
+.d2 .g-btn { animation: d2-hl 6.4s ease infinite; }
+.d2 .guide-sub { animation: d2-sub 6.4s ease infinite; }
+.d2 .guide-bar { animation: d2-bar 6.4s ease infinite; }
+.guide-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 20px; }
+.guide-foot button { font: 600 13px 'Be Vietnam Pro', sans-serif; cursor: pointer; border-radius: 999px; }
+.guide-ok { padding: 11px 26px; background: #e5c574; color: #20251c; border: 0; }
+.guide-ok:hover { background: #f4d993; }
+.guide-skip { padding: 8px 4px; background: transparent; color: #a9ae9c; border: 0; font-weight: 400 !important; text-decoration: underline; }
+.guide-box button:focus-visible { outline: 2px solid #f5cf75; outline-offset: 3px; }
+@media (max-width: 720px) { .guide-grid { grid-template-columns: 1fr; } .guide-box { padding: 20px 18px; } }
+@media (prefers-reduced-motion: reduce) { .guide, .guide *, .guide-box { animation: none !important; transition: none !important; } .guide-cursor { opacity: 1; } }
+.guide-cursor { margin: -3px 0 0 -3px; }
+@keyframes d1-cursor { 0% { left: 90%; top: 88%; opacity: 0 } 8% { left: 90%; top: 88%; opacity: 1 } 34% { left: 74.3%; top: 45.6%; transform: scale(1) } 42% { left: 74.3%; top: 45.6%; transform: scale(.85) } 48% { left: 74.3%; top: 45.6%; transform: scale(1); opacity: 1 } 62% { left: 74.3%; top: 45.6%; opacity: 0 } 100% { left: 74.3%; top: 45.6%; opacity: 0 } }
+@keyframes d1-ripple { 0%, 40% { opacity: 0; transform: scale(.3) } 42% { opacity: .9 } 56% { opacity: 0; transform: scale(1.8) } 100% { opacity: 0 } }
+@keyframes d1-view { 0%, 50% { transform: scale(1) } 70%, 90% { transform: scale(3.1) } 100% { transform: scale(1) } }
+@keyframes d1-hl { 0%, 24% { opacity: 0 } 34%, 48% { opacity: 1 } 56% { opacity: 0 } 100% { opacity: 0 } }
+@keyframes d2-cursor { 0% { left: 20%; top: 62%; opacity: 0 } 8% { left: 20%; top: 62%; opacity: 1 } 34% { left: 48.3%; top: 95.3%; transform: scale(1) } 42% { left: 48.3%; top: 95.3%; transform: scale(.85) } 48% { left: 48.3%; top: 95.3%; transform: scale(1); opacity: 1 } 62% { left: 48.3%; top: 95.3%; opacity: 0 } 100% { left: 48.3%; top: 95.3%; opacity: 0 } }
+@keyframes d2-ripple { 0%, 40% { opacity: 0; transform: scale(.3) } 42% { opacity: .9 } 56% { opacity: 0; transform: scale(1.8) } 100% { opacity: 0 } }
+@keyframes d2-hl { 0%, 28% { opacity: 0 } 34%, 48% { opacity: 1 } 54% { opacity: .5 } 62%, 100% { opacity: 0 } }
+@keyframes d2-sub { 0%, 56% { opacity: 0; transform: translateY(12px) } 64%, 90% { opacity: 1; transform: none } 98%, 100% { opacity: 0 } }
+@keyframes d2-bar { 0%, 52% { opacity: 0 } 60%, 90% { opacity: 1 } 98%, 100% { opacity: 0 } }

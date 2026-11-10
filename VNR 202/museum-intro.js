@@ -369,6 +369,7 @@ const MuseumIntro = (() => {
         await delay(reduced ? 0 : 750);
         overlay.hidden = true; app.inert = false; app.removeAttribute('aria-hidden');
         window.MuseumApp.start();
+        MuseumGuide.show(1000);
         document.getElementById('graphicsQualityToggle').focus({ preventScroll: true });
     }
     enter.addEventListener('click', async () => {
