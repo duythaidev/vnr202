@@ -349,7 +349,6 @@ const MuseumIntro = (() => {
     document.getElementById('introSound').addEventListener('click', () => MuseumSound.toggle());
     async function showStep(text, index) {
         title.textContent = text;
-
         stage.classList.remove('step-out'); stage.classList.add('step-in');
         MuseumSound.chime(index);
         await delay(2200);
@@ -359,7 +358,7 @@ const MuseumIntro = (() => {
     async function transition() {
         if (!ready || !started || entered || failed) return;
         entered = true;
-        title.textContent = 'Bước vào những trang sử';
+        title.textContent = 'Không gian lịch sử đang mở.';
 
         stage.classList.remove('step-out'); stage.classList.add('step-in');
         MuseumSound.transition();
@@ -380,12 +379,12 @@ const MuseumIntro = (() => {
         document.getElementById('introWelcome').hidden = true;
         stage.hidden = false;
         await delay(300);
-        for (const [i, text] of ['Xin chào tất cả các bạn', 'Hôm nay, cùng khám phá bảo tàng nhé'].entries()) {
+        for (const [i, text] of ['Xin chào tất cả các bạn', 'Chào mừng đến với bài thuyết trình của nhóm 1'].entries()) {
             if (failed) break;
             await showStep(text, i);
         }
         if (!failed) {
-            title.textContent = 'Không gian lịch sử đang mở…';
+            title.textContent = 'Không gian lịch sử đang mở.';
             MuseumSound.chime(2);
             document.getElementById('introLoading').hidden = false;
             stage.classList.remove('step-out'); stage.classList.add('step-in');
@@ -400,27 +399,27 @@ const MuseumIntro = (() => {
         document.head.appendChild(fonts);
         try {
             for (let i = 0; i < sources.length; i++) {
-                status.textContent = i < 11 ? 'Đang chuẩn bị phòng trưng bày…' : 'Đang sắp xếp tác phẩm và tư liệu…';
+                status.textContent = i < 11 ? 'Đang tải thư viện…' : 'Đang tải nội dung và tư liệu…';
                 await loadScript(sources[i]);
                 progress.value = Math.round((i + 1) / sources.length * 80);
             }
             await timelineDone;
             if (failed) return;
-            status.textContent = 'Đang dựng ánh sáng và không gian 3D…';
+            status.textContent = 'Đang dựng không gian 3D…';
             progress.value = 85; await nextPaint();
             await window.MuseumApp.prepare();
             await nextPaint();
             ready = true; progress.value = 100;
-            status.textContent = 'Phòng trưng bày đã sẵn sàng.';
+            status.textContent = 'Sẵn sàng.';
             transition();
         } catch (error) {
             console.error('Museum startup:', error);
             failed = true;
             document.getElementById('introWelcome').hidden = false;
             stage.hidden = true;
-            document.getElementById('introWelcomeTitle').textContent = 'Chưa mở được phòng trưng bày';
-            status.textContent = 'Chưa mở được phòng trưng bày. Kiểm tra kết nối rồi thử lại.';
-            enter.textContent = 'Tải lại phòng trưng bày'; enter.disabled = false;
+            document.getElementById('introWelcomeTitle').textContent = 'Chưa mở được';
+            status.textContent = 'Chưa mở được. Kiểm tra kết nối rồi thử lại.';
+            enter.textContent = 'Tải lại'; enter.disabled = false;
         }
     }
     boot();

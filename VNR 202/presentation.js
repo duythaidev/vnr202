@@ -414,7 +414,7 @@ const Presentation = (() => {
             panel.innerHTML = `<div class="tour-card done"><div class="font-mono-museum">THE VNR202 MUSEUM</div>
                 <b class="font-serif-museum">Đã hoàn tất ${MUSEUM_PIECES.length} tranh</b>
                 <p>${segs.length - MUSEUM_PIECES.length} bước nội dung – cảm ơn đã theo dõi</p>
-                <div><button data-act="replay">↺ Phát lại</button><button data-act="museum">Về bảo tàng</button></div></div>`;
+                <div><button data-act="replay">↺ Phát lại</button><button data-act="museum">Thoát</button></div></div>`;
         } else panel.innerHTML = '';
         panel.classList.toggle('show', status === 'error' || status === 'completed');
     }

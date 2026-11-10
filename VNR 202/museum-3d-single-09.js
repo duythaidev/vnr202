@@ -209,14 +209,27 @@ function animateMuseum() {
     postFX.composer.render(dt);
 }
 
-let lastHudBay = -1;
+let lastHudPiece = -2;
+const _hudPos = new THREE.Vector3();
+// Chỉ hiện tên tranh khi đứng gần và hướng về phía tranh đó; xa thì ẩn.
 function updateNearestHudText() {
-    const bay = Math.max(0, Math.min(NUM_BAYS - 1, Math.round((BAY_START_Z - camPos.z) / BAY_LENGTH)));
-    if (bay === lastHudBay) return;
-    lastHudBay = bay;
-    const L = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2)];
-    const R = MUSEUM_PIECES[bay * 2 + 1];
-    document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}/${NUM_BAYS} – ${L.shortLabel}${R ? " / " + R.shortLabel : ""}`;
+    let best = -1, bestScore = 6.5;
+    const lx = -Math.sin(yaw), lz = -Math.cos(yaw);
+    for (const art of paintingMeshes) {
+        art.getWorldPosition(_hudPos);
+        const dx = _hudPos.x - camPos.x, dz = _hudPos.z - camPos.z, d = Math.hypot(dx, dz);
+        const facing = d > 0.01 ? (dx * lx + dz * lz) / d : 0;
+        const score = d - 2.5 * Math.max(0, facing);
+        if (d < 6.5 && score < bestScore) { bestScore = score; best = art.userData.pieceIndex; }
+    }
+    if (best === lastHudPiece) return;
+    lastHudPiece = best;
+    const box = document.getElementById('hudPiece');
+    if (best < 0) { box.classList.remove('show'); return; }
+    const pc = MUSEUM_PIECES[best];
+    document.getElementById('hudPieceTitle').textContent = pc.title;
+    document.getElementById('hudPieceDate').textContent = pc.date;
+    box.classList.add('show');
 }
 
 // ---------- Âm thanh tương tác dùng chung với intro ----------

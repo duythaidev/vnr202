@@ -63,7 +63,6 @@ function createArtworkCanvasTexture(piece) {
 // ---------- Khởi tạo ----------
 function initThreeMuseum() {
     const container = document.getElementById('museumCanvasContainer');
-    document.getElementById('museumPieceCount').textContent = MUSEUM_PIECES.length + ' TÁC PHẨM';
     const low = FX.isLowPower;
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x2c3029);

@@ -1,20 +1,21 @@
 .museum-intro {
-    position: fixed; inset: 0; z-index: 100; overflow: auto;
+    position: fixed; inset: 0; z-index: 100; overflow-x: hidden; overflow-y: auto;
     display: flex; flex-direction: column; min-height: 100%;
     padding: 30px clamp(24px, 5vw, 96px); color: #eae1cb;
     background: #181e19;
     transition: opacity .75s, transform .75s;
 }
 .museum-intro[hidden], .intro-stage[hidden], .intro-welcome[hidden], .intro-loading[hidden] { display: none; }
-.intro-header { display: flex; justify-content: flex-end; position: absolute; top: 24px; right: 28px; z-index: 2; }
+.intro-header { display: flex; justify-content: space-between; align-items: center; position: absolute; top: 24px; left: 28px; right: 28px; z-index: 2; }
+.intro-brand { font: 500 12px 'JetBrains Mono', monospace; letter-spacing: .22em; text-transform: uppercase; color: #c7ac68; }
 .intro-header button { padding: 10px 16px; border: 1px solid #7b806a; border-radius: 30px; color: #eae1cb; background: transparent; font: 12px 'Be Vietnam Pro', sans-serif; cursor: pointer; }
-.intro-cinema { flex: 1; display: grid; place-items: center; position: relative; padding: 70px 0; min-height: 420px; }
-.intro-welcome, .intro-stage { text-align: center; width: 100%; position: relative; z-index: 1; }
+.intro-cinema { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: clamp(150px, 26vh, 260px) 0 clamp(40px, 8vh, 80px); min-height: 520px; }
+.intro-welcome, .intro-stage { text-align: center; width: 100%; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .intro-start-icon { width: 80px; height: 80px; margin: 0 auto 32px; border: 1px solid #76663d; border-radius: 50%; color: #c7ac68; display: grid; place-items: center; }
 .intro-start-icon svg { width: 42px; height: 42px; }
-.intro-welcome h1, .intro-stage h2 { font: 600 clamp(40px, 6.5vw, 96px)/1.2 'Playfair Display', Georgia, serif; letter-spacing: -.04em; margin: 0 auto; color: #f2ead8; max-width: 1100px; text-wrap: balance; }
-.intro-welcome h1 { font-size: clamp(32px, 3.5vw, 52px); color: #e7ce8f; letter-spacing: -.025em; }
-.intro-welcome > p { font-size: 13px; line-height: 1.9; color: #c0c5b9; margin: 18px auto 32px; max-width: 360px; }
+.intro-welcome h1, .intro-stage h2 { font: 600 clamp(30px, 4.2vw, 60px)/1.2 'Playfair Display', Georgia, serif; letter-spacing: -.03em; margin: 0 auto; color: #f2ead8; max-width: 1000px; text-wrap: balance; text-shadow: 0 2px 24px #181e19, 0 0 8px #181e19; }
+.intro-welcome h1 { font-size: clamp(30px, 3.4vw, 50px); color: #e7ce8f; letter-spacing: -.02em; }
+.intro-welcome > p { font-size: 14px; line-height: 1.8; color: #c0c5b9; margin: 12px auto 26px; max-width: 420px; }
 .intro-welcome button { min-height: 48px; padding: 15px 28px; border-radius: 30px; background: #e5c574; color: #20251c; border: 1px solid #e5c574; font: 700 12px 'Be Vietnam Pro', sans-serif; cursor: pointer; }
 .intro-welcome button:hover { background: #f4d993; }
 .intro-stage { opacity: 0; transform: translateY(28px); transition: opacity .8s, transform .8s; }
@@ -31,15 +32,50 @@
 .intro-leaving { opacity: 0; transform: scale(1.06); pointer-events: none; }
 .museum-intro button:focus-visible { outline: 2px solid #f5cf75; outline-offset: 5px; }
 @keyframes museum-whoosh { 0% { opacity: 0; transform: translateX(-70%) skewX(-12deg); } 40% { opacity: .8; } 52% { opacity: 1; } 100% { opacity: 0; transform: translateX(70%) skewX(-12deg); } }
+.museum-intro::before { content: ""; position: absolute; inset: -20%; pointer-events: none; background: radial-gradient(40% 40% at 30% 35%, #c7ac6824, transparent 70%), radial-gradient(35% 35% at 72% 60%, #8a9a6c1c, transparent 70%); animation: intro-drift 18s ease-in-out infinite alternate; will-change: transform; }
+@keyframes intro-drift { to { transform: translate3d(4%, 3%, 0); } }
+/* Dòng thời gian 1930–1945: chỉ dùng transform và opacity nên nhẹ */
+.intro-timeline { position: absolute; left: 50%; top: 22%; width: min(780px, 84vw); height: 90px; transform: translate(-50%, -50%); display: flex; justify-content: space-between; align-items: flex-start; z-index: 0; pointer-events: none; }
+.tl-line { position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #c7ac68; transform-origin: left; transform: scaleX(0); animation: tl-draw 2.4s cubic-bezier(.6, 0, .2, 1) .3s forwards; }
+.tl-item { position: relative; width: 0; display: flex; flex-direction: column; align-items: center; opacity: 0; transform: translateY(10px); animation: tl-in .7s ease forwards; }
+.tl-item:nth-of-type(1) { animation-delay: .6s; } .tl-item:nth-of-type(2) { animation-delay: 1.0s; } .tl-item:nth-of-type(3) { animation-delay: 1.4s; } .tl-item:nth-of-type(4) { animation-delay: 1.8s; } .tl-item:nth-of-type(5) { animation-delay: 2.2s; }
+.tl-item i { width: 15px; height: 15px; border-radius: 50%; border: 1px solid #c7ac68; background: #181e19; position: relative; }
+.tl-item i::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: #e5c574; animation: tl-beat 2.8s ease-in-out infinite; }
+.tl-item b { margin-top: 18px; font: 600 clamp(20px, 2.6vw, 30px) 'Playfair Display', Georgia, serif; color: #e7ce8f; letter-spacing: -.01em; }
+.tl-item span { margin-top: 4px; font: 12px 'Be Vietnam Pro', sans-serif; color: #aeb39f; white-space: nowrap; }
+@keyframes tl-draw { to { transform: scaleX(1); } }
+@keyframes tl-in { to { opacity: 1; transform: none; } }
+@keyframes tl-beat { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@media (max-width: 700px) {
+    .tl-item span { display: none; }
+    .intro-timeline { height: 60px; }
+}
 @media (max-width: 700px) {
     .museum-intro { padding: 20px 24px; }
     .intro-header { top: 18px; right: 20px; }
     .intro-header button { font-size: 11px; padding: 9px 12px; }
-    .intro-stage h2 { font-size: clamp(36px, 9vw, 54px); }
+    .intro-stage h2 { font-size: clamp(28px, 8vw, 44px); }
     .intro-loading { bottom: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .museum-intro, .intro-stage, .intro-loading progress::-webkit-progress-value { transition: none; }
     .intro-transition .intro-whoosh { animation: none; }
     .intro-leaving { transform: none; }
+    .museum-intro::before, .tl-item i::after { animation: none; }
+    .tl-line { animation: none; transform: none; }
+    .tl-item { animation: none; opacity: 1; transform: none; }
 }
+
+.intro-kicker { font: 500 12px 'JetBrains Mono', monospace; letter-spacing: .28em; text-transform: uppercase; color: #c7ac68; margin-bottom: 16px; }
+.intro-welcome h1 { max-width: 760px; }
+/* trang trí dòng thời gian: vạch chia nhỏ, sao vàng, đốm sáng chạy dọc */
+.tl-line::after { content: ""; position: absolute; left: 0; right: 0; top: -3px; height: 7px; opacity: .4; background: repeating-linear-gradient(90deg, #c7ac68 0 1px, transparent 1px 14px); }
+.tl-star { position: absolute; left: 50%; top: -46px; width: 26px; height: 26px; margin-left: -13px; color: #e5c574; opacity: 0; animation: tl-in .8s ease 2.6s forwards; }
+.tl-spark { position: absolute; left: 0; top: 4px; width: 7px; height: 7px; border-radius: 50%; background: #f4d993; box-shadow: 0 0 10px 2px #e5c574aa; opacity: 0; animation: tl-run 6s ease-in-out 3s infinite; }
+@keyframes tl-run { 0% { transform: translateX(0); opacity: 0; } 10%, 90% { opacity: 1; } 100% { transform: translateX(min(780px, 84vw)); opacity: 0; } }
+.museum-intro::after { content: ""; position: absolute; left: 50%; top: 50%; width: min(78vmin, 760px); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid #c7ac6822; box-shadow: 0 0 0 40px #c7ac6800, 0 0 0 41px #c7ac6812; pointer-events: none; }
+/* nhãn tên tranh ở góc trái: chỉ hiện khi đứng gần một tranh */
+.hud-piece { display: inline-flex; align-items: baseline; gap: 10px; padding: 8px 16px; border-radius: 999px; background: #0007; border: 1px solid #ffffff26; backdrop-filter: blur(8px); color: #e7e0cc; font: 13px 'Be Vietnam Pro', sans-serif; opacity: 0; transform: translateY(-6px); transition: opacity .35s, transform .35s; }
+.museum-location.show .hud-piece { opacity: 1; transform: none; }
+.hud-piece b { font-weight: 600; }
+.hud-piece span { font-size: 11px; color: #c7ac68; letter-spacing: .08em; }
