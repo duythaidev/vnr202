@@ -141,7 +141,7 @@ const BoardWriter = (() => {
 
             if (b.type === 'text' || b.type === 'note') {
                 const isNote = b.type === 'note';
-                const sz = isNote ? S(42) : S({ lg: 52, md: 40, sm: 32 }[b.size || 'md']);
+                const sz = isNote ? S(42) : S({ lg: 56, md: 44, sm: 36 }[b.size || 'md']);
                 const wt = isNote ? 400 : (b.size === 'lg' ? 600 : b.size === 'sm' ? 400 : 500);
                 const font = isNote ? `${sz}px ${HAND}` : `${wt} ${sz}px ${SANS}`;
                 ctx.font = font;
@@ -198,7 +198,7 @@ const BoardWriter = (() => {
                 cy += S(20);
             }
             else if (b.type === 'image') {
-                const iw = cw, ih = Math.min(S(b.h || cw * 0.62), H - cy - S(110));
+                const iw = cw, ih = Math.min(S(b.h || cw * 0.62), H - cy - S(70));
                 const ix = x, iy = cy + S(20);
                 const tilt = (FX.rng(bseed)() - 0.5) * 0.05;
                 fadeOp((c, p, redraw) => {
@@ -300,7 +300,7 @@ const BoardWriter = (() => {
             }
             else if (b.type === 'thesis') {
                 // Ý CHÍNH: câu khẳng định, vạch đỏ bên trái + bút dạ quang
-                const sz = S(b.size || 40), font = `700 ${sz}px ${SANS}`, pad = S(34), lh = sz * 1.42;
+                const sz = S(b.size || 46), font = `700 ${sz}px ${SANS}`, pad = S(34), lh = sz * 1.42;
                 const lines = wrap(b.text, cw - pad - S(8), font);
                 const top = cy + S(8);
                 strokeOp([[x + S(8), top], [x + S(10), top + lines.length * lh + S(2)]], RED, S(9), 1800);
@@ -317,7 +317,7 @@ const BoardWriter = (() => {
                 // các hộp nối nhau bằng mũi tên: nguyên nhân → hệ quả
                 const items = (b.items || []).map(it => typeof it === 'string' ? { text: it } : it);
                 const n = items.length, gap = S(60), bw = (cw - gap * (n - 1)) / n, pad = S(18);
-                const hs = S(31), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const hs = S(35), ts = S(b.ts || 34), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
                 const wr = items.map(it => ({ h: it.head ? wrap(it.head, bw - pad * 2, hf) : [], t: wrap(it.text || '', bw - pad * 2, tf) }));
                 const bh = pad * 2 + Math.max(...wr.map(w => w.h.length * hs * 1.3 + w.t.length * ts * 1.3)) + S(8);
                 const top = cy + S(12);
@@ -334,7 +334,7 @@ const BoardWriter = (() => {
             else if (b.type === 'grid') {
                 // lưới ô đánh số (2 hoặc 3 cột)
                 const cols = b.cols || 2, items = b.items || [], gap = S(28), cwid = (cw - gap * (cols - 1)) / cols, pad = S(20);
-                const hs = S(b.hs || 33), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const hs = S(b.hs || 36), ts = S(b.ts || 32), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
                 const numW = (cols < 3 && b.numbered !== false) ? S(60) : 0;
                 const cells = items.map(it => ({ h: wrap(it.head || '', cwid - pad * 2 - numW, hf), t: wrap(it.text || '', cwid - pad * 2, tf) }));
                 let top = cy + S(12);
@@ -362,7 +362,7 @@ const BoardWriter = (() => {
             else if (b.type === 'versus') {
                 // hai cột đối chiếu theo hàng: Trước/Sau, Cương lĩnh/Luận cương...
                 const rows = b.rows || [], mid = S(b.arrow ? 90 : 70), colW = (cw - mid) / 2, pad = S(14);
-                const hs = S(34), ts = S(b.ts || 29), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const hs = S(36), ts = S(b.ts || 33), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
                 const lx = x, rx = x + colW + mid;
                 let top = cy + S(10);
                 const hl = wrap(b.left || '', colW - pad * 2, hf), hr = wrap(b.right || '', colW - pad * 2, hf);
@@ -389,7 +389,7 @@ const BoardWriter = (() => {
             else if (b.type === 'ladder') {
                 // bậc thang: các mốc tăng dần (hội nghị, bước chuẩn bị)
                 const items = b.items || [], n = items.length, gap = S(18), colW = (cw - gap * (n - 1)) / n, pad = S(16), rise = S(b.rise || 44);
-                const tf = `500 ${S(31)}px ${SANS}`, ts = S(31), tagf = `800 ${S(34)}px ${SANS}`, dtf = `700 ${S(26)}px ${SANS}`;
+                const tf = `500 ${S(31)}px ${SANS}`, ts = S(31), tagf = `800 ${S(34)}px ${SANS}`, dtf = `700 ${S(29)}px ${SANS}`;
                 const wr = items.map(it => wrap(it.text || '', colW - pad * 2, tf));
                 const base = cy + S(14);
                 const need = items.map((it, i) => (n - 1 - i) * rise + pad + S(44) + (it.date ? S(34) : 0) + wr[i].length * ts * 1.3 + pad);
@@ -408,7 +408,7 @@ const BoardWriter = (() => {
                 // một trung tâm, nhiều nan hoa
                 const items = (b.items || []).map(it => typeof it === 'string' ? { text: it } : it);
                 const R = S(b.r || 128), lx0 = x + R + S(20), tx = x + R * 2 + S(110), tw = cw - (tx - x);
-                const hs = S(31), ts = S(28), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const hs = S(36), ts = S(33), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
                 const wr = items.map(it => ({ h: it.head ? wrap(it.head, tw, hf) : [], t: wrap(it.text || '', tw, tf) }));
                 const hts = wr.map(w => w.h.length * hs * 1.25 + w.t.length * ts * 1.28 + S(16));
                 const total = hts.reduce((a, v) => a + v, 0), blockH = Math.max(total, R * 2 + S(30));
@@ -434,7 +434,7 @@ const BoardWriter = (() => {
             else if (b.type === 'rail') {
                 // đường ray ngang có mốc đánh số: ngày, tiêu đề ngắn, giải thích
                 const items = b.items || [], n = items.length, colW = cw / n, pad = S(12);
-                const hs = S(30), ts = S(27), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
+                const hs = S(34), ts = S(31), hf = `800 ${hs}px ${SANS}`, tf = `500 ${ts}px ${SANS}`;
                 const ly = cy + S(86);
                 strokeOp([[x, ly], [x + cw - S(26), ly + S(3)]], INK, S(5), 2600);
                 arrowOps(x + cw - S(60), ly + S(3), x + cw - S(6), ly + S(3), INK, S(5));
@@ -443,7 +443,7 @@ const BoardWriter = (() => {
                     const px = x + colW * i;
                     strokeOp(handCircle(px + S(24), ly + S(1), S(22), S(22), bseed + i), RED, S(5), 900);
                     textOp(String(i + 1), px + S(15), ly + S(12), `800 ${S(28)}px ${SANS}`, S(28), RED, 700);
-                    textOp(String(it.date || ''), px + S(2), ly - S(34), `800 ${S(31)}px ${SANS}`, S(31), RED, 1100);
+                    textOp(String(it.date || ''), px + S(2), ly - S(34), `800 ${S(34)}px ${SANS}`, S(34), RED, 1100);
                     let ty = ly + S(44);
                     wrap(it.head || '', colW - S(24), hf).forEach(l => { ty += hs * 1.25; textOp(l, px + S(2), ty, hf, hs, INK, 1300); });
                     wrap(it.text || '', colW - S(24), tf).forEach(l => { ty += ts * 1.3; textOp(l, px + S(2), ty, tf, ts, INK, 1800); });
@@ -453,7 +453,7 @@ const BoardWriter = (() => {
             }
             else if (b.type === 'vtimeline') {
                 // trục dọc: cột ngày bên trái, diễn biến bên phải
-                const items = b.items || [], dw = S(b.dw || 196), ts = S(b.ts || 30), tf = `500 ${ts}px ${SANS}`, df = `800 ${S(29)}px ${SANS}`;
+                const items = b.items || [], dw = S(b.dw || 196), ts = S(b.ts || 34), tf = `500 ${ts}px ${SANS}`, df = `800 ${S(32)}px ${SANS}`;
                 const wr = items.map(it => wrap(it.text || '', cw - dw - S(44), tf));
                 const dr = items.map(it => wrap(String(it.date || ''), dw - S(14), df));
                 const rh = items.map((it, i) => Math.max(wr[i].length * ts * 1.3, dr[i].length * S(34)) + S(24));
@@ -470,7 +470,7 @@ const BoardWriter = (() => {
             }
             else if (b.type === 'checklist') {
                 // dấu tick (nội dung) hoặc dấu gạch chéo (hạn chế)
-                const sz = S(b.size || 34), font = `500 ${sz}px ${SANS}`, cross = b.mark === 'cross';
+                const sz = S(b.size || 38), font = `500 ${sz}px ${SANS}`, cross = b.mark === 'cross';
                 (b.items || []).forEach(item => {
                     const lines = wrap(item, cw - S(62), font);
                     const ty0 = cy + sz * 1.3;
@@ -488,7 +488,7 @@ const BoardWriter = (() => {
             }
             else if (b.type === 'stats') {
                 // hàng 2–3 con số lớn, mỗi số một chú thích
-                const items = b.items || [], n = items.length, colW = cw / n, vs = S(b.vs || 92), ts = S(28), tf = `500 ${ts}px ${SANS}`;
+                const items = b.items || [], n = items.length, colW = cw / n, vs = S(b.vs || 92), ts = S(32), tf = `500 ${ts}px ${SANS}`;
                 const base = cy + vs * 1.0 + S(8);
                 let maxB = base;
                 items.forEach((it, i) => {
@@ -507,12 +507,12 @@ const BoardWriter = (() => {
             }
             else if (b.type === 'table') {
                 // sổ kẻ tay: hàng tiêu đề + các hàng nội dung
-                const cols = b.cols || [], ws = b.widths || cols.map(() => 1 / cols.length), ts = S(b.ts || 29), tf = `500 ${ts}px ${SANS}`, bf = `800 ${ts}px ${SANS}`;
+                const cols = b.cols || [], ws = b.widths || cols.map(() => 1 / cols.length), ts = S(b.ts || 34), tf = `500 ${ts}px ${SANS}`, bf = `800 ${ts}px ${SANS}`;
                 const colX = []; let acc = 0;
                 ws.forEach(w => { colX.push(x + acc * cw); acc += w; });
                 const colW = ws.map(w => w * cw - S(24));
                 let top = cy + S(8);
-                cols.forEach((c, i) => textOp(String(c).toUpperCase(), colX[i] + S(6), top + S(34), `800 ${S(25)}px ${SANS}`, S(25), RED, 1100));
+                cols.forEach((c, i) => textOp(String(c).toUpperCase(), colX[i] + S(6), top + S(34), `800 ${S(28)}px ${SANS}`, S(28), RED, 1100));
                 top += S(46);
                 strokeOp([[x, top], [x + cw, top + S(3)]], INK, S(5), 3000);
                 (b.rows || []).forEach((row) => {

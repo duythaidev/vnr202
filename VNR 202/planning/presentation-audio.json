@@ -1,6 +1,6 @@
 {
   "course": "VNR202",
-  "revision": 3,
+  "revision": 4,
   "voice": "vi-VN-NamMinhNeural",
   "generatedBy": "scripts/build-presentation-audio-manifest.cjs",
   "clips": {
@@ -9,9 +9,9 @@
       "pieceId": "vnr-p01",
       "file": "audio/presentation/vnr-p01-intro.mp3",
       "status": "ready",
-      "duration": 9,
-      "bytes": 54000,
-      "textHash": "7409259b8a1b"
+      "duration": 8.88,
+      "bytes": 53280,
+      "textHash": "94c09d62c6c32e25"
     },
     "vnr-p01-s01": {
       "kind": "step",
@@ -19,9 +19,9 @@
       "stepId": "vnr-p01-s01",
       "file": "audio/presentation/vnr-p01-s01.mp3",
       "status": "ready",
-      "duration": 16.25,
-      "bytes": 97488,
-      "textHash": "d7db220b7276"
+      "duration": 12.1,
+      "bytes": 72576,
+      "textHash": "87a7ca3cdd0ffc41"
     },
     "vnr-p01-s02": {
       "kind": "step",
@@ -29,9 +29,9 @@
       "stepId": "vnr-p01-s02",
       "file": "audio/presentation/vnr-p01-s02.mp3",
       "status": "ready",
-      "duration": 16.61,
-      "bytes": 99648,
-      "textHash": "fe7873c7069d"
+      "duration": 12.62,
+      "bytes": 75744,
+      "textHash": "9ad564786695404e"
     },
     "vnr-p01-s03": {
       "kind": "step",
@@ -39,9 +39,9 @@
       "stepId": "vnr-p01-s03",
       "file": "audio/presentation/vnr-p01-s03.mp3",
       "status": "ready",
-      "duration": 15.82,
-      "bytes": 94896,
-      "textHash": "dfb11b7a4a59"
+      "duration": 11.35,
+      "bytes": 68112,
+      "textHash": "e8f8b45b6a6425dc"
     },
     "vnr-p01-s04": {
       "kind": "step",
@@ -49,18 +49,18 @@
       "stepId": "vnr-p01-s04",
       "file": "audio/presentation/vnr-p01-s04.mp3",
       "status": "ready",
-      "duration": 17.28,
-      "bytes": 103680,
-      "textHash": "f79c417fa581"
+      "duration": 12.14,
+      "bytes": 72864,
+      "textHash": "6c2bf8bf2f833f78"
     },
     "vnr-p02-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p02",
       "file": "audio/presentation/vnr-p02-intro.mp3",
       "status": "ready",
-      "duration": 8.38,
-      "bytes": 50256,
-      "textHash": "0636dfb56456"
+      "duration": 6.34,
+      "bytes": 38016,
+      "textHash": "4e0a6ec6d993c71b"
     },
     "vnr-p02-s01": {
       "kind": "step",
@@ -68,9 +68,9 @@
       "stepId": "vnr-p02-s01",
       "file": "audio/presentation/vnr-p02-s01.mp3",
       "status": "ready",
-      "duration": 14.23,
-      "bytes": 85392,
-      "textHash": "595cf3852e4d"
+      "duration": 11.93,
+      "bytes": 71568,
+      "textHash": "0add5d35067c538f"
     },
     "vnr-p02-s02": {
       "kind": "step",
@@ -78,9 +78,9 @@
       "stepId": "vnr-p02-s02",
       "file": "audio/presentation/vnr-p02-s02.mp3",
       "status": "ready",
-      "duration": 14.33,
-      "bytes": 85968,
-      "textHash": "50874f091de1"
+      "duration": 13.1,
+      "bytes": 78624,
+      "textHash": "28cef57cc6fb013e"
     },
     "vnr-p02-s03": {
       "kind": "step",
@@ -88,28 +88,18 @@
       "stepId": "vnr-p02-s03",
       "file": "audio/presentation/vnr-p02-s03.mp3",
       "status": "ready",
-      "duration": 14.57,
-      "bytes": 87408,
-      "textHash": "93a30d08d265"
-    },
-    "vnr-p02-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p02",
-      "stepId": "vnr-p02-s04",
-      "file": "audio/presentation/vnr-p02-s04.mp3",
-      "status": "ready",
-      "duration": 13.8,
-      "bytes": 82800,
-      "textHash": "387dd3b50f5b"
+      "duration": 11.26,
+      "bytes": 67536,
+      "textHash": "31ccbf616c703d9d"
     },
     "vnr-p03-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p03",
       "file": "audio/presentation/vnr-p03-intro.mp3",
       "status": "ready",
-      "duration": 11.4,
-      "bytes": 68400,
-      "textHash": "37cadbdc8a87"
+      "duration": 7.3,
+      "bytes": 43776,
+      "textHash": "3a0607a6d3e09770"
     },
     "vnr-p03-s01": {
       "kind": "step",
@@ -117,9 +107,9 @@
       "stepId": "vnr-p03-s01",
       "file": "audio/presentation/vnr-p03-s01.mp3",
       "status": "ready",
-      "duration": 14.45,
-      "bytes": 86688,
-      "textHash": "d4b1f21e72a4"
+      "duration": 12.17,
+      "bytes": 73008,
+      "textHash": "c35999a532e8ed11"
     },
     "vnr-p03-s02": {
       "kind": "step",
@@ -127,9 +117,9 @@
       "stepId": "vnr-p03-s02",
       "file": "audio/presentation/vnr-p03-s02.mp3",
       "status": "ready",
-      "duration": 14.38,
-      "bytes": 86256,
-      "textHash": "f6c611032d9f"
+      "duration": 13.46,
+      "bytes": 80784,
+      "textHash": "1d2610e2be44ea3e"
     },
     "vnr-p03-s03": {
       "kind": "step",
@@ -137,18 +127,18 @@
       "stepId": "vnr-p03-s03",
       "file": "audio/presentation/vnr-p03-s03.mp3",
       "status": "ready",
-      "duration": 13.8,
-      "bytes": 82800,
-      "textHash": "419d696ef328"
+      "duration": 14.66,
+      "bytes": 87984,
+      "textHash": "c8d2b49904538464"
     },
     "vnr-p04-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p04",
       "file": "audio/presentation/vnr-p04-intro.mp3",
       "status": "ready",
-      "duration": 9.55,
-      "bytes": 57312,
-      "textHash": "fdfa55af8b7c"
+      "duration": 11.02,
+      "bytes": 66096,
+      "textHash": "398ca08916c67b1b"
     },
     "vnr-p04-s01": {
       "kind": "step",
@@ -156,9 +146,9 @@
       "stepId": "vnr-p04-s01",
       "file": "audio/presentation/vnr-p04-s01.mp3",
       "status": "ready",
-      "duration": 15.62,
-      "bytes": 93744,
-      "textHash": "df152da710e4"
+      "duration": 13.92,
+      "bytes": 83520,
+      "textHash": "0c55ab3ce3626e42"
     },
     "vnr-p04-s02": {
       "kind": "step",
@@ -166,9 +156,9 @@
       "stepId": "vnr-p04-s02",
       "file": "audio/presentation/vnr-p04-s02.mp3",
       "status": "ready",
-      "duration": 14.66,
-      "bytes": 87984,
-      "textHash": "81ce44fe48df"
+      "duration": 15.31,
+      "bytes": 91872,
+      "textHash": "00e611a633e97102"
     },
     "vnr-p04-s03": {
       "kind": "step",
@@ -176,28 +166,18 @@
       "stepId": "vnr-p04-s03",
       "file": "audio/presentation/vnr-p04-s03.mp3",
       "status": "ready",
-      "duration": 16.46,
-      "bytes": 98784,
-      "textHash": "cadde419ec66"
-    },
-    "vnr-p04-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p04",
-      "stepId": "vnr-p04-s04",
-      "file": "audio/presentation/vnr-p04-s04.mp3",
-      "status": "ready",
-      "duration": 15.5,
-      "bytes": 93024,
-      "textHash": "e89b9946c429"
+      "duration": 14.02,
+      "bytes": 84096,
+      "textHash": "23bf4b5f6ccbaf64"
     },
     "vnr-p05-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p05",
       "file": "audio/presentation/vnr-p05-intro.mp3",
       "status": "ready",
-      "duration": 11.02,
-      "bytes": 66096,
-      "textHash": "4add7e1f9eda"
+      "duration": 7.2,
+      "bytes": 43200,
+      "textHash": "b4e981cfb1b6e39c"
     },
     "vnr-p05-s01": {
       "kind": "step",
@@ -205,9 +185,9 @@
       "stepId": "vnr-p05-s01",
       "file": "audio/presentation/vnr-p05-s01.mp3",
       "status": "ready",
-      "duration": 14.98,
-      "bytes": 89856,
-      "textHash": "be9a421086d0"
+      "duration": 17.57,
+      "bytes": 105408,
+      "textHash": "e7a6e6a914276df9"
     },
     "vnr-p05-s02": {
       "kind": "step",
@@ -215,9 +195,9 @@
       "stepId": "vnr-p05-s02",
       "file": "audio/presentation/vnr-p05-s02.mp3",
       "status": "ready",
-      "duration": 17.09,
-      "bytes": 102528,
-      "textHash": "ddd332e1b00d"
+      "duration": 10.42,
+      "bytes": 62496,
+      "textHash": "5343d82de9f6225f"
     },
     "vnr-p05-s03": {
       "kind": "step",
@@ -225,28 +205,18 @@
       "stepId": "vnr-p05-s03",
       "file": "audio/presentation/vnr-p05-s03.mp3",
       "status": "ready",
-      "duration": 15.22,
-      "bytes": 91296,
-      "textHash": "da43033dc9ac"
-    },
-    "vnr-p05-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p05",
-      "stepId": "vnr-p05-s04",
-      "file": "audio/presentation/vnr-p05-s04.mp3",
-      "status": "ready",
-      "duration": 17.02,
-      "bytes": 102096,
-      "textHash": "fcfc5d9eb6d7"
+      "duration": 13.27,
+      "bytes": 79632,
+      "textHash": "0f1689e3c3e208fd"
     },
     "vnr-p06-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p06",
       "file": "audio/presentation/vnr-p06-intro.mp3",
       "status": "ready",
-      "duration": 8.74,
-      "bytes": 52416,
-      "textHash": "cc821abff6e9"
+      "duration": 8.59,
+      "bytes": 51552,
+      "textHash": "1c6a578a309ab4fc"
     },
     "vnr-p06-s01": {
       "kind": "step",
@@ -254,9 +224,9 @@
       "stepId": "vnr-p06-s01",
       "file": "audio/presentation/vnr-p06-s01.mp3",
       "status": "ready",
-      "duration": 17.21,
-      "bytes": 103248,
-      "textHash": "c12a2a745113"
+      "duration": 13.63,
+      "bytes": 81792,
+      "textHash": "c1302f174bb0437f"
     },
     "vnr-p06-s02": {
       "kind": "step",
@@ -264,9 +234,9 @@
       "stepId": "vnr-p06-s02",
       "file": "audio/presentation/vnr-p06-s02.mp3",
       "status": "ready",
-      "duration": 19.08,
-      "bytes": 114480,
-      "textHash": "8aedf2c2c09f"
+      "duration": 11.06,
+      "bytes": 66384,
+      "textHash": "058ee2aab7376564"
     },
     "vnr-p06-s03": {
       "kind": "step",
@@ -274,28 +244,18 @@
       "stepId": "vnr-p06-s03",
       "file": "audio/presentation/vnr-p06-s03.mp3",
       "status": "ready",
-      "duration": 13.25,
-      "bytes": 79488,
-      "textHash": "94e8bdace812"
-    },
-    "vnr-p06-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p06",
-      "stepId": "vnr-p06-s04",
-      "file": "audio/presentation/vnr-p06-s04.mp3",
-      "status": "ready",
-      "duration": 16.01,
-      "bytes": 96048,
-      "textHash": "cb7d89e4c102"
+      "duration": 12.22,
+      "bytes": 73296,
+      "textHash": "f784eb9b920985f1"
     },
     "vnr-p07-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p07",
       "file": "audio/presentation/vnr-p07-intro.mp3",
       "status": "ready",
-      "duration": 8.59,
-      "bytes": 51552,
-      "textHash": "04f4f7c72924"
+      "duration": 7.7,
+      "bytes": 46224,
+      "textHash": "2edc2f834c78d92a"
     },
     "vnr-p07-s01": {
       "kind": "step",
@@ -303,9 +263,9 @@
       "stepId": "vnr-p07-s01",
       "file": "audio/presentation/vnr-p07-s01.mp3",
       "status": "ready",
-      "duration": 15.86,
-      "bytes": 95184,
-      "textHash": "0799e38d9fac"
+      "duration": 11.26,
+      "bytes": 67536,
+      "textHash": "57af83d4ee026973"
     },
     "vnr-p07-s02": {
       "kind": "step",
@@ -313,9 +273,9 @@
       "stepId": "vnr-p07-s02",
       "file": "audio/presentation/vnr-p07-s02.mp3",
       "status": "ready",
-      "duration": 17.11,
-      "bytes": 102672,
-      "textHash": "319bae68c930"
+      "duration": 12.29,
+      "bytes": 73728,
+      "textHash": "7df207ea3d4e3400"
     },
     "vnr-p07-s03": {
       "kind": "step",
@@ -323,18 +283,28 @@
       "stepId": "vnr-p07-s03",
       "file": "audio/presentation/vnr-p07-s03.mp3",
       "status": "ready",
-      "duration": 13.66,
-      "bytes": 81936,
-      "textHash": "fcebf6c26631"
+      "duration": 11.71,
+      "bytes": 70272,
+      "textHash": "79a2ef5d17a09eca"
+    },
+    "vnr-p07-s04": {
+      "kind": "step",
+      "pieceId": "vnr-p07",
+      "stepId": "vnr-p07-s04",
+      "file": "audio/presentation/vnr-p07-s04.mp3",
+      "status": "ready",
+      "duration": 12.38,
+      "bytes": 74304,
+      "textHash": "94a6ffa0850b14f4"
     },
     "vnr-p08-intro": {
       "kind": "piece-intro",
       "pieceId": "vnr-p08",
       "file": "audio/presentation/vnr-p08-intro.mp3",
       "status": "ready",
-      "duration": 10.15,
-      "bytes": 60912,
-      "textHash": "9fc703c9d9ad"
+      "duration": 7.13,
+      "bytes": 42768,
+      "textHash": "9b17fbb4c984a021"
     },
     "vnr-p08-s01": {
       "kind": "step",
@@ -342,9 +312,9 @@
       "stepId": "vnr-p08-s01",
       "file": "audio/presentation/vnr-p08-s01.mp3",
       "status": "ready",
-      "duration": 16.99,
-      "bytes": 101952,
-      "textHash": "6ef1858c6c6d"
+      "duration": 14.16,
+      "bytes": 84960,
+      "textHash": "2e345b3143c4b161"
     },
     "vnr-p08-s02": {
       "kind": "step",
@@ -352,9 +322,9 @@
       "stepId": "vnr-p08-s02",
       "file": "audio/presentation/vnr-p08-s02.mp3",
       "status": "ready",
-      "duration": 14.28,
-      "bytes": 85680,
-      "textHash": "171204d64b89"
+      "duration": 14.98,
+      "bytes": 89856,
+      "textHash": "e466e53edd402d54"
     },
     "vnr-p08-s03": {
       "kind": "step",
@@ -362,117 +332,9 @@
       "stepId": "vnr-p08-s03",
       "file": "audio/presentation/vnr-p08-s03.mp3",
       "status": "ready",
-      "duration": 14.5,
-      "bytes": 86976,
-      "textHash": "15f590dea79c"
-    },
-    "vnr-p08-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p08",
-      "stepId": "vnr-p08-s04",
-      "file": "audio/presentation/vnr-p08-s04.mp3",
-      "status": "ready",
-      "duration": 11.16,
-      "bytes": 66960,
-      "textHash": "41fde854db78"
-    },
-    "vnr-p09-intro": {
-      "kind": "piece-intro",
-      "pieceId": "vnr-p09",
-      "file": "audio/presentation/vnr-p09-intro.mp3",
-      "status": "ready",
-      "duration": 8.71,
-      "bytes": 52272,
-      "textHash": "467e40540e0c"
-    },
-    "vnr-p09-s01": {
-      "kind": "step",
-      "pieceId": "vnr-p09",
-      "stepId": "vnr-p09-s01",
-      "file": "audio/presentation/vnr-p09-s01.mp3",
-      "status": "ready",
-      "duration": 14.54,
-      "bytes": 87264,
-      "textHash": "45f7c307d45c"
-    },
-    "vnr-p09-s02": {
-      "kind": "step",
-      "pieceId": "vnr-p09",
-      "stepId": "vnr-p09-s02",
-      "file": "audio/presentation/vnr-p09-s02.mp3",
-      "status": "ready",
-      "duration": 17.71,
-      "bytes": 106272,
-      "textHash": "d51a69abd5ed"
-    },
-    "vnr-p09-s03": {
-      "kind": "step",
-      "pieceId": "vnr-p09",
-      "stepId": "vnr-p09-s03",
-      "file": "audio/presentation/vnr-p09-s03.mp3",
-      "status": "ready",
-      "duration": 15.98,
-      "bytes": 95904,
-      "textHash": "310818218a8b"
-    },
-    "vnr-p09-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p09",
-      "stepId": "vnr-p09-s04",
-      "file": "audio/presentation/vnr-p09-s04.mp3",
-      "status": "ready",
-      "duration": 15.48,
-      "bytes": 92880,
-      "textHash": "dee771ca9ada"
-    },
-    "vnr-p10-intro": {
-      "kind": "piece-intro",
-      "pieceId": "vnr-p10",
-      "file": "audio/presentation/vnr-p10-intro.mp3",
-      "status": "ready",
-      "duration": 8.02,
-      "bytes": 48096,
-      "textHash": "e0a1afc282e9"
-    },
-    "vnr-p10-s01": {
-      "kind": "step",
-      "pieceId": "vnr-p10",
-      "stepId": "vnr-p10-s01",
-      "file": "audio/presentation/vnr-p10-s01.mp3",
-      "status": "ready",
-      "duration": 15.12,
-      "bytes": 90720,
-      "textHash": "1cd625485883"
-    },
-    "vnr-p10-s02": {
-      "kind": "step",
-      "pieceId": "vnr-p10",
-      "stepId": "vnr-p10-s02",
-      "file": "audio/presentation/vnr-p10-s02.mp3",
-      "status": "ready",
-      "duration": 15.48,
-      "bytes": 92880,
-      "textHash": "49b1935a782e"
-    },
-    "vnr-p10-s03": {
-      "kind": "step",
-      "pieceId": "vnr-p10",
-      "stepId": "vnr-p10-s03",
-      "file": "audio/presentation/vnr-p10-s03.mp3",
-      "status": "ready",
-      "duration": 18.41,
-      "bytes": 110448,
-      "textHash": "ffd921556754"
-    },
-    "vnr-p10-s04": {
-      "kind": "step",
-      "pieceId": "vnr-p10",
-      "stepId": "vnr-p10-s04",
-      "file": "audio/presentation/vnr-p10-s04.mp3",
-      "status": "ready",
-      "duration": 16.9,
-      "bytes": 101376,
-      "textHash": "5bcc596b6b68"
+      "duration": 12.17,
+      "bytes": 73008,
+      "textHash": "d40291c37a3cbb5b"
     }
   }
 }

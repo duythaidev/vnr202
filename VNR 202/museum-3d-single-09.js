@@ -216,7 +216,7 @@ function updateNearestHudText() {
     lastHudBay = bay;
     const L = MUSEUM_PIECES[Math.min(MUSEUM_PIECES.length - 1, bay * 2)];
     const R = MUSEUM_PIECES[bay * 2 + 1];
-    document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}/${NUM_BAYS} · ${L.shortLabel}${R ? " / " + R.shortLabel : ""}`;
+    document.getElementById('hudNearestPiece').innerText = `Khoang ${bay + 1}/${NUM_BAYS} – ${L.shortLabel}${R ? " / " + R.shortLabel : ""}`;
 }
 
 // ---------- Âm thanh tương tác dùng chung với intro ----------

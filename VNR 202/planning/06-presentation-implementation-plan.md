@@ -1,6 +1,6 @@
-# Mode thuyết trình VNR202 · triển khai từ bản tham khảo
+# Mode thuyết trình VNR202 – triển khai từ bản tham khảo
 
-Cập nhật 09/11/2026. **Đã triển khai camera, animation, phụ đề và bộ điều khiển tour** cho 10 tranh / 38 step (48 đoạn). Phần phát giọng đọc MP3 chưa triển khai: `Narrator` trong bản tham khảo cũng chỉ là đồng hồ mô phỏng thời gian đọc. Không coi chạy hết tour đồng nghĩa đã có 48 file voice.
+Cập nhật 09/11/2026. **Đã triển khai camera, animation, phụ đề và bộ điều khiển tour** cho 8 tranh / 26 step (34 đoạn). Phần phát giọng đọc MP3 chưa triển khai: `Narrator` trong bản tham khảo cũng chỉ là đồng hồ mô phỏng thời gian đọc. Không coi chạy hết tour đồng nghĩa đã có 48 file voice.
 
 ## Nguồn chuyển sang
 
@@ -15,7 +15,7 @@ Không mang drawer, quiz, Flat View, nội dung 15 tranh, chất lượng render
 | File | Trách nhiệm |
 |---|---|
 | `museum-tour.js` | Camera phòng tranh theo đường cong Bézier; đi qua lối giữa, quay nhìn tranh, tiến chậm khi giới thiệu; pause/cancel. Chứa Narrator mô phỏng thời gian đọc. |
-| `presentation.js` | Controller duy nhất: 48 segment theo dữ liệu thật, tiến/lùi/seek, tốc độ, phụ đề, trạng thái lỗi và hoàn tất. |
+| `presentation.js` | Controller duy nhất: 34 segment theo dữ liệu thật, tiến/lùi/seek, tốc độ, phụ đề, trạng thái lỗi và hoàn tất. |
 | `presentation.css` | Khung điện ảnh, thẻ giới thiệu, phụ đề và thanh điều khiển lấy từ tham khảo. |
 | `museum-3d-single-08.js` | StoryBoard có sự kiện, Promise đóng bảng, hủy callback phiên cũ, pause/timeScale và điều phối input cho tour. |
 | `museum-3d-single-09.js` | Cho tour sở hữu camera, chặn điều khiển đi tự do, hủy pendingBoardTimer và khởi tạo UI sau prepare. |
@@ -24,7 +24,7 @@ Không mang drawer, quiz, Flat View, nội dung 15 tranh, chất lượng render
 
 ## Luồng và quyền sở hữu
 
-Bắt đầu → đóng detail nếu đang mở → camera tới tranh → giới thiệu + drift chậm → mở detail → đợi `stepReady` → chạy phụ đề cùng bút → **đợi Narrator hoàn tất VÀ writer.done** → bước kế → đóng detail → tranh kế. Hết 48 đoạn: lùi camera ra toàn cảnh rồi hiện hoàn tất, không lặp tự động.
+Bắt đầu → đóng detail nếu đang mở → camera tới tranh → giới thiệu + drift chậm → mở detail → đợi `stepReady` → chạy phụ đề cùng bút → **đợi Narrator hoàn tất VÀ writer.done** → bước kế → đóng detail → tranh kế. Hết 34 đoạn: lùi camera ra toàn cảnh rồi hiện hoàn tất, không lặp tự động.
 
 `Presentation` quyết định chuyển đoạn; `MuseumTour` giữ camera; `StoryBoard` giữ chuyển động/viết trên bảng. Không dùng timer mở bảng của khám phá tự do trong tour. Các Promise chuyển camera hoàn tất tại đích thật. Bản Narrator hiện tại hoàn tất theo đồng hồ, chưa phải audio ended.
 
@@ -47,7 +47,7 @@ Các điều khiển khám phá bị ẩn khi chạy tour được đặt inert 
 
 ## Kết quả kiểm tra
 
-- Edge file://: chạy tự nhiên đủ 48 đoạn theo thứ tự với đồng hồ thử nghiệm tăng tốc; cả 38 bước chỉ hoàn tất khi writer.done và Narrator đã xong. Kết thúc đóng bảng và camera về toàn cảnh. Không có lỗi JavaScript trong lượt này.
+- Edge file://: chạy tự nhiên đủ 34 đoạn theo thứ tự với đồng hồ thử nghiệm tăng tốc; cả 38 bước chỉ hoàn tất khi writer.done và Narrator đã xong. Kết thúc đóng bảng và camera về toàn cảnh. Không có lỗi JavaScript trong lượt này.
 - Kiểm tra pause camera/Narrator và pause writer; rapid next/prev/seek qua các bảng; seek sau hoàn tất; đổi chặng trong lúc camera đang kết thúc; bắt đầu từ tranh đang mở; hủy pending timer của khám phá tự do; Esc và reset timeScale/inputHook/tourActive.
 - Sau tinh chỉnh UI: kiểm tra riêng controller + Narrator thật trong browser với adapter camera/bảng giả lập, không cần mạng. 390px: các nút chính trong viewport, Tab không lọt vào điều khiển bị ẩn, focus/inert được khôi phục, pause và transform progress hoạt động. Đây không thay cho kiểm tra render cảnh 3D trên điện thoại thật.
 - Lượt HTTP/ảnh chụp mobile đầy đủ cuối không hoàn tất do DNS không phân giải được cdn.tailwindcss.com và fonts.googleapis.com; startup dừng trước thư viện đầu tiên (progress 0). Không ghi lượt này là pass, không thay CDN/bootstrap ngoài phạm vi chuyển tính năng.
@@ -63,7 +63,7 @@ Voice TTS đọc nhanh nên tour phải gọn hơn:
 - Độ dài lời nói theo [05-narration-plan.md](05-narration-plan.md): step 40–60 từ, lời dẫn tranh 25–35 từ.
 - Thẻ nay có thêm khối `thesis chain grid versus ladder hub rail vtimeline checklist stats table`; phụ đề lấy từ `stepText()` đã hỗ trợ các khối này. Phụ đề chỉ là phương án tạm: lời nói đã duyệt đặt vào `step.narration` / `story.intro`.
 
-## Giọng đọc MP3 · phần tiếp theo
+## Giọng đọc MP3 – phần tiếp theo
 
 Giữ yêu cầu người dùng: **generate tất cả MP3 trước**, không gọi TTS khi vào tranh/detail hoặc trong phiên tour. Service local POST localhost:5050/v1/audio/speech, model tts-1, voice vi-VN-NamMinhNeural, response_format mp3; Bearer key chỉ ở công cụ generate local. Kịch bản mới phải theo revision 2 và hash nội dung, không tái dùng audio revision 1 chỉ vì cùng ID.
 

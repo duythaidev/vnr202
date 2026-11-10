@@ -301,7 +301,7 @@ const StoryBoard = (() => {
         const dir = new V3(card.camOff.x, card.camOff.y, 1).normalize();
         // mode thuyết trình: lùi xa hơn một chút + đẩy thẻ lên trên để chừa chỗ cho phụ đề
         const tour = api.tourActive ? 1 : 0;
-        const dd = d * (1 + 0.2 * tour);
+        const dd = d * (1 + 0.1 * tour);
         return {
             pos: card.center.clone().add(new V3(0, -0.42 * tour, 0)).addScaledVector(dir, dd).setZ(card.center.z + dir.z * dd),
             look: card.center.clone().add(new V3(0, -0.03 - 0.42 * tour, 0.02)),
@@ -449,7 +449,7 @@ const StoryBoard = (() => {
     // ---------------- HUD ----------------
     function updateHud() {
         const p = MUSEUM_PIECES[st.piece];
-        $('boardPieceCode').textContent = `${p.code} · BƯỚC ${st.current + 1}/${st.cards.length}`;
+        $('boardPieceCode').textContent = `${p.code} – BƯỚC ${st.current + 1}/${st.cards.length}`;
         $('boardPieceTitle').textContent = p.title;
         $('boardDots').innerHTML = st.cards.map((c, i) =>
             `<button class="board-dot${i === st.current ? ' on' : ''}${c.visited ? ' done' : ''}" data-i="${i}" title="${(c.step.title || '').replace(/"/g, '')}">${i + 1}</button>`).join('');

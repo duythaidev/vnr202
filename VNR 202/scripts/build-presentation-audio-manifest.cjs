@@ -10,6 +10,9 @@ const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const AUDIO_DIR = 'audio/presentation';
+const hashesFile = path.join(ROOT, AUDIO_DIR, 'hashes.json');
+const hashes = fs.existsSync(hashesFile) ? JSON.parse(fs.readFileSync(hashesFile, 'utf8')) : {};
+const MODEL = 'tts-1';
 const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'planning/presentation-script.json'), 'utf8'));
 
 function duration(file) {
@@ -25,14 +28,16 @@ const missing = [];
 function add(clipId, kind, pieceId, stepId, text) {
     const rel = `${AUDIO_DIR}/${clipId}.mp3`;
     const abs = path.join(ROOT, rel);
-    const ok = fs.existsSync(abs) && fs.statSync(abs).size > 0;
+    const want = crypto.createHash('sha1').update([script.voice, MODEL, text].join('|')).digest('hex').slice(0, 16);
+    // clip chỉ "ready" khi file có VÀ hash nội dung khớp kịch bản hiện hành (tránh phát voice của bản cũ)
+    const ok = fs.existsSync(abs) && fs.statSync(abs).size > 0 && hashes[clipId] === want;
     const dur = ok ? duration(abs) : null;
     if (!ok || !dur) missing.push(clipId);
     clips[clipId] = {
         kind, pieceId, ...(stepId ? { stepId } : {}),
         file: rel, status: ok && dur ? 'ready' : 'missing', duration: dur,
         bytes: ok ? fs.statSync(abs).size : 0,
-        textHash: crypto.createHash('sha1').update(text).digest('hex').slice(0, 12)
+        textHash: want
     };
 }
 script.pieces.forEach(p => {
@@ -40,7 +45,7 @@ script.pieces.forEach(p => {
     p.steps.forEach(s => add(s.stepId, 'step', p.pieceId, s.stepId, s.text));
 });
 
-const manifest = { course: 'VNR202', revision: 3, voice: script.voice, generatedBy: 'scripts/build-presentation-audio-manifest.cjs', clips };
+const manifest = { course: 'VNR202', revision: script.revision, voice: script.voice, generatedBy: 'scripts/build-presentation-audio-manifest.cjs', clips };
 fs.writeFileSync(path.join(ROOT, 'planning/presentation-audio.json'), JSON.stringify(manifest, null, 2), 'utf8');
 const runtime = Object.fromEntries(Object.entries(clips).filter(([, c]) => c.status === 'ready').map(([k, c]) => [k, { file: c.file, duration: c.duration }]));
 fs.writeFileSync(path.join(ROOT, 'presentation-audio.js'),

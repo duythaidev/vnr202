@@ -2,194 +2,138 @@
 const PRESENTATION_AUDIO = {
     "vnr-p01-intro": {
         "file": "audio/presentation/vnr-p01-intro.mp3",
-        "duration": 9
+        "duration": 8.88
     },
     "vnr-p01-s01": {
         "file": "audio/presentation/vnr-p01-s01.mp3",
-        "duration": 16.25
+        "duration": 12.1
     },
     "vnr-p01-s02": {
         "file": "audio/presentation/vnr-p01-s02.mp3",
-        "duration": 16.61
+        "duration": 12.62
     },
     "vnr-p01-s03": {
         "file": "audio/presentation/vnr-p01-s03.mp3",
-        "duration": 15.82
+        "duration": 11.35
     },
     "vnr-p01-s04": {
         "file": "audio/presentation/vnr-p01-s04.mp3",
-        "duration": 17.28
+        "duration": 12.14
     },
     "vnr-p02-intro": {
         "file": "audio/presentation/vnr-p02-intro.mp3",
-        "duration": 8.38
+        "duration": 6.34
     },
     "vnr-p02-s01": {
         "file": "audio/presentation/vnr-p02-s01.mp3",
-        "duration": 14.23
+        "duration": 11.93
     },
     "vnr-p02-s02": {
         "file": "audio/presentation/vnr-p02-s02.mp3",
-        "duration": 14.33
+        "duration": 13.1
     },
     "vnr-p02-s03": {
         "file": "audio/presentation/vnr-p02-s03.mp3",
-        "duration": 14.57
-    },
-    "vnr-p02-s04": {
-        "file": "audio/presentation/vnr-p02-s04.mp3",
-        "duration": 13.8
+        "duration": 11.26
     },
     "vnr-p03-intro": {
         "file": "audio/presentation/vnr-p03-intro.mp3",
-        "duration": 11.4
+        "duration": 7.3
     },
     "vnr-p03-s01": {
         "file": "audio/presentation/vnr-p03-s01.mp3",
-        "duration": 14.45
+        "duration": 12.17
     },
     "vnr-p03-s02": {
         "file": "audio/presentation/vnr-p03-s02.mp3",
-        "duration": 14.38
+        "duration": 13.46
     },
     "vnr-p03-s03": {
         "file": "audio/presentation/vnr-p03-s03.mp3",
-        "duration": 13.8
+        "duration": 14.66
     },
     "vnr-p04-intro": {
         "file": "audio/presentation/vnr-p04-intro.mp3",
-        "duration": 9.55
+        "duration": 11.02
     },
     "vnr-p04-s01": {
         "file": "audio/presentation/vnr-p04-s01.mp3",
-        "duration": 15.62
+        "duration": 13.92
     },
     "vnr-p04-s02": {
         "file": "audio/presentation/vnr-p04-s02.mp3",
-        "duration": 14.66
+        "duration": 15.31
     },
     "vnr-p04-s03": {
         "file": "audio/presentation/vnr-p04-s03.mp3",
-        "duration": 16.46
-    },
-    "vnr-p04-s04": {
-        "file": "audio/presentation/vnr-p04-s04.mp3",
-        "duration": 15.5
+        "duration": 14.02
     },
     "vnr-p05-intro": {
         "file": "audio/presentation/vnr-p05-intro.mp3",
-        "duration": 11.02
+        "duration": 7.2
     },
     "vnr-p05-s01": {
         "file": "audio/presentation/vnr-p05-s01.mp3",
-        "duration": 14.98
+        "duration": 17.57
     },
     "vnr-p05-s02": {
         "file": "audio/presentation/vnr-p05-s02.mp3",
-        "duration": 17.09
+        "duration": 10.42
     },
     "vnr-p05-s03": {
         "file": "audio/presentation/vnr-p05-s03.mp3",
-        "duration": 15.22
-    },
-    "vnr-p05-s04": {
-        "file": "audio/presentation/vnr-p05-s04.mp3",
-        "duration": 17.02
+        "duration": 13.27
     },
     "vnr-p06-intro": {
         "file": "audio/presentation/vnr-p06-intro.mp3",
-        "duration": 8.74
+        "duration": 8.59
     },
     "vnr-p06-s01": {
         "file": "audio/presentation/vnr-p06-s01.mp3",
-        "duration": 17.21
+        "duration": 13.63
     },
     "vnr-p06-s02": {
         "file": "audio/presentation/vnr-p06-s02.mp3",
-        "duration": 19.08
+        "duration": 11.06
     },
     "vnr-p06-s03": {
         "file": "audio/presentation/vnr-p06-s03.mp3",
-        "duration": 13.25
-    },
-    "vnr-p06-s04": {
-        "file": "audio/presentation/vnr-p06-s04.mp3",
-        "duration": 16.01
+        "duration": 12.22
     },
     "vnr-p07-intro": {
         "file": "audio/presentation/vnr-p07-intro.mp3",
-        "duration": 8.59
+        "duration": 7.7
     },
     "vnr-p07-s01": {
         "file": "audio/presentation/vnr-p07-s01.mp3",
-        "duration": 15.86
+        "duration": 11.26
     },
     "vnr-p07-s02": {
         "file": "audio/presentation/vnr-p07-s02.mp3",
-        "duration": 17.11
+        "duration": 12.29
     },
     "vnr-p07-s03": {
         "file": "audio/presentation/vnr-p07-s03.mp3",
-        "duration": 13.66
+        "duration": 11.71
+    },
+    "vnr-p07-s04": {
+        "file": "audio/presentation/vnr-p07-s04.mp3",
+        "duration": 12.38
     },
     "vnr-p08-intro": {
         "file": "audio/presentation/vnr-p08-intro.mp3",
-        "duration": 10.15
+        "duration": 7.13
     },
     "vnr-p08-s01": {
         "file": "audio/presentation/vnr-p08-s01.mp3",
-        "duration": 16.99
+        "duration": 14.16
     },
     "vnr-p08-s02": {
         "file": "audio/presentation/vnr-p08-s02.mp3",
-        "duration": 14.28
+        "duration": 14.98
     },
     "vnr-p08-s03": {
         "file": "audio/presentation/vnr-p08-s03.mp3",
-        "duration": 14.5
-    },
-    "vnr-p08-s04": {
-        "file": "audio/presentation/vnr-p08-s04.mp3",
-        "duration": 11.16
-    },
-    "vnr-p09-intro": {
-        "file": "audio/presentation/vnr-p09-intro.mp3",
-        "duration": 8.71
-    },
-    "vnr-p09-s01": {
-        "file": "audio/presentation/vnr-p09-s01.mp3",
-        "duration": 14.54
-    },
-    "vnr-p09-s02": {
-        "file": "audio/presentation/vnr-p09-s02.mp3",
-        "duration": 17.71
-    },
-    "vnr-p09-s03": {
-        "file": "audio/presentation/vnr-p09-s03.mp3",
-        "duration": 15.98
-    },
-    "vnr-p09-s04": {
-        "file": "audio/presentation/vnr-p09-s04.mp3",
-        "duration": 15.48
-    },
-    "vnr-p10-intro": {
-        "file": "audio/presentation/vnr-p10-intro.mp3",
-        "duration": 8.02
-    },
-    "vnr-p10-s01": {
-        "file": "audio/presentation/vnr-p10-s01.mp3",
-        "duration": 15.12
-    },
-    "vnr-p10-s02": {
-        "file": "audio/presentation/vnr-p10-s02.mp3",
-        "duration": 15.48
-    },
-    "vnr-p10-s03": {
-        "file": "audio/presentation/vnr-p10-s03.mp3",
-        "duration": 18.41
-    },
-    "vnr-p10-s04": {
-        "file": "audio/presentation/vnr-p10-s04.mp3",
-        "duration": 16.9
+        "duration": 12.17
     }
 };
