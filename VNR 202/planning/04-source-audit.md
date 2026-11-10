@@ -8,7 +8,7 @@ Trạng thái: các sửa mốc dưới đây đã áp dụng trong runtime revi
 
 **Kết quả: cần sửa, độ tin cậy cao.** Đoạn 174 đặt Hội nghị quân sự cách mạng Bắc Kỳ vào 15/5/1945, đang gộp hai sự kiện.
 
-- Văn kiện có tiêu đề và nội dung xác định Hội nghị diễn ra **15–20/4/1945**, ra chủ trương thống nhất lực lượng: [Nghị quyết Hội nghị quân sự cách mạng Bắc Kỳ, kho văn kiện Đảng](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-i/nghi-quyet-cua-hoi-nghi-quan-su-cach-mang-bac-ky-ngay-15-20-4-1945-670).
+- Văn kiện có tiêu đề và nội dung xác định Hội nghị diễn ra **15-20/4/1945**, ra chủ trương thống nhất lực lượng: [Nghị quyết Hội nghị quân sự cách mạng Bắc Kỳ, kho văn kiện Đảng](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-i/nghi-quyet-cua-hoi-nghi-quan-su-cach-mang-bac-ky-ngay-15-20-4-1945-670).
 - **15/5/1945** là lễ thống nhất Việt Nam Tuyên truyền Giải phóng quân và Cứu quốc quân thành Việt Nam Giải phóng quân. Đối chiếu [sách Đội Việt Nam Tuyên truyền Giải phóng quân trên thư viện Ban Tuyên giáo Cao Bằng](https://sachdientu.tuyengiaocaobang.vn/uploads/thuviensach/cuon-sach-doi-viet-nam-tuyen-truyen-giai-phong-quan.pdf).
 
 Cách viết lên thẻ: `4/1945: hội nghị quyết định thống nhất lực lượng → 15/5/1945: thực hiện thống nhất thành Việt Nam Giải phóng quân`. Không gọi ngày 15/5 là ngày Hội nghị tại Hiệp Hòa.
@@ -23,7 +23,7 @@ Cách viết an toàn: `1938: Hội Truyền bá Quốc ngữ góp phần mở r
 
 **Kết quả: cần sửa cách gộp thành phần, độ tin cậy cao.** Đoạn 030 liệt kê cả Ai Lao ngay tại mốc thành lập 17/10/1887. Bài giới thiệu sắc lệnh trên trang cơ quan lưu trữ nêu khối ban đầu gồm Bắc Kỳ, Trung Kỳ, Nam Kỳ và Cao Miên, còn Lào bổ sung sau: [Vài nét về chế độ toàn quyền của thực dân Pháp ở Đông Dương](https://www.archives.org.vn/gioi-thieu-tai-lieu-nghiep-vu/vai-net-ve-che-do-toan-quyen-cua-thuc-dan-phap-o-dong-duong.htm).
 
-Lưu ý: các tổng quan còn có cách trình bày khác nhau về những bước tổ chức hành chính tiếp theo. [Giới thiệu tài liệu lưu trữ Việt–Pháp](https://vietphap.luutru.gov.vn/tructuyen/ttlt.aspx) nêu sắc lệnh sáp nhập Lào năm 1899. Không cần giải quyết toàn bộ lịch sử hành chính này trên một thẻ của bài.
+Lưu ý: các tổng quan còn có cách trình bày khác nhau về những bước tổ chức hành chính tiếp theo. [Giới thiệu tài liệu lưu trữ Việt-Pháp](https://vietphap.luutru.gov.vn/tructuyen/ttlt.aspx) nêu sắc lệnh sáp nhập Lào năm 1899. Không cần giải quyết toàn bộ lịch sử hành chính này trên một thẻ của bài.
 
 Cách viết lên thẻ: `Pháp áp dụng chế độ cai trị khác nhau ở Bắc Kỳ, Trung Kỳ và Nam Kỳ trong bộ máy thuộc địa Đông Dương`. Nếu đưa timeline 1887, không liệt kê Lào là thành phần ngay từ đầu. Mốc Lào không phải trọng tâm đường lối của triển lãm.
 
@@ -51,10 +51,10 @@ Khuyến nghị: thẻ viết `Cuộc biểu tình Hưng Nguyên ngày 12/9/1930
 
 ### 35.009 hội viên: có đối chiếu văn kiện gốc
 
-Đoạn 115 có thể giữ nếu ghi đúng đối tượng và mốc báo cáo. [Văn kiện Đảng toàn tập, Tập 6, tr.375–376](https://tulieuvankien.dangcongsan.vn/upload/3000006/20251024/20403122ca44f3a0c223857a121f4387VK_Dang_TT_-_Tap_6.pdf) có tổng số **35.009 hội viên quần chúng**, kèm các nhóm thành viên. Đây **không phải số đảng viên** hoặc số người tại một cuộc mít tinh.
+Đoạn 115 có thể giữ nếu ghi đúng đối tượng và mốc báo cáo. [Văn kiện Đảng toàn tập, Tập 6, tr.375-376](https://tulieuvankien.dangcongsan.vn/upload/3000006/20251024/20403122ca44f3a0c223857a121f4387VK_Dang_TT_-_Tap_6.pdf) có tổng số **35.009 hội viên quần chúng**, kèm các nhóm thành viên. Đây **không phải số đảng viên** hoặc số người tại một cuộc mít tinh.
 
 Cách dùng: caption `Theo báo cáo thời kỳ 1938: 35.009 hội viên trong các tổ chức quần chúng`; đặt số đảng viên ở chú giải riêng nếu thực sự cần. Không thay số hội viên bằng quy mô toàn bộ đội quân chính trị đã được vận động trong suốt giai đoạn.
 
 ## Phạm vi áp dụng
 
-Áp dụng các sửa mốc vào bản nội dung VNR202 trước khi viết lời nói và generate MP3. Không đổi file nguồn DOCX của nhóm trong đợt planning. Những chi tiết còn lại của bài chưa được kiểm chứng hết; đặc biệt số lượng cuộc đấu tranh, số báo, thương vong và trích dẫn dài cần có nguồn tương ứng nếu muốn dùng làm điểm nhấn. Ưu tiên trình bày quan hệ bối cảnh–chủ trương–lực lượng–phương pháp–kết quả hơn là nhồi số liệu.
+Áp dụng các sửa mốc vào bản nội dung VNR202 trước khi viết lời nói và generate MP3. Không đổi file nguồn DOCX của nhóm trong đợt planning. Những chi tiết còn lại của bài chưa được kiểm chứng hết; đặc biệt số lượng cuộc đấu tranh, số báo, thương vong và trích dẫn dài cần có nguồn tương ứng nếu muốn dùng làm điểm nhấn. Ưu tiên trình bày quan hệ bối cảnh-chủ trương-lực lượng-phương pháp-kết quả hơn là nhồi số liệu.

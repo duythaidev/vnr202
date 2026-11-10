@@ -53,16 +53,16 @@ const MUSEUM_PIECES = [
             "vnr-p03"
         ],
         "code": "02",
-        "shortLabel": "02 Xô viết Nghệ–Tĩnh",
+        "shortLabel": "02 Xô viết Nghệ-Tĩnh",
         "chapter": "Ý CHÍNH 1",
-        "date": "1930–1931",
-        "title": "Xô viết Nghệ–Tĩnh",
+        "date": "1930-1931",
+        "title": "Xô viết Nghệ-Tĩnh",
         "subtitle": "",
         "imageUrl": "assets/images/exhibition-8/xo-viet-nghe-tinh-tranh.webp",
         "imageAspect": 1.9867549668874172,
         "imageTypeLabel": "Tranh lịch sử tái hiện",
-        "imageCredit": "BT Mỹ thuật Việt Nam – Báo Nhân Dân",
-        "imageCaption": "Xô viết Nghệ Tĩnh — tranh sơn mài tái hiện.",
+        "imageCredit": "BT Mỹ thuật Việt Nam - Báo Nhân Dân",
+        "imageCaption": "Xô viết Nghệ Tĩnh - tranh sơn mài tái hiện.",
         "imageSource": "https://nhandan.vn/special/nhung-mua-xuan-co-dang-qua-tranh-cua-cac-danh-hoa-vi-t/",
         "hotspots": [
             {
@@ -70,7 +70,7 @@ const MUSEUM_PIECES = [
                 "desc": "Bãi công và biểu tình lan rộng"
             },
             {
-                "name": "Xô viết Nghệ–Tĩnh",
+                "name": "Xô viết Nghệ-Tĩnh",
                 "desc": "Chính quyền công nông thu nhỏ"
             },
             {
@@ -80,7 +80,7 @@ const MUSEUM_PIECES = [
         ],
         "bullets": [
             "Cao trào cách mạng",
-            "Xô viết Nghệ–Tĩnh",
+            "Xô viết Nghệ-Tĩnh",
             "Đàn áp và ý nghĩa"
         ]
     },
@@ -94,14 +94,14 @@ const MUSEUM_PIECES = [
         "code": "03",
         "shortLabel": "03 Luận cương và khôi phục",
         "chapter": "Ý CHÍNH 1",
-        "date": "1930–1935",
+        "date": "1930-1935",
         "title": "Luận cương và khôi phục",
         "subtitle": "",
         "imageUrl": "assets/images/exhibition-8/tran-phu-chan-dung.webp",
         "imageAspect": 0.8104166666666667,
         "imageTypeLabel": "Chân dung lịch sử",
         "imageCredit": "BT Lịch sử Quốc gia",
-        "imageCaption": "Trần Phú (1904–1931), Tổng Bí thư đầu tiên.",
+        "imageCaption": "Trần Phú (1904-1931), Tổng Bí thư đầu tiên.",
         "imageSource": "https://baotanglichsu.vn/vi/Album/47/ky-niem-90-nam-ngay-thanh-lap-djang-cong-san-viet-nam-3-2-1930-3-2-2020",
         "hotspots": [
             {
@@ -133,7 +133,7 @@ const MUSEUM_PIECES = [
         "code": "04",
         "shortLabel": "04 Dân chủ, cơm áo, hòa bình",
         "chapter": "Ý CHÍNH 2",
-        "date": "1936–1939",
+        "date": "1936-1939",
         "title": "Dân chủ, cơm áo, hòa bình",
         "subtitle": "",
         "imageUrl": "assets/images/exhibition-8/dau-xao-1938.webp",
@@ -172,19 +172,19 @@ const MUSEUM_PIECES = [
         "code": "05",
         "shortLabel": "05 Chuyển hướng chiến lược",
         "chapter": "Ý CHÍNH 3",
-        "date": "1939–1941",
+        "date": "1939-1941",
         "title": "Chuyển hướng chiến lược",
         "subtitle": "",
         "imageUrl": "assets/images/exhibition-8/pac-bo-suoi-le-nin-hien-nay.webp",
         "imageAspect": 1.566615620214395,
-        "imageTypeLabel": "Di tích – ảnh hiện đại",
+        "imageTypeLabel": "Di tích - ảnh hiện đại",
         "imageCredit": "Bảo tàng Hồ Chí Minh",
-        "imageCaption": "Suối Lê-nin, Pác Bó — ảnh hiện đại.",
+        "imageCaption": "Suối Lê-nin, Pác Bó - ảnh hiện đại.",
         "imageSource": "https://baotanghochiminh.vn/phat-trien-du-lich-pac-bo-trong-tinh-hinh-moi.htm",
         "hotspots": [
             {
                 "name": "Ba bước chuyển hướng",
-                "desc": "TW6, TW7, TW8 hoàn chỉnh"
+                "desc": "Ba hội nghị Trung ương, hoàn chỉnh 1941"
             },
             {
                 "name": "Bốn nội dung cốt lõi",
@@ -211,7 +211,7 @@ const MUSEUM_PIECES = [
         "code": "06",
         "shortLabel": "06 Chuẩn bị khởi nghĩa",
         "chapter": "Ý CHÍNH 3",
-        "date": "1940–1944",
+        "date": "1940-1944",
         "title": "Chuẩn bị khởi nghĩa",
         "subtitle": "",
         "imageUrl": "assets/images/exhibition-8/doi-tuyen-truyen-giai-phong-quan-1944.webp",

@@ -11,7 +11,7 @@
 //   "con trỏ" rồi huỷ thao tác đang chạy → bấm liên tục cũng không mở chồng bảng.
 //   Pause = đóng băng camera bảo tàng, camera bảng, bút và người dẫn cùng lúc.
 //
-//   Phím: Space tạm dừng/tiếp – → / PageDown tiếp – ← / PageUp trước – Esc thoát
+//   Phím: Space tạm dừng/tiếp - → / PageDown tiếp - ← / PageUp trước - Esc thoát
 //   (PageUp/PageDown: dùng được bút trình chiếu / clicker)
 // =============================================================================
 const Presentation = (() => {
@@ -400,9 +400,9 @@ const Presentation = (() => {
         $('tourCC').setAttribute('aria-pressed', String(captionsOn));
         $('tourPlay').setAttribute('aria-label', status === 'running' ? 'Tạm dừng' : status === 'completed' ? 'Phát lại' : 'Tiếp tục');
         $('tourWhere').textContent = `TRANH ${String(snap.piece + 1).padStart(2, '0')}/${MUSEUM_PIECES.length}` +
-            (snap.step < 0 ? ' – GIỚI THIỆU' : ` – BƯỚC ${String(snap.step + 1).padStart(2, '0')}/${String(n).padStart(2, '0')}`);
+            (snap.step < 0 ? ' - GIỚI THIỆU' : ` - BƯỚC ${String(snap.step + 1).padStart(2, '0')}/${String(n).padStart(2, '0')}`);
         const phaseLabel = { closing: 'Đóng bảng…', moving: 'Đang di chuyển…', opening: 'Mở thẻ…' }[phase];
-        $('tourWhat').textContent = status === 'paused' ? 'Đã tạm dừng – Space để tiếp tục'
+        $('tourWhat').textContent = status === 'paused' ? 'Đã tạm dừng - Space để tiếp tục'
             : phaseLabel || (snap.step < 0 ? strip(piece.title) : strip(story.steps[snap.step].title));
         // bảng trạng thái: lỗi / hoàn tất
         const panel = $('tourPanel');
@@ -413,7 +413,7 @@ const Presentation = (() => {
         } else if (status === 'completed') {
             panel.innerHTML = `<div class="tour-card done"><div class="font-mono-museum">THE VNR202 MUSEUM</div>
                 <b class="font-serif-museum">Đã hoàn tất ${MUSEUM_PIECES.length} tranh</b>
-                <p>${segs.length - MUSEUM_PIECES.length} bước nội dung – cảm ơn đã theo dõi</p>
+                <p>${segs.length - MUSEUM_PIECES.length} bước nội dung - cảm ơn đã theo dõi</p>
                 <div><button data-act="replay">↺ Phát lại</button><button data-act="museum">Thoát</button></div></div>`;
         } else panel.innerHTML = '';
         panel.classList.toggle('show', status === 'error' || status === 'completed');
@@ -441,9 +441,9 @@ const Presentation = (() => {
         const el = $('tourIntro');
         if (on) {
             const piece = MUSEUM_PIECES[p];
-            el.querySelector('.tour-intro-code').textContent = `${piece.code} – ${piece.date}`;
+            el.querySelector('.tour-intro-code').textContent = `${piece.code} - ${piece.date}`;
             el.querySelector('.tour-intro-title').textContent = strip(piece.title).replace(/^\d+\.\s*/, '');
-            el.querySelector('.tour-intro-meta').textContent = `${strip(piece.chapter)} – ${getStory(p).steps.length} bước`;
+            el.querySelector('.tour-intro-meta').textContent = `${strip(piece.chapter)} - ${getStory(p).steps.length} bước`;
         }
         el.classList.toggle('show', on);
     }

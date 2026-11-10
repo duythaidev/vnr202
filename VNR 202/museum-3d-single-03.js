@@ -20,7 +20,7 @@ const STORY_DATA = {
                         "size": 38,
                         "items": [
                             "Cần Vương, Yên Thế: còn mang cốt cách phong kiến",
-                            "Đông Du, Duy tân: chưa nhìn rõ bản chất thực dân",
+                            "Đông Du, cải cách Phan Châu Trinh: chưa nhìn rõ bản chất thực dân",
                             "Yên Bái 1930: manh động, thất bại nhanh"
                         ]
                     },
@@ -40,7 +40,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Dưới ách thực dân Pháp, mâu thuẫn giữa toàn dân tộc với thực dân và phong kiến trở nên gay gắt nhất. Các phong trào Cần Vương, Đông Du, Yên Bái đều thất bại vì thiếu đường lối đúng và tổ chức tiên phong.",
                 "id": "vnr-p01-s01",
-                "label": "01 / 1858–1930"
+                "label": "01 / 1858-1930"
             },
             {
                 "title": "Nguyễn Ái Quốc tìm đường",
@@ -85,7 +85,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Năm một nghìn chín trăm mười một, Nguyễn Tất Thành ra đi tìm đường cứu nước. Đọc Luận cương của Lênin, dự Đại hội Tours, rồi lập Hội Thanh niên ở Quảng Châu, Người gắn giải phóng dân tộc với cách mạng vô sản.",
                 "id": "vnr-p01-s02",
-                "label": "02 / 1911–1927"
+                "label": "02 / 1911-1927"
             },
             {
                 "title": "Ba tổ chức hợp nhất",
@@ -125,7 +125,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Năm một nghìn chín trăm hai mươi chín xuất hiện ba tổ chức cộng sản. Đầu năm một nghìn chín trăm ba mươi, Nguyễn Ái Quốc triệu tập hội nghị ở Hồng Kông, hợp nhất thành Đảng Cộng sản Việt Nam.",
                 "id": "vnr-p01-s03",
-                "label": "03 / 1929–1930"
+                "label": "03 / 1929-1930"
             },
             {
                 "title": "Cương lĩnh đầu tiên",
@@ -191,7 +191,7 @@ const STORY_DATA = {
                         "ts": 36,
                         "items": [
                             {
-                                "date": "1–4/1930",
+                                "date": "1-4/1930",
                                 "text": "Bãi công nổ ra khắp nơi"
                             },
                             {
@@ -214,7 +214,7 @@ const STORY_DATA = {
                                 "value": 54
                             },
                             {
-                                "label": "Tháng 6–8",
+                                "label": "Tháng 6-8",
                                 "value": 121
                             }
                         ]
@@ -231,7 +231,7 @@ const STORY_DATA = {
                 "label": "01 / 1930"
             },
             {
-                "title": "Xô viết Nghệ–Tĩnh",
+                "title": "Xô viết Nghệ-Tĩnh",
                 "head": "box",
                 "blocks": [
                     {
@@ -354,7 +354,7 @@ const STORY_DATA = {
                         "items": [
                             "Trần Phú: “Hãy giữ vững chí khí chiến đấu!”",
                             "Lý Tự Trọng: con đường của thanh niên là cách mạng",
-                            "Trong tù lập chi bộ, dịch kinh điển Mác – Lênin"
+                            "Trong tù lập chi bộ, dịch kinh điển Mác - Lênin"
                         ]
                     },
                     {
@@ -369,7 +369,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Dưới khủng bố trắng, nhiều đồng chí giữ vững khí tiết. Trần Phú dặn hãy giữ vững chí khí chiến đấu. Trong các nhà tù, đảng viên lập chi bộ, dịch kinh điển và biến nhà tù thành trường học cộng sản.",
                 "id": "vnr-p03-s02",
-                "label": "02 / 1931–1933"
+                "label": "02 / 1931-1933"
             },
             {
                 "title": "Khôi phục và Đại hội I",
@@ -404,7 +404,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Từ Chương trình hành động năm một nghìn chín trăm ba mươi hai đến Ban Chỉ huy ở ngoài, Đảng khôi phục tổ chức. Đại hội thứ nhất ở Ma Cao, tháng ba một nghìn chín trăm ba mươi lăm, bầu Lê Hồng Phong làm Tổng Bí thư, nhưng vẫn chưa đặt độc lập lên hàng đầu.",
                 "id": "vnr-p03-s03",
-                "label": "03 / 1932–1935"
+                "label": "03 / 1932-1935"
             }
         ]
     },
@@ -426,7 +426,7 @@ const STORY_DATA = {
                         "ts": 34,
                         "items": [
                             {
-                                "head": "1929–1933",
+                                "head": "1929-1933",
                                 "text": "Phát xít thắng thế ở châu Âu"
                             },
                             {
@@ -451,7 +451,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Phát xít thắng thế ở châu Âu. Đại hội bảy Quốc tế Cộng sản năm một nghìn chín trăm ba mươi lăm chủ trương lập Mặt trận nhân dân, và Mặt trận nhân dân Pháp lên cầm quyền. Đảng cũng phải xác định lại kẻ thù và cách đấu tranh.",
                 "id": "vnr-p04-s01",
-                "label": "01 / 1935–1936"
+                "label": "01 / 1935-1936"
             },
             {
                 "title": "Chủ trương mới và đột phá",
@@ -488,7 +488,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Các hội nghị Trung ương xác định kẻ thù trước mắt là phát xít và phản động thuộc địa, đòi tự do, dân chủ, cơm áo, hòa bình. Tháng mười năm một nghìn chín trăm ba mươi sáu, Đảng nêu rõ giải phóng dân tộc không nhất định phải kết chặt với cách mạng điền địa.",
                 "id": "vnr-p04-s02",
-                "label": "02 / 1936–1938"
+                "label": "02 / 1936-1938"
             },
             {
                 "title": "Đấu tranh và kết quả",
@@ -502,7 +502,7 @@ const STORY_DATA = {
                         "type": "checklist",
                         "size": 34,
                         "items": [
-                            "Đông Dương đại hội, 600 ủy ban hành động",
+                            "Đông Dương đại hội, 600 ủy ban hành động ở Nam Kỳ",
                             "Bãi công, báo chí, tranh cử",
                             "Hội truyền bá quốc ngữ"
                         ]
@@ -533,7 +533,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Đông Dương đại hội, bãi công, báo chí, tranh cử: phong trào dân chủ rất sôi nổi. Đảng có hơn một nghìn năm trăm đảng viên bí mật, hơn ba mươi lăm nghìn hội viên, thành đội quân chính trị chuẩn bị cho Cách mạng Tháng Tám.",
                 "id": "vnr-p04-s03",
-                "label": "03 / 1936–1939"
+                "label": "03 / 1936-1939"
             }
         ]
     },
@@ -555,17 +555,17 @@ const STORY_DATA = {
                         "rise": 56,
                         "items": [
                             {
-                                "tag": "TW 6",
+                                "tag": "Trung ương 6",
                                 "date": "11/1939",
                                 "text": "Giải phóng dân tộc là tối cao"
                             },
                             {
-                                "tag": "TW 7",
+                                "tag": "Trung ương 7",
                                 "date": "11/1940",
-                                "text": "Còn chưa dứt khoát"
+                                "text": "Hội nghị cán bộ, còn chưa dứt khoát"
                             },
                             {
-                                "tag": "TW 8",
+                                "tag": "Trung ương 8",
                                 "date": "5/1941",
                                 "text": "Nguyễn Ái Quốc chủ trì, hoàn chỉnh"
                             }
@@ -578,7 +578,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Chiến tranh thế giới và ách Pháp Nhật buộc Đảng chuyển hướng qua ba hội nghị. Trung ương sáu đặt giải phóng dân tộc lên tối cao. Trung ương bảy còn chưa dứt khoát. Trung ương tám, tháng năm một nghìn chín trăm bốn mươi mốt, do Nguyễn Ái Quốc chủ trì, hoàn chỉnh triệt để.",
                 "id": "vnr-p05-s01",
-                "label": "01 / 1939–1941"
+                "label": "01 / 1939-1941"
             },
             {
                 "title": "Bốn nội dung cốt lõi",
@@ -705,7 +705,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Năm một nghìn chín trăm bốn mươi có ba cuộc nổi dậy: Bắc Sơn, Nam Kỳ và Đô Lương. Đều bị đàn áp, nhưng là những tiếng súng báo hiệu khởi nghĩa toàn quốc. Đảng mất nhiều lãnh tụ mà ý chí vẫn vững.",
                 "id": "vnr-p06-s01",
-                "label": "01 / 1940–1941"
+                "label": "01 / 1940-1941"
             },
             {
                 "title": "Lực lượng chính trị, văn hóa",
@@ -738,7 +738,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Việt Minh công bố Tuyên ngôn và Chương trình cứu nước. Đảng ra Đề cương về văn hóa với ba nguyên tắc dân tộc, khoa học, đại chúng, lập Đảng Dân chủ và Hội Văn hóa cứu quốc.",
                 "id": "vnr-p06-s02",
-                "label": "02 / 1941–1944"
+                "label": "02 / 1941-1944"
             },
             {
                 "title": "Lực lượng vũ trang",
@@ -773,7 +773,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Căn cứ địa mở rộng ở Bắc Sơn Võ Nhai và Cao Bằng. Ngày hai mươi hai tháng mười hai năm một nghìn chín trăm bốn mươi bốn, Đội Việt Nam tuyên truyền giải phóng quân ra đời và thắng liền hai trận Phai Khắt, Nà Ngần.",
                 "id": "vnr-p06-s03",
-                "label": "03 / 1941–1944"
+                "label": "03 / 1941-1944"
             }
         ]
     },
@@ -860,7 +860,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Khởi nghĩa từng phần nổ ra khắp nơi, như Ba Tơ. Ngày bốn tháng sáu, Khu giải phóng Việt Bắc thành lập. Khẩu hiệu phá kho thóc, giải quyết nạn đói đưa hàng triệu người đứng lên.",
                 "id": "vnr-p07-s02",
-                "label": "02 / 3–6/1945"
+                "label": "02 / 3-6/1945"
             },
             {
                 "title": "Thời cơ và quyết sách Tân Trào",
@@ -879,7 +879,7 @@ const STORY_DATA = {
                                 "text": "Lệnh tổng khởi nghĩa"
                             },
                             {
-                                "date": "14–15/8",
+                                "date": "14-15/8",
                                 "head": "Hội nghị toàn quốc",
                                 "text": "Tập trung, thống nhất, kịp thời"
                             },
@@ -955,7 +955,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Hà Nội giành chính quyền ngày mười chín, Huế ngày hai mươi ba, Sài Gòn ngày hai mươi lăm tháng tám. Ngày ba mươi, vua Bảo Đại thoái vị. Chính quyền cách mạng được xác lập trong cả nước.",
                 "id": "vnr-p07-s04",
-                "label": "04 / 19–30/8/1945"
+                "label": "04 / 19-30/8/1945"
             }
         ]
     },
@@ -1010,7 +1010,7 @@ const STORY_DATA = {
                 "blocks": [
                     {
                         "type": "thesis",
-                        "text": "Thắng lợi 1930–1945 để lại bốn bài học kinh nghiệm quý báu."
+                        "text": "Thắng lợi 1930-1945 để lại bốn bài học kinh nghiệm quý báu."
                     },
                     {
                         "type": "grid",
@@ -1048,7 +1048,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Có bốn bài học. Giương cao ngọn cờ giải phóng dân tộc. Tập hợp mọi lực lượng yêu nước trong mặt trận rộng rãi. Kết hợp chính trị với vũ trang và chớp thời cơ. Xây dựng Đảng gắn bó máu thịt với quần chúng.",
                 "id": "vnr-p08-s02",
-                "label": "02 / 1930–1945"
+                "label": "02 / 1930-1945"
             },
             {
                 "title": "Năm cột mốc đường lối",
@@ -1095,7 +1095,7 @@ const STORY_DATA = {
                 ],
                 "narration": "Đường lối đi qua năm cột mốc: Cương lĩnh đúng đắn, Luận cương tả khuynh, bước đột phá năm một nghìn chín trăm ba mươi sáu, chuyển hướng năm một nghìn chín trăm bốn mươi mốt, và chớp thời cơ năm một nghìn chín trăm bốn mươi lăm.",
                 "id": "vnr-p08-s03",
-                "label": "03 / 1930–1945"
+                "label": "03 / 1930-1945"
             }
         ]
     }

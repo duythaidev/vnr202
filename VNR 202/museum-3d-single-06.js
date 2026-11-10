@@ -11,7 +11,7 @@ const BoardPaper = (() => {
     }
 
     // ---------- Giấy cũ ----------
-    // trả về canvas nền (vẽ 1 lần, cache) — nội dung chữ vẽ đè lên sau
+    // trả về canvas nền (vẽ 1 lần, cache) - nội dung chữ vẽ đè lên sau
     function agedPaper(W, H, seed, opts = {}) {
         const [cv, c] = makeCanvas(W, H);
         const rand = FX.rng(seed);
@@ -140,7 +140,7 @@ const BoardPaper = (() => {
         return FX.canvasTexture(cv, { repeat: [3, 3], aniso: 8 });
     }
 
-    // vết phấn mờ (vòng tròn, mũi tên) — lớp phủ trong suốt đặt trên bảng
+    // vết phấn mờ (vòng tròn, mũi tên) - lớp phủ trong suốt đặt trên bảng
     function chalkMarks(seed) {
         const [cv, c] = makeCanvas(1024, 1024);
         const rand = FX.rng(seed);

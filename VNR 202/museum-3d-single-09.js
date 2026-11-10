@@ -211,16 +211,14 @@ function animateMuseum() {
 
 let lastHudPiece = -2;
 const _hudPos = new THREE.Vector3();
-// Chỉ hiện tên tranh khi đứng gần và hướng về phía tranh đó; xa thì ẩn.
+// Hiện tên tranh khi đứng ở nửa tường của tranh đó và nằm trong khoảng giữa hai bên của khoang (rộng, không cần sát tranh).
 function updateNearestHudText() {
-    let best = -1, bestScore = 6.5;
-    const lx = -Math.sin(yaw), lz = -Math.cos(yaw);
+    let best = -1, bestDz = BAY_LENGTH * 0.5;
+    const side = Math.abs(camPos.x) < 0.8 ? Math.sign(-Math.sin(yaw)) : Math.sign(camPos.x);   // đứng giữa lối thì lấy bên đang nhìn
     for (const art of paintingMeshes) {
         art.getWorldPosition(_hudPos);
-        const dx = _hudPos.x - camPos.x, dz = _hudPos.z - camPos.z, d = Math.hypot(dx, dz);
-        const facing = d > 0.01 ? (dx * lx + dz * lz) / d : 0;
-        const score = d - 2.5 * Math.max(0, facing);
-        if (d < 6.5 && score < bestScore) { bestScore = score; best = art.userData.pieceIndex; }
+        const dz = Math.abs(_hudPos.z - camPos.z);
+        if (Math.sign(_hudPos.x) === side && dz < bestDz) { bestDz = dz; best = art.userData.pieceIndex; }
     }
     if (best === lastHudPiece) return;
     lastHudPiece = best;

@@ -65,7 +65,7 @@ const StoryBoard = (() => {
         fill = new THREE.SpotLight(0xc8d6cc, 26, 0, 0.95, 1, 2);
         scene.add(fill, fill.target);
 
-        // ghim: tiện tròn (lathe) – đầu tròn, cổ, đế
+        // ghim: tiện tròn (lathe) - đầu tròn, cổ, đế
         const prof = [[0, 0.175], [0.03, 0.172], [0.055, 0.162], [0.072, 0.145], [0.08, 0.122], [0.076, 0.1], [0.06, 0.085], [0.035, 0.078],
             [0.03, 0.05], [0.046, 0.036], [0.052, 0.022], [0.046, 0.01], [0, 0.008]].map(([r, y]) => new THREE.Vector2(r, y));
         pinGeo = new THREE.LatheGeometry(prof, 28);
@@ -449,7 +449,7 @@ const StoryBoard = (() => {
     // ---------------- HUD ----------------
     function updateHud() {
         const p = MUSEUM_PIECES[st.piece];
-        $('boardPieceCode').textContent = `${p.code} – BƯỚC ${st.current + 1}/${st.cards.length}`;
+        $('boardPieceCode').textContent = `${p.code} - BƯỚC ${st.current + 1}/${st.cards.length}`;
         $('boardPieceTitle').textContent = p.title;
         $('boardDots').innerHTML = st.cards.map((c, i) =>
             `<button class="board-dot${i === st.current ? ' on' : ''}${c.visited ? ' done' : ''}" data-i="${i}" title="${(c.step.title || '').replace(/"/g, '')}">${i + 1}</button>`).join('');

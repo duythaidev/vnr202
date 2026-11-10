@@ -278,7 +278,7 @@ const BoardWriter = (() => {
                 ctx.font = qf;
                 let ty = cy + S(20);
                 wrapLines(ctx, b.text, cw - S(90)).forEach(line => { ty += qs * 1.35; textOp(line, x + S(90), ty, qf, qs, INK, 1300); });
-                if (b.by) { ty += S(52); textOp('— ' + b.by, x + S(90), ty, `600 ${S(30)}px ${SANS}`, S(30), SOFT, 1200); }
+                if (b.by) { ty += S(52); textOp('- ' + b.by, x + S(90), ty, `600 ${S(30)}px ${SANS}`, S(30), SOFT, 1200); }
                 cy = ty + S(24);
             }
             else if (b.type === 'chart') {
@@ -487,7 +487,7 @@ const BoardWriter = (() => {
                 cy += S(10);
             }
             else if (b.type === 'stats') {
-                // hàng 2–3 con số lớn, mỗi số một chú thích
+                // hàng 2-3 con số lớn, mỗi số một chú thích
                 const items = b.items || [], n = items.length, colW = cw / n, vs = S(b.vs || 92), ts = S(32), tf = `500 ${ts}px ${SANS}`;
                 const base = cy + vs * 1.0 + S(8);
                 let maxB = base;

@@ -191,7 +191,7 @@ const MuseumTextures = (() => {
         c.fillStyle = '#ece7d9'; c.fillRect(0, 0, 600, 400);
         c.textAlign = 'left'; c.fillStyle = '#74664f';
         c.font = '500 23px "Be Vietnam Pro", sans-serif';
-        c.fillText(`${piece.code}  –  ${piece.date}`, 34, 52);
+        c.fillText(`${piece.code}  -  ${piece.date}`, 34, 52);
         c.fillStyle = '#292922'; c.font = '600 35px "Be Vietnam Pro", sans-serif';
         const words = piece.title.split(' '); let line = '', y = 110;
         words.forEach(word => {

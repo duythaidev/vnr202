@@ -7,7 +7,7 @@
       "vnr-p01",
       "vnr-p02"
     ],
-    "sourceParagraphs": "022–052",
+    "sourceParagraphs": "022-052",
     "stepIds": [
       "vnr-p01-s01",
       "vnr-p01-s02",
@@ -23,7 +23,7 @@
       "vnr-p03",
       "vnr-p04"
     ],
-    "sourceParagraphs": "053–065",
+    "sourceParagraphs": "053-065",
     "stepIds": [
       "vnr-p02-s01",
       "vnr-p02-s02",
@@ -34,11 +34,11 @@
   {
     "id": "vnr-p03",
     "index": 2,
-    "title": "Xô viết Nghệ–Tĩnh",
+    "title": "Xô viết Nghệ-Tĩnh",
     "mergedFrom": [
       "vnr-p05"
     ],
-    "sourceParagraphs": "067–073",
+    "sourceParagraphs": "067-073",
     "stepIds": [
       "vnr-p03-s01",
       "vnr-p03-s02",
@@ -54,7 +54,7 @@
       "vnr-p07",
       "vnr-p08"
     ],
-    "sourceParagraphs": "074–088",
+    "sourceParagraphs": "074-088",
     "stepIds": [
       "vnr-p04-s01",
       "vnr-p04-s02",
@@ -70,7 +70,7 @@
       "vnr-p09",
       "vnr-p10"
     ],
-    "sourceParagraphs": "089–117",
+    "sourceParagraphs": "089-117",
     "stepIds": [
       "vnr-p05-s01",
       "vnr-p05-s02",
@@ -86,7 +86,7 @@
       "vnr-p11",
       "vnr-p12"
     ],
-    "sourceParagraphs": "118–148",
+    "sourceParagraphs": "118-148",
     "stepIds": [
       "vnr-p06-s01",
       "vnr-p06-s02",
@@ -101,7 +101,7 @@
     "mergedFrom": [
       "vnr-p13"
     ],
-    "sourceParagraphs": "149–161",
+    "sourceParagraphs": "149-161",
     "stepIds": [
       "vnr-p07-s01",
       "vnr-p07-s02",
@@ -115,7 +115,7 @@
     "mergedFrom": [
       "vnr-p14"
     ],
-    "sourceParagraphs": "162–176",
+    "sourceParagraphs": "162-176",
     "stepIds": [
       "vnr-p08-s01",
       "vnr-p08-s02",
@@ -131,7 +131,7 @@
       "vnr-p14",
       "vnr-p15"
     ],
-    "sourceParagraphs": "177–190",
+    "sourceParagraphs": "177-190",
     "stepIds": [
       "vnr-p09-s01",
       "vnr-p09-s02",
@@ -146,7 +146,7 @@
     "mergedFrom": [
       "vnr-p15"
     ],
-    "sourceParagraphs": "190–209",
+    "sourceParagraphs": "190-209",
     "stepIds": [
       "vnr-p10-s01",
       "vnr-p10-s02",

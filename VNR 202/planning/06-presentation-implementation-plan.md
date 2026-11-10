@@ -1,4 +1,4 @@
-# Mode thuyết trình VNR202 – triển khai từ bản tham khảo
+# Mode thuyết trình VNR202 - triển khai từ bản tham khảo
 
 Cập nhật 09/11/2026. **Đã triển khai camera, animation, phụ đề và bộ điều khiển tour** cho 8 tranh / 26 step (34 đoạn). Phần phát giọng đọc MP3 chưa triển khai: `Narrator` trong bản tham khảo cũng chỉ là đồng hồ mô phỏng thời gian đọc. Không coi chạy hết tour đồng nghĩa đã có 48 file voice.
 
@@ -59,11 +59,11 @@ Voice TTS đọc nhanh nên tour phải gọn hơn:
 
 - Mặc định chạy **1,25×** (danh sách tốc độ nay là 1× / 1,25× / 1,5× / 2×; bỏ 0,75×). Tốc độ áp dụng cùng camera, bút và đồng hồ phụ đề.
 - Đồng hồ Narrator mô phỏng đọc **3,4 từ mỗi giây** (trước là 2,5) cho tới khi có MP3; đây chỉ là đồng hồ tạm.
-- Thẻ nay dày hơn (thesis + ý phụ, khoảng 12–19 giây viết ở 1×), nên đồng bộ với voice là việc phải làm khi gắn MP3: khi biết `duration` của clip, đặt `StoryBoard.timeScale = clamp(Writer.total / duration, 1, 2.2) × tốc độ người dùng` để bút xong gần cùng lúc lời nói. Nếu voice dài hơn bút thì giữ 1× (không làm chậm bút). Rào chuyển step vẫn là `ended` **và** `writer.done`.
-- Độ dài lời nói theo [05-narration-plan.md](05-narration-plan.md): step 40–60 từ, lời dẫn tranh 25–35 từ.
+- Thẻ nay dày hơn (thesis + ý phụ, khoảng 12-19 giây viết ở 1×), nên đồng bộ với voice là việc phải làm khi gắn MP3: khi biết `duration` của clip, đặt `StoryBoard.timeScale = clamp(Writer.total / duration, 1, 2.2) × tốc độ người dùng` để bút xong gần cùng lúc lời nói. Nếu voice dài hơn bút thì giữ 1× (không làm chậm bút). Rào chuyển step vẫn là `ended` **và** `writer.done`.
+- Độ dài lời nói theo [05-narration-plan.md](05-narration-plan.md): step 40-60 từ, lời dẫn tranh 25-35 từ.
 - Thẻ nay có thêm khối `thesis chain grid versus ladder hub rail vtimeline checklist stats table`; phụ đề lấy từ `stepText()` đã hỗ trợ các khối này. Phụ đề chỉ là phương án tạm: lời nói đã duyệt đặt vào `step.narration` / `story.intro`.
 
-## Giọng đọc MP3 – phần tiếp theo
+## Giọng đọc MP3 - phần tiếp theo
 
 Giữ yêu cầu người dùng: **generate tất cả MP3 trước**, không gọi TTS khi vào tranh/detail hoặc trong phiên tour. Service local POST localhost:5050/v1/audio/speech, model tts-1, voice vi-VN-NamMinhNeural, response_format mp3; Bearer key chỉ ở công cụ generate local. Kịch bản mới phải theo revision 2 và hash nội dung, không tái dùng audio revision 1 chỉ vì cùng ID.
 
