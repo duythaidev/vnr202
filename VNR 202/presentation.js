@@ -202,6 +202,28 @@ const Presentation = (() => {
         return true;
     }
 
+    // ---------- Nhạc nền (cinematic-bg.mp3): nhỏ, lặp, fade theo trạng thái tour ----------
+    const Bgm = (() => {
+        const VOL = 0.1;    // nhỏ để không át giọng người dẫn
+        let a = null, fadeId = 0;
+        const el = () => a || (a = Object.assign(new Audio(new URL('cinematic-bg.mp3', document.baseURI).href), { loop: true, preload: 'auto', volume: 0 }));
+        function fadeTo(v, ms, then) {
+            cancelAnimationFrame(fadeId);
+            const e = el(), from = e.volume, t0 = performance.now();
+            const step = (now) => {
+                const k = Math.min(1, (now - t0) / ms);
+                e.volume = from + (v - from) * k;
+                if (k < 1) fadeId = requestAnimationFrame(step); else if (then) then();
+            };
+            fadeId = requestAnimationFrame(step);
+        }
+        return {
+            play() { el().play().catch(() => {}); fadeTo(VOL, 1500); },
+            pause() { fadeTo(0, 400, () => el().pause()); },
+            stop() { fadeTo(0, 800, () => { el().pause(); el().currentTime = 0; }); }
+        };
+    })();
+
     // ---------- Điều khiển công khai ----------
     function start(fromPiece = 0) {
         buildUI();
@@ -304,6 +326,9 @@ const Presentation = (() => {
         MuseumTour.paused = paused;
         Narrator.setPaused(paused);
         StoryBoard.setPaused(paused && s !== 'idle');
+        if (s === 'running') Bgm.play();
+        else if (s === 'paused' || s === 'error') Bgm.pause();
+        else Bgm.stop();     // idle | completed
         notify();
     }
     function setPhase(ph) { phase = ph; notify(); }
